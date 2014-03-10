@@ -18,12 +18,13 @@ Network connection: NetConn_1 contains 1 individual synaptic connections
 
 
     <include href="AMPAR.synapse.nml"/>
+    <include href="NMDAR.synapse.nml"/>
     <include href="KConductance.channel.nml"/>
     <include href="LeakConductance.channel.nml"/>
     <include href="NaConductance.channel.nml"/>
     <include href="TestCell_ChannelML.cell.nml"/>
 
-    <pulseGenerator id="Input_0" delay="20.0ms" duration="60.0ms" amplitude="2.0E-4uA"/>
+    <pulseGenerator id="Input_0" delay="20.0ms" duration="60.0ms" amplitude="0.7E-4uA"/>
 
     
     <network id="SimpleNet" type="networkWithTemperature" temperature="6.3 degC">
@@ -36,9 +37,15 @@ Network connection: NetConn_1 contains 1 individual synaptic connections
             </instance>
         </population>
 
-        <population id="CG2" component="TestCell_ChannelML" type="populationList" size="1">
+        <population id="CG2" component="TestCell_ChannelML" type="populationList" size="3">
             <instance id="0">
-                <location x="41.628883" y="72.79404" z="74.07768"/>
+                <location x="0" y="0" z="0"/>
+            </instance>
+            <instance id="1">
+                <location x="100" y="0" z="0"/>
+            </instance>
+            <instance id="2">
+                <location x="200" y="0" z="0"/>
             </instance>
         </population>
 
@@ -46,6 +53,14 @@ Network connection: NetConn_1 contains 1 individual synaptic connections
 
         <projection id="NetConn_1" presynapticPopulation="CG1" postsynapticPopulation="CG2" synapse="AMPAR">
             <connection id="0" preCellId="../CG1/0/TestCell_ChannelML" postCellId="../CG2/0/TestCell_ChannelML" preSegmentId="0" preFractionAlong="0.5" postSegmentId="0" postFractionAlong="0.5"/>
+        </projection>
+
+        <projection id="NetConn_2_1" presynapticPopulation="CG1" postsynapticPopulation="CG2" synapse="AMPAR">
+            <connection id="0" preCellId="../CG1/0/TestCell_ChannelML" postCellId="../CG2/1/TestCell_ChannelML" preSegmentId="0" preFractionAlong="0.5" postSegmentId="0" postFractionAlong="0.5"/>
+        </projection>
+
+        <projection id="NetConn_2_2" presynapticPopulation="CG1" postsynapticPopulation="CG2" synapse="NMDAR">
+            <connection id="0" preCellId="../CG1/0/TestCell_ChannelML" postCellId="../CG2/1/TestCell_ChannelML" preSegmentId="0" preFractionAlong="0.5" postSegmentId="0" postFractionAlong="0.5"/>
         </projection>
 
         <inputList id="Input_0" component="Input_0" population="CG1">
