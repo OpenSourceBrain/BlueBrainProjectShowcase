@@ -1,0 +1,42 @@
+<Lems xmlns="http://www.neuroml.org/lems/0.7.2" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:schemaLocation="http://www.neuroml.org/lems/0.7.2  https://raw.github.com/LEMS/LEMS/development/Schemas/LEMS/LEMS_v0.7.2.xsd">
+
+    <Target component="sim1" reportFile="simulator.props" timesFile="time.dat"/>
+
+        <!--Include standard NeuroML 2 ComponentType definitions-->
+
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+    
+
+        <!--Include the generated NeuroML 2 files-->
+
+
+        <!--   Channel/synapse files-->
+    <Include file="AMPAR.synapse.nml"/>
+    <Include file="KConductance.channel.nml"/>
+    <Include file="LeakConductance.channel.nml"/>
+    <Include file="NaConductance.channel.nml"/>
+        <!--   Cell files-->
+    <Include file="TestCell_ChannelML.cell.nml"/>
+        <!--   Network file-->
+    <Include file="SimpleNet.net.nml"/>
+    
+
+        <!--Note: this could be: Simulation id="sim1" ... , but Component type="Simulation" ... 
+        is used to allow validation of this file according to the LEMS schema specified above...-->
+    <Component type="Simulation" id="sim1" length="100.0ms" step="0.01ms" target="SimpleNet">
+        
+        <Display id="GraphWin_0" title="Simple network" xmin="-10.0" xmax="110.0" ymin="-104.0" ymax="64.0" timeScale="1ms">
+            <Line id="VOLTAGE-CG1_0" timeScale="1ms" quantity="CG1/0/TestCell_ChannelML/v" scale="1 mV" color="#000000"/>
+        
+            <Line id="VOLTAGE-CG2_0" timeScale="1ms" quantity="CG2/0/TestCell_ChannelML/v" scale="1 mV" color="#ff0000"/>
+        </Display>
+    
+    </Component>
+
+
+</Lems>
