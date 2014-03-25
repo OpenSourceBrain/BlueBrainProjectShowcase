@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IonChannel Name="HCN1" ModelID="9" ModelName="HCN1" ModelType="hhmodels" ID="61" ImageID="52">
+  <Environment Temp="0.0">
+    <RevPotential>-45.0</RevPotential>
+    <Age> 21</Age>
+    <CellType> Dorsal root ganglion</CellType>
+    <Animal Name="Mouse"/>
+  </Environment>
+  <Ion Name="Hcn"/>
+  <Reference ID="57" PubmedID="11248683">Cellular expression and functional characterization of four hyperpolarization-activated pacemaker channels in cardiac and neuronal tissues. Eur. J. Biochem., 2001, 268, 1646-52</Reference>
+  <Gates Power="1.0" Name="m" EqType="1">
+    <Inf_Alpha>
+      <Equation>1.0000/(1+exp((v- -94)/8.1))</Equation>
+    </Inf_Alpha>
+    <Tau_Beta>
+      <Equation>30.0000</Equation>
+    </Tau_Beta>
+  </Gates>
+</IonChannel>

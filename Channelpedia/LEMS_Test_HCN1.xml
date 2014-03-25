@@ -1,0 +1,72 @@
+<Lems>
+
+
+    <!-- Specify which component to run -->
+    <Target component="sim1"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+    <Include file="HCN1.channel.nml"/>
+    <Include file="NML2_SimpleIonChannel.nml"/>
+
+    <ComponentType name="testVoltage" extends="baseCellMembPot" description="Still in development!!!"> 
+
+        <Parameter name="delay" dimension="time"/>
+        <Parameter name="duration" dimension="time"/>
+        <Parameter name="baseVoltage" dimension="voltage"/>
+        <Parameter name="targetVoltage" dimension="voltage"/>
+
+        <Children name="populations" type="baseChannelPopulation"/>
+
+        <Dynamics>
+
+            <StateVariable name="v" exposure="v" dimension="voltage"/>
+
+            <OnStart>
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnStart>
+
+            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+                <StateAssignment variable="v" value="targetVoltage"/>
+            </OnCondition>
+
+            <OnCondition test="t .gt. duration+delay">
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType>
+    
+    <testVoltage id="holderCell0" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="-10mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+        <!--<channelPopulation id="test" ionChannel="na" number="1" erev="50mV"/>-->
+    </testVoltage>
+
+    
+
+
+    <Simulation id="sim1" length="200ms" step="0.025ms" target="holderCell0">
+
+        <Display id="d0" title="clamp"  timeScale="1ms" xmin="-10" xmax="210" ymin="-80" ymax="10">
+            <Line id="-60mV" quantity="v" scale="1mV"  color="#ffffff" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="d1" title="G"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.1" ymax="1">
+            <!--<Line id="-60mV" quantity="test/na/fopen" scale="1mV"  color="#ffffff" timeScale="1ms"/>-->
+            <Line id="-60mV" quantity="test/Channelpedia_HCN1_9/fopen" scale="1mV"  color="#ffffff" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="d2" title="inf"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.1" ymax="1">
+            <!--<Line id="-60mV" quantity="test/na/fopen" scale="1mV"  color="#ffffff" timeScale="1ms"/>-->
+            <Line id="-60mV" quantity="test/Channelpedia_HCN1_9/m/q" scale="1mV"  color="#ffffff" timeScale="1ms"/>
+        </Display>
+
+
+    </Simulation>
+
+
+</Lems>
