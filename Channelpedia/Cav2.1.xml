@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IonChannel Name="Cav2.1" ModelID="5" ModelName="Ca_P/Q" ModelType="hhmodels" ID="78" ImageID="40">
+  <Environment Temp="21.0">
+    <RevPotential>135.0</RevPotential>
+    <Age> 21</Age>
+    <CellType> Cerebellar Purkinje</CellType>
+    <Animal Name="rat"/>
+  </Environment>
+  <Ion Name="Ca"/>
+  <Reference ID="261" PubmedID="11164813">Low-threshold potassium channels and a low-threshold calcium channel regulate Ca2+ spike firing in the dendrites of cerebellar Purkinje neurons: a modeling study. Brain Res., 2001, 891, 106-15</Reference>
+  <Gates Power="1.0" Name="m" EqType="2">
+    <Inf_Alpha>
+      <Equation>8.5/(1+exp((v-8)/(-12.5)))</Equation>
+    </Inf_Alpha>
+    <Tau_Beta>
+      <Equation>35/(1+exp((v+74)/(14.5)))</Equation>
+    </Tau_Beta>
+  </Gates>
+</IonChannel>

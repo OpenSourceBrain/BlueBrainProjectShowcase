@@ -7,6 +7,7 @@ The original model can be found at: http://channelpedia.epfl.ch/ionchannels/61</
             <steadyState type="Channelpedia_HCN1_9_inf"/>
         </gate>
     </ionChannelHH>
+
     <ComponentType name="Channelpedia_HCN1_9_tau" extends="baseVoltageDepTime">
     <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
     <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
@@ -15,6 +16,7 @@ The original model can be found at: http://channelpedia.epfl.ch/ionchannels/61</
     <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
     </Dynamics>
     </ComponentType>
+
     <ComponentType name="Channelpedia_HCN1_9_inf" extends="baseVoltageDepVariable">
     <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
     <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>

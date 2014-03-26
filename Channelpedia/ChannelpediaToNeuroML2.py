@@ -5,6 +5,8 @@ import lems.api as lems
 
 import xml.etree.ElementTree as ET
 
+import sys
+
 def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
     
     print('Converting Channelpedia XML to NeuroML2')
@@ -14,7 +16,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
     for child in root:
         print child.tag, child.attrib
         
-    channel_id='Channelpedia_%s_%s'%(root.attrib['ModelName'], root.attrib['ModelID'])
+    channel_id='Channelpedia_%s_%s'%(root.attrib['ModelName'].replace("/","_"), root.attrib['ModelID'])
     
     doc = neuroml.NeuroMLDocument()
     
@@ -28,39 +30,77 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
     comp_types = {}
     for gate in root.findall('Gates'):
         
-        gate_type= 'gateHHtauInf'
-        g = neuroml.GateHHTauInf(id=gate.attrib['Name'],instances=int(float(gate.attrib['Power'])), type=gate_type)
+        eq_type = gate.attrib['EqType']
+        
+        if eq_type == '1':
+            gate_type= 'gateHHtauInf'
+            g = neuroml.GateHHTauInf(id=gate.attrib['Name'],instances=int(float(gate.attrib['Power'])), type=gate_type)
+        elif eq_type == '2':
+            gate_type= 'gateHHrates'
+            g = neuroml.GateHHRates(id=gate.attrib['Name'],instances=int(float(gate.attrib['Power'])), type=gate_type)
         
         for inf in gate.findall('Inf_Alpha'):
             equation = check_equation(inf.findall('Equation')[0].text)
-            new_comp_type = "%s_inf"%(channel_id)
-            g.steady_state = neuroml.HHVariable(type=new_comp_type)
             
-            comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepVariable")
+            if eq_type == '1':
+                new_comp_type = "%s_%s"%(channel_id, 'inf')
+                g.steady_state = neuroml.HHVariable(type=new_comp_type)
 
-            comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
-            comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
-     
-            comp_type.dynamics.add(lems.DerivedVariable(name='x', dimension="none", value="%s"%equation, exposure="x"))
-            comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
-          
-            comp_types[new_comp_type] = comp_type
+                comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepVariable")
+
+                comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
+                comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
+
+                comp_type.dynamics.add(lems.DerivedVariable(name='x', dimension="none", value="%s"%equation, exposure="x"))
+                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
+
+                comp_types[new_comp_type] = comp_type
+                
+            elif eq_type == '2':
+                new_comp_type = "%s_%s"%(channel_id, 'alpha')
+                g.forward_rate = neuroml.HHRate(type=new_comp_type)
+
+                comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepRate")
+
+                comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
+                comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
+
+                comp_type.dynamics.add(lems.DerivedVariable(name='r', dimension="per_time", value="%s / TIME_SCALE"%equation, exposure="r"))
+                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
+
+                comp_types[new_comp_type] = comp_type
+                
             
         for tau in gate.findall('Tau_Beta'):
             equation = check_equation(tau.findall('Equation')[0].text)
             
-            new_comp_type = "%s_tau"%(channel_id)
-            g.time_course = neuroml.HHTime(type=new_comp_type)
-            
-            comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepTime")
+            if eq_type == '1':
+                new_comp_type = "%s_tau"%(channel_id)
+                g.time_course = neuroml.HHTime(type=new_comp_type)
 
-            comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
-            comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
-     
-            comp_type.dynamics.add(lems.DerivedVariable(name='t', dimension="none", value="(%s) * TIME_SCALE"%equation, exposure="t"))
-            comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
-          
-            comp_types[new_comp_type] = comp_type
+                comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepTime")
+
+                comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
+                comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
+
+                comp_type.dynamics.add(lems.DerivedVariable(name='t', dimension="none", value="(%s) * TIME_SCALE"%equation, exposure="t"))
+                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
+
+                comp_types[new_comp_type] = comp_type
+                
+            elif eq_type == '2':
+                new_comp_type = "%s_%s"%(channel_id, 'beta')
+                g.reverse_rate = neuroml.HHRate(type=new_comp_type)
+
+                comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepRate")
+
+                comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
+                comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
+
+                comp_type.dynamics.add(lems.DerivedVariable(name='r', dimension="per_time", value="%s  / TIME_SCALE"%equation, exposure="r"))
+                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
+
+                comp_types[new_comp_type] = comp_type
         
         chan.gates.append(g)
                           
@@ -79,7 +119,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
         print("Adding definition for %s:\n%s\n"%(comp_type_name, ct_xml))
         nml2_file = open(nml2_file_name, 'r')
         orig = nml2_file.read()
-        new_contents = orig.replace("</neuroml>", "    %s\n</neuroml>"%ct_xml)
+        new_contents = orig.replace("</neuroml>", "\n    %s\n</neuroml>"%ct_xml)
         nml2_file.close()
         nml2_file = open(nml2_file_name, 'w')
         nml2_file.write(new_contents)
@@ -98,7 +138,10 @@ def check_equation(eqn):
     return eqn
 
 if __name__ == '__main__':
-    target = 'HCN1'
+    if len(sys.argv) == 2:
+        target = sys.argv[1]
+    else:
+        target = 'HCN1'
     test_file = target+'.xml'
     contents = open(test_file, 'r').read()
     channelpedia_xml_to_neuroml2(contents, target+'.channel.nml')

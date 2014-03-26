@@ -1,0 +1,105 @@
+<Lems>
+
+
+    <!-- Specify which component to run -->
+    <Target component="sim1"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+    <Include file="Cav2.1.channel.nml"/>
+    <Include file="vClamps.xml"/>
+
+    
+    <vClampedCell id="holderCell0" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="90mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="80mV"/>
+    </vClampedCell>
+    <vClampedCell id="holderCell1" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="70mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="80mV"/>
+    </vClampedCell>
+    <vClampedCell id="holderCell2" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="50mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="80mV"/>
+    </vClampedCell>
+    <vClampedCell id="holderCell3" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="30mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="80mV"/>
+    </vClampedCell>
+    <vClampedCell id="holderCell4" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="10mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="80mV"/>
+    </vClampedCell>
+    <vClampedCell id="holderCell5" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-10mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="80mV"/>
+    </vClampedCell>
+    <vClampedCell id="holderCell6" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-30mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="80mV"/>
+    </vClampedCell>
+    
+    
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="12ms" baseVoltage="-100mV" targetVoltage0="-100mV" targetVoltage1="100mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="80mV"/>
+    </vClampedRampCell>
+
+    
+    <network id="net1">
+        <population id="holderCellPop0" component="holderCell0" size="1"/>
+        <population id="holderCellPop1" component="holderCell1" size="1"/>
+        <population id="holderCellPop2" component="holderCell2" size="1"/>
+        <population id="holderCellPop3" component="holderCell3" size="1"/>
+        <population id="holderCellPop4" component="holderCell4" size="1"/>
+        <population id="holderCellPop5" component="holderCell5" size="1"/>
+        <population id="holderCellPop6" component="holderCell6" size="1"/>
+        
+        <population id="rampCellPop0" component="rampCell0" size="1"/>
+    </network>
+
+
+    <Simulation id="sim1" length="12ms" step="0.01ms" target="net1">
+
+        <Display id="d0" title="Clamp voltages"  timeScale="1ms" xmin="-1" xmax="13" ymin="-120" ymax="40">
+            <Line id="90mV" quantity="holderCellPop0[0]/v" scale="1mV"  color="#0000ff" timeScale="1ms"/>
+            <Line id="70mV" quantity="holderCellPop1[0]/v" scale="1mV"  color="#00ff00" timeScale="1ms"/>
+            <Line id="50mV" quantity="holderCellPop2[0]/v" scale="1mV"  color="#ff0000" timeScale="1ms"/>
+            <Line id="30mV" quantity="holderCellPop3[0]/v" scale="1mV"  color="#00ffff" timeScale="1ms"/>
+            <Line id="10mV" quantity="holderCellPop4[0]/v" scale="1mV"  color="#ff00ff" timeScale="1ms"/>
+            <Line id="-10mV" quantity="holderCellPop5[0]/v" scale="1mV"  color="#ffff00" timeScale="1ms"/>
+            <Line id="-30mV" quantity="holderCellPop6[0]/v" scale="1mV"  color="#000000" timeScale="1ms"/>
+        </Display>
+
+
+        
+        <Display id="d1" title="Fractional conductance"  timeScale="1ms" xmin="-1" xmax="13" ymin="-0.1" ymax="1">
+            <Line id="90mV" quantity="holderCellPop0[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#0000ff" timeScale="1ms"/>
+	    <Line id="70mV" quantity="holderCellPop1[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#00ff00" timeScale="1ms"/>
+            <Line id="50mV" quantity="holderCellPop2[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
+            <Line id="30mV" quantity="holderCellPop3[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#00ffff" timeScale="1ms"/>
+            <Line id="10mV" quantity="holderCellPop4[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#ff00ff" timeScale="1ms"/>
+            <Line id="-10mV" quantity="holderCellPop5[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#ffff00" timeScale="1ms"/>
+            <Line id="-30mV" quantity="holderCellPop6[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#000000" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="d7" title="Currents"  timeScale="1ms" xmin="-1" xmax="13" ymin="-0.00002" ymax="0.0014">
+            <Line id="90mV" quantity="holderCellPop0[0]/test/i" scale="-1nA"  color="#0000ff" timeScale="1ms"/>
+            <Line id="70mV" quantity="holderCellPop1[0]/test/i" scale="-1nA"  color="#00ff00" timeScale="1ms"/>
+            <Line id="50mV" quantity="holderCellPop2[0]/test/i" scale="-1nA"  color="#ff0000" timeScale="1ms"/>
+            <Line id="30mV" quantity="holderCellPop3[0]/test/i" scale="-1nA"  color="#00ffff" timeScale="1ms"/>
+            <Line id="10mV" quantity="holderCellPop4[0]/test/i" scale="-1nA"  color="#ff00ff" timeScale="1ms"/>
+            <Line id="-10mV" quantity="holderCellPop5[0]/test/i" scale="-1nA"  color="#ffff00" timeScale="1ms"/>
+            <Line id="-30mV" quantity="holderCellPop6[0]/test/i" scale="-1nA"  color="#000000" timeScale="1ms"/>
+        </Display>
+
+
+        <Display id="d2" title="inf"  timeScale="1ms" xmin="-1" xmax="13" ymin="-0.1" ymax="1.1">
+            <Line id="inf" quantity="rampCellPop0[0]/test/Channelpedia_Ca_P_Q_5/m/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="d3" title="tau"  timeScale="1ms" xmin="-1" xmax="13" ymin="-.1" ymax=".9">
+            <Line id="tau" quantity="rampCellPop0[0]/test/Channelpedia_Ca_P_Q_5/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
+        </Display>
+
+
+
+    </Simulation>
+
+
+</Lems>
