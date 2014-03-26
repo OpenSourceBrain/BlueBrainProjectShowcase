@@ -41,7 +41,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
             comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
             comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
      
-            comp_type.dynamics.add(lems.DerivedVariable(name='x', dimension="none", value="(%s) / TIME_SCALE"%equation, exposure="x"))
+            comp_type.dynamics.add(lems.DerivedVariable(name='x', dimension="none", value="%s"%equation, exposure="x"))
             comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
           
             comp_types[new_comp_type] = comp_type
@@ -57,7 +57,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
             comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
             comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
      
-            comp_type.dynamics.add(lems.DerivedVariable(name='t', dimension="none", value="(%s) / TIME_SCALE"%equation, exposure="t"))
+            comp_type.dynamics.add(lems.DerivedVariable(name='t', dimension="none", value="(%s) * TIME_SCALE"%equation, exposure="t"))
             comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
           
             comp_types[new_comp_type] = comp_type

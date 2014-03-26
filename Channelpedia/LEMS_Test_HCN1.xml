@@ -46,10 +46,15 @@
         <!--<channelPopulation id="test" ionChannel="na" number="1" erev="50mV"/>-->
     </testVoltage>
 
+    <testVoltage id="holderCellx" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="-100mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+        <!--<channelPopulation id="test" ionChannel="na" number="1" erev="50mV"/>-->
+    </testVoltage>
+
     
 
 
-    <Simulation id="sim1" length="200ms" step="0.025ms" target="holderCell0">
+    <Simulation id="sim1" length="200ms" step="0.025ms" target="holderCellx">
 
         <Display id="d0" title="clamp"  timeScale="1ms" xmin="-10" xmax="210" ymin="-80" ymax="10">
             <Line id="-60mV" quantity="v" scale="1mV"  color="#ffffff" timeScale="1ms"/>
@@ -60,9 +65,14 @@
             <Line id="-60mV" quantity="test/Channelpedia_HCN1_9/fopen" scale="1mV"  color="#ffffff" timeScale="1ms"/>
         </Display>
         
-        <Display id="d2" title="inf"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.1" ymax="1">
+        <Display id="d2" title="inf"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.1" ymax="1.1">
             <!--<Line id="-60mV" quantity="test/na/fopen" scale="1mV"  color="#ffffff" timeScale="1ms"/>-->
-            <Line id="-60mV" quantity="test/Channelpedia_HCN1_9/m/q" scale="1mV"  color="#ffffff" timeScale="1ms"/>
+            <Line id="-60mV" quantity="test/Channelpedia_HCN1_9/m/q" scale="1"  color="#ffffff" timeScale="1ms"/>
+        </Display>
+
+        <Display id="d3" title="tau"  timeScale="1ms" xmin="-10" xmax="210" ymin="-5" ymax="35">
+            <!--<Line id="-60mV" quantity="test/na/fopen" scale="1mV"  color="#ffffff" timeScale="1ms"/>-->
+            <Line id="-60mV" quantity="test/Channelpedia_HCN1_9/m/tau" scale="1ms"  color="#ffffff" timeScale="1ms"/>
         </Display>
 
 
