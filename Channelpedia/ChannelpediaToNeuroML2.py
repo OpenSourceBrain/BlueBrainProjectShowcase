@@ -5,6 +5,8 @@ import lems.api as lems
 
 import xml.etree.ElementTree as ET
 
+import re
+
 import sys
 
 def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
@@ -115,11 +117,19 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
 
     for comp_type_name in comp_types.keys():
         comp_type = comp_types[comp_type_name]
-        ct_xml = comp_type.toxml().replace("><", ">\n    <")
+        ct_xml = comp_type.toxml()
+        
+        # Quick & dirty pretty printing..
+        ct_xml = ct_xml.replace('<Const','\n        <Const')
+        ct_xml = ct_xml.replace('<Dyna','\n        <Dyna')
+        ct_xml = ct_xml.replace('</Dyna','\n        </Dyna')
+        ct_xml = ct_xml.replace('<Deriv','\n            <Deriv')
+        ct_xml = ct_xml.replace('</Compone','\n    </Compone')
+        
         print("Adding definition for %s:\n%s\n"%(comp_type_name, ct_xml))
         nml2_file = open(nml2_file_name, 'r')
         orig = nml2_file.read()
-        new_contents = orig.replace("</neuroml>", "\n    %s\n</neuroml>"%ct_xml)
+        new_contents = orig.replace("</neuroml>", "\n    %s\n\n</neuroml>"%ct_xml)
         nml2_file.close()
         nml2_file = open(nml2_file_name, 'w')
         nml2_file.write(new_contents)
