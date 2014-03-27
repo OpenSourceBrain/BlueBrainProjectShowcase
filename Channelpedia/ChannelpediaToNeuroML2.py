@@ -47,7 +47,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
     
     for reference in root.findall('Reference'):
         pmid = reference.attrib['PubmedID']
-        metadata = update_metadata(chan, metadata, channel_id, "urn:miriam:pubmed:%s"%pmid)
+        metadata = update_metadata(chan, metadata, channel_id, "http://identifiers.org/pubmed/%s"%pmid)
                           
     comp_types = {}
     for gate in root.findall('Gates'):

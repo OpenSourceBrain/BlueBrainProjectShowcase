@@ -8,7 +8,7 @@ The original model can be found at: http://channelpedia.epfl.ch/ionchannels/78</
                 <rdf:Description rdf:about="Channelpedia_Ca_P_Q_5">
                     <bqmodel:isDescribedBy>
                         <rdf:Bag>
-                            <rdf:li rdf:resource="urn:miriam:pubmed:11164813"/>
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/11164813"/>
                         </rdf:Bag>
                     </bqmodel:isDescribedBy>
                 </rdf:Description>
