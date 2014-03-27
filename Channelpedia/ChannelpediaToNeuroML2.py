@@ -9,18 +9,34 @@ import re
 
 import sys
 
+def update_metadata(element, metadata, about_id, urn):
+    
+    template = '\n            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">\n'+\
+    '                <rdf:Description rdf:about="%s">\n'+\
+    '                    <bqmodel:isDescribedBy>\n'+\
+    '                        <rdf:Bag>\n'+\
+    '                            <rdf:li rdf:resource="%s"/>\n'+\
+    '                        </rdf:Bag>\n'+\
+    '                    </bqmodel:isDescribedBy>\n'+\
+    '                </rdf:Description>\n'+\
+    '            </rdf:RDF>\n'
+    
+    annotation = neuroml.Annotation()
+    element.annotation = annotation
+    metadata = metadata + template%(about_id, urn)
+    return metadata
+
 def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
     
     print('Converting Channelpedia XML to NeuroML2')
     
     root = ET.fromstring(cpd_xml)
-    print root.attrib
-    for child in root:
-        print child.tag, child.attrib
         
     channel_id='Channelpedia_%s_%s'%(root.attrib['ModelName'].replace("/","_"), root.attrib['ModelID'])
     
     doc = neuroml.NeuroMLDocument()
+    
+    metadata = ''
     
     ion = root.findall('Ion')[0]
     chan = neuroml.IonChannelHH(id=channel_id,
@@ -28,6 +44,10 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
                           species=ion.attrib['Name'],
                           notes="This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. "
                           "\nThe original model can be found at: http://channelpedia.epfl.ch/ionchannels/%s"%root.attrib['ID'])
+    
+    for reference in root.findall('Reference'):
+        pmid = reference.attrib['PubmedID']
+        metadata = update_metadata(chan, metadata, channel_id, "urn:miriam:pubmed:%s"%pmid)
                           
     comp_types = {}
     for gate in root.findall('Gates'):
@@ -135,6 +155,16 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
         nml2_file.write(new_contents)
         nml2_file.close()
         
+    if len(metadata)>0:
+        print("Inserting metadata: %s"%metadata)
+        nml2_file = open(nml2_file_name, 'r')
+        orig = nml2_file.read()
+        new_contents = orig.replace("<annotation/>", "\n        <annotation>%s        </annotation>\n"%metadata)
+        nml2_file.close()
+        nml2_file = open(nml2_file_name, 'w')
+        nml2_file.write(new_contents)
+        nml2_file.close()
+        
 
     ###### Validate the NeuroML ######    
 
@@ -146,6 +176,8 @@ def check_equation(eqn):
     eqn = eqn.replace("v", "V")
     eqn = eqn.replace("- -", "+")
     return eqn
+
+
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:

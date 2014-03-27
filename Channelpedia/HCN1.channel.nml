@@ -2,6 +2,19 @@
     <ionChannelHH id="Channelpedia_HCN1_9" conductance="10pS" species="Hcn">
         <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
 The original model can be found at: http://channelpedia.epfl.ch/ionchannels/61</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <rdf:Description rdf:about="Channelpedia_HCN1_9">
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <rdf:li rdf:resource="urn:miriam:pubmed:11248683"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
         <gate id="m" instances="1" type="gateHHtauInf">
             <timeCourse type="Channelpedia_HCN1_9_tau"/>
             <steadyState type="Channelpedia_HCN1_9_inf"/>

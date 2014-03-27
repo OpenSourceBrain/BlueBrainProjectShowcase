@@ -2,6 +2,19 @@
     <ionChannelHH id="Channelpedia_Ca_P_Q_5" conductance="10pS" species="Ca">
         <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
 The original model can be found at: http://channelpedia.epfl.ch/ionchannels/78</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <rdf:Description rdf:about="Channelpedia_Ca_P_Q_5">
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <rdf:li rdf:resource="urn:miriam:pubmed:11164813"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
         <gate id="m" instances="1" type="gateHHrates">
             <forwardRate type="Channelpedia_Ca_P_Q_5_alpha"/>
             <reverseRate type="Channelpedia_Ca_P_Q_5_beta"/>
