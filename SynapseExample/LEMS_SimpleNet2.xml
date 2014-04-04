@@ -24,7 +24,10 @@
         <!--   Cell files-->
     <Include file="TestCell_ChannelML.cell.nml"/>
         <!--   Network file-->
-    <Include file="SimpleNet.net.nml"/>
+        
+    <Include file="detAMPANMDASynapse.xml"/>
+
+    <Include file="SimpleNet2.net.nml"/>
     
 
     <Component type="Simulation" id="sim1" length="100.0ms" step="0.01ms" target="SimpleNet">
@@ -33,14 +36,16 @@
             <Line id="VOLTAGE-CG1_0" timeScale="1ms" quantity="CG1/0/TestCell_ChannelML/v" scale="1 mV" color="#000000"/>
             <Line id="VOLTAGE-CG2_0" timeScale="1ms" quantity="CG2/0/TestCell_ChannelML/v" scale="1 mV" color="#ff0000"/>
             <Line id="VOLTAGE-CG2_1" timeScale="1ms" quantity="CG2/1/TestCell_ChannelML/v" scale="1 mV" color="#ff8800"/>
+            <Line id="VOLTAGE-CG2_2" timeScale="1ms" quantity="CG2/2/TestCell_ChannelML/v" scale="1 mV" color="#ff8866"/>
         </Display>
         
         
-        <Display id="d2" title="Synaptic current" timeScale="1ms" xmin="-10.0" xmax="110.0" ymin="-0.02" ymax="0.1">
-            <Line id ="CG2_0 iSyn (AMPA)" quantity="CG2/0/TestCell_ChannelML/iSyn" scale="1nA" color="#01DF01" timeScale="1ms"/>
-            <Line id ="CG2_1 iSyn (AMPA and NMDA)" quantity="CG2/1/TestCell_ChannelML/iSyn" scale="1nA" color="#01DFee" timeScale="1ms"/>
+        <Display id="d2" title="Synaptic current" timeScale="1ms" xmin="-10.0" xmax="110.0" ymin="-0.0005" ymax="0.0045">
+            <Line id ="CG2_0 iSyn (ratio_NMDA=0)" quantity="CG2/0/TestCell_ChannelML/iSyn" scale="1nA" color="#01DF01" timeScale="1ms"/>
+            <Line id ="CG2_1 iSyn (ratio_NMDA=0.1)" quantity="CG2/1/TestCell_ChannelML/iSyn" scale="1nA" color="#015555" timeScale="1ms"/>
+            <Line id ="CG2_2 iSyn (ratio_NMDA=0.2)" quantity="CG2/2/TestCell_ChannelML/iSyn" scale="1nA" color="#01DFee" timeScale="1ms"/>
         </Display>
-        
+     <!--   
         <OutputFile id="Plot_0_OF" fileName="CG1_0.dat">
             <OutputColumn id="v" quantity="CG1/0/TestCell_ChannelML/v"/>
         </OutputFile>
@@ -51,7 +56,7 @@
         
         <OutputFile id="Plot_1_1F" fileName="CG2_1.dat">
             <OutputColumn id="v" quantity="CG2/1/TestCell_ChannelML/v"/>
-        </OutputFile>
+        </OutputFile>-->
 
     
     </Component>
