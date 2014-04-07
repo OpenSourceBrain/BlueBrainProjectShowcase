@@ -11,7 +11,7 @@ import sys
 
 def update_metadata(element, metadata, about_id, urn):
     
-    template = '\n            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">\n'+\
+    template = '\n            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">\n'+\
     '                <rdf:Description rdf:about="%s">\n'+\
     '                    <bqmodel:isDescribedBy>\n'+\
     '                        <rdf:Bag>\n'+\

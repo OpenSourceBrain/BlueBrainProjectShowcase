@@ -4,7 +4,7 @@
 The original model can be found at: http://channelpedia.epfl.ch/ionchannels/78</notes>
         
         <annotation>
-            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
                 <rdf:Description rdf:about="Channelpedia_Ca_P_Q_5">
                     <bqmodel:isDescribedBy>
                         <rdf:Bag>
