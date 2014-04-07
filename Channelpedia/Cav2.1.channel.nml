@@ -4,13 +4,33 @@
 The original model can be found at: http://channelpedia.epfl.ch/ionchannels/78</notes>
         
         <annotation>
-            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2 -->
                 <rdf:Description rdf:about="Channelpedia_Ca_P_Q_5">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 78, ModelID: 5; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/78/hhmodels/5.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
                     <bqmodel:isDescribedBy>
                         <rdf:Bag>
+                            <!-- Channelpedia channel ID: 78; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/78"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 11164813 is referenced in original XML -->
                             <rdf:li rdf:resource="http://identifiers.org/pubmed/11164813"/>
                         </rdf:Bag>
                     </bqmodel:isDescribedBy>
+                    <bqbiol:hasTaxon>
+                        <rdf:Bag>
+                            <!-- Known species: rat; taxonomy id: 10116 -->
+                            <rdf:li rdf:resource="http://identifiers.org/taxonomy/10116"/>
+                        </rdf:Bag>
+                    </bqbiol:hasTaxon>
                 </rdf:Description>
             </rdf:RDF>
         </annotation>
