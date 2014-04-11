@@ -11,7 +11,9 @@ import osb.resources
 
 import sys
 
-def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
+
+def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
+    
     
     info = 'Automatic conversion of Channelpedia XML file to NeuroML2'
     print(info)
@@ -53,13 +55,13 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
     for reference in root.findall('Reference'):
         pmid = reference.attrib['PubmedID']
         #metadata = update_metadata(chan, metadata, channel_id, "http://identifiers.org/pubmed/%s"%pmid)
-
-        pubmed_url_template = "http://identifiers.org/pubmed/%s"
+        ref_info = reference.text
         osb.metadata.add_simple_qualifier(desc, \
                                           'bqmodel', \
                                           'isDescribedBy', \
-                                          pubmed_url_template%(pmid), \
-                                          "PubMed ID: %s is referenced in original XML" % (pmid))
+                                          osb.resources.PUBMED_URL_TEMPLATE % (pmid), \
+                                          ("PubMed ID: %s is referenced in original XML\n"+\
+                                          "                                 %s") % (pmid, ref_info))
             
     for environment in root.findall('Environment'):
         for animal in environment.findall('Animal'):
@@ -72,13 +74,29 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
                     osb.metadata.add_simple_qualifier(desc, \
                                                       'bqbiol', \
                                                       'hasTaxon', \
-                                                      'http://identifiers.org/taxonomy/%s'%known_id, \
+                                                      osb.resources.NCBI_TAXONOMY_URL_TEMPLATE % known_id, \
                                                       "Known species: %s; taxonomy id: %s" % (species, known_id))
                 else:
                     print("Unknown species: %s"%species)
+                    unknowns += "species: %s\n"%species
+                    
+        for cell_type_el in environment.findall('CellType'):
+            cell_type = cell_type_el.text.strip().lower()
+
+            if cell_type:
+                if osb.resources.KNOWN_CELL_TYPES.has_key(cell_type):
+                    known_id = osb.resources.KNOWN_CELL_TYPES[cell_type]
+                    osb.metadata.add_simple_qualifier(desc, \
+                                                      'bqbiol', \
+                                                      'isPartOf', \
+                                                      osb.resources.NEUROLEX_URL_TEMPLATE % known_id, \
+                                                      "Known cell type: %s; taxonomy id: %s" % (cell_type, known_id))
+                else:
+                    print("Unknown cell_type: %s"%cell_type)
+                    unknowns += "cell_type: %s\n"%cell_type
 
         
-
+    print("Currently unknown: <<<%s>>>"%unknowns)
                           
     comp_types = {}
     for gate in root.findall('Gates'):
@@ -202,6 +220,8 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
 
     validate_neuroml2(nml2_file_name)
     
+    return unknowns
+    
 def check_equation(eqn):
     eqn = eqn.replace("v", "V")
     eqn = eqn.replace("- -", "+")
@@ -210,12 +230,19 @@ def check_equation(eqn):
 
 
 if __name__ == '__main__':
+
     if len(sys.argv) == 2:
         target = sys.argv[1]
     else:
         target = 'HCN1'
     test_file = target+'.xml'
     contents = open(test_file, 'r').read()
-    channelpedia_xml_to_neuroml2(contents, target+'.channel.nml')
+    
+    unknowns = channelpedia_xml_to_neuroml2(contents, target+'.channel.nml')
+
+    unknowns_file = open('unknowns','w')
+    unknowns_file.write("No unknowns!" if len(unknowns)==0 else unknowns)
+    unknowns_file.close()
+
 
 

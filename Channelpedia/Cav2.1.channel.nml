@@ -31,6 +31,12 @@ The original model can be found at: http://channelpedia.epfl.ch/ionchannels/78</
                             <rdf:li rdf:resource="http://identifiers.org/taxonomy/10116"/>
                         </rdf:Bag>
                     </bqbiol:hasTaxon>
+                    <bqbiol:isPartOf>
+                        <rdf:Bag>
+                            <!-- Known cell type: cerebellar purkinje; taxonomy id: sao471801888 -->
+                            <rdf:li rdf:resource="http://identifiers.org/neurolex/sao471801888"/>
+                        </rdf:Bag>
+                    </bqbiol:isPartOf>
                 </rdf:Description>
             </rdf:RDF>
         </annotation>

@@ -21,7 +21,8 @@ The original model can be found at: http://channelpedia.epfl.ch/ionchannels/61</
                     </bqmodel:isDescribedBy>
                     <bqmodel:isDescribedBy>
                         <rdf:Bag>
-                            <!-- PubMed ID: 11248683 is referenced in original XML -->
+                            <!-- PubMed ID: 11248683 is referenced in original XML
+                                 Cellular expression and functional characterization of four hyperpolarization-activated pacemaker channels in cardiac and neuronal tissues. Eur. J. Biochem., 2001, 268, 1646-52 -->
                             <rdf:li rdf:resource="http://identifiers.org/pubmed/11248683"/>
                         </rdf:Bag>
                     </bqmodel:isDescribedBy>
@@ -31,6 +32,12 @@ The original model can be found at: http://channelpedia.epfl.ch/ionchannels/61</
                             <rdf:li rdf:resource="http://identifiers.org/taxonomy/10090"/>
                         </rdf:Bag>
                     </bqbiol:hasTaxon>
+                    <bqbiol:isPartOf>
+                        <rdf:Bag>
+                            <!-- Known cell type: dorsal root ganglion; taxonomy id: birnlex_2596 -->
+                            <rdf:li rdf:resource="http://identifiers.org/neurolex/birnlex_2596"/>
+                        </rdf:Bag>
+                    </bqbiol:isPartOf>
                 </rdf:Description>
             </rdf:RDF>
         </annotation>

@@ -13,6 +13,8 @@ soup = BeautifulSoup(contents)
 print soup.title.string
 count = 0
 
+unknowns = ""
+
 for link in soup.find_all('a'):
     href = link.get('href')
     # /ionchannels/189/hhmodels/37.xml
@@ -32,7 +34,11 @@ for link in soup.find_all('a'):
         file_out.write(cpd_xml)
         file_out.close()
         
-        channelpedia_xml_to_neuroml2(cpd_xml, "test/%s.channel.nml"%channel_id)
+        unknowns = channelpedia_xml_to_neuroml2(cpd_xml, "test/%s.channel.nml"%channel_id, unknowns)
 
         
 print("\nFound %i models in Channelpedia XML format\n"%count)
+
+unknowns_file = open('unknowns','w')
+unknowns_file.write("No unknowns!" if len(unknowns)==0 else unknowns)
+unknowns_file.close()

@@ -1,4 +1,4 @@
-python ChannelpediaToNeuroML2.py HCN
+python ChannelpediaToNeuroML2.py HCN1
 jnml LEMS_Test_HCN1.xml &
 
 python ChannelpediaToNeuroML2.py Cav2.1
