@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<IonChannel Name="Nav1.3" ModelID="43" ModelName="Nav1.3" ModelType="hhmodels" ID="122" ImageID="166">
+  <Environment Temp="23.0">
+    <RevPotential>50.0</RevPotential>
+    <Age> 0</Age>
+    <CellType> Neocortical</CellType>
+    <Animal Name="rat"/>
+  </Environment>
+  <Ion Name="Na"/>
+  <Reference ID="43" PubmedID="11487618">Nav1.3 sodium channels: rapid repriming and slow closed-state inactivation display quantitative differences after expression in a mammalian cell line and in spinal sensory neurons. J. Neurosci., 2001, 21, 5952-61</Reference>
+  <Gates Power="3.0" Name="m" EqType="2">
+    <Inf_Alpha>
+      <Equation Value="-26" Var="v" Condition="neq">(0.182 * ((v)- -26))/(1-(exp(-((v)- -26)/9)))</Equation>
+    </Inf_Alpha>
+    <Tau_Beta>
+      <Equation Value="-26" Var="v" Condition="neq">(0.124 * (-(v) -26))/(1-(exp(-(-(v) -26)/9)))</Equation>
+    </Tau_Beta>
+  </Gates>
+  <Gates Power="1.0" Name="h" EqType="1">
+    <Inf_Alpha>
+      <Equation>1 /(1+exp((v-(-65.0))/8.1))</Equation>
+    </Inf_Alpha>
+    <Tau_Beta>
+      <Equation>0.40 + (0.265 * exp(-v/9.47))</Equation>
+    </Tau_Beta>
+  </Gates>
+</IonChannel>

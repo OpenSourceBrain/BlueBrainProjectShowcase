@@ -102,19 +102,20 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
     for gate in root.findall('Gates'):
         
         eq_type = gate.attrib['EqType']
+        gate_name = gate.attrib['Name']
         
         if eq_type == '1':
             gate_type= 'gateHHtauInf'
-            g = neuroml.GateHHTauInf(id=gate.attrib['Name'],instances=int(float(gate.attrib['Power'])), type=gate_type)
+            g = neuroml.GateHHTauInf(id=gate_name,instances=int(float(gate.attrib['Power'])), type=gate_type)
         elif eq_type == '2':
             gate_type= 'gateHHrates'
-            g = neuroml.GateHHRates(id=gate.attrib['Name'],instances=int(float(gate.attrib['Power'])), type=gate_type)
+            g = neuroml.GateHHRates(id=gate_name,instances=int(float(gate.attrib['Power'])), type=gate_type)
         
         for inf in gate.findall('Inf_Alpha'):
             equation = check_equation(inf.findall('Equation')[0].text)
             
             if eq_type == '1':
-                new_comp_type = "%s_%s"%(channel_id, 'inf')
+                new_comp_type = "%s_%s_%s"%(channel_id, gate_name, 'inf')
                 g.steady_state = neuroml.HHVariable(type=new_comp_type)
 
                 comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepVariable")
@@ -128,7 +129,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                 comp_types[new_comp_type] = comp_type
                 
             elif eq_type == '2':
-                new_comp_type = "%s_%s"%(channel_id, 'alpha')
+                new_comp_type = "%s_%s_%s"%(channel_id, gate_name, 'alpha')
                 g.forward_rate = neuroml.HHRate(type=new_comp_type)
 
                 comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepRate")
@@ -146,7 +147,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
             equation = check_equation(tau.findall('Equation')[0].text)
             
             if eq_type == '1':
-                new_comp_type = "%s_tau"%(channel_id)
+                new_comp_type = "%s_%s_tau"%(channel_id, gate_name)
                 g.time_course = neuroml.HHTime(type=new_comp_type)
 
                 comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepTime")
@@ -160,7 +161,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                 comp_types[new_comp_type] = comp_type
                 
             elif eq_type == '2':
-                new_comp_type = "%s_%s"%(channel_id, 'beta')
+                new_comp_type = "%s_%s_%s"%(channel_id, gate_name, 'beta')
                 g.reverse_rate = neuroml.HHRate(type=new_comp_type)
 
                 comp_type = lems.ComponentType(new_comp_type, extends="baseVoltageDepRate")
