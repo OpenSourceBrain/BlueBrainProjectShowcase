@@ -18,7 +18,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
     
     root = ET.fromstring(cpd_xml)
         
-    channel_id='Channelpedia_%s_%s'%(root.attrib['ModelName'].replace("/","_"), root.attrib['ModelID'])
+    channel_id='Channelpedia_%s_%s'%(root.attrib['ModelName'].replace("/","_").replace(" ","_").replace(".","_"), root.attrib['ModelID'])
     
     doc = neuroml.NeuroMLDocument()
     
@@ -177,7 +177,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name):
         ct_xml = ct_xml.replace('<Deriv','\n            <Deriv')
         ct_xml = ct_xml.replace('</Compone','\n    </Compone')
         
-        print("Adding definition for %s:\n%s\n"%(comp_type_name, ct_xml))
+        # print("Adding definition for %s:\n%s\n"%(comp_type_name, ct_xml))
         nml2_file = open(nml2_file_name, 'r')
         orig = nml2_file.read()
         new_contents = orig.replace("</neuroml>", "\n    %s\n\n</neuroml>"%ct_xml)

@@ -27,7 +27,7 @@ The original model can be found at: http://channelpedia.epfl.ch/ionchannels/61</
                     </bqmodel:isDescribedBy>
                     <bqbiol:hasTaxon>
                         <rdf:Bag>
-                            <!-- Open Source Brain species: mouse; taxonomy id: 10090 -->
+                            <!-- Known species: mouse; taxonomy id: 10090 -->
                             <rdf:li rdf:resource="http://identifiers.org/taxonomy/10090"/>
                         </rdf:Bag>
                     </bqbiol:hasTaxon>
