@@ -17,7 +17,7 @@
     </vClampedCell>
 #end##    
     
-    <vClampedRampCell id="rampCell0" delay="0ms" duration="200ms" baseVoltage="-100mV" targetVoltage0="-100mV" targetVoltage1="100mV">
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="${duration}ms" baseVoltage="-100mV" targetVoltage0="-100mV" targetVoltage1="100mV">
         <channelPopulation id="test" ionChannel="${channel}" number="1" erev="80mV"/>
     </vClampedRampCell>
 
@@ -31,33 +31,35 @@
         <population id="rampCellPop0" component="rampCell0" size="1"/>
     </network>
 
+#set( $start = -0.1 * $duration )
+#set( $end = 1.1 * $duration )
+#set( $dt = 0.0005 * $duration )
 
-    <Simulation id="sim1" length="200ms" step="0.025ms" target="net1">
-
-        <Display id="d0" title="Clamp voltages"  timeScale="1ms" xmin="-10" xmax="210" ymin="-120" ymax="40">
+    <Simulation id="sim1" length="${duration}ms" step="${dt}ms" target="net1">
+        <Display id="d0" title="Clamp voltages"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-120" ymax="40">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/v" scale="1mV"  color="${tv.col}" timeScale="1ms"/>
 #end## 
         </Display>
 
 
-        <Display id="d1" title="Fractional conductance"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.1" ymax="1">
+        <Display id="d1" title="Fractional conductance"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/test/${channel}/fopen" scale="1"  color="${tv.col}" timeScale="1ms"/>
 #end## 
         </Display>
         
-        <Display id="d7" title="Currents"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="Currents"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.00002" ymax="0.0014">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/test/i" scale="1nA"  color="${tv.col}" timeScale="1ms"/>
 #end## 
         </Display>
 
-        <Display id="d2" title="inf"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.1" ymax="1.1">
+        <Display id="d2" title="inf"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
             <Line id="inf" quantity="rampCellPop0[0]/test/${channel}/m/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d3" title="tau"  timeScale="1ms" xmin="-10" xmax="210" ymin="-5" ymax="35">
+        <Display id="d3" title="tau"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-10" ymax="110">
             <Line id="tau" quantity="rampCellPop0[0]/test/${channel}/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
         </Display>
 
