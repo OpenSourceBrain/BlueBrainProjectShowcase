@@ -15,7 +15,8 @@ import sys
 def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
     
     
-    info = 'Automatic conversion of Channelpedia XML file to NeuroML2'
+    info = 'Automatic conversion of Channelpedia XML file to NeuroML2\n'+\
+           'Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py'
     print(info)
     
     root = ET.fromstring(cpd_xml)
@@ -31,8 +32,9 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
     chan = neuroml.IonChannelHH(id=channel_id,
                           conductance='10pS',
                           species=ion.attrib['Name'],
-                          notes="This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. "
-                          "\nThe original model can be found at: http://channelpedia.epfl.ch/ionchannels/%s"%root.attrib['ID'])
+                          notes="This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. "+
+                          "\nThe original model can be found at: http://channelpedia.epfl.ch/ionchannels/%s"%root.attrib['ID']+
+                          "\n\nConversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase")
     
     chan.annotation = neuroml.Annotation()
     

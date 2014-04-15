@@ -11,42 +11,50 @@
     <Include file="HCN1.channel.nml"/>
     <Include file="vClamps.xml"/>
 
-    <vClampedCell id="holderCell_min100" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="-100mV">
-        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+    <vClampedCell id="holderCell_min120" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-120mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min80" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="-80mV">
-        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+    <vClampedCell id="holderCell_min110" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-110mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min60" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="-60mV">
-        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+    <vClampedCell id="holderCell_min100" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-100mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min40" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="-40mV">
-        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+    <vClampedCell id="holderCell_min90" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-90mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min20" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="-20mV">
-        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+    <vClampedCell id="holderCell_min80" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-80mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_0" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="0mV">
-        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+    <vClampedCell id="holderCell_min70" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-70mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_20" delay="25ms" duration="150ms" baseVoltage="-70mV" targetVoltage="20mV">
-        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+    <vClampedCell id="holderCell_min60" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-60mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
+    </vClampedCell>
+    <vClampedCell id="holderCell_min50" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-50mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
+    </vClampedCell>
+    <vClampedCell id="holderCell_min40" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-40mV">
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
     
     <vClampedRampCell id="rampCell0" delay="0ms" duration="200ms" baseVoltage="-100mV" targetVoltage0="-100mV" targetVoltage1="100mV">
-        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="80mV"/>
+        <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedRampCell>
 
     
     <network id="net1">
         
+        <population id="holderCellPop_min120" component="holderCell_min120" size="1"/>
+        <population id="holderCellPop_min110" component="holderCell_min110" size="1"/>
         <population id="holderCellPop_min100" component="holderCell_min100" size="1"/>
+        <population id="holderCellPop_min90" component="holderCell_min90" size="1"/>
         <population id="holderCellPop_min80" component="holderCell_min80" size="1"/>
+        <population id="holderCellPop_min70" component="holderCell_min70" size="1"/>
         <population id="holderCellPop_min60" component="holderCell_min60" size="1"/>
+        <population id="holderCellPop_min50" component="holderCell_min50" size="1"/>
         <population id="holderCellPop_min40" component="holderCell_min40" size="1"/>
-        <population id="holderCellPop_min20" component="holderCell_min20" size="1"/>
-        <population id="holderCellPop_0" component="holderCell_0" size="1"/>
-        <population id="holderCellPop_20" component="holderCell_20" size="1"/>
         
         <population id="rampCellPop0" component="rampCell0" size="1"/>
     </network>
@@ -55,33 +63,39 @@
     <Simulation id="sim1" length="200ms" step="0.05ms" target="net1">
         
         <Display id="d0" title="Channelpedia_HCN1_9: Clamp voltages"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-120" ymax="40">
-            <Line id="-100mV" quantity="holderCellPop_min100[0]/v" scale="1mV"  color="#ffff00" timeScale="1ms"/>
-            <Line id="-80mV" quantity="holderCellPop_min80[0]/v" scale="1mV"  color="#ffd400" timeScale="1ms"/>
-            <Line id="-60mV" quantity="holderCellPop_min60[0]/v" scale="1mV"  color="#ffaa00" timeScale="1ms"/>
-            <Line id="-40mV" quantity="holderCellPop_min40[0]/v" scale="1mV"  color="#ff7f00" timeScale="1ms"/>
-            <Line id="-20mV" quantity="holderCellPop_min20[0]/v" scale="1mV"  color="#ff5500" timeScale="1ms"/>
-            <Line id="0mV" quantity="holderCellPop_0[0]/v" scale="1mV"  color="#ff2a00" timeScale="1ms"/>
-            <Line id="20mV" quantity="holderCellPop_20[0]/v" scale="1mV"  color="#ff0000" timeScale="1ms"/>
+            <Line id="-120mV" quantity="holderCellPop_min120[0]/v" scale="1mV"  color="#ffff00" timeScale="1ms"/>
+            <Line id="-110mV" quantity="holderCellPop_min110[0]/v" scale="1mV"  color="#ffdf00" timeScale="1ms"/>
+            <Line id="-100mV" quantity="holderCellPop_min100[0]/v" scale="1mV"  color="#ffbf00" timeScale="1ms"/>
+            <Line id="-90mV" quantity="holderCellPop_min90[0]/v" scale="1mV"  color="#ff9f00" timeScale="1ms"/>
+            <Line id="-80mV" quantity="holderCellPop_min80[0]/v" scale="1mV"  color="#ff7f00" timeScale="1ms"/>
+            <Line id="-70mV" quantity="holderCellPop_min70[0]/v" scale="1mV"  color="#ff5f00" timeScale="1ms"/>
+            <Line id="-60mV" quantity="holderCellPop_min60[0]/v" scale="1mV"  color="#ff3f00" timeScale="1ms"/>
+            <Line id="-50mV" quantity="holderCellPop_min50[0]/v" scale="1mV"  color="#ff1f00" timeScale="1ms"/>
+            <Line id="-40mV" quantity="holderCellPop_min40[0]/v" scale="1mV"  color="#ff0000" timeScale="1ms"/>
         </Display>
 
         <Display id="d1" title="Channelpedia_HCN1_9: Fractional conductance"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.1" ymax="1.1">
-            <Line id="-100mV" quantity="holderCellPop_min100[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffff00" timeScale="1ms"/>
-            <Line id="-80mV" quantity="holderCellPop_min80[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffd400" timeScale="1ms"/>
-            <Line id="-60mV" quantity="holderCellPop_min60[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffaa00" timeScale="1ms"/>
-            <Line id="-40mV" quantity="holderCellPop_min40[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff7f00" timeScale="1ms"/>
-            <Line id="-20mV" quantity="holderCellPop_min20[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff5500" timeScale="1ms"/>
-            <Line id="0mV" quantity="holderCellPop_0[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff2a00" timeScale="1ms"/>
-            <Line id="20mV" quantity="holderCellPop_20[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
+            <Line id="-120mV" quantity="holderCellPop_min120[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffff00" timeScale="1ms"/>
+            <Line id="-110mV" quantity="holderCellPop_min110[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffdf00" timeScale="1ms"/>
+            <Line id="-100mV" quantity="holderCellPop_min100[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffbf00" timeScale="1ms"/>
+            <Line id="-90mV" quantity="holderCellPop_min90[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff9f00" timeScale="1ms"/>
+            <Line id="-80mV" quantity="holderCellPop_min80[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff7f00" timeScale="1ms"/>
+            <Line id="-70mV" quantity="holderCellPop_min70[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff5f00" timeScale="1ms"/>
+            <Line id="-60mV" quantity="holderCellPop_min60[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff3f00" timeScale="1ms"/>
+            <Line id="-50mV" quantity="holderCellPop_min50[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff1f00" timeScale="1ms"/>
+            <Line id="-40mV" quantity="holderCellPop_min40[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
         <Display id="d7" title="Channelpedia_HCN1_9: Currents"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.00002" ymax="0.0014">
-            <Line id="-100mV" quantity="holderCellPop_min100[0]/test/i" scale="1nA"  color="#ffff00" timeScale="1ms"/>
-            <Line id="-80mV" quantity="holderCellPop_min80[0]/test/i" scale="1nA"  color="#ffd400" timeScale="1ms"/>
-            <Line id="-60mV" quantity="holderCellPop_min60[0]/test/i" scale="1nA"  color="#ffaa00" timeScale="1ms"/>
-            <Line id="-40mV" quantity="holderCellPop_min40[0]/test/i" scale="1nA"  color="#ff7f00" timeScale="1ms"/>
-            <Line id="-20mV" quantity="holderCellPop_min20[0]/test/i" scale="1nA"  color="#ff5500" timeScale="1ms"/>
-            <Line id="0mV" quantity="holderCellPop_0[0]/test/i" scale="1nA"  color="#ff2a00" timeScale="1ms"/>
-            <Line id="20mV" quantity="holderCellPop_20[0]/test/i" scale="1nA"  color="#ff0000" timeScale="1ms"/>
+            <Line id="-120mV" quantity="holderCellPop_min120[0]/test/i" scale="1nA"  color="#ffff00" timeScale="1ms"/>
+            <Line id="-110mV" quantity="holderCellPop_min110[0]/test/i" scale="1nA"  color="#ffdf00" timeScale="1ms"/>
+            <Line id="-100mV" quantity="holderCellPop_min100[0]/test/i" scale="1nA"  color="#ffbf00" timeScale="1ms"/>
+            <Line id="-90mV" quantity="holderCellPop_min90[0]/test/i" scale="1nA"  color="#ff9f00" timeScale="1ms"/>
+            <Line id="-80mV" quantity="holderCellPop_min80[0]/test/i" scale="1nA"  color="#ff7f00" timeScale="1ms"/>
+            <Line id="-70mV" quantity="holderCellPop_min70[0]/test/i" scale="1nA"  color="#ff5f00" timeScale="1ms"/>
+            <Line id="-60mV" quantity="holderCellPop_min60[0]/test/i" scale="1nA"  color="#ff3f00" timeScale="1ms"/>
+            <Line id="-50mV" quantity="holderCellPop_min50[0]/test/i" scale="1nA"  color="#ff1f00" timeScale="1ms"/>
+            <Line id="-40mV" quantity="holderCellPop_min40[0]/test/i" scale="1nA"  color="#ff0000" timeScale="1ms"/>
         </Display>
 
         <Display id="m_inf" title="Channelpedia_HCN1_9: Gate m steady state, m_inf"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.1" ymax="1.1">

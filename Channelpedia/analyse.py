@@ -7,7 +7,7 @@ MIN_COLOUR = (255, 255, 0)
 
 known_parameters = {}
 #                                             low v,   step,  hi v,  delay,  duration,  base v, tot dur, erev                                
-known_parameters["Channelpedia_HCN1_9"] =     (-100,   20,    20,    25,     150,       -70,    200,     80)                              
+known_parameters["Channelpedia_HCN1_9"] =     (-120,   10,    -40,    25,     150,       -40,    200,     -45)                              
 known_parameters["Channelpedia_Ca_P_Q_5"] =   (-60,    10,    90,    1,      10,        -70,    12,      135.0)                        
 known_parameters["Channelpedia_Ih_14"] =      (-120,   10,   -40,    100,    700,       -40,    1000,    -45)                   
 known_parameters["Channelpedia_Kir21_44"] =   (-180,   10,     0,    100,    600,       0,      800,     135)
