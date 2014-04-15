@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 
 import xml.etree.ElementTree as ET
 
+import neuroml.loaders as loaders
+
 contents = osb.utils.get_page("http://channelpedia.epfl.ch/reports/model")
 
 soup = BeautifulSoup(contents)
@@ -36,12 +38,20 @@ for link in soup.find_all('a'):
         file_out.close()
         
         nml2_file_name = "%s.channel.nml"%channel_id
-        unknowns = channelpedia_xml_to_neuroml2(cpd_xml, "test/"+nml2_file_name, unknowns)
+        nml2_file_path = "test/"+nml2_file_name
+        unknowns = channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_path, unknowns)
         
+        doc = loaders.NeuroMLLoader.load(nml2_file_path)
+        #print dir(doc)
+        gates = []
+        for ic in doc.ion_channel_hhs:
+            if ic.id == channel_id:
+                for g in ic.gates:
+                    gates.append(g.id)
 
         new_lems_file = "test/LEMS_Test_%s.xml"%channel_id
     
-        lems_helper = generate_lems_channel_analyser_(nml2_file_name, channel_id)
+        lems_helper = generate_lems_channel_analyser_(nml2_file_name, channel_id, gates)
         
         file_out = open(new_lems_file, 'w')
         file_out.write(lems_helper)

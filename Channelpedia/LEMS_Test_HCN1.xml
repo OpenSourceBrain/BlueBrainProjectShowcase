@@ -52,9 +52,9 @@
     </network>
 
 
-    <Simulation id="sim1" length="200ms" step="0.025ms" target="net1">
-
-        <Display id="d0" title="Clamp voltages"  timeScale="1ms" xmin="-10" xmax="210" ymin="-120" ymax="40">
+    <Simulation id="sim1" length="200ms" step="0.05ms" target="net1">
+        
+        <Display id="d0" title="Channelpedia_HCN1_9: Clamp voltages"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-120" ymax="40">
             <Line id="-100mV" quantity="holderCellPop_min100[0]/v" scale="1mV"  color="#ffff00" timeScale="1ms"/>
             <Line id="-80mV" quantity="holderCellPop_min80[0]/v" scale="1mV"  color="#ffd400" timeScale="1ms"/>
             <Line id="-60mV" quantity="holderCellPop_min60[0]/v" scale="1mV"  color="#ffaa00" timeScale="1ms"/>
@@ -64,8 +64,7 @@
             <Line id="20mV" quantity="holderCellPop_20[0]/v" scale="1mV"  color="#ff0000" timeScale="1ms"/>
         </Display>
 
-
-        <Display id="d1" title="Fractional conductance"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.1" ymax="1">
+        <Display id="d1" title="Channelpedia_HCN1_9: Fractional conductance"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.1" ymax="1.1">
             <Line id="-100mV" quantity="holderCellPop_min100[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffff00" timeScale="1ms"/>
             <Line id="-80mV" quantity="holderCellPop_min80[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffd400" timeScale="1ms"/>
             <Line id="-60mV" quantity="holderCellPop_min60[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffaa00" timeScale="1ms"/>
@@ -75,7 +74,7 @@
             <Line id="20mV" quantity="holderCellPop_20[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d7" title="Currents"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="Channelpedia_HCN1_9: Currents"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.00002" ymax="0.0014">
             <Line id="-100mV" quantity="holderCellPop_min100[0]/test/i" scale="1nA"  color="#ffff00" timeScale="1ms"/>
             <Line id="-80mV" quantity="holderCellPop_min80[0]/test/i" scale="1nA"  color="#ffd400" timeScale="1ms"/>
             <Line id="-60mV" quantity="holderCellPop_min60[0]/test/i" scale="1nA"  color="#ffaa00" timeScale="1ms"/>
@@ -85,14 +84,13 @@
             <Line id="20mV" quantity="holderCellPop_20[0]/test/i" scale="1nA"  color="#ff0000" timeScale="1ms"/>
         </Display>
 
-        <Display id="d2" title="inf"  timeScale="1ms" xmin="-10" xmax="210" ymin="-0.1" ymax="1.1">
-            <Line id="inf" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
+        <Display id="m_inf" title="Channelpedia_HCN1_9: Gate m steady state, m_inf"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.1" ymax="1.1">
+            <Line id="m_inf" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d3" title="tau"  timeScale="1ms" xmin="-10" xmax="210" ymin="-5" ymax="35">
-            <Line id="tau" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
+        <Display id="m_tau" title="Channelpedia_HCN1_9: Gate m time course, m_tau"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-10" ymax="110">
+            <Line id="m_tau" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
         </Display>
-
 
 
     </Simulation>

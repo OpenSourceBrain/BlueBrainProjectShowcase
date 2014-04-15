@@ -13,12 +13,12 @@
 
 #foreach ($tv in $target_voltages)##
     <vClampedCell id="holderCell_${tv.v_str}" delay="${clamp_delay}ms" duration="${clamp_duration}ms" baseVoltage="${clamp_base_voltage}mV" targetVoltage="${tv.v}mV">
-        <channelPopulation id="test" ionChannel="${channel}" number="1" erev="80mV"/>
+        <channelPopulation id="test" ionChannel="${channel}" number="1" erev="${erev}mV"/>
     </vClampedCell>
 #end##    
     
     <vClampedRampCell id="rampCell0" delay="0ms" duration="${duration}ms" baseVoltage="-100mV" targetVoltage0="-100mV" targetVoltage1="100mV">
-        <channelPopulation id="test" ionChannel="${channel}" number="1" erev="80mV"/>
+        <channelPopulation id="test" ionChannel="${channel}" number="1" erev="${erev}mV"/>
     </vClampedRampCell>
 
     
@@ -33,36 +33,37 @@
 
 #set( $start = -0.1 * $duration )
 #set( $end = 1.1 * $duration )
-#set( $dt = 0.0005 * $duration )
+#set( $dt = 0.00025 * $duration )
 
     <Simulation id="sim1" length="${duration}ms" step="${dt}ms" target="net1">
-        <Display id="d0" title="Clamp voltages"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-120" ymax="40">
+        
+        <Display id="d0" title="${channel}: Clamp voltages"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-120" ymax="40">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/v" scale="1mV"  color="${tv.col}" timeScale="1ms"/>
 #end## 
         </Display>
 
-
-        <Display id="d1" title="Fractional conductance"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
+        <Display id="d1" title="${channel}: Fractional conductance"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/test/${channel}/fopen" scale="1"  color="${tv.col}" timeScale="1ms"/>
 #end## 
         </Display>
         
-        <Display id="d7" title="Currents"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="${channel}: Currents"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.00002" ymax="0.0014">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/test/i" scale="1nA"  color="${tv.col}" timeScale="1ms"/>
 #end## 
         </Display>
 
-        <Display id="d2" title="inf"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
-            <Line id="inf" quantity="rampCellPop0[0]/test/${channel}/m/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
+#foreach ($g in $gates)##
+        <Display id="${g}_inf" title="${channel}: Gate ${g} steady state, ${g}_inf"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
+            <Line id="${g}_inf" quantity="rampCellPop0[0]/test/${channel}/${g}/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d3" title="tau"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-10" ymax="110">
-            <Line id="tau" quantity="rampCellPop0[0]/test/${channel}/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
+        <Display id="${g}_tau" title="${channel}: Gate ${g} time course, ${g}_tau"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-10" ymax="110">
+            <Line id="${g}_tau" quantity="rampCellPop0[0]/test/${channel}/${g}/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
         </Display>
-
+#end## 
 
 
     </Simulation>

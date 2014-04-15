@@ -78,7 +78,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                                                       "Known species: %s; taxonomy id: %s" % (species, known_id))
                 else:
                     print("Unknown species: %s"%species)
-                    unknowns += "species: %s\n"%species
+                    unknowns += "Unknown species: %s\n"%species
                     
         for cell_type_el in environment.findall('CellType'):
             cell_type = cell_type_el.text.strip().lower()
@@ -93,7 +93,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                                                       "Known cell type: %s; taxonomy id: %s" % (cell_type, known_id))
                 else:
                     print("Unknown cell_type: %s"%cell_type)
-                    unknowns += "cell_type: %s\n"%cell_type
+                    unknowns += "Unknown cell_type: %s\n"%cell_type
 
         
     print("Currently unknown: <<<%s>>>"%unknowns)
