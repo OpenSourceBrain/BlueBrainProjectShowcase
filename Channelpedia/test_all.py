@@ -16,6 +16,8 @@ soup = BeautifulSoup(contents)
 print soup.title.string
 count = 0
 
+temperature = 32  # Unused in Channelpedia...
+
 unknowns = ""
 
 for link in soup.find_all('a'):
@@ -51,7 +53,7 @@ for link in soup.find_all('a'):
 
         new_lems_file = "test/LEMS_Test_%s.xml"%channel_id
     
-        lems_helper = generate_lems_channel_analyser_(nml2_file_name, channel_id, gates)
+        lems_helper = generate_lems_channel_analyser_(nml2_file_name, channel_id, gates, temperature)
         
         file_out = open(new_lems_file, 'w')
         file_out.write(lems_helper)

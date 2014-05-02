@@ -25,7 +25,7 @@ def merge_with_template(model, templfile):
     return templ.merge(model)
 
 
-def generate_lems_channel_analyser_(channel_file, channel, gates):
+def generate_lems_channel_analyser_(channel_file, channel, gates, temperature):
 
     if known_parameters.has_key(channel):
         params = known_parameters[channel]
@@ -50,11 +50,11 @@ def generate_lems_channel_analyser_(channel_file, channel, gates):
         
     return generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
                       step_target_voltage, max_target_voltage, clamp_delay, \
-                      clamp_duration, clamp_base_voltage, duration, erev, gates)
+                      clamp_duration, clamp_base_voltage, duration, erev, gates, temperature)
 
 def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
                       step_target_voltage, max_target_voltage, clamp_delay, \
-                      clamp_duration, clamp_base_voltage, duration, erev, gates):
+                      clamp_duration, clamp_base_voltage, duration, erev, gates, temperature):
                       
     target_voltages = []
     v = min_target_voltage
@@ -80,7 +80,8 @@ def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
              "clamp_base_voltage":  clamp_base_voltage,
              "duration":  duration,
              "erev":  erev,
-             "gates":  gates}
+             "gates":  gates,
+             "temperature":  temperature}
 
     merged = merge_with_template(model, TEMPLATE_FILE)
 
@@ -95,7 +96,7 @@ if __name__ == '__main__':
     channel = "Channelpedia_HCN1_9"
     new_lems_file = "LEMS_Test_HCN1.xml"
 
-    info = generate_lems_channel_analyser_(channel_file, channel, ["m"])
+    info = generate_lems_channel_analyser_(channel_file, channel, ["m"], 32)
                       
     print info
                       
@@ -107,12 +108,26 @@ if __name__ == '__main__':
     channel = "Channelpedia_Ca_P_Q_5"
     new_lems_file = "LEMS_Test_Cav2.1.xml"
 
-    info = generate_lems_channel_analyser_(channel_file, channel, ["m"])
+    info = generate_lems_channel_analyser_(channel_file, channel, ["m"], 32)
                       
     print info
                       
     lf = open(new_lems_file, 'w')
     lf.write(info)
     lf.close()
+    
+    
+    '''           
+    channel_file = "../../../testChanMV/inact_kv.channel.nml"
+    channel = "inact_kv"
+    new_lems_file = "LEMS_Test_inact_kv.xml"
+
+    info = generate_lems_channel_analyser_(channel_file, channel, ["n", "h"], 32)
+                      
+    print info
+                      
+    lf = open(new_lems_file, 'w')
+    lf.write(info)
+    lf.close()'''
                       
     

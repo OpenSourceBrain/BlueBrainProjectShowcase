@@ -44,7 +44,7 @@
     </vClampedRampCell>
 
     
-    <network id="net1">
+    <network id="net1" type="networkWithTemperature" temperature = "32 degC">
         
         <population id="holderCellPop_min120" component="holderCell_min120" size="1"/>
         <population id="holderCellPop_min110" component="holderCell_min110" size="1"/>
@@ -105,6 +105,14 @@
         <Display id="m_tau" title="Channelpedia_HCN1_9: Gate m time course, m_tau"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-10" ymax="110">
             <Line id="m_tau" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
         </Display>
+
+        <OutputFile id="m_inf_of1" fileName="m_inf.lems.dat">
+            <OutputColumn id="m" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/inf"/> 
+        </OutputFile>
+        <OutputFile id="m_tau_of1" fileName="m_tau.lems.dat">
+            <OutputColumn id="m" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau"/> 
+        </OutputFile>
+
 
 
     </Simulation>
