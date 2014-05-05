@@ -1,0 +1,44 @@
+<Lems>
+    
+    <Target component="sim1"/>
+
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+    <Include file="SingleCompHHCell.nml"/>
+    
+
+    <voltageClamp id="vClamp0" delay="50ms" duration="200ms" targetVoltage="-50mV" simpleSeriesResistance="5e5ohm"/>
+
+    <network id="net1">
+        <population id="hhpop" component="hhcell" size="1"/>
+        <explicitInput target="hhpop[0]" input="vClamp0"/>
+    </network>
+
+
+    <Simulation id="sim1" length="300ms" step="0.002ms" target="net1">
+    
+        <Display id="d1" title="Ex5: HH cell with simple morphology: voltage" timeScale="1ms" xmin="0" xmax="300" ymin="-90" ymax="50">
+                <Line id="v" quantity="hhpop[0]/v" scale="1mV" color="#ffffff" timeScale="1ms"/>
+        </Display>
+        <Display id="d2" title="Ex5: HH cell with simple morphology: rate variables" timeScale="1ms" xmin="0" xmax="300" ymin="-0.1" ymax="1.1">
+                <Line id="m" quantity="hhpop[0]/bioPhys1/membraneProperties/naChans/naChan/m/q" scale="1"  color="#000000" timeScale="1ms"/>
+                <Line id="h" quantity="hhpop[0]/bioPhys1/membraneProperties/naChans/naChan/h/q" scale="1"  color="#ff0000" timeScale="1ms"/>
+                <Line id="n" quantity="hhpop[0]/bioPhys1/membraneProperties/kChans/kChan/n/q" scale="1"  color="#0000ff" timeScale="1ms"/>
+        </Display>
+        <!--
+        <Display id="d3" title="Ex5: HH cell with simple morphology: current densities" timeScale="1ms" xmin="0" xmax="300" ymin="-0.1" ymax="1.1">
+                <Line id="ina" quantity="hhpop[0]/bioPhys1/membraneProperties/naChans/iDensity" scale="1"  color="#000000" timeScale="1ms"/>
+                <Line id="ik" quantity="hhpop[0]/bioPhys1/membraneProperties/kChans/iDensity" scale="1"  color="#ff0000" timeScale="1ms"/>
+        </Display>
+        <Display id="d4" title="Ex5: HH cell with simple morphology: conductance densities" timeScale="1ms" xmin="0" xmax="300" ymin="-50" ymax="350">
+                <Line id="gna" quantity="hhpop[0]/bioPhys1/membraneProperties/naChans/gDensity" scale="1"  color="#000000" timeScale="1ms"/>
+                <Line id="gk" quantity="hhpop[0]/bioPhys1/membraneProperties/kChans/gDensity" scale="1"  color="#ff0000" timeScale="1ms"/>
+        </Display>-->
+    
+        
+    </Simulation>
+
+
+</Lems>

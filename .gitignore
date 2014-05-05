@@ -1,3 +1,7 @@
+i386
+umac
+x86_64
+
 /Channelpedia/LEMS_Test_inact_kv.xml
 /Channelpedia/m_inf.lems.dat
 /Channelpedia/m_tau.lems.dat
@@ -7,3 +11,9 @@
 Channelpedia/test/*.*ml
 *.pyc
 *~
+
+ChannelTest/*.mod
+ChannelTest/*nrn.py
+ChannelTest/*.hoc
+ChannelTest/*.dat
+ChannelTest/*.log
