@@ -7,12 +7,12 @@ install:
     - cd
     - svn checkout https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar
     - export JNML_HOME=$HOME/jNeuroMLJar
+    - cd $TRAVIS_BUILD_DIR
     
 
 script:
     - env
     - pwd
-    - cd $HOME/BlueBrainProjectShowcase
     - ls
     - cd Channelpedia
     - echo $JNML_HOME
