@@ -1,0 +1,17 @@
+language: python
+python: 2.7
+
+
+install:
+    - cd
+    - svn checkout https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar
+    - export JNML_HOME=$HOME/jNeuroMLJar
+    - cd
+    #- git clone 
+    - cd $TRAVIS_BUILD_DIR
+    
+
+script:
+    - cd Channelpedia
+    #- python ChannelpediaToNeuroML2.py HCN1
+    - $JNML_HOME/jnml LEMS_Test_HCN1.xml -nogui
