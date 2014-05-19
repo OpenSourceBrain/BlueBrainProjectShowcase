@@ -3,7 +3,6 @@ python: 2.7
 
 
 install:
-    - pwd
     - cd
     - svn checkout https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar
     - export JNML_HOME=$HOME/jNeuroMLJar
@@ -11,10 +10,6 @@ install:
     
 
 script:
-    - env
-    - pwd
-    - ls
     - cd Channelpedia
-    - echo $JNML_HOME
-    - ls -alt $JNML_HOME
-    - $JNML_HOME/jnml -v
+    - python ChannelpediaToNeuroML2.py HCN1
+    - $JNML_HOME/jnml LEMS_Test_HCN1.xml -nogui
