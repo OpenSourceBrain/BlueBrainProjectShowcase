@@ -3,11 +3,17 @@ python: 2.7
 
 
 install:
+    - pwd
+    - cd
     - svn checkout https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar
     - export JNML_HOME=$HOME/jNeuroMLJar
+    
 
 script:
     - env
+    - pwd
+    - cd $HOME/BlueBrainProjectShowcase
+    - ls
     - cd Channelpedia
     - echo $JNML_HOME
     - ls -alt $JNML_HOME
