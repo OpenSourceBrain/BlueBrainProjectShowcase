@@ -7,7 +7,7 @@ install:
     - svn checkout https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar
     - export JNML_HOME=$HOME/jNeuroMLJar
     - cd
-    - git clone 
+    #- git clone 
     - cd $TRAVIS_BUILD_DIR
     
 
