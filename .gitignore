@@ -9,6 +9,9 @@ x86_64
 /Channelpedia/test/m_tau.lems.dat
 /Channelpedia/unknowns
 Channelpedia/test/*.*ml
+Channelpedia/*.dat
+Channelpedia/LEMS_Test_k*
+
 *.pyc
 *~
 

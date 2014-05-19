@@ -1,9 +1,4 @@
-import airspeed
-
-TEMPLATE_FILE = "LEMS_Test_template.xml"
-    
-MAX_COLOUR = (255, 0, 0)
-MIN_COLOUR = (255, 255, 0)
+from NML2ChannelAnalyse import generate_lems_channel_analyser
 
 known_parameters = {}
 #                                             low v,   step,  hi v,  delay,  duration,  base v, tot dur, erev                                
@@ -13,19 +8,8 @@ known_parameters["Channelpedia_Ih_14"] =      (-120,   10,   -40,    100,    700
 known_parameters["Channelpedia_Kir21_44"] =   (-180,   10,     0,    100,    600,       0,      800,     135)
 
 
-def get_colour_hex(fract):
-    rgb = [ hex(int(x + (y-x)*fract)) for x, y in zip(MIN_COLOUR, MAX_COLOUR) ]
-    col = "#"
-    for c in rgb: col+= ( c[2:4] if len(c)==4 else "00")
-    return col
 
-def merge_with_template(model, templfile):
-    with open(templfile) as f:
-        templ = airspeed.Template(f.read())
-    return templ.merge(model)
-
-
-def generate_lems_channel_analyser_(channel_file, channel, gates, temperature):
+def generate(channel_file, channel, gates, temperature):
 
     if known_parameters.has_key(channel):
         params = known_parameters[channel]
@@ -52,6 +36,7 @@ def generate_lems_channel_analyser_(channel_file, channel, gates, temperature):
                       step_target_voltage, max_target_voltage, clamp_delay, \
                       clamp_duration, clamp_base_voltage, duration, erev, gates, temperature)
 
+'''
 def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
                       step_target_voltage, max_target_voltage, clamp_delay, \
                       clamp_duration, clamp_base_voltage, duration, erev, gates, temperature):
@@ -86,6 +71,7 @@ def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
     merged = merge_with_template(model, TEMPLATE_FILE)
 
     return merged
+    '''
 
 
 
@@ -96,7 +82,7 @@ if __name__ == '__main__':
     channel = "Channelpedia_HCN1_9"
     new_lems_file = "LEMS_Test_HCN1.xml"
 
-    info = generate_lems_channel_analyser_(channel_file, channel, ["m"], 32)
+    info = generate(channel_file, channel, ["m"], 32)
                       
     print info
                       
@@ -108,7 +94,7 @@ if __name__ == '__main__':
     channel = "Channelpedia_Ca_P_Q_5"
     new_lems_file = "LEMS_Test_Cav2.1.xml"
 
-    info = generate_lems_channel_analyser_(channel_file, channel, ["m"], 32)
+    info = generate(channel_file, channel, ["m"], 32)
                       
     print info
                       

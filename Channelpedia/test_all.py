@@ -1,7 +1,7 @@
 import osb.utils
 
 from ChannelpediaToNeuroML2 import channelpedia_xml_to_neuroml2
-from analyse import generate_lems_channel_analyser_
+from analyse import generate
 
 from bs4 import BeautifulSoup
 
@@ -53,7 +53,7 @@ for link in soup.find_all('a'):
 
         new_lems_file = "test/LEMS_Test_%s.xml"%channel_id
     
-        lems_helper = generate_lems_channel_analyser_(nml2_file_name, channel_id, gates, temperature)
+        lems_helper = generate(nml2_file_name, channel_id, gates, temperature)
         
         file_out = open(new_lems_file, 'w')
         file_out.write(lems_helper)
