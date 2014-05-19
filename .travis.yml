@@ -13,4 +13,5 @@ install:
 
 script:
     - env
+    - cd Channelpedia
     - jnml -v
