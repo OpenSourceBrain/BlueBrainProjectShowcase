@@ -52,7 +52,7 @@ def process_args():
     parser.add_argument('-temperature', 
                         type=float,
                         metavar='<temperature>',
-                        default=32,
+                        default=6.3,
                         help='Temperature (float, celsius)')
                         
                         

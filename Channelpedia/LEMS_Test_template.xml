@@ -43,13 +43,13 @@
 #end## 
         </Display>
 
-        <Display id="d1" title="${channel}: Fractional conductance"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
+        <Display id="d1" title="${channel}: Fractional conductance at ${temperature} degC"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/test/${channel}/fopen" scale="1"  color="${tv.col}" timeScale="1ms"/>
 #end## 
         </Display>
         
-        <Display id="d7" title="${channel}: Currents"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="${channel}: Currents at ${temperature} degC"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.00002" ymax="0.0014">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/test/i" scale="1nA"  color="${tv.col}" timeScale="1ms"/>
 #end## 
@@ -60,7 +60,7 @@
             <Line id="${g}_inf" quantity="rampCellPop0[0]/test/${channel}/${g}/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="${g}_tau" title="${channel}: Gate ${g} time course, ${g}_tau"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-10" ymax="110">
+        <Display id="${g}_tau" title="${channel}: Gate ${g} time course, ${g}_tau at ${temperature} degC"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-10" ymax="110">
             <Line id="${g}_tau" quantity="rampCellPop0[0]/test/${channel}/${g}/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
         </Display>
 #end## 
