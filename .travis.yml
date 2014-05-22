@@ -13,11 +13,22 @@ install:
     - cd libNeuroML
     - git checkout development
     - python setup.py install 
+    - cd
+    # Install PyLEMS  (development version)
+    - git clone https://github.com/LEMS/pylems.git
+    - cd pylems
+    - git checkout development
+    - python setup.py install
+    - cd
+    # Install OSB API
+    - git clone git@github.com:OpenSourceBrain/OSB_API.git
+    - cd OSB_API/python
+    - python setup.py install
     # Go back to main installation dir for travis
     - cd $TRAVIS_BUILD_DIR
     
 
 script:
     - cd Channelpedia
-    #- python ChannelpediaToNeuroML2.py HCN1
+    - python ChannelpediaToNeuroML2.py HCN1
     - $JNML_HOME/jnml LEMS_Test_HCN1.xml -nogui
