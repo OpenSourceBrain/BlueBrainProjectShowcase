@@ -35,3 +35,6 @@ script:
     - python ChannelpediaToNeuroML2.py HCN1
     - $JNML_HOME/jnml LEMS_Test_HCN1.xml -nogui
     - python analyse.py
+    - python NML2ChannelAnalyse.py Nav1.3.channel.nml Channelpedia_Nav1_3_43
+    
+    
