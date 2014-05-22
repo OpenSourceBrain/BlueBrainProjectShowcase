@@ -25,7 +25,7 @@ install:
     - cd OSB_API/python
     - python setup.py install
     #   Install airspeed
-    - pip install airspeed
+    - pip install git+https://github.com/purcell/airspeed.git
     # Go back to main installation dir for travis
     - cd $TRAVIS_BUILD_DIR
     
