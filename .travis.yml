@@ -4,26 +4,28 @@ python: 2.7
 
 install:
     - cd
-    # Install jNeuroML
+    #   Install jNeuroML
     - svn checkout https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar
     - export JNML_HOME=$HOME/jNeuroMLJar
-    # Install libNeuroML (development version) & dependencies
+    #   Install libNeuroML (development version) & dependencies
     - pip install lxml
     - git clone https://github.com/NeuralEnsemble/libNeuroML.git
     - cd libNeuroML
     - git checkout development
     - python setup.py install 
     - cd
-    # Install PyLEMS  (development version)
+    #   Install PyLEMS  (development version)
     - git clone https://github.com/LEMS/pylems.git
     - cd pylems
     - git checkout development
     - python setup.py install
     - cd
-    # Install OSB API
+    #   Install OSB API
     - git clone https://github.com/OpenSourceBrain/OSB_API.git
     - cd OSB_API/python
     - python setup.py install
+    #   Install airspeed
+    - pip install airspeed
     # Go back to main installation dir for travis
     - cd $TRAVIS_BUILD_DIR
     
@@ -32,3 +34,4 @@ script:
     - cd Channelpedia
     - python ChannelpediaToNeuroML2.py HCN1
     - $JNML_HOME/jnml LEMS_Test_HCN1.xml -nogui
+    - python analyse.py

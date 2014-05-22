@@ -109,7 +109,7 @@
             <Line id="90mV" quantity="holderCellPop_90[0]/v" scale="1mV"  color="#ff0000" timeScale="1ms"/>
         </Display>
 
-        <Display id="d1" title="Channelpedia_Ca_P_Q_5: Fractional conductance"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-0.1" ymax="1.1">
+        <Display id="d1" title="Channelpedia_Ca_P_Q_5: Fractional conductance at 32 degC"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-0.1" ymax="1.1">
             <Line id="-60mV" quantity="holderCellPop_min60[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#ffff00" timeScale="1ms"/>
             <Line id="-50mV" quantity="holderCellPop_min50[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#ffee00" timeScale="1ms"/>
             <Line id="-40mV" quantity="holderCellPop_min40[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#ffdd00" timeScale="1ms"/>
@@ -128,7 +128,7 @@
             <Line id="90mV" quantity="holderCellPop_90[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d7" title="Channelpedia_Ca_P_Q_5: Currents"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="Channelpedia_Ca_P_Q_5: Currents at 32 degC"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-0.00002" ymax="0.0014">
             <Line id="-60mV" quantity="holderCellPop_min60[0]/test/i" scale="1nA"  color="#ffff00" timeScale="1ms"/>
             <Line id="-50mV" quantity="holderCellPop_min50[0]/test/i" scale="1nA"  color="#ffee00" timeScale="1ms"/>
             <Line id="-40mV" quantity="holderCellPop_min40[0]/test/i" scale="1nA"  color="#ffdd00" timeScale="1ms"/>
@@ -151,7 +151,7 @@
             <Line id="m_inf" quantity="rampCellPop0[0]/test/Channelpedia_Ca_P_Q_5/m/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="m_tau" title="Channelpedia_Ca_P_Q_5: Gate m time course, m_tau"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-10" ymax="110">
+        <Display id="m_tau" title="Channelpedia_Ca_P_Q_5: Gate m time course, m_tau at 32 degC"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-10" ymax="110">
             <Line id="m_tau" quantity="rampCellPop0[0]/test/Channelpedia_Ca_P_Q_5/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
         </Display>
 

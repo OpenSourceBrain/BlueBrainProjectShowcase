@@ -74,7 +74,7 @@
             <Line id="-40mV" quantity="holderCellPop_min40[0]/v" scale="1mV"  color="#ff0000" timeScale="1ms"/>
         </Display>
 
-        <Display id="d1" title="Channelpedia_HCN1_9: Fractional conductance"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.1" ymax="1.1">
+        <Display id="d1" title="Channelpedia_HCN1_9: Fractional conductance at 32 degC"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.1" ymax="1.1">
             <Line id="-120mV" quantity="holderCellPop_min120[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffff00" timeScale="1ms"/>
             <Line id="-110mV" quantity="holderCellPop_min110[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffdf00" timeScale="1ms"/>
             <Line id="-100mV" quantity="holderCellPop_min100[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ffbf00" timeScale="1ms"/>
@@ -86,7 +86,7 @@
             <Line id="-40mV" quantity="holderCellPop_min40[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d7" title="Channelpedia_HCN1_9: Currents"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="Channelpedia_HCN1_9: Currents at 32 degC"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.00002" ymax="0.0014">
             <Line id="-120mV" quantity="holderCellPop_min120[0]/test/i" scale="1nA"  color="#ffff00" timeScale="1ms"/>
             <Line id="-110mV" quantity="holderCellPop_min110[0]/test/i" scale="1nA"  color="#ffdf00" timeScale="1ms"/>
             <Line id="-100mV" quantity="holderCellPop_min100[0]/test/i" scale="1nA"  color="#ffbf00" timeScale="1ms"/>
@@ -102,7 +102,7 @@
             <Line id="m_inf" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="m_tau" title="Channelpedia_HCN1_9: Gate m time course, m_tau"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-10" ymax="110">
+        <Display id="m_tau" title="Channelpedia_HCN1_9: Gate m time course, m_tau at 32 degC"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-10" ymax="110">
             <Line id="m_tau" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
         </Display>
 
