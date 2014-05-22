@@ -4,10 +4,16 @@ python: 2.7
 
 install:
     - cd
+    # Install jNeuroML
     - svn checkout https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar
     - export JNML_HOME=$HOME/jNeuroMLJar
-    - cd
-    #- git clone 
+    # Install libNeuroML (development version) & dependencies
+    - pip install lxml
+    - git clone https://github.com/NeuralEnsemble/libNeuroML.git
+    - cd libNeuroML
+    - git checkout development
+    - python setup.py install 
+    # Go back to main installation dir for travis
     - cd $TRAVIS_BUILD_DIR
     
 
