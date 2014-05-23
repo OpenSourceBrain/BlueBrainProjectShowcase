@@ -2,7 +2,12 @@
 
 #
 #
-#   ...
+#   A script which can be run to generate a LEMS file to analyse the behaviour of channels in NeuroML 2
+#   
+#   For usage information type:
+#       python NML2ChannelAnalyse.py
+#
+#  For a list of the dependencies for this script see https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/.travis.yml
 #
 #
 
@@ -24,7 +29,7 @@ def process_args():
     """ 
     Parse command-line arguments.
     """
-    parser = argparse.ArgumentParser(description="A script which can be run to generate a LEMS script to analyse the behaviour of channels in NeuroML 2")
+    parser = argparse.ArgumentParser(description="A script which can be run to generate a LEMS file to analyse the behaviour of channels in NeuroML 2")
 
     parser.add_argument('channelFile', type=str, metavar='<NeuroML 2 Channel file>', 
                         help='Name of the NeuroML 2 file')
