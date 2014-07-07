@@ -123,11 +123,10 @@ def main():
     
     step_target_voltage = 20
     clamp_delay=10 
-    clamp_duration=80
+    clamp_duration=2000
     clamp_base_voltage=-70
-    duration = 100
+    duration = 2050
     erev = 0
-
 
     doc = loaders.NeuroMLLoader.load(args.channelFile)
     gates = []
