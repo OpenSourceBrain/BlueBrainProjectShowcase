@@ -26,7 +26,7 @@ def main():
     ih = []
     il = []
 
-    print "voltage\ti_lowest\ti_highest"
+    print "voltage (mV)   i_lowest (A)   i_highest (A)"
 
     # Find highest, lowest, and steady-state current from each file
     for f in files:
@@ -51,7 +51,7 @@ def main():
             if i > i_highest:
                 i_highest = i;
 
-        print str(voltage) + "\t" + str(i_lowest) + "\t" + str(i_highest)
+        print "{0:>12}{1:>15E}{2:>15E}".format(voltage, i_lowest, i_highest)
 
         v_arr.append(float(voltage));
         ih.append(float(i_highest));
