@@ -132,7 +132,9 @@ def main():
     duration = 100
     erev = 0
 
-
+    if not os.path.isfile(args.channelFile):
+        print("File could not be found: %s!\n"%args.channelFile)
+        exit(1)
     doc = loaders.NeuroMLLoader.load(args.channelFile)
     gates = []
     channels = []
