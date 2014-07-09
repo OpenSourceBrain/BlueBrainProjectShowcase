@@ -16,6 +16,8 @@ import argparse
 import neuroml.loaders as loaders
 
 import airspeed
+import sys
+import os.path
 
 TEMPLATE_FILE = "LEMS_Test_template.xml"
     
@@ -71,6 +73,8 @@ def get_colour_hex(fract):
     return col
 
 def merge_with_template(model, templfile):
+    if not os.path.isfile(templfile):
+        templfile = os.path.join(os.path.dirname(sys.argv[0]), templfile)
     with open(templfile) as f:
         templ = airspeed.Template(f.read())
     return templ.merge(model)
