@@ -17,7 +17,7 @@
     </vClampedCell>
 #end##    
     
-    <vClampedRampCell id="rampCell0" delay="0ms" duration="${duration}ms" baseVoltage="-100mV" targetVoltage0="-100mV" targetVoltage1="100mV">
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="${duration}ms" baseVoltage="${min_target_voltage}mV" targetVoltage0="${min_target_voltage}mV" targetVoltage1="${max_target_voltage}mV">
         <channelPopulation id="test" ionChannel="${channel}" number="1" erev="${erev}mV"/>
     </vClampedRampCell>
 
@@ -33,11 +33,13 @@
 
 #set( $start = -0.1 * $duration )
 #set( $end = 1.1 * $duration )
+#set( $startv = $min_target_voltage - (0.1 * ($max_target_voltage-$min_target_voltage)) )
+#set( $endv =   $max_target_voltage + (0.1 * ($max_target_voltage-$min_target_voltage)) )
 #set( $dt = 0.00025 * $duration )
 
     <Simulation id="sim1" length="${duration}ms" step="${dt}ms" target="net1">
         
-        <Display id="d0" title="${channel}: Clamp voltages (mV)"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-120" ymax="40">
+        <Display id="d0" title="${channel}: Clamp voltages (mV)"  timeScale="1ms" xmin="$start" xmax="$end" ymin="$startv" ymax="$endv">
 #foreach ($tv in $target_voltages)##
             <Line id="${tv.v}mV" quantity="holderCellPop_${tv.v_str}[0]/v" scale="1mV"  color="${tv.col}" timeScale="1ms"/>
 #end## 
@@ -73,6 +75,10 @@
             <OutputColumn id="${g}" quantity="rampCellPop0[0]/test/${channel}/${g}/tau"/> 
         </OutputFile>
 #end## 
+
+        <OutputFile id="rampCellV" fileName="${channel}.rampV.lems.dat">
+            <OutputColumn id="v" quantity="rampCellPop0[0]/v"/> 
+        </OutputFile>
 
 
 

@@ -106,6 +106,8 @@ def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
              "clamp_delay":         clamp_delay,
              "clamp_duration":      clamp_duration,
              "clamp_base_voltage":  clamp_base_voltage,
+             "min_target_voltage":  min_target_voltage,
+             "max_target_voltage":  max_target_voltage,
              "duration":  duration,
              "erev":  erev,
              "gates":  gates,
