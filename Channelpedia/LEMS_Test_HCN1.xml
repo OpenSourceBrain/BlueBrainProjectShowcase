@@ -9,7 +9,68 @@
     <Include file="Simulation.xml"/>
 
     <Include file="HCN1.channel.nml"/>
-    <Include file="vClamps.xml"/>
+    
+    <!-- These may eventually be moved to core NeuroML definition files -->
+    
+    <ComponentType name="vClampedCell" extends="baseCellMembPot" description="A 'cell' which can be clamped to a specific voltage for a certain duration to examine ion channel behaviour."> 
+
+        <Parameter name="delay" dimension="time"/>
+        <Parameter name="duration" dimension="time"/>
+        <Parameter name="baseVoltage" dimension="voltage"/>
+        <Parameter name="targetVoltage" dimension="voltage"/>
+
+        <Children name="channelPopulation" type="channelPopulation"/>
+
+        <Dynamics>
+
+            <StateVariable name="v" exposure="v" dimension="voltage"/>
+
+            <OnStart>
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnStart>
+
+            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+                <StateAssignment variable="v" value="targetVoltage"/>
+            </OnCondition>
+
+            <OnCondition test="t .gt. duration+delay">
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType>
+    
+    <ComponentType name="vClampedRampCell" extends="baseCellMembPot" description="A 'cell' which can be clamped to a steadily changing voltage for a certain duration to examine ion channel behaviour."> 
+
+        <Parameter name="delay" dimension="time"/>
+        <Parameter name="duration" dimension="time"/>
+        <Parameter name="baseVoltage" dimension="voltage"/>
+        <Parameter name="targetVoltage0" dimension="voltage"/>
+        <Parameter name="targetVoltage1" dimension="voltage"/>
+        
+        <Child name="channelPopulation" type="channelPopulation"/>
+
+        <Dynamics>
+
+            <StateVariable name="v" exposure="v" dimension="voltage"/>
+            
+            <OnStart>
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnStart>
+
+            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+                <StateAssignment variable="v" value="targetVoltage0 + (targetVoltage1-targetVoltage0)*(t-delay)/(duration)"/>
+            </OnCondition>
+
+            <OnCondition test="t .gt. duration+delay">
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType>
+    
 
     <vClampedCell id="holderCell_min120" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-120mV">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
@@ -39,7 +100,7 @@
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
     
-    <vClampedRampCell id="rampCell0" delay="0ms" duration="200ms" baseVoltage="-100mV" targetVoltage0="-100mV" targetVoltage1="100mV">
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="200ms" baseVoltage="-120mV" targetVoltage0="-120mV" targetVoltage1="-40mV">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedRampCell>
 
@@ -62,7 +123,7 @@
 
     <Simulation id="sim1" length="200ms" step="0.05ms" target="net1">
         
-        <Display id="d0" title="Channelpedia_HCN1_9: Clamp voltages"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-120" ymax="40">
+        <Display id="d0" title="Channelpedia_HCN1_9: Clamp voltages (mV)"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-128.0" ymax="-32.0">
             <Line id="-120mV" quantity="holderCellPop_min120[0]/v" scale="1mV"  color="#ffff00" timeScale="1ms"/>
             <Line id="-110mV" quantity="holderCellPop_min110[0]/v" scale="1mV"  color="#ffdf00" timeScale="1ms"/>
             <Line id="-100mV" quantity="holderCellPop_min100[0]/v" scale="1mV"  color="#ffbf00" timeScale="1ms"/>
@@ -86,7 +147,7 @@
             <Line id="-40mV" quantity="holderCellPop_min40[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d7" title="Channelpedia_HCN1_9: Currents at 32 degC"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="Channelpedia_HCN1_9: Currents (nA) at different clamped potentials; 32 degC; rev potential: -45 mV"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.00002" ymax="0.0014">
             <Line id="-120mV" quantity="holderCellPop_min120[0]/test/i" scale="1nA"  color="#ffff00" timeScale="1ms"/>
             <Line id="-110mV" quantity="holderCellPop_min110[0]/test/i" scale="1nA"  color="#ffdf00" timeScale="1ms"/>
             <Line id="-100mV" quantity="holderCellPop_min100[0]/test/i" scale="1nA"  color="#ffbf00" timeScale="1ms"/>
@@ -99,18 +160,22 @@
         </Display>
 
         <Display id="m_inf" title="Channelpedia_HCN1_9: Gate m steady state, m_inf"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.1" ymax="1.1">
-            <Line id="m_inf" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
+            <Line id="m_inf (x axis: -120mV to -40mV)" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/inf" scale="1"  color="#000000" timeScale="1ms"/>
         </Display>
         
-        <Display id="m_tau" title="Channelpedia_HCN1_9: Gate m time course, m_tau at 32 degC"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-10" ymax="110">
-            <Line id="m_tau" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
+        <Display id="m_tau" title="Channelpedia_HCN1_9: Gate m time course, m_tau (ms) at 32 degC"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-10" ymax="110">
+            <Line id="m_tau (x axis: -120mV to -40mV)" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau" scale="1ms"  color="#000000" timeScale="1ms"/>
         </Display>
 
-        <OutputFile id="m_inf_of1" fileName="m_inf.lems.dat">
+        <OutputFile id="m_inf_of1" fileName="Channelpedia_HCN1_9.m.inf.lems.dat">
             <OutputColumn id="m" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/inf"/> 
         </OutputFile>
-        <OutputFile id="m_tau_of1" fileName="m_tau.lems.dat">
+        <OutputFile id="m_tau_of1" fileName="Channelpedia_HCN1_9.m.tau.lems.dat">
             <OutputColumn id="m" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau"/> 
+        </OutputFile>
+
+        <OutputFile id="rampCellV" fileName="Channelpedia_HCN1_9.rampV.lems.dat">
+            <OutputColumn id="v" quantity="rampCellPop0[0]/v"/> 
         </OutputFile>
 
 

@@ -9,7 +9,68 @@
     <Include file="Simulation.xml"/>
 
     <Include file="${channel_file}"/>
-    <Include file="vClamps.xml"/>
+    
+    <!-- These may eventually be moved to core NeuroML definition files -->
+    
+    <ComponentType name="vClampedCell" extends="baseCellMembPot" description="A 'cell' which can be clamped to a specific voltage for a certain duration to examine ion channel behaviour."> 
+
+        <Parameter name="delay" dimension="time"/>
+        <Parameter name="duration" dimension="time"/>
+        <Parameter name="baseVoltage" dimension="voltage"/>
+        <Parameter name="targetVoltage" dimension="voltage"/>
+
+        <Children name="channelPopulation" type="channelPopulation"/>
+
+        <Dynamics>
+
+            <StateVariable name="v" exposure="v" dimension="voltage"/>
+
+            <OnStart>
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnStart>
+
+            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+                <StateAssignment variable="v" value="targetVoltage"/>
+            </OnCondition>
+
+            <OnCondition test="t .gt. duration+delay">
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType>
+    
+    <ComponentType name="vClampedRampCell" extends="baseCellMembPot" description="A 'cell' which can be clamped to a steadily changing voltage for a certain duration to examine ion channel behaviour."> 
+
+        <Parameter name="delay" dimension="time"/>
+        <Parameter name="duration" dimension="time"/>
+        <Parameter name="baseVoltage" dimension="voltage"/>
+        <Parameter name="targetVoltage0" dimension="voltage"/>
+        <Parameter name="targetVoltage1" dimension="voltage"/>
+        
+        <Child name="channelPopulation" type="channelPopulation"/>
+
+        <Dynamics>
+
+            <StateVariable name="v" exposure="v" dimension="voltage"/>
+            
+            <OnStart>
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnStart>
+
+            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+                <StateAssignment variable="v" value="targetVoltage0 + (targetVoltage1-targetVoltage0)*(t-delay)/(duration)"/>
+            </OnCondition>
+
+            <OnCondition test="t .gt. duration+delay">
+                <StateAssignment variable="v" value="baseVoltage"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType>
+    
 
 #foreach ($tv in $target_voltages)##
     <vClampedCell id="holderCell_${tv.v_str}" delay="${clamp_delay}ms" duration="${clamp_duration}ms" baseVoltage="${clamp_base_voltage}mV" targetVoltage="${tv.v}mV">
@@ -59,11 +120,11 @@
 
 #foreach ($g in $gates)##
         <Display id="${g}_inf" title="${channel}: Gate ${g} steady state, ${g}_inf"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-0.1" ymax="1.1">
-            <Line id="${g}_inf" quantity="rampCellPop0[0]/test/${channel}/${g}/inf" scale="1"  color="#ff0000" timeScale="1ms"/>
+            <Line id="${g}_inf (x axis: ${min_target_voltage}mV to ${max_target_voltage}mV)" quantity="rampCellPop0[0]/test/${channel}/${g}/inf" scale="1"  color="#000000" timeScale="1ms"/>
         </Display>
         
         <Display id="${g}_tau" title="${channel}: Gate ${g} time course, ${g}_tau (ms) at ${temperature} degC"  timeScale="1ms" xmin="$start" xmax="$end" ymin="-10" ymax="110">
-            <Line id="${g}_tau" quantity="rampCellPop0[0]/test/${channel}/${g}/tau" scale="1ms"  color="#ff0000" timeScale="1ms"/>
+            <Line id="${g}_tau (x axis: ${min_target_voltage}mV to ${max_target_voltage}mV)" quantity="rampCellPop0[0]/test/${channel}/${g}/tau" scale="1ms"  color="#000000" timeScale="1ms"/>
         </Display>
 #end## 
 
