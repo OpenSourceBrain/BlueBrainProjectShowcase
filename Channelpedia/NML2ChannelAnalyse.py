@@ -16,6 +16,8 @@ import argparse
 import neuroml.loaders as loaders
 
 import airspeed
+import sys
+import os.path
 
 TEMPLATE_FILE = "LEMS_Test_template.xml"
     
@@ -71,6 +73,8 @@ def get_colour_hex(fract):
     return col
 
 def merge_with_template(model, templfile):
+    if not os.path.isfile(templfile):
+        templfile = os.path.join(os.path.dirname(sys.argv[0]), templfile)
     with open(templfile) as f:
         templ = airspeed.Template(f.read())
     return templ.merge(model)
@@ -102,6 +106,8 @@ def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
              "clamp_delay":         clamp_delay,
              "clamp_duration":      clamp_duration,
              "clamp_base_voltage":  clamp_base_voltage,
+             "min_target_voltage":  min_target_voltage,
+             "max_target_voltage":  max_target_voltage,
              "duration":  duration,
              "erev":  erev,
              "gates":  gates,
@@ -128,6 +134,9 @@ def main():
     duration = 2050
     erev = 0
 
+    if not os.path.isfile(args.channelFile):
+        print("File could not be found: %s!\n"%args.channelFile)
+        exit(1)
     doc = loaders.NeuroMLLoader.load(args.channelFile)
     gates = []
     channels = []
