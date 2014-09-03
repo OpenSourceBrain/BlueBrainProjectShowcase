@@ -129,9 +129,9 @@ def main():
     
     step_target_voltage = 20
     clamp_delay=10 
-    clamp_duration=2000
+    clamp_duration=80
     clamp_base_voltage=-70
-    duration = 2050
+    duration = 100
     erev = 0
 
     if not os.path.isfile(args.channelFile):
