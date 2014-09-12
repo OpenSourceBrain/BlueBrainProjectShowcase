@@ -62,6 +62,45 @@ def process_args():
                         default=6.3,
                         help='Temperature (float, celsius)')
                         
+                        #clamp_delay, \
+                      #clamp_duration, clamp_base_voltage, duration
+                        
+    parser.add_argument('-duration', 
+                        type=float,
+                        metavar='<duration>',
+                        default=100,
+                        help='Duration of simulation in ms')
+                        
+    parser.add_argument('-clampDelay', 
+                        type=float,
+                        metavar='<clamp delay>',
+                        default=10,
+                        help='Delay before voltage clamp is activated in ms')
+                        
+    parser.add_argument('-clampDuration', 
+                        type=float,
+                        metavar='<clamp duration>',
+                        default=80,
+                        help='Duration of voltage clamp in ms')
+                        
+    parser.add_argument('-clampBaseVoltage', 
+                        type=float,
+                        metavar='<clamp base voltage>',
+                        default=-70,
+                        help='Clamp base (starting/finishing) voltage in mV')
+                        
+    parser.add_argument('-stepTargetVoltage', 
+                        type=float,
+                        metavar='<step target voltage>',
+                        default=20,
+                        help='Voltage in mV through which to step voltage clamps')
+                        
+    parser.add_argument('-erev', 
+                        type=float,
+                        metavar='<reversal potential>',
+                        default=0,
+                        help='Reversal potential of channel for currents')
+                        
                         
     return parser.parse_args()
 
@@ -127,12 +166,12 @@ def main():
 
     if verbose: print "Going to test channel from file: "+ args.channelFile
     
-    step_target_voltage = 20
-    clamp_delay=10 
-    clamp_duration=80
-    clamp_base_voltage=-70
-    duration = 100
-    erev = 0
+    step_target_voltage = args.stepTargetVoltage
+    clamp_delay = args.clampDelay 
+    clamp_duration = args.clampDuration
+    clamp_base_voltage = args.clampBaseVoltage
+    duration = args.duration
+    erev = args.erev
 
     if not os.path.isfile(args.channelFile):
         print("File could not be found: %s!\n"%args.channelFile)
