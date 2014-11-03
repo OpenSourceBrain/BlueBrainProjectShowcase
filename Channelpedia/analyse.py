@@ -10,6 +10,8 @@ known_parameters["Channelpedia_Kir21_44"] =   (-180,   10,     0,    100,    600
 
 
 def generate(channel_file, channel, gates, temperature):
+    
+    ca_conc = 1e-5
 
     if known_parameters.has_key(channel):
         params = known_parameters[channel]
@@ -34,7 +36,7 @@ def generate(channel_file, channel, gates, temperature):
         
     return generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
                       step_target_voltage, max_target_voltage, clamp_delay, \
-                      clamp_duration, clamp_base_voltage, duration, erev, gates, temperature)
+                      clamp_duration, clamp_base_voltage, duration, erev, gates, temperature, ca_conc)
 
 '''
 def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \

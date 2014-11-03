@@ -18,6 +18,8 @@
         <Parameter name="duration" dimension="time"/>
         <Parameter name="baseVoltage" dimension="voltage"/>
         <Parameter name="targetVoltage" dimension="voltage"/>
+        
+        <Parameter name="caConc" dimension="concentration"/>
 
         <Children name="channelPopulation" type="channelPopulation"/>
 
@@ -49,6 +51,8 @@
         <Parameter name="targetVoltage0" dimension="voltage"/>
         <Parameter name="targetVoltage1" dimension="voltage"/>
         
+        <Parameter name="caConc" dimension="concentration"/>
+        
         <Child name="channelPopulation" type="channelPopulation"/>
 
         <Dynamics>
@@ -73,12 +77,12 @@
     
 
 #foreach ($tv in $target_voltages)##
-    <vClampedCell id="holderCell_${tv.v_str}" delay="${clamp_delay}ms" duration="${clamp_duration}ms" baseVoltage="${clamp_base_voltage}mV" targetVoltage="${tv.v}mV">
+    <vClampedCell id="holderCell_${tv.v_str}" delay="${clamp_delay}ms" duration="${clamp_duration}ms" baseVoltage="${clamp_base_voltage}mV" targetVoltage="${tv.v}mV" caConc="${ca_conc}mM">
         <channelPopulation id="test" ionChannel="${channel}" number="1" erev="${erev}mV"/>
     </vClampedCell>
 #end##    
     
-    <vClampedRampCell id="rampCell0" delay="0ms" duration="${duration}ms" baseVoltage="${min_target_voltage}mV" targetVoltage0="${min_target_voltage}mV" targetVoltage1="${max_target_voltage}mV">
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="${duration}ms" baseVoltage="${min_target_voltage}mV" targetVoltage0="${min_target_voltage}mV" targetVoltage1="${max_target_voltage}mV" caConc="${ca_conc}mM">
         <channelPopulation id="test" ionChannel="${channel}" number="1" erev="${erev}mV"/>
     </vClampedRampCell>
 

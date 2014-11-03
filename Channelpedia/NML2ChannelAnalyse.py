@@ -62,9 +62,6 @@ def process_args():
                         default=6.3,
                         help='Temperature (float, celsius)')
                         
-                        #clamp_delay, \
-                      #clamp_duration, clamp_base_voltage, duration
-                        
     parser.add_argument('-duration', 
                         type=float,
                         metavar='<duration>',
@@ -101,6 +98,12 @@ def process_args():
                         default=0,
                         help='Reversal potential of channel for currents')
                         
+    parser.add_argument('-caConc', 
+                        type=float,
+                        metavar='<Ca2+ concentration>',
+                        default=5e-5,
+                        help='Internal concentration of Ca2+ (float, concentration in mM)')
+                        
                         
     return parser.parse_args()
 
@@ -121,7 +124,8 @@ def merge_with_template(model, templfile):
 
 def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
                       step_target_voltage, max_target_voltage, clamp_delay, \
-                      clamp_duration, clamp_base_voltage, duration, erev, gates, temperature):
+                      clamp_duration, clamp_base_voltage, duration, erev, gates, \
+                      temperature, ca_conc):
                       
     target_voltages = []
     v = min_target_voltage
@@ -150,7 +154,8 @@ def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
              "duration":  duration,
              "erev":  erev,
              "gates":  gates,
-             "temperature":  temperature}
+             "temperature":  temperature,
+             "ca_conc":  ca_conc}
 
     merged = merge_with_template(model, TEMPLATE_FILE)
 
@@ -196,7 +201,8 @@ def main():
     
     lems_content = generate_lems_channel_analyser(args.channelFile, args.channelId, args.minV, \
                       step_target_voltage, args.maxV, clamp_delay, \
-                      clamp_duration, clamp_base_voltage, duration, erev, gates, args.temperature)
+                      clamp_duration, clamp_base_voltage, duration, erev, gates, \
+                      args.temperature, args.caConc)
                       
     new_lems_file = "LEMS_Test_%s.xml"%args.channelId
 
