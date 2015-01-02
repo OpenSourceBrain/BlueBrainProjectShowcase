@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+from decimal import Decimal
+import glob
 import re
 import numpy as np
 from matplotlib import pyplot as plt
@@ -7,20 +9,15 @@ from matplotlib import pyplot as plt
 
 def main():
 
-    # list of files to process
-    files = [
-        "i_min100.lems.dat",
-        "i_min80.lems.dat",
-        "i_min60.lems.dat",
-        "i_min40.lems.dat",
-        "i_min20.lems.dat",
-        "i_0.lems.dat",
-        "i_20.lems.dat",
-        "i_40.lems.dat",
-        "i_60.lems.dat",
-        "i_80.lems.dat",
-        "i_100.lems.dat"
-    ]
+    # Build dict of voltages and their corresponding files
+    filenames = glob.glob('./i_*.lems.dat')
+    file_dict = {}
+    for name in filenames:
+        v_match = re.match("\./i_(.*)\.lems\.dat", name)
+        voltage = v_match.group(1)
+        voltage = voltage.replace("min", "-")
+        voltage = Decimal(voltage)
+        file_dict[voltage] = name
 
     v_arr = []
     ih = []
@@ -29,16 +26,14 @@ def main():
     print "voltage (mV)   i_lowest (A)   i_highest (A)"
 
     # Find highest, lowest, and steady-state current from each file
-    for f in files:
+    voltages = file_dict.keys()
+    voltages.sort()
+    for voltage in voltages:
         i_highest = None
         i_lowest = 10000
         i_steady = None
 
-        v_match = re.match("i_(.*)\.lems\.dat", f)
-        voltage = v_match.group(1)
-        voltage = voltage.replace("min", "-")
-
-        i_file = open(f, "r")
+        i_file = open(file_dict[voltage], "r")
 
         for line in i_file:
             columns = line.split()
