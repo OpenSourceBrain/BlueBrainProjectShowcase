@@ -45,10 +45,10 @@ Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Ch
             </rdf:RDF>
         </annotation>
 
-        <gateHHtauInf id="m" instances="1">
+        <gate id="m" instances="1" type="gateHHtauInf">
             <timeCourse type="Channelpedia_HCN1_9_m_tau"/>
             <steadyState type="Channelpedia_HCN1_9_m_inf"/>
-        </gateHHtauInf>
+        </gate>
     </ionChannelHH>
 
     <ComponentType name="Channelpedia_HCN1_9_m_inf" extends="baseVoltageDepVariable">

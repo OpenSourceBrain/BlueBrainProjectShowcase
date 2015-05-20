@@ -105,14 +105,12 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
         
         eq_type = gate.attrib['EqType']
         gate_name = gate.attrib['Name']
-        target = None
+        target = chan.gates
         
         if eq_type == '1':
-            g = neuroml.GateHHTauInf(id=gate_name,instances=int(float(gate.attrib['Power'])))
-            target = chan.gate_hh_tau_infs
+            g = neuroml.GateHHUndetermined(id=gate_name, type='gateHHtauInf', instances=int(float(gate.attrib['Power'])))
         elif eq_type == '2':
-            g = neuroml.GateHHRates(id=gate_name,instances=int(float(gate.attrib['Power'])))
-            target = chan.gate_hh_rates
+            g = neuroml.GateHHUndetermined(id=gate_name, type='gateHHrates', instances=int(float(gate.attrib['Power'])))
         
         for inf in gate.findall('Inf_Alpha'):
             equation = check_equation(inf.findall('Equation')[0].text)

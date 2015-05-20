@@ -45,10 +45,10 @@ Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Ch
             </rdf:RDF>
         </annotation>
 
-        <gateHHrates id="m" instances="1">
+        <gate id="m" instances="1" type="gateHHrates">
             <forwardRate type="Channelpedia_Ca_P_Q_5_m_alpha"/>
             <reverseRate type="Channelpedia_Ca_P_Q_5_m_beta"/>
-        </gateHHrates>
+        </gate>
     </ionChannelHH>
 
     <ComponentType name="Channelpedia_Ca_P_Q_5_m_beta" extends="baseVoltageDepRate">

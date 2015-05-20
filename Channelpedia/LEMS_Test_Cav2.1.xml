@@ -18,6 +18,8 @@
         <Parameter name="duration" dimension="time"/>
         <Parameter name="baseVoltage" dimension="voltage"/>
         <Parameter name="targetVoltage" dimension="voltage"/>
+        
+        <Parameter name="caConc" dimension="concentration"/>
 
         <Children name="channelPopulation" type="channelPopulation"/>
 
@@ -49,6 +51,8 @@
         <Parameter name="targetVoltage0" dimension="voltage"/>
         <Parameter name="targetVoltage1" dimension="voltage"/>
         
+        <Parameter name="caConc" dimension="concentration"/>
+        
         <Child name="channelPopulation" type="channelPopulation"/>
 
         <Dynamics>
@@ -72,56 +76,56 @@
     </ComponentType>
     
 
-    <vClampedCell id="holderCell_min60" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-60mV">
+    <vClampedCell id="holderCell_min60" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-60mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min50" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-50mV">
+    <vClampedCell id="holderCell_min50" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-50mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min40" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-40mV">
+    <vClampedCell id="holderCell_min40" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-40mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min30" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-30mV">
+    <vClampedCell id="holderCell_min30" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-30mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min20" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-20mV">
+    <vClampedCell id="holderCell_min20" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-20mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min10" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-10mV">
+    <vClampedCell id="holderCell_min10" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="-10mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_0" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="0mV">
+    <vClampedCell id="holderCell_0" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="0mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_10" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="10mV">
+    <vClampedCell id="holderCell_10" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="10mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_20" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="20mV">
+    <vClampedCell id="holderCell_20" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="20mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_30" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="30mV">
+    <vClampedCell id="holderCell_30" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="30mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_40" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="40mV">
+    <vClampedCell id="holderCell_40" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="40mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_50" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="50mV">
+    <vClampedCell id="holderCell_50" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="50mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_60" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="60mV">
+    <vClampedCell id="holderCell_60" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="60mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_70" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="70mV">
+    <vClampedCell id="holderCell_70" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="70mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_80" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="80mV">
+    <vClampedCell id="holderCell_80" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="80mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_90" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="90mV">
+    <vClampedCell id="holderCell_90" delay="1ms" duration="10ms" baseVoltage="-70mV" targetVoltage="90mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
     
-    <vClampedRampCell id="rampCell0" delay="0ms" duration="12ms" baseVoltage="-60mV" targetVoltage0="-60mV" targetVoltage1="90mV">
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="12ms" baseVoltage="-60mV" targetVoltage0="-60mV" targetVoltage1="90mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedRampCell>
 

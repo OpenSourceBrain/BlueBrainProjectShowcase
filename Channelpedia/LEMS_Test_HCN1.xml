@@ -18,6 +18,8 @@
         <Parameter name="duration" dimension="time"/>
         <Parameter name="baseVoltage" dimension="voltage"/>
         <Parameter name="targetVoltage" dimension="voltage"/>
+        
+        <Parameter name="caConc" dimension="concentration"/>
 
         <Children name="channelPopulation" type="channelPopulation"/>
 
@@ -49,6 +51,8 @@
         <Parameter name="targetVoltage0" dimension="voltage"/>
         <Parameter name="targetVoltage1" dimension="voltage"/>
         
+        <Parameter name="caConc" dimension="concentration"/>
+        
         <Child name="channelPopulation" type="channelPopulation"/>
 
         <Dynamics>
@@ -72,35 +76,35 @@
     </ComponentType>
     
 
-    <vClampedCell id="holderCell_min120" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-120mV">
+    <vClampedCell id="holderCell_min120" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-120mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min110" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-110mV">
+    <vClampedCell id="holderCell_min110" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-110mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min100" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-100mV">
+    <vClampedCell id="holderCell_min100" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-100mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min90" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-90mV">
+    <vClampedCell id="holderCell_min90" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-90mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min80" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-80mV">
+    <vClampedCell id="holderCell_min80" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-80mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min70" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-70mV">
+    <vClampedCell id="holderCell_min70" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-70mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min60" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-60mV">
+    <vClampedCell id="holderCell_min60" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-60mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min50" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-50mV">
+    <vClampedCell id="holderCell_min50" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-50mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
-    <vClampedCell id="holderCell_min40" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-40mV">
+    <vClampedCell id="holderCell_min40" delay="25ms" duration="150ms" baseVoltage="-40mV" targetVoltage="-40mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
     
-    <vClampedRampCell id="rampCell0" delay="0ms" duration="200ms" baseVoltage="-120mV" targetVoltage0="-120mV" targetVoltage1="-40mV">
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="200ms" baseVoltage="-120mV" targetVoltage0="-120mV" targetVoltage1="-40mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedRampCell>
 
