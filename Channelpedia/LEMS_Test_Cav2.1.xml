@@ -31,7 +31,7 @@
                 <StateAssignment variable="v" value="baseVoltage"/>
             </OnStart>
 
-            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+            <OnCondition test="t .geq. delay .and. t .leq. duration+delay">
                 <StateAssignment variable="v" value="targetVoltage"/>
             </OnCondition>
 
@@ -63,7 +63,7 @@
                 <StateAssignment variable="v" value="baseVoltage"/>
             </OnStart>
 
-            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+            <OnCondition test="t .geq. delay .and. t .leq. duration+delay">
                 <StateAssignment variable="v" value="targetVoltage0 + (targetVoltage1-targetVoltage0)*(t-delay)/(duration)"/>
             </OnCondition>
 
@@ -125,7 +125,8 @@
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedCell>
     
-    <vClampedRampCell id="rampCell0" delay="0ms" duration="12ms" baseVoltage="-60mV" targetVoltage0="-60mV" targetVoltage1="90mV" caConc="1e-05mM">
+    <!-- Using twice duration & scaled up max_target_voltage to avoid problem at t = delay+duration -->
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="24ms" baseVoltage="-60mV" targetVoltage0="-60mV" targetVoltage1="240mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_Ca_P_Q_5" number="1" erev="135.0mV"/>
     </vClampedRampCell>
 
@@ -153,7 +154,7 @@
     </network>
 
 
-    <Simulation id="sim1" length="12ms" step="0.003ms" target="net1">
+    <Simulation id="sim1" length="12ms" step="0.0003ms" target="net1">
         
         <Display id="d0" title="Channelpedia_Ca_P_Q_5: Clamp voltages (mV)"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-75.0" ymax="105.0">
             <Line id="-60mV" quantity="holderCellPop_min60[0]/v" scale="1mV"  color="#ffff00" timeScale="1ms"/>
@@ -193,7 +194,7 @@
             <Line id="90mV" quantity="holderCellPop_90[0]/test/Channelpedia_Ca_P_Q_5/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d7" title="Channelpedia_Ca_P_Q_5: Currents (nA) at different clamped potentials; 32 degC; rev potential: 135.0 mV"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="Channelpedia_Ca_P_Q_5: Currents (nA) at different clamped potentials; 32 degC; rev potential: 135.0 mV"  timeScale="1ms" xmin="-1.2" xmax="13.2" ymin="-0.002" ymax="0.0014">
             <Line id="-60mV" quantity="holderCellPop_min60[0]/test/i" scale="1nA"  color="#ffff00" timeScale="1ms"/>
             <Line id="-50mV" quantity="holderCellPop_min50[0]/test/i" scale="1nA"  color="#ffee00" timeScale="1ms"/>
             <Line id="-40mV" quantity="holderCellPop_min40[0]/test/i" scale="1nA"  color="#ffdd00" timeScale="1ms"/>
@@ -226,6 +227,7 @@
         <OutputFile id="m_tau_of1" fileName="Channelpedia_Ca_P_Q_5.m.tau.lems.dat">
             <OutputColumn id="m" quantity="rampCellPop0[0]/test/Channelpedia_Ca_P_Q_5/m/tau"/> 
         </OutputFile>
+
 
         <OutputFile id="rampCellV" fileName="Channelpedia_Ca_P_Q_5.rampV.lems.dat">
             <OutputColumn id="v" quantity="rampCellPop0[0]/v"/> 

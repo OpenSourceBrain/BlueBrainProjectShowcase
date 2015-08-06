@@ -43,10 +43,9 @@ script:
     
     - cd Channelpedia
     - python ChannelpediaToNeuroML2.py HCN1
-    - pynml LEMS_Test_HCN1.xml -nogui
     - python analyse.py
-    - python NML2ChannelAnalyse.py Nav1.3.channel.nml Channelpedia_Nav1_3_43
-    - pynml LEMS_Test_Channelpedia_Nav1_3_43.xml -nogui
+    - pynml LEMS_Test_HCN1.xml -nogui
+    
 
     
     

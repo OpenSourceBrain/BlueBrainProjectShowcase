@@ -1,4 +1,4 @@
-from NML2ChannelAnalyse import generate_lems_channel_analyser
+from pyneuroml.analysis.NML2ChannelAnalysis import generate_lems_channel_analyser
 
 known_parameters = {}
 #                                             low v,   step,  hi v,  delay,  duration,  base v, tot dur, erev                                
@@ -36,45 +36,7 @@ def generate(channel_file, channel, gates, temperature):
         
     return generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
                       step_target_voltage, max_target_voltage, clamp_delay, \
-                      clamp_duration, clamp_base_voltage, duration, erev, gates, temperature, ca_conc)
-
-'''
-def generate_lems_channel_analyser(channel_file, channel, min_target_voltage, \
-                      step_target_voltage, max_target_voltage, clamp_delay, \
-                      clamp_duration, clamp_base_voltage, duration, erev, gates, temperature):
-                      
-    target_voltages = []
-    v = min_target_voltage
-    while v <= max_target_voltage:
-        target_voltages.append(v)
-        v+=step_target_voltage
-
-    target_voltages_map = []
-    for t in target_voltages:
-        fract = float(target_voltages.index(t)) / (len(target_voltages)-1)
-        info = {}
-        info["v"] = t
-        info["v_str"] = str(t).replace("-", "min")
-        info["col"] = get_colour_hex(fract)
-        target_voltages_map.append(info)
-        #print info
-
-    model = {"channel_file":        channel_file, 
-             "channel":             channel, 
-             "target_voltages" :    target_voltages_map,
-             "clamp_delay":         clamp_delay,
-             "clamp_duration":      clamp_duration,
-             "clamp_base_voltage":  clamp_base_voltage,
-             "duration":  duration,
-             "erev":  erev,
-             "gates":  gates,
-             "temperature":  temperature}
-
-    merged = merge_with_template(model, TEMPLATE_FILE)
-
-    return merged
-    '''
-
+                      clamp_duration, clamp_base_voltage, duration, erev, gates, temperature, ca_conc, False)
 
 
 if __name__ == '__main__':

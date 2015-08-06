@@ -31,7 +31,7 @@
                 <StateAssignment variable="v" value="baseVoltage"/>
             </OnStart>
 
-            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+            <OnCondition test="t .geq. delay .and. t .leq. duration+delay">
                 <StateAssignment variable="v" value="targetVoltage"/>
             </OnCondition>
 
@@ -63,7 +63,7 @@
                 <StateAssignment variable="v" value="baseVoltage"/>
             </OnStart>
 
-            <OnCondition test="t .geq. delay .and. t .lt. duration+delay">
+            <OnCondition test="t .geq. delay .and. t .leq. duration+delay">
                 <StateAssignment variable="v" value="targetVoltage0 + (targetVoltage1-targetVoltage0)*(t-delay)/(duration)"/>
             </OnCondition>
 
@@ -104,7 +104,8 @@
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedCell>
     
-    <vClampedRampCell id="rampCell0" delay="0ms" duration="200ms" baseVoltage="-120mV" targetVoltage0="-120mV" targetVoltage1="-40mV" caConc="1e-05mM">
+    <!-- Using twice duration & scaled up max_target_voltage to avoid problem at t = delay+duration -->
+    <vClampedRampCell id="rampCell0" delay="0ms" duration="400ms" baseVoltage="-120mV" targetVoltage0="-120mV" targetVoltage1="40mV" caConc="1e-05mM">
         <channelPopulation id="test" ionChannel="Channelpedia_HCN1_9" number="1" erev="-45mV"/>
     </vClampedRampCell>
 
@@ -125,7 +126,7 @@
     </network>
 
 
-    <Simulation id="sim1" length="200ms" step="0.05ms" target="net1">
+    <Simulation id="sim1" length="200ms" step="0.005ms" target="net1">
         
         <Display id="d0" title="Channelpedia_HCN1_9: Clamp voltages (mV)"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-128.0" ymax="-32.0">
             <Line id="-120mV" quantity="holderCellPop_min120[0]/v" scale="1mV"  color="#ffff00" timeScale="1ms"/>
@@ -151,7 +152,7 @@
             <Line id="-40mV" quantity="holderCellPop_min40[0]/test/Channelpedia_HCN1_9/fopen" scale="1"  color="#ff0000" timeScale="1ms"/>
         </Display>
         
-        <Display id="d7" title="Channelpedia_HCN1_9: Currents (nA) at different clamped potentials; 32 degC; rev potential: -45 mV"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.00002" ymax="0.0014">
+        <Display id="d7" title="Channelpedia_HCN1_9: Currents (nA) at different clamped potentials; 32 degC; rev potential: -45 mV"  timeScale="1ms" xmin="-20.0" xmax="220.0" ymin="-0.002" ymax="0.0014">
             <Line id="-120mV" quantity="holderCellPop_min120[0]/test/i" scale="1nA"  color="#ffff00" timeScale="1ms"/>
             <Line id="-110mV" quantity="holderCellPop_min110[0]/test/i" scale="1nA"  color="#ffdf00" timeScale="1ms"/>
             <Line id="-100mV" quantity="holderCellPop_min100[0]/test/i" scale="1nA"  color="#ffbf00" timeScale="1ms"/>
@@ -177,6 +178,7 @@
         <OutputFile id="m_tau_of1" fileName="Channelpedia_HCN1_9.m.tau.lems.dat">
             <OutputColumn id="m" quantity="rampCellPop0[0]/test/Channelpedia_HCN1_9/m/tau"/> 
         </OutputFile>
+
 
         <OutputFile id="rampCellV" fileName="Channelpedia_HCN1_9.rampV.lems.dat">
             <OutputColumn id="v" quantity="rampCellPop0[0]/v"/> 
