@@ -7,6 +7,7 @@ x86_64
 /Channelpedia/m_inf.lems.dat
 /Channelpedia/m_tau.lems.dat
 /Channelpedia/test/*.dat
+/Channelpedia/test/*.xml
 /Channelpedia/unknowns
 Channelpedia/*.dat
 Channelpedia/LEMS_Test_k*

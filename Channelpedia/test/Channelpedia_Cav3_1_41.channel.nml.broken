@@ -1,0 +1,85 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_Cav3_1_41">
+    <ionChannelHH id="Channelpedia_Cav3_1_41" conductance="10pS" species="Ca">
+        <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
+The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/85
+
+Conversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2
+Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py -->
+                <rdf:Description rdf:about="Channelpedia_Cav3_1_41">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 85, ModelID: 41; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/85/hhmodels/41.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 85; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/85"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 17082234 is referenced in original XML
+                                 Subunit-specific modulation of T-type calcium channels by zinc. J. Physiol. (Lond.), 2007, 578, 159-71 -->
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/17082234"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
+        <gate id="m" instances="1" type="gateHHtauInf">
+            <timeCourse type="Channelpedia_Cav3_1_41_m_tau"/>
+            <steadyState type="Channelpedia_Cav3_1_41_m_inf"/>
+        </gate>
+        <gate id="h" instances="1" type="gateHHtauInf">
+            <timeCourse type="Channelpedia_Cav3_1_41_h_tau"/>
+            <steadyState type="Channelpedia_Cav3_1_41_h_inf"/>
+        </gate>
+    </ionChannelHH>
+
+    <ComponentType name="Channelpedia_Cav3_1_41_h_tau" extends="baseVoltageDepTime">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="t" dimension="none" exposure="t" value="(9.987873 + (0.002883 * exp(-V/5.598574))) * TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Cav3_1_41_m_tau" extends="baseVoltageDepTime">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="t" dimension="none" exposure="t" value="(-0.855809 + (1.493527 * exp(-V/27.414182))) * TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Cav3_1_41_m_inf" extends="baseVoltageDepVariable">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1 /(1+exp((V-(-42.921064))/-5.163208))"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Cav3_1_41_h_inf" extends="baseVoltageDepVariable">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1 /(1+exp((V-(-72.907420))/4.575763))"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

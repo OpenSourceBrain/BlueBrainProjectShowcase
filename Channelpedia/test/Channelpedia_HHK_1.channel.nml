@@ -1,0 +1,67 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_HHK_1">
+    <ionChannelHH id="Channelpedia_HHK_1" conductance="10pS" species="K">
+        <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
+The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/188
+
+Conversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2
+Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py -->
+                <rdf:Description rdf:about="Channelpedia_HHK_1">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 188, ModelID: 1; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/188/hhmodels/1.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 188; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/188"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 2185861 is referenced in original XML
+                                 A quantitative description of membrane current and its application to conduction and excitation in nerve. 1952. Bull. Math. Biol., 1990, 52, 25-71; discussion 5-23 -->
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/2185861"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqbiol:hasTaxon>
+                        <rdf:Bag>
+                            <!-- Known species: squid; taxonomy id: 551290 -->
+                            <rdf:li rdf:resource="http://identifiers.org/taxonomy/551290"/>
+                        </rdf:Bag>
+                    </bqbiol:hasTaxon>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
+        <gate id="m" instances="4" type="gateHHrates">
+            <forwardRate type="Channelpedia_HHK_1_m_alpha"/>
+            <reverseRate type="Channelpedia_HHK_1_m_beta"/>
+        </gate>
+    </ionChannelHH>
+
+    <ComponentType name="Channelpedia_HHK_1_m_beta" extends="baseVoltageDepRate">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="r" dimension="per_time" exposure="r" value="0.125 * (exp(-V/80))  / TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_HHK_1_m_alpha" extends="baseVoltageDepRate">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="r" dimension="per_time" exposure="r" value="(0.01*(10-V))/(exp((10-V)/10) - 1.0) / TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

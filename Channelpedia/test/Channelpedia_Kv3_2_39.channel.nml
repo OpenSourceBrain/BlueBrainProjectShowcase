@@ -1,0 +1,61 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_Kv3_2_39">
+    <ionChannelHH id="Channelpedia_Kv3_2_39" conductance="10pS" species="K">
+        <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
+The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/12
+
+Conversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2
+Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py -->
+                <rdf:Description rdf:about="Channelpedia_Kv3_2_39">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 12, ModelID: 39; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/12/hhmodels/39.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 12; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/12"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 10482766 is referenced in original XML
+                                 Kv3.1-Kv3.2 channels underlie a high-voltage-activating component of the delayed rectifier K+ current in projecting neurons from the globus pallidus. J. Neurophysiol., 1999, 82, 1512-28 -->
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/10482766"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
+        <gate id="m" instances="2" type="gateHHtauInf">
+            <timeCourse type="Channelpedia_Kv3_2_39_m_tau"/>
+            <steadyState type="Channelpedia_Kv3_2_39_m_inf"/>
+        </gate>
+    </ionChannelHH>
+
+    <ComponentType name="Channelpedia_Kv3_2_39_m_tau" extends="baseVoltageDepTime">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="t" dimension="none" exposure="t" value="(3.241643 +( 19.106496 / (1 + exp((V - 19.220623)/4.451533)))) * TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Kv3_2_39_m_inf" extends="baseVoltageDepVariable">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1/(1+exp((V+0.373267)/-8.568187))"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

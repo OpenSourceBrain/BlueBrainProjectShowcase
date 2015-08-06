@@ -1,0 +1,61 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_Km2_16">
+    <ionChannelHH id="Channelpedia_Km2_16" conductance="10pS" species="K">
+        <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
+The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/213
+
+Conversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2
+Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py -->
+                <rdf:Description rdf:about="Channelpedia_Km2_16">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 213, ModelID: 16; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/213/hhmodels/16.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 213; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/213"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 12574468 is referenced in original XML
+                                 Fast rhythmic bursting can be induced in layer 2/3 cortical neurons by enhancing persistent Na+ conductance or by blocking BK channels. J. Neurophysiol., 2003, 89, 909-21 -->
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/12574468"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
+        <gate id="m" instances="1" type="gateHHrates">
+            <forwardRate type="Channelpedia_Km2_16_m_alpha"/>
+            <reverseRate type="Channelpedia_Km2_16_m_beta"/>
+        </gate>
+    </ionChannelHH>
+
+    <ComponentType name="Channelpedia_Km2_16_m_beta" extends="baseVoltageDepRate">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="r" dimension="per_time" exposure="r" value="0.01*exp((-V-43)/18)  / TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Km2_16_m_alpha" extends="baseVoltageDepRate">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="r" dimension="per_time" exposure="r" value="0.02/(1+exp((-V-20)/5)) / TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

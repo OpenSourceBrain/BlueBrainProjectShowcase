@@ -1,0 +1,73 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_NaP_37">
+    <ionChannelHH id="Channelpedia_NaP_37" conductance="10pS" species="Na">
+        <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
+The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/189
+
+Conversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2
+Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py -->
+                <rdf:Description rdf:about="Channelpedia_NaP_37">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 189, ModelID: 37; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/189/hhmodels/37.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 189; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/189"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 16571753 is referenced in original XML
+                                 Persistent sodium current in layer 5 neocortical neurons is primarily generated in the proximal axon. J. Neurosci., 2006, 26, 3465-73 -->
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/16571753"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqbiol:hasTaxon>
+                        <rdf:Bag>
+                            <!-- Known species: rat; taxonomy id: 10116 -->
+                            <rdf:li rdf:resource="http://identifiers.org/taxonomy/10116"/>
+                        </rdf:Bag>
+                    </bqbiol:hasTaxon>
+                    <bqbiol:isPartOf>
+                        <rdf:Bag>
+                            <!-- Known cell type: l5pc; taxonomy id: nifext_50 -->
+                            <rdf:li rdf:resource="http://neurolex.org/wiki/nifext_50"/>
+                        </rdf:Bag>
+                    </bqbiol:isPartOf>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
+        <gate id="m" instances="3" type="gateHHtauInf">
+            <timeCourse type="Channelpedia_NaP_37_m_tau"/>
+            <steadyState type="Channelpedia_NaP_37_m_inf"/>
+        </gate>
+    </ionChannelHH>
+
+    <ComponentType name="Channelpedia_NaP_37_m_inf" extends="baseVoltageDepVariable">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1.0000/(1+ exp((V +44.0000)/-4.8500))"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_NaP_37_m_tau" extends="baseVoltageDepTime">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="t" dimension="none" exposure="t" value="( 1.0 ) * TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

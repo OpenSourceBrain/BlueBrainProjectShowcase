@@ -1,0 +1,91 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_Kv3_4_29">
+    <ionChannelHH id="Channelpedia_Kv3_4_29" conductance="10pS" species="K">
+        <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
+The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/14
+
+Conversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2
+Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py -->
+                <rdf:Description rdf:about="Channelpedia_Kv3_4_29">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 14, ModelID: 29; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/14/hhmodels/29.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 14; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/14"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 1381835 is referenced in original XML
+                                 Cloning of ShIII (Shaw-like) cDNAs encoding a novel high-voltage-activating, TEA-sensitive, type-A K+ channel. Proc. Biol. Sci., 1992, 248, 9-18 -->
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/1381835"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqbiol:hasTaxon>
+                        <rdf:Bag>
+                            <!-- Known species: xenopus; taxonomy id: 262014 -->
+                            <rdf:li rdf:resource="http://identifiers.org/taxonomy/262014"/>
+                        </rdf:Bag>
+                    </bqbiol:hasTaxon>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
+        <gate id="m" instances="1" type="gateHHtauInf">
+            <timeCourse type="Channelpedia_Kv3_4_29_m_tau"/>
+            <steadyState type="Channelpedia_Kv3_4_29_m_inf"/>
+        </gate>
+        <gate id="h" instances="1" type="gateHHtauInf">
+            <timeCourse type="Channelpedia_Kv3_4_29_h_tau"/>
+            <steadyState type="Channelpedia_Kv3_4_29_h_inf"/>
+        </gate>
+    </ionChannelHH>
+
+    <ComponentType name="Channelpedia_Kv3_4_29_m_tau" extends="baseVoltageDepTime">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="t" dimension="none" exposure="t" value="(10.000/(1+exp(((V -(4.440))/(38.140))))) * TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Kv3_4_29_h_tau" extends="baseVoltageDepTime">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="t" dimension="none" exposure="t" value="(20000.000/(1+exp(((V -(-46.560))/(-44.140))))) * TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Kv3_4_29_h_inf" extends="baseVoltageDepVariable">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1/(1+exp(((V -(-53.320))/(7.400))))"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Kv3_4_29_m_inf" extends="baseVoltageDepVariable">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1/(1+exp(((V -(-3.400))/(-8.400))))"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

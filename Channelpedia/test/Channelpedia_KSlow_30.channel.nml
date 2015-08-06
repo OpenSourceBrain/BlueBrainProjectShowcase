@@ -1,0 +1,97 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_KSlow_30">
+    <ionChannelHH id="Channelpedia_KSlow_30" conductance="10pS" species="K">
+        <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
+The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/188
+
+Conversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2
+Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py -->
+                <rdf:Description rdf:about="Channelpedia_KSlow_30">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 188, ModelID: 30; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/188/hhmodels/30.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 188; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/188"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 10856117 is referenced in original XML
+                                 Voltage-gated K+ channels in layer 5 neocortical pyramidal neurones from young rats: subtypes and gradients. J. Physiol. (Lond.), 2000, 525 Pt 3, 621-39 -->
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/10856117"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqbiol:hasTaxon>
+                        <rdf:Bag>
+                            <!-- Known species: rat; taxonomy id: 10116 -->
+                            <rdf:li rdf:resource="http://identifiers.org/taxonomy/10116"/>
+                        </rdf:Bag>
+                    </bqbiol:hasTaxon>
+                    <bqbiol:isPartOf>
+                        <rdf:Bag>
+                            <!-- Known cell type: neocortical l5pc; taxonomy id: nifext_50 -->
+                            <rdf:li rdf:resource="http://neurolex.org/wiki/nifext_50"/>
+                        </rdf:Bag>
+                    </bqbiol:isPartOf>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
+        <gate id="m" instances="2" type="gateHHtauInf">
+            <timeCourse type="Channelpedia_KSlow_30_m_tau"/>
+            <steadyState type="Channelpedia_KSlow_30_m_inf"/>
+        </gate>
+        <gate id="h" instances="1" type="gateHHtauInf">
+            <timeCourse type="Channelpedia_KSlow_30_h_tau"/>
+            <steadyState type="Channelpedia_KSlow_30_h_inf"/>
+        </gate>
+    </ionChannelHH>
+
+    <ComponentType name="Channelpedia_KSlow_30_m_inf" extends="baseVoltageDepVariable">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="(1/(1 + exp(-(V+14)/14.6)))"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_KSlow_30_h_inf" extends="baseVoltageDepVariable">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1/(1 + exp(-(V+54)/-11))"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_KSlow_30_h_tau" extends="baseVoltageDepTime">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="t" dimension="none" exposure="t" value="(360+(1010+24*(V+55))*exp(-((V+75)/48)^2)) * TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_KSlow_30_m_tau" extends="baseVoltageDepTime">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="t" dimension="none" exposure="t" value="((1.25+175.03*exp(-V * -0.026))) * TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

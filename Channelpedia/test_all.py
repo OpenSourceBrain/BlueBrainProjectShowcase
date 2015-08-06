@@ -4,6 +4,7 @@ from ChannelpediaToNeuroML2 import channelpedia_xml_to_neuroml2
 from analyse import generate
 
 from bs4 import BeautifulSoup
+import os
 
 import xml.etree.ElementTree as ET
 
@@ -22,7 +23,7 @@ temperature = 32  # Unused in Channelpedia...
 
 unknowns = ""
 
-max_chans = 3
+max_chans = 1000
 
 for link in soup.find_all('a'):
     href = link.get('href')
@@ -35,7 +36,7 @@ for link in soup.find_all('a'):
 
         root = ET.fromstring(cpd_xml)
 
-        channel_id='Channelpedia_%s_%s'%(root.attrib['ModelName'].replace("/","_").replace(" ","_"), root.attrib['ModelID'])
+        channel_id='Channelpedia_%s_%s'%(root.attrib['ModelName'].replace("/","_").replace(" ","_").replace(".","_"), root.attrib['ModelID'])
         
         print("Channel id: %s"%channel_id)
         
@@ -65,17 +66,23 @@ for link in soup.find_all('a'):
         file_out.write(lems_helper)
         file_out.close()
         
-        pynml.run_lems_with_jneuroml("LEMS_Test_%s.xml"%channel_id, 
+        success = pynml.run_lems_with_jneuroml("LEMS_Test_%s.xml"%channel_id, 
                            nogui=True, 
                            load_saved_data=False, 
                            plot=False, 
                            exec_in_dir = "test/",
-                           verbose=True)
+                           verbose=True,
+                           exit_on_fail = False)
+                           
+        if success: 
+            valid +=1
+        else:
+            os.rename(nml2_file_path, nml2_file_path+".broken")
         
         max_chans -=1
 
         
-print("\nFound %i models in Channelpedia XML format\n"%count)
+print("\nFound %i models in Channelpedia XML format, converted %i to valid NeuroML2\n"%(count,valid))
 
 unknowns_file = open('unknowns','w')
 unknowns_file.write("No unknowns!" if len(unknowns)==0 else unknowns)
