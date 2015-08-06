@@ -4,6 +4,7 @@ python: 2.7
 
 env:
     - OMV_ENGINE=jNeuroML
+    - OMV_ENGINE=NON_OMV_TESTS
 
 install:
     
@@ -29,16 +30,22 @@ install:
     - cd OSB_API/python
     - python setup.py install
 
-    
+
+    - cd $TRAVIS_BUILD_DIR
 
 script:
+
+    - omv all -V; export OMV_SUCCESS=$?; echo $OMV_SUCCESS
+    - echo "Finished all OMV tests"
+    - if [[ ${OMV_ENGINE} == "NON_OMV_TESTS" ]]; then echo "Continuing with tests not under OMV..."; else exit $OMV_SUCCESS; fi
+    - echo "Running non OMV tests..."
+    
     - cd Channelpedia
     - python ChannelpediaToNeuroML2.py HCN1
-    - $JNML_HOME/jnml LEMS_Test_HCN1.xml -nogui
+    - pynml LEMS_Test_HCN1.xml -nogui
     - python analyse.py
     - python NML2ChannelAnalyse.py Nav1.3.channel.nml Channelpedia_Nav1_3_43
-    - $JNML_HOME/jnml LEMS_Test_Channelpedia_Nav1_3_43.xml -nogui
+    - pynml LEMS_Test_Channelpedia_Nav1_3_43.xml -nogui
 
-    - omv all -V
     
     
