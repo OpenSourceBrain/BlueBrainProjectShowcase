@@ -6,13 +6,13 @@ x86_64
 /Channelpedia/LEMS_Test_inact_kv.xml
 /Channelpedia/m_inf.lems.dat
 /Channelpedia/m_tau.lems.dat
-/Channelpedia/test/m_inf.lems.dat
-/Channelpedia/test/m_tau.lems.dat
+/Channelpedia/test/*.dat
 /Channelpedia/unknowns
 Channelpedia/test/*.*ml
 Channelpedia/*.dat
 Channelpedia/LEMS_Test_k*
 
+Channelpedia/test/html
 *.pyc
 *~
 
