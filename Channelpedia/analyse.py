@@ -6,15 +6,36 @@ known_parameters["Channelpedia_HCN1_9"] =     (-120,   10,    -40,    25,     15
 known_parameters["Channelpedia_Ca_P_Q_5"] =   (-60,    10,    90,    1,      10,        -70,    12,      135.0)                        
 known_parameters["Channelpedia_Ih_14"] =      (-120,   10,   -40,    100,    700,       -40,    1000,    -45)                   
 known_parameters["Channelpedia_Kir21_44"] =   (-180,   10,     0,    100,    600,       0,      800,     135)
+         
+default_parameters = {}
+
+default_parameters["na"] =                    (-100,   20,     100,   20,    100,       0,      140,     55)
+default_parameters["k"] =                     (-100,   20,     100,   20,    400,       0,      500,     -80)
+default_parameters["ca"] =                    (-100,   20,     100,   50,    400,       0,      500,     120)
 
 
-
-def generate(channel_file, channel, gates, temperature):
+def generate(channel_file, channel, gates, temperature, ion = '?'):
     
     ca_conc = 1e-5
-
+    ion = ion.lower()
+    print('---- Generating for %s in %s (gates: %s) with ion: %s'%(channel, channel_file, gates, ion))
     if known_parameters.has_key(channel):
         params = known_parameters[channel]
+        print('Using:')
+        print(params)
+        min_target_voltage = params[0]
+        step_target_voltage = params[1]
+        max_target_voltage = params[2]
+        clamp_delay = params[3]
+        clamp_duration = params[4]
+        clamp_base_voltage = params[5]
+        duration = params[6]
+        erev = params[7]
+        
+    elif default_parameters.has_key(ion):
+        params = default_parameters[ion]
+        print('Using:')
+        print(params)
         min_target_voltage = params[0]
         step_target_voltage = params[1]
         max_target_voltage = params[2]
@@ -25,6 +46,7 @@ def generate(channel_file, channel, gates, temperature):
         erev = params[7]
         
     else:
+        print('Using defaults!')
         min_target_voltage = -100
         step_target_voltage = 20
         max_target_voltage = 20

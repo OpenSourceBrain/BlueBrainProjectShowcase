@@ -1,0 +1,97 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_Generic_Ca_8">
+    <ionChannelHH id="Channelpedia_Generic_Ca_8" conductance="10pS" species="Ca">
+        <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
+The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/190
+
+Conversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase</notes>
+        
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <!-- Automatic conversion of Channelpedia XML file to NeuroML2
+Uses: https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/Channelpedia/ChannelpediaToNeuroML2.py -->
+                <rdf:Description rdf:about="Channelpedia_Generic_Ca_8">
+                    <bqmodel:isDerivedFrom>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 190, ModelID: 8; direct link to original XML model -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/190/hhmodels/8.xml"/>
+                        </rdf:Bag>
+                    </bqmodel:isDerivedFrom>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- Channelpedia channel ID: 190; link to main page for channel -->
+                            <rdf:li rdf:resource="http://channelpedia.epfl.ch/ionchannels/190"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqmodel:isDescribedBy>
+                        <rdf:Bag>
+                            <!-- PubMed ID: 8229187 is referenced in original XML
+                                 Stepwise repolarization from Ca2+ plateaus in neocortical pyramidal cells: evidence for nonhomogeneous distribution of HVA Ca2+ channels in dendrites. J. Neurosci., 1993, 13, 4609-21 -->
+                            <rdf:li rdf:resource="http://identifiers.org/pubmed/8229187"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
+                    <bqbiol:hasTaxon>
+                        <rdf:Bag>
+                            <!-- Known species: rat; taxonomy id: 10116 -->
+                            <rdf:li rdf:resource="http://identifiers.org/taxonomy/10116"/>
+                        </rdf:Bag>
+                    </bqbiol:hasTaxon>
+                    <bqbiol:isPartOf>
+                        <rdf:Bag>
+                            <!-- Known cell type: neocortical l5pc; taxonomy id: nifext_50 -->
+                            <rdf:li rdf:resource="http://neurolex.org/wiki/nifext_50"/>
+                        </rdf:Bag>
+                    </bqbiol:isPartOf>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
+
+        <gate id="m" instances="2" type="gateHHrates">
+            <forwardRate type="Channelpedia_Generic_Ca_8_m_alpha"/>
+            <reverseRate type="Channelpedia_Generic_Ca_8_m_beta"/>
+        </gate>
+        <gate id="h" instances="1" type="gateHHrates">
+            <forwardRate type="Channelpedia_Generic_Ca_8_h_alpha"/>
+            <reverseRate type="Channelpedia_Generic_Ca_8_h_beta"/>
+        </gate>
+    </ionChannelHH>
+
+    <ComponentType name="Channelpedia_Generic_Ca_8_h_alpha" extends="baseVoltageDepRate">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="r" dimension="per_time" exposure="r" value="(0.000457*exp((-13-V)/50)) / TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Generic_Ca_8_m_beta" extends="baseVoltageDepRate">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="r" dimension="per_time" exposure="r" value="(0.94*exp((-75-V)/17))  / TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Generic_Ca_8_h_beta" extends="baseVoltageDepRate">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="r" dimension="per_time" exposure="r" value="(0.0065/(exp((-V-15)/28)+1))  / TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+
+    <ComponentType name="Channelpedia_Generic_Ca_8_m_alpha" extends="baseVoltageDepRate">
+        <Constant name = "TIME_SCALE" value = "1 ms" dimension = "time"/>
+        <Constant name = "VOLT_SCALE" value = "1 mV" dimension = "voltage"/>
+        <Dynamics>
+            <DerivedVariable name="r" dimension="per_time" exposure="r" value="(0.055*(-27-V))/(exp((-27-V)/3.8) - 1) / TIME_SCALE"/>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

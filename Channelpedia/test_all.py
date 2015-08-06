@@ -13,17 +13,21 @@ contents = osb.utils.get_page("http://channelpedia.epfl.ch/reports/model")
 
 soup = BeautifulSoup(contents)
 
-print soup.title.string
+from pyneuroml import pynml
+
 count = 0
+valid = 0
 
 temperature = 32  # Unused in Channelpedia...
 
 unknowns = ""
 
+max_chans = 3
+
 for link in soup.find_all('a'):
     href = link.get('href')
     # /ionchannels/189/hhmodels/37.xml
-    if "ionchannels" in href and "hhmodels" in href and href.endswith(".xml"):
+    if "ionchannels" in href and "hhmodels" in href and href.endswith(".xml") and max_chans > 0:
         url = "http://channelpedia.epfl.ch%s"%href
         print("Retrieving: "+ url)
         count += 1
@@ -43,6 +47,8 @@ for link in soup.find_all('a'):
         nml2_file_path = "test/"+nml2_file_name
         unknowns = channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_path, unknowns)
         
+        pynml.validate_neuroml2(nml2_file_path)
+        
         doc = loaders.NeuroMLLoader.load(nml2_file_path)
         #print dir(doc)
         gates = []
@@ -53,11 +59,20 @@ for link in soup.find_all('a'):
 
         new_lems_file = "test/LEMS_Test_%s.xml"%channel_id
     
-        lems_helper = generate(nml2_file_name, channel_id, gates, temperature)
+        lems_helper = generate(nml2_file_name, channel_id, gates, temperature, ion=doc.ion_channel_hhs[0].species)
         
         file_out = open(new_lems_file, 'w')
         file_out.write(lems_helper)
         file_out.close()
+        
+        pynml.run_lems_with_jneuroml("LEMS_Test_%s.xml"%channel_id, 
+                           nogui=True, 
+                           load_saved_data=False, 
+                           plot=False, 
+                           exec_in_dir = "test/",
+                           verbose=True)
+        
+        max_chans -=1
 
         
 print("\nFound %i models in Channelpedia XML format\n"%count)
