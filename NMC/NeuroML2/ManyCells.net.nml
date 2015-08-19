@@ -1,0 +1,10 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="ManyCells">
+    <include href="cNAC187_L1_HAC_f8c9772d9d.net.nml"></include>
+    <network id="ManyCells">
+        <population id="Pop_cNAC187_L1_HAC_f8c9772d9d" type="populationList" component="cNAC187_L1_HAC_f8c9772d9d_0_0">
+            <instance id="0">
+                <location y="0." x="0." z="0."/>
+            </instance>
+        </population>
+    </network>
+</neuroml>

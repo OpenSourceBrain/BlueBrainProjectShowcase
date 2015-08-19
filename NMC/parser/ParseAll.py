@@ -40,7 +40,7 @@ def parse_cell_info_file(cell_dir):
         
         return data
 
-net_ref = "Net"
+net_ref = "ManyCells"
 net_doc = NeuroMLDocument(id=net_ref)
 
 net = Network(id=net_ref)
@@ -130,7 +130,7 @@ define_shape()
         cell_info = parse_cell_info_file(cell_dir)
         
         nml_file_name = "%s.net.nml"%bbp_ref
-        nml_file_loc = "../%s"%nml_file_name
+        nml_file_loc = "../../NeuroML2/%s"%nml_file_name
         
     
         export_to_neuroml2(load_cell_file, 
@@ -149,10 +149,15 @@ define_shape()
                                                     templates_json="../templates.json")
         
         cell.biophysical_properties = bp
+        
+        notes = cell.notes
+        notes+="\n\n****************************\n*\n*  This export to NeuroML2 has not yet been fully validated!!"+ \
+            "\n*  Use with caution!!\n*\n****************************\n\n"
+        cell.notes = notes
         for channel in incl_chans:
         
             nml_doc.includes.append(neuroml.IncludeType(
-                                href="../NeuroML2/%s" % channel))
+                                href="%s" % channel))
         
         pynml.write_neuroml2_file(nml_doc, nml_file_loc)
         
@@ -163,7 +168,8 @@ define_shape()
                                        3000,
                                        0.025,
                                        "LEMS_%s.xml"%cell_dir,
-                                       '..')
+                                       '../../NeuroML2',
+                                       copy_neuroml = False)
         
         pynml.nml2_to_svg(nml_file_loc)
         
@@ -186,7 +192,7 @@ define_shape()
         count+=1
 
 
-net_file = '../'+net_ref+'.net.nml'
+net_file = '../../NeuroML2/'+net_ref+'.net.nml'
 writers.NeuroMLWriter.write(net_doc, net_file)
 
 print("Written network with %i cells in network to: %s"%(count,net_file))
