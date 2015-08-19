@@ -3,3 +3,16 @@
 
 target: Test_L1.hoc
 engine: NEURON
+mep: .test.l1.mep
+experiments:
+  stepcurrent3:
+    observables:
+      spike times:
+        file: 
+          path: hoc_recordings/soma_voltage.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0

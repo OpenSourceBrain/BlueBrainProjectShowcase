@@ -107,10 +107,10 @@ load_file(1, "constants.hoc")
 load_file(1, "morphology.hoc")
 load_file(1, "biophysics.hoc")
 load_file(1, "synapses/synapses.hoc")
-load_file(1, "template.hoc")
+load_file(1, "createsimulation.hoc")
 
 
-cell = new {{ cell }}(0)
+create_cell(0)
 print "Created new cell using loadcell.hoc: {{ cell }}"
 
 define_shape()

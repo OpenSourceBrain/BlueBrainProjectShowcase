@@ -23,9 +23,10 @@ load_file(1, "morphology.hoc")
 load_file(1, "biophysics.hoc")
 load_file(1, "synapses/synapses.hoc")
 load_file(1, "template.hoc")
+load_file(1, "createsimulation.hoc")
 
 
-cell = new cNAC187_L1_HAC_f8c9772d9d(0)
+create_cell(0)
 print "Created new cell using loadcell.hoc: cNAC187_L1_HAC_f8c9772d9d"
 
 define_shape()

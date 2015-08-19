@@ -1,2 +1,14 @@
 
 load_file("../parser/L1_HAC_cNAC187_1/loadcell.hoc")
+
+tstop=3000
+
+create_recording()
+
+create_stimulus("stepcurrent3")
+
+psection()
+
+simulate()
+
+save_recording()
