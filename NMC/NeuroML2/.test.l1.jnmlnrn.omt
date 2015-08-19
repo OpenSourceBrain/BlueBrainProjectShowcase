@@ -1,0 +1,5 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+# Still in development, subject to change without notice!!
+
+target: LEMS_L1_HAC_cNAC187_1.xml 
+engine: jNeuroML_NEURON
