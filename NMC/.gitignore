@@ -9,6 +9,8 @@ NeuroML2/*.mod
 NeuroML2/*.hoc
 NeuroML2/*nrn.py
 NEURON/*.dat
+NeuroML2/old
+parser/L*/hoc_recordings/
 
 *.png
 *.pov

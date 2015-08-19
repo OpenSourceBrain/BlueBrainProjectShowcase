@@ -156,17 +156,18 @@ wopen()
         cell_info = parse_cell_info_file(cell_dir)
         
         nml_file_name = "%s.net.nml"%bbp_ref
-        nml_file_loc = "../../NeuroML2/%s"%nml_file_name
+        nml_net_loc = "../../NeuroML2/%s"%nml_file_name
+        nml_cell_loc = "../../NeuroML2/%s_0_0.cell.nml"%bbp_ref
         
     
         export_to_neuroml2(load_cell_file, 
-                           nml_file_loc, 
-                           separateCellFiles=False,
+                           nml_net_loc, 
+                           separateCellFiles=True,
                            includeBiophysicalProperties=False)
         
-        print(' > Exported to: %s using %s'%(nml_file_loc, load_cell_file))
+        print(' > Exported to: %s and %s using %s'%(nml_net_loc, nml_cell_loc, load_cell_file))
         
-        nml_doc = pynml.read_neuroml2_file(nml_file_loc)
+        nml_doc = pynml.read_neuroml2_file(nml_cell_loc)
         
         cell = nml_doc.cells[0]
         
@@ -205,11 +206,11 @@ wopen()
             nml_doc.includes.append(neuroml.IncludeType(
                                 href="%s" % channel))
         
-        pynml.write_neuroml2_file(nml_doc, nml_file_loc)
+        pynml.write_neuroml2_file(nml_doc, nml_cell_loc)
         
         
         generate_lems_file_for_neuroml(cell_dir,
-                                       nml_file_loc,
+                                       nml_net_loc,
                                        "network",
                                        3000,
                                        0.025,
@@ -217,7 +218,7 @@ wopen()
                                        '../../NeuroML2',
                                        copy_neuroml = False)
         
-        pynml.nml2_to_svg(nml_file_loc)
+        pynml.nml2_to_svg(nml_net_loc)
         
         clear_neuron()
         

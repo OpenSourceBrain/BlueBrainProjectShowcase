@@ -15,6 +15,7 @@
     <Include file="Simulation.xml"/>
     
     <Include file="cNAC187_L1_HAC_f8c9772d9d.net.nml"/>
+    <Include file="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"/>
     <Include file="K_Tst.channel.nml"/>
     <Include file="SKv3_1.channel.nml"/>
     <Include file="Nap_Et2.channel.nml"/>
@@ -29,7 +30,7 @@
     <Simulation id="L1_HAC_cNAC187_1" length="3000ms" step="0.025ms" target="network">
         
         <Display id="DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" title="Voltages of DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
-            <Line id="v Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0__v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0[0]/v" scale="1mV" color="#387c49" timeScale="1ms"/>
+            <Line id="v Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0__v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0[0]/v" scale="1mV" color="#de2e01" timeScale="1ms"/>
         </Display>
         
         <OutputFile id="Volts_file__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" fileName="L1_HAC_cNAC187_1.Pop_cNAC187_L1_HAC_f8c9772d9d_0_0.v.dat">
