@@ -3,7 +3,7 @@
 
 target: LEMS_Soma_AllNML2.xml 
 engine: jNeuroML
-mep: ../test/.test.mep
+mep: ../NEURON/.test.mep
 experiments:
   Current clamp:
     observables:
