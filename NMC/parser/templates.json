@@ -1,0 +1,5371 @@
+{
+    "cSTUT_7": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "apical": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009500"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.567935"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000052"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000010"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004399"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-79.315740"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009500"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.567935"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000052"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000010"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004399"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-79.315740"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.959764"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.098908"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.010353"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000999"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003442"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004729"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.317363"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "64.277990"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.216510"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000094"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000015"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000003"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.092965"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.156376"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000511"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.367950"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.019726"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.197999"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.297559"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "731.707637"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-62.442793"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000091"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001067"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000032"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "dNAC_1": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "KdShu2007",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "KdShu2007",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "Im",
+                "KdShu2007",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "apical": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009500"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000052"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gkbar_KdShu2007": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000483"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "KdShu2007"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000010"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004399"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-79.315740"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009500"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000052"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gkbar_KdShu2007": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000483"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "KdShu2007"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000010"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004399"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-79.315740"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.959764"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.098908"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.010353"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000999"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003442"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004729"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.317363"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "64.277990"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.216510"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000094"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000015"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000003"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.092965"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.156376"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000511"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.019726"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gkbar_KdShu2007": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000425"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "KdShu2007"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.197999"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.297559"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "731.707637"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-62.442793"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000091"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001067"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000032"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "bNAC_1": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "apical": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001511"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000083"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000229"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000049"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.295916"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000022"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001511"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000083"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000229"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000049"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.295916"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000022"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.999855"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.042115"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001739"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000554"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001224"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001693"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.386953"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "468.069681"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-63.854018"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009017"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000400"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.039863"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005446"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000500"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000478"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000523"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.150747"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.503893"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "645.079741"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-67.128897"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000100"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003242"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000174"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "bSTUT_1": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "apical": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001511"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.413603"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000049"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000229"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000083"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.295916"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000022"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001511"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.413603"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000049"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000229"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000083"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.295916"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000022"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.999855"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.042115"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001739"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000554"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001224"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001693"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.386953"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "468.069681"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-63.854018"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009017"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000400"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.039863"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005446"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000500"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.104239"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000478"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000523"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.150747"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.503893"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "645.079741"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-67.128897"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000100"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003242"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000174"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "cADpyr_229": {
+        "channels": {
+            "basal": [
+                "Ih"
+            ],
+            "apical": [
+                "Im",
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih"
+            ],
+            "axonal": [
+                "Ca_HVA",
+                "SKv3_1",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "all": [
+                "pas"
+            ],
+            "somatic": [
+                "Ca_HVA",
+                "SKv3_1",
+                "SK_E2",
+                "Ca_LVAst",
+                "Ih",
+                "NaTs2_t",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "cm": "2"
+            },
+            "apical": {
+                "ena": "50",
+                "cm": "2",
+                "ek": "-85"
+            },
+            "all": {
+                "g_pas": "3e-5",
+                "Ra": "100",
+                "cm": "1",
+                "e_pas": "-75"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                }
+            },
+            "apical": {
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.012009"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000513"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003100))*0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000740"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.429725"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001035"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.016713"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009803"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.008085"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gCa_HVAbar_Ca_HVA": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000306"
+                    },
+                    "parameter": "gCa_HVAbar",
+                    "channel": "Ca_HVA"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.959296"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.094971"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "384.114655"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000050"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                }
+            },
+            "somatic": {
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000533"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.102517"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.099433"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gCa_HVAbar_Ca_HVA": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000374"
+                    },
+                    "parameter": "gCa_HVAbar",
+                    "channel": "Ca_HVA"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.926705"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "342.544232"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000778"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                }
+            }
+        }
+    },
+    "cADpyr_231": {
+        "channels": {
+            "basal": [
+                "Ih"
+            ],
+            "apical": [
+                "Im",
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih"
+            ],
+            "axonal": [
+                "Ca_HVA",
+                "SKv3_1",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "all": [
+                "pas"
+            ],
+            "somatic": [
+                "Ca_HVA",
+                "SKv3_1",
+                "SK_E2",
+                "Ca_LVAst",
+                "Ih",
+                "NaTs2_t",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "cm": "2"
+            },
+            "apical": {
+                "ena": "50",
+                "cm": "2",
+                "ek": "-85"
+            },
+            "all": {
+                "g_pas": "3e-5",
+                "Ra": "100",
+                "cm": "1",
+                "e_pas": "-75"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                }
+            },
+            "apical": {
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.025690"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.039763"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003100))*0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001000"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.288755"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.029456"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001734"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000671"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.098377"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gCa_HVAbar_Ca_HVA": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000684"
+                    },
+                    "parameter": "gCa_HVAbar",
+                    "channel": "Ca_HVA"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.957198"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "1.936176"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "103.091390"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000007"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                }
+            },
+            "somatic": {
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000996"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.072929"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003869"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gCa_HVAbar_Ca_HVA": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000459"
+                    },
+                    "parameter": "gCa_HVAbar",
+                    "channel": "Ca_HVA"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.976885"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "873.498863"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005592"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                }
+            }
+        }
+    },
+    "cNAC_149": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "apical": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009500"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004399"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000010"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000052"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-79.315740"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009500"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004399"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000010"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000052"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-79.315740"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.959764"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.098908"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.010353"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000999"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003442"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004729"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.317363"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "64.277990"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.216510"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000094"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000015"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000003"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.092965"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.156376"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000511"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.019726"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.197999"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.297559"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "731.707637"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-62.442793"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000091"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001067"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000032"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "cIR_1": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "apical": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.007375"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.325478"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000023"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001373"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000041"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-63.118492"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000014"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.007375"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.325478"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000023"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001373"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000041"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-63.118492"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000014"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.993125"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000503"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000345"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005611"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.068460"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.517764"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "573.007045"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-64.601696"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000063"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009986"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000501"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.077616"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000114"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000814"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.743567"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000032"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.002099"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.395881"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.260872"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "967.678789"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-69.781406"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000020"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009728"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000028"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "bIR_1": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.002940"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.290744"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000051"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004119"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005450"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.065872"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000006"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.000371"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.002940"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.290744"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000051"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004119"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005450"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.065872"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000006"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.000371"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.418459"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.026009"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003923"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000599"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000009"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.025854"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.196957"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "20.715642"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.250899"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000002"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.002256"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000138"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.008343"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.502333"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000893"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.658298"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000784"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.026900"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.300054"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.653374"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "605.033222"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-76.498119"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000057"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005574"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000792"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "bAC_1": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.002940"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005450"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004119"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000051"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.065872"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000006"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.000371"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.002940"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005450"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004119"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000051"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.065872"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000006"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.000371"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.418459"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.026009"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003923"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000599"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000009"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.025854"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.196957"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "20.715642"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.250899"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000002"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.002256"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000138"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.008343"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.502333"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000893"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000784"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.026900"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.300054"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.653374"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "605.033222"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-76.498119"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000057"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005574"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000792"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "cADpyr_232": {
+        "channels": {
+            "basal": [
+                "Ih"
+            ],
+            "apical": [
+                "Im",
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih"
+            ],
+            "axonal": [
+                "Ca_HVA",
+                "SKv3_1",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "all": [
+                "pas"
+            ],
+            "somatic": [
+                "Ca_HVA",
+                "SKv3_1",
+                "SK_E2",
+                "Ca_LVAst",
+                "Ih",
+                "NaTs2_t",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "cm": "2"
+            },
+            "apical": {
+                "ena": "50",
+                "cm": "2",
+                "ek": "-85"
+            },
+            "all": {
+                "g_pas": "3e-5",
+                "Ra": "100",
+                "cm": "1",
+                "e_pas": "-75"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                }
+            },
+            "apical": {
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.026145"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004226"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003100))*0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000143"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.137968"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.089259"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.002910"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.006827"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.007104"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gCa_HVAbar_Ca_HVA": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000990"
+                    },
+                    "parameter": "gCa_HVAbar",
+                    "channel": "Ca_HVA"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.973538"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "1.021945"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "287.198731"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.008752"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                }
+            },
+            "somatic": {
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000609"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.303472"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.008407"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gCa_HVAbar_Ca_HVA": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000994"
+                    },
+                    "parameter": "gCa_HVAbar",
+                    "channel": "Ca_HVA"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.983955"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "210.485284"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000333"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                }
+            }
+        }
+    },
+    "dSTUT_1": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "KdShu2007",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "KdShu2007",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "StochKv",
+                "Im",
+                "KdShu2007",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "apical": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009500"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.378682"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000052"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gkbar_KdShu2007": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000483"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "KdShu2007"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000010"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004399"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-79.315740"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009500"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.378682"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000052"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gkbar_KdShu2007": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000483"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "KdShu2007"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000010"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004399"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-79.315740"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.959764"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.098908"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.010353"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000999"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.003442"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004729"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.317363"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "64.277990"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-60.216510"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000094"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000015"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000003"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.092965"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.156376"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000511"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gkbar_StochKv": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.893658"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "StochKv"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000008"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.019726"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gkbar_KdShu2007": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000425"
+                    },
+                    "parameter": "gkbar",
+                    "channel": "KdShu2007"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.197999"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.297559"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "731.707637"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-62.442793"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000091"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001067"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000032"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "cACint_237": {
+        "channels": {
+            "basal": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "all": [
+                "pas"
+            ],
+            "apical": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Nap_Et2",
+                "Ih",
+                "Im",
+                "K_Pst",
+                "K_Tst"
+            ],
+            "axonal": [
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "somatic": [
+                "NaTs2_t",
+                "SKv3_1",
+                "Ca",
+                "SK_E2",
+                "Ca_LVAst",
+                "Nap_Et2",
+                "Im",
+                "K_Pst",
+                "K_Tst",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "apical": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "all": {
+                "Ra": "100.0",
+                "cm": "1.0",
+                "e_pas": "-75.300257"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.007375"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000041"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001373"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000023"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-63.118492"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000014"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "apical": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.007375"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000041"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001373"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000023"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-63.118492"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000014"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.993125"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000503"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000000"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000345"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.005611"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.068460"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.517764"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "573.007045"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-64.601696"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000063"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009986"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000501"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            },
+            "somatic": {
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.077616"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000114"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000814"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000001"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000032"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.002099"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.395881"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.260872"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "967.678789"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "e_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "-69.781406"
+                    },
+                    "parameter": "e",
+                    "channel": "pas"
+                },
+                "g_pas": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000020"
+                    },
+                    "parameter": "g",
+                    "channel": "pas"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.009728"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                },
+                "gCabar_Ca": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000028"
+                    },
+                    "parameter": "gCabar",
+                    "channel": "Ca"
+                }
+            }
+        }
+    },
+    "cADpyr_230": {
+        "channels": {
+            "basal": [
+                "Ih"
+            ],
+            "apical": [
+                "Im",
+                "NaTs2_t",
+                "SKv3_1",
+                "Ih"
+            ],
+            "axonal": [
+                "Ca_HVA",
+                "SKv3_1",
+                "SK_E2",
+                "CaDynamics_E2",
+                "Nap_Et2",
+                "K_Pst",
+                "K_Tst",
+                "Ca_LVAst",
+                "NaTa_t"
+            ],
+            "all": [
+                "pas"
+            ],
+            "somatic": [
+                "Ca_HVA",
+                "SKv3_1",
+                "SK_E2",
+                "Ca_LVAst",
+                "Ih",
+                "NaTs2_t",
+                "CaDynamics_E2"
+            ]
+        },
+        "forsecs": {
+            "basal": {
+                "cm": "2"
+            },
+            "apical": {
+                "ena": "50",
+                "cm": "2",
+                "ek": "-85"
+            },
+            "all": {
+                "g_pas": "3e-5",
+                "Ra": "100",
+                "cm": "1",
+                "e_pas": "-75"
+            },
+            "axonal": {
+                "ena": "50",
+                "ek": "-85"
+            },
+            "somatic": {
+                "ena": "50",
+                "ek": "-85"
+            }
+        },
+        "parameters": {
+            "basal": {
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                }
+            },
+            "apical": {
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.022874"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.039967"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "exponential",
+                        "value": "(-0.869600 + 2.087000*exp((x-0.000000)*0.003100))*0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "gImbar_Im": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001000"
+                    },
+                    "parameter": "gImbar",
+                    "channel": "Im"
+                }
+            },
+            "axonal": {
+                "gNaTa_tbar_NaTa_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "3.999904"
+                    },
+                    "parameter": "gNaTa_tbar",
+                    "channel": "NaTa_t"
+                },
+                "gK_Tstbar_K_Tst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.071166"
+                    },
+                    "parameter": "gK_Tstbar",
+                    "channel": "K_Tst"
+                },
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000502"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gNap_Et2bar_Nap_Et2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000056"
+                    },
+                    "parameter": "gNap_Et2bar",
+                    "channel": "Nap_Et2"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.097244"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gCa_HVAbar_Ca_HVA": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000860"
+                    },
+                    "parameter": "gCa_HVAbar",
+                    "channel": "Ca_HVA"
+                },
+                "gK_Pstbar_K_Pst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.428834"
+                    },
+                    "parameter": "gK_Pstbar",
+                    "channel": "K_Pst"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.004779"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "179.044149"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.001612"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                }
+            },
+            "somatic": {
+                "gamma_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.002253"
+                    },
+                    "parameter": "gamma",
+                    "channel": "CaDynamics_E2"
+                },
+                "gSKv3_1bar_SKv3_1": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.283745"
+                    },
+                    "parameter": "gSKv3_1bar",
+                    "channel": "SKv3_1"
+                },
+                "gSK_E2bar_SK_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.002971"
+                    },
+                    "parameter": "gSK_E2bar",
+                    "channel": "SK_E2"
+                },
+                "gCa_HVAbar_Ca_HVA": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000379"
+                    },
+                    "parameter": "gCa_HVAbar",
+                    "channel": "Ca_HVA"
+                },
+                "gNaTs2_tbar_NaTs2_t": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.999812"
+                    },
+                    "parameter": "gNaTs2_tbar",
+                    "channel": "NaTs2_t"
+                },
+                "gIhbar_Ih": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.000080"
+                    },
+                    "parameter": "gIhbar",
+                    "channel": "Ih"
+                },
+                "decay_CaDynamics_E2": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "739.416497"
+                    },
+                    "parameter": "decay",
+                    "channel": "CaDynamics_E2"
+                },
+                "gCa_LVAstbar_Ca_LVAst": {
+                    "distribution": {
+                        "disttype": "uniform",
+                        "value": "0.006868"
+                    },
+                    "parameter": "gCa_LVAstbar",
+                    "channel": "Ca_LVAst"
+                }
+            }
+        }
+    }
+}
