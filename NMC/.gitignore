@@ -8,6 +8,7 @@ NeuroML2/LEMS_Test*.xml
 NeuroML2/*.mod
 NeuroML2/*.hoc
 NeuroML2/*nrn.py
+NEURON/*.dat
 
 *.png
 *.pov
