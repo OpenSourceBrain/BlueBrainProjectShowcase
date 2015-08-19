@@ -9326,6 +9326,59 @@
             <segmentGroup id="OneSecGrp_SectionRef_32">
                 <include segmentGroup="dend_41"/>
             </segmentGroup>
+            <segmentGroup id="basal">
+                <include segmentGroup="dend_0"/>
+                <include segmentGroup="dend_1"/>
+                <include segmentGroup="dend_2"/>
+                <include segmentGroup="dend_3"/>
+                <include segmentGroup="dend_4"/>
+                <include segmentGroup="dend_5"/>
+                <include segmentGroup="dend_6"/>
+                <include segmentGroup="dend_7"/>
+                <include segmentGroup="dend_8"/>
+                <include segmentGroup="dend_9"/>
+                <include segmentGroup="dend_10"/>
+                <include segmentGroup="dend_11"/>
+                <include segmentGroup="dend_12"/>
+                <include segmentGroup="dend_13"/>
+                <include segmentGroup="dend_14"/>
+                <include segmentGroup="dend_15"/>
+                <include segmentGroup="dend_16"/>
+                <include segmentGroup="dend_17"/>
+                <include segmentGroup="dend_18"/>
+                <include segmentGroup="dend_19"/>
+                <include segmentGroup="dend_20"/>
+                <include segmentGroup="dend_21"/>
+                <include segmentGroup="dend_22"/>
+                <include segmentGroup="dend_23"/>
+                <include segmentGroup="dend_24"/>
+                <include segmentGroup="dend_25"/>
+                <include segmentGroup="dend_26"/>
+                <include segmentGroup="dend_27"/>
+                <include segmentGroup="dend_28"/>
+                <include segmentGroup="dend_29"/>
+                <include segmentGroup="dend_30"/>
+                <include segmentGroup="dend_31"/>
+                <include segmentGroup="dend_32"/>
+                <include segmentGroup="dend_33"/>
+                <include segmentGroup="dend_34"/>
+                <include segmentGroup="dend_35"/>
+                <include segmentGroup="dend_36"/>
+                <include segmentGroup="dend_37"/>
+                <include segmentGroup="dend_38"/>
+                <include segmentGroup="dend_39"/>
+                <include segmentGroup="dend_40"/>
+                <include segmentGroup="dend_41"/>
+                <include segmentGroup="dend_42"/>
+            </segmentGroup>
+            <segmentGroup id="apical"/>
+            <segmentGroup id="axonal">
+                <include segmentGroup="axon_0"/>
+                <include segmentGroup="axon_1"/>
+            </segmentGroup>
+            <segmentGroup id="somatic">
+                <include segmentGroup="soma_0"/>
+            </segmentGroup>
         </morphology>
         <biophysicalProperties id="biophys">
             <membraneProperties>
@@ -9364,8 +9417,8 @@
                 <initMembPotential segmentGroup="all" value="-65 mV"/>
             </membraneProperties>
             <intracellularProperties>
-                <species segmentGroup="axonal" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
-                <species segmentGroup="somatic" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
+                <species segmentGroup="axonal" ion="ca" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
+                <species segmentGroup="somatic" ion="ca" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
                 <resistivity segmentGroup="all" value="1 ohm_cm"/>
             </intracellularProperties>
         </biophysicalProperties>

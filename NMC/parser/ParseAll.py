@@ -50,6 +50,7 @@ cell_dirs = []
 
 cell_dirs = [ f for f in os.listdir('.') if (os.path.isdir(f) and os.path.isfile(f+'/.provenance.json')) ]
 
+groups_info_file = 'groups.txt'
 
 clear_neuron()
         
@@ -80,6 +81,7 @@ for cell_dir in cell_dirs:
         variables = {}
         
         variables['cell'] = bbp_ref
+        variables['groups_info_file'] = groups_info_file
         
         template = """
 load_file("nrngui.hoc")
@@ -113,7 +115,31 @@ print "Created new cell using loadcell.hoc: {{ cell }}"
 
 define_shape()
 
+wopen("{{ groups_info_file }}")
+
+fprint("//Saving information on groups in this cell...\\n")
+
+fprint("- somatic\\n")
+forsec {{ cell }}[0].somatic {
+    fprint("%s\\n",secname())
+}
+
+fprint("- basal\\n")
+forsec {{ cell }}[0].basal {
+    fprint("%s\\n",secname())
+}
+
+fprint("- axonal\\n")
+forsec {{ cell }}[0].axonal {
+    fprint("%s\\n",secname())
+}
+fprint("- apical\\n")
+forsec {{ cell }}[0].apical {
+    fprint("%s\\n",secname())
+}
+wopen()
         """
+        
         t = Template(template)
 
         contents = t.render(variables)
@@ -144,6 +170,26 @@ define_shape()
         
         cell = nml_doc.cells[0]
         
+        print(' > Adding groups from: %s'%groups_info_file)
+        groups = {}
+        current_group = None
+        for line in open(groups_info_file):
+            if not line.startswith('//'):
+                if line.startswith('- '):
+                    current_group = line[2:-1]
+                    print(' > Adding group: [%s]'%current_group)
+                    groups[current_group] = []
+                else:
+                    section = line.split('.')[1].strip()
+                    segment_group = section.replace('[','_').replace(']','')
+                    groups[current_group].append(segment_group)
+        
+        for g in groups.keys():
+            new_seg_group = neuroml.SegmentGroup(id=g)
+            cell.morphology.segment_groups.append(new_seg_group)
+            for sg in groups[g]:
+                new_seg_group.includes.append(neuroml.Include(sg))
+            
         bp, incl_chans = get_biophysical_properties(cell_info['e-type'], 
                                                     ignore_chans=['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca'],
                                                     templates_json="../templates.json")

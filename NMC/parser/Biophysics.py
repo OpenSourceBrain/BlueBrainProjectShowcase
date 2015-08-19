@@ -149,6 +149,7 @@ def parse_templates_json(templates_json="templates.json",
 
                     species.append(neuroml.Species(
                         id='ca',
+                        ion='ca',
                         initial_concentration='1.0E-4 mM',
                         initial_ext_concentration='1.0E-4 mM',
                         concentration_model='CaDynamics_E2_NML2',
