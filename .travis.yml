@@ -4,6 +4,8 @@ python: 2.7
 
 env:
     - OMV_ENGINE=jNeuroML
+    - OMV_ENGINE=jNeuroML_NEURON
+    - OMV_ENGINE=NEURON
     - OMV_ENGINE=jNeuroML_validate
     - OMV_ENGINE=NON_OMV_TESTS
 
