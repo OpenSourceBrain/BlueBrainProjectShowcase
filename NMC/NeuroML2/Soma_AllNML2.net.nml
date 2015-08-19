@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta3.xsd" id="network_Soma_AllNML2">
+
+
+
+
+    <include href="Ca.channel.nml"/>
+    <include href="Ca_LVAst.channel.nml"/>
+    <include href="CaDynamics_E2_NML2.nml"/>
+    <include href="Ih.channel.nml"/>
+    <include href="Im.channel.nml"/>
+    <include href="K_Pst.channel.nml"/>
+    <include href="K_Tst.channel.nml"/>
+    <include href="KdShu2007.channel.nml"/>
+    <include href="Nap_Et2.channel.nml"/>
+    <include href="NaTa_t.channel.nml"/>
+    <include href="pas.channel.nml"/>
+    <include href="SK_E2.channel.nml"/>
+    <include href="SKv3_1.channel.nml"/>
+    <include href="Soma_AllNML2.cell.nml"/>
+
+    <pulseGenerator id="Input_4" delay="300.0ms" duration="100.0ms" amplitude="5.0E-5uA"/>
+    <pulseGenerator id="Input_3" delay="100.0ms" duration="100.0ms" amplitude="-1.0E-5uA"/>
+
+    
+    <network id="network_Soma_AllNML2" type="networkWithTemperature" temperature="6.3 degC">
+
+        
+
+        <population id="CG_TestCML" component="Soma_AllNML2" type="populationList" size="1">
+            <instance id="0">
+                <location x="105.841934" y="19.6415" z="55.338722"/>
+            </instance>
+        </population>
+
+
+
+            <!--There are no synaptic connections present in the network-->
+
+
+        <inputList id="Input_4" component="Input_4" population="CG_TestCML">
+            <input id="0" target="../CG_TestCML/0/Soma_AllNML2" destination="synapses"/>
+        </inputList>
+
+
+
+        <inputList id="Input_3" component="Input_3" population="CG_TestCML">
+            <input id="0" target="../CG_TestCML/0/Soma_AllNML2" destination="synapses"/>
+        </inputList>
+
+
+
+
+
+    </network>
+
+</neuroml>

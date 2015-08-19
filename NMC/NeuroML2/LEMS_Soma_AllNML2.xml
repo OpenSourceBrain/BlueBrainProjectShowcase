@@ -1,0 +1,108 @@
+<Lems xmlns="http://www.neuroml.org/lems/0.7.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/lems/0.7.2  https://raw.github.com/LEMS/LEMS/development/Schemas/LEMS/LEMS_v0.7.2.xsd">
+
+    <Target component="sim1" reportFile="simulator.props" timesFile="time.dat"/>
+
+        <!--Include standard NeuroML 2 ComponentType definitions-->
+
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+
+        <!--   Channel/synapse files-->
+    <Include file="Ca.channel.nml"/>
+    <Include file="Ca_LVAst.channel.nml"/>
+    <Include file="Ih.channel.nml"/>
+    <Include file="Im.channel.nml"/>
+    <Include file="K_Pst.channel.nml"/>
+    <Include file="K_Tst.channel.nml"/>
+    <Include file="KdShu2007.channel.nml"/>
+    <Include file="Nap_Et2.channel.nml"/>
+    <Include file="NaTa_t.channel.nml"/>
+    <Include file="NaTs2_t.channel.nml"/>
+    <Include file="SK_E2.channel.nml"/>
+    <Include file="SKv3_1.channel.nml"/>
+
+    <Include file="CaDynamics_E2_NML2.nml"/>
+    <Include file="pas.channel.nml"/>
+
+        <!--   Cell files-->
+    <Include file="Soma_AllNML2.cell.nml"/>
+        <!--   Network file-->
+    <Include file="Soma_AllNML2.net.nml"/>
+    
+
+        <!--Note: this could be: Simulation id="sim1" ... , but Component type="Simulation" ... 
+        is used to allow validation of this file according to the LEMS schema specified above...-->
+    <Component type="Simulation" id="sim1" length="600.0ms" step="0.001ms" target="network_Soma_AllNML2">
+        
+        <Display id="CG_TestMod_v" title="BBP Soma VOLTAGE" xmin="-60.0" xmax="660.0" ymin="-104.0" ymax="64.0" timeScale="1ms">
+            <Line id="VOLTAGE" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/v" scale="1 mV" color="#000000"/>
+        </Display>
+    
+    
+        <Display id="GraphWin_5" title="BBP Soma CaDynamics_E2_NML2:CONC:ca" xmin="-60.0" xmax="660.0" ymin="-1e-8" ymax="1e-9" timeScale="1ms">
+            <Line id="CaDynamics_E2_NML2_CONC_ca" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/caConc" scale="1 mM" color="#000000"/>
+        </Display>
+    
+        <Display id="GraphWin_4" title="BBP Ca erev" xmin="-60.0" xmax="660.0" ymin="70" ymax="130" timeScale="1ms">
+            <Line id="Ca_erev" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_all/erev" scale="1mV" color="#000000"/>
+        
+        </Display>
+        
+        
+        
+        <Display id="GraphWin_0" title="BBP Soma channels" xmin="-60.0" xmax="660.0" ymin="-0.1" ymax="1.1" timeScale="1ms">
+            <Line id="Ih_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ih_all/Ih/m/q" scale="1" color="#000000"/>
+            <Line id="Im_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Im_all/Im/m/q" scale="1" color="#ff0000"/>
+            
+            <Line id="KdShu2007_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/KdShu2007_all/KdShu2007/m/q" scale="1" color="#0000ff"/>
+            <Line id="KdShu2007_h" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/KdShu2007_all/KdShu2007/h/q" scale="1" color="#00ff00"/>
+            
+            <Line id="Ca_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_all/Ca/m/q" scale="1" color="#ffff00"/>
+            <Line id="Ca_h" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_all/Ca/h/q" scale="1" color="#ff00ff"/>
+            
+            <!--
+            <Line id="NaTa_t_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/NaTa_t_all/NaTa_t/m/q" scale="1" color="#FF0000"/>
+            <Line id="NaTa_t_h" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/NaTa_t_all/NaTa_t/h/q" scale="1" color="#00FF00"/>
+            <Line id="NaTs2_t_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/NaTs2_t_all/NaTs2_t/m/q" scale="1" color="#0000FF"/>
+            <Line id="NaTs2_t_h" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/NaTs2_t_all/NaTs2_t/h/q" scale="1" color="#00FFFF"/>-->
+        </Display>
+        
+        
+    
+    <!--
+    
+        <Display id="GraphWin_4" title="BBP Soma channels" xmin="-60.0" xmax="660.0" ymin="-0.1" ymax="1.1" timeScale="1ms">
+            <Line id="Ca_LVAst_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_LVAst_all/Ca_LVAst/m/q" scale="1" color="#000000"/>
+        
+            <Line id="Ca_LVAst_h" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_LVAst_all/Ca_LVAst/h/q" scale="1" color="#ff0000"/>
+        </Display>
+        
+        
+    
+        <OutputFile id="Var_20_OF" fileName="CG_TestCML_0.Ca_LVAst_m.dat">
+            <OutputColumn id="q" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_LVAst_all/Ca_LVAst/m/q"/>
+        </OutputFile>
+    
+        <OutputFile id="Var_21_OF" fileName="CG_TestCML_0.Ca_LVAst_h.dat">
+            <OutputColumn id="q" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_LVAst_all/Ca_LVAst/h/q"/>
+        </OutputFile>
+    
+    
+        <OutputFile id="Var_5_OF" fileName="CG_TestCML_0.Im_m.dat">
+            <OutputColumn id="q" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Im_all/Im/m/q"/>
+        </OutputFile>-->
+        
+        <OutputFile id="CG_TestCML_v_OF" fileName="CG_TestCML_0.dat">
+            <OutputColumn id="v" quantity="CG_TestCML/0/Soma_AllNML2/v"/>
+        </OutputFile>
+        
+        <OutputFile id="Var_35_OF" fileName="CG_TestCML_0.CaDynamics_E2_NML2_CONC_ca.dat">
+            <OutputColumn id="caConc" quantity="CG_TestCML/0/Soma_AllNML2/caConc"/>
+        </OutputFile>
+        
+    </Component>
+
+
+</Lems>

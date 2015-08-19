@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Soma_AllNML2">
+
+    <include href="Ca.channel.nml"/>
+
+    <include href="Ca_LVAst.channel.nml"/>
+
+    <include href="CaDynamics_E2_NML2.nml"/>
+
+    <include href="Ih.channel.nml"/>
+
+    <include href="Im.channel.nml"/>
+
+    <include href="K_Pst.channel.nml"/>
+
+    <include href="K_Tst.channel.nml"/>
+
+    <include href="KdShu2007.channel.nml"/>
+
+    <include href="Nap_Et2.channel.nml"/>
+
+    <include href="NaTa_t.channel.nml"/>
+
+    <include href="NaTs2_t.channel.nml"/>
+
+    <include href="pas.channel.nml"/>
+
+    <include href="SK_E2.channel.nml"/>
+
+    <include href="SKv3_1.channel.nml"/>
+
+    <cell id="Soma_AllNML2">
+
+        <notes>A single segment/compartment cell</notes>
+
+        <morphology id="morphology">
+
+            <segment id="0" name="Soma">
+                <proximal x="0.0" y="0.0" z="0.0" diameter="13.4715"/>
+                <distal x="0.0" y="23.1694" z="0.0" diameter="13.4715"/>
+            </segment>
+
+            <segmentGroup id="Soma" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <member segment="0"/>
+            </segmentGroup>
+
+            <segmentGroup id="all">
+                <include segmentGroup="Soma"/>
+            </segmentGroup>
+
+            <segmentGroup id="soma_group" neuroLexId="GO:0043025">    <!--Soma group-->
+
+                <include segmentGroup="Soma"/>
+            </segmentGroup>
+
+            
+        </morphology>
+
+        <!--Adding the biophysical parameters-->
+
+        <biophysicalProperties id="biophys">
+
+            <membraneProperties>
+                
+                <channelDensity condDensity="0.0338 mS_per_cm2" id="pas_all" ionChannel="pas" ion="non_specific" erev="-90.0 mV"/>
+                
+                <channelDensity condDensity="0.2 mS_per_cm2" id="Ih_all" ionChannel="Ih" ion="hcn" erev="-45.0 mV"/>
+                
+                <channelDensity condDensity="0.0675 mS_per_cm2" id="Im_all" ionChannel="Im" ion="k" erev="-85.0 mV"/>
+                
+                <channelDensity condDensity="2.23 mS_per_cm2" id="K_Pst_all" ionChannel="K_Pst" ion="k" erev="-85.0 mV"/>
+                
+                <channelDensity condDensity="81.2 mS_per_cm2" id="K_Tst_all" ionChannel="K_Tst" ion="k" erev="-85.0 mV"/>
+               
+                <!-- NOTE: different erev!! -->
+                <channelDensity condDensity="0.2  mS_per_cm2" id="KdShu2007_all" ionChannel="KdShu2007" ion="k" erev="-100.0 mV"/>
+                
+                
+                <channelDensity condDensity="200.0 mS_per_cm2" id="NaTa_t_all" ionChannel="NaTa_t" ion="na" erev="50.0 mV"/>
+                <channelDensity condDensity="100.0 mS_per_cm2" id="NaTs2_t_all" ionChannel="NaTs2_t" ion="na" erev="50.0 mV"/>
+                <channelDensity condDensity="1.72 mS_per_cm2" id="Nap_Et2_all" ionChannel="Nap_Et2" ion="na" erev="50.0 mV"/>
+                
+                <channelDensity condDensity="0.08 mS_per_cm2" id="SK_E2_all" ionChannel="SK_E2" ion="k" erev="-85.0 mV"/>
+                <channelDensity condDensity="293.0 mS_per_cm2" id="SKv3_1_all" ionChannel="SKv3_1" ion="k" erev="-85.0 mV"/>
+
+                <channelDensityNernst condDensity="3.43 mS_per_cm2" id="Ca_LVAst_all" ionChannel="Ca_LVAst" ion="ca"/>
+                
+                <channelDensityNernst condDensity="0.992 mS_per_cm2" id="Ca_all" ionChannel="Ca" ion="ca"/>
+
+                <spikeThresh value="0 mV"/>
+
+                <specificCapacitance value="1.0 uF_per_cm2"/>
+
+                <initMembPotential value="-90.0 mV"/>
+
+            </membraneProperties>
+
+            <intracellularProperties>
+
+                <species id="ca" ion="ca" concentrationModel="CaDynamics_E2_NML2" initialConcentration="5.0E-11 mol_per_cm3" initialExtConcentration="2.0E-6 mol_per_cm3"/>
+
+                <resistivity value="0.1 kohm_cm"/>
+
+            </intracellularProperties>
+
+        </biophysicalProperties>
+
+    </cell>
+    
+</neuroml>

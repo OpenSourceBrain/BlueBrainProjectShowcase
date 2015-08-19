@@ -1,0 +1,16 @@
+test/*.dat
+test/vClamps.xml
+test/LEMS*.xml
+recordings
+channels/*.dat
+NeuroML2/*.dat
+NeuroML2/LEMS_Test*.xml
+NeuroML2/*.mod
+NeuroML2/*.hoc
+NeuroML2/*nrn.py
+
+*.png
+*.pov
+*.ini
+*.svg
+*.avi
