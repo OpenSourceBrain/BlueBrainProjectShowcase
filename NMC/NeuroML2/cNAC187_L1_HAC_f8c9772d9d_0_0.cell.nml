@@ -10,14 +10,16 @@
     <include href="K_Pst.channel.nml"></include>
     <include href="CaDynamics_E2_NML2.nml"></include>
     <cell id="cNAC187_L1_HAC_f8c9772d9d_0_0">
-        <notes>Cell: cNAC187_L1_HAC_f8c9772d9d_0_0 exported from NEURON ModelView
+        <notes>
 
-****************************
-*
+Export of a cell model obtained from the BBP Neocortical Microcircuit Collaboration Portal into NeuroML2
+
+******************************************************
 *  This export to NeuroML2 has not yet been fully validated!!
 *  Use with caution!!
-*
-****************************
+******************************************************
+
+For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L1_HAC_cNAC/details
 
 </notes>
         <morphology id="morphology">

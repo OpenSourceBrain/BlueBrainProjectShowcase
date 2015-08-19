@@ -197,9 +197,12 @@ wopen()
         
         cell.biophysical_properties = bp
         
-        notes = cell.notes
-        notes+="\n\n****************************\n*\n*  This export to NeuroML2 has not yet been fully validated!!"+ \
-            "\n*  Use with caution!!\n*\n****************************\n\n"
+        notes = ''
+        notes+="\n\nExport of a cell model obtained from the BBP Neocortical Microcircuit Collaboration Portal into NeuroML2"+\
+               "\n\n******************************************************\n*  This export to NeuroML2 has not yet been fully validated!!"+ \
+            "\n*  Use with caution!!\n******************************************************\n\n"
+        notes+="For more information on this cell model see: "+\
+               "https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/%s/details\n\n"%cell_info['me-type']
         cell.notes = notes
         for channel in incl_chans:
         
