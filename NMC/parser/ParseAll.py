@@ -190,9 +190,14 @@ wopen()
             cell.morphology.segment_groups.append(new_seg_group)
             for sg in groups[g]:
                 new_seg_group.includes.append(neuroml.Include(sg))
+                
+    
+        ignore_chans=['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 
+                      "SKv3_1", "SK_E2", "CaDynamics_E2", "Nap_Et2", "Im"]#,
+                      #"K_Tst", "NaTa_t", "K_Pst"]#, "NaTs2_t"]
             
         bp, incl_chans = get_biophysical_properties(cell_info['e-type'], 
-                                                    ignore_chans=['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca'],
+                                                    ignore_chans=ignore_chans,
                                                     templates_json="../templates.json")
         
         cell.biophysical_properties = bp
@@ -201,8 +206,13 @@ wopen()
         notes+="\n\nExport of a cell model obtained from the BBP Neocortical Microcircuit Collaboration Portal into NeuroML2"+\
                "\n\n******************************************************\n*  This export to NeuroML2 has not yet been fully validated!!"+ \
             "\n*  Use with caution!!\n******************************************************\n\n"
+            
+        if len(ignore_chans) > 0:
+            notes+="Ignored channels = %s\n\n"%ignore_chans
+            
         notes+="For more information on this cell model see: "+\
                "https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/%s/details\n\n"%cell_info['me-type']
+               
         cell.notes = notes
         for channel in incl_chans:
         
@@ -212,10 +222,55 @@ wopen()
         pynml.write_neuroml2_file(nml_doc, nml_cell_loc)
         
         
+        stim_ref = 'stepcurrent3'
+        stim_ref_hyp = '%s_hyp'%stim_ref
+        stim_sim_duration = 3000
+        stim_hyp_amp = '-0.025513nA'
+        stim_amp = '0.0665952nA'
+        stim_del = '700ms'
+        stim_dur = '2000ms'
+        
+        new_net_loc = "../../NeuroML2/%s.%s.net.nml"%(bbp_ref, stim_ref)
+        new_net_doc = pynml.read_neuroml2_file(nml_net_loc)
+        
+        #<pulseGenerator id="Gran_10pA" delay="100.0ms" duration="500.0ms" amplitude="1.0E-5uA"/>
+        stim_hyp = PulseGenerator(id=stim_ref_hyp, delay="0ms", duration="%sms"%stim_sim_duration, amplitude=stim_hyp_amp)
+        new_net_doc.pulse_generators.append(stim_hyp)
+        stim = PulseGenerator(id=stim_ref, delay=stim_del, duration=stim_dur, amplitude=stim_amp)
+        new_net_doc.pulse_generators.append(stim)
+        
+        new_net = new_net_doc.networks[0]
+        
+        pop_id = new_net.populations[0].id
+        pop_comp = new_net.populations[0].component
+        input_list = neuroml.InputList(id="%s_input"%stim_ref_hyp,
+                             component=stim_ref_hyp,
+                             populations=pop_id)
+                             
+        input = neuroml.Input(id=0, 
+                              target="../%s/0/%s"%(pop_id, pop_comp), 
+                              destination="synapses")  
+                              
+        input_list.input.append(input)
+        new_net.input_lists.append(input_list)
+        
+        input_list = neuroml.InputList(id="%s_input"%stim_ref,
+                             component=stim_ref,
+                             populations=pop_id)
+                             
+        input = neuroml.Input(id=0, 
+                              target="../%s/0/%s"%(pop_id, pop_comp), 
+                              destination="synapses")  
+                              
+        input_list.input.append(input)
+        new_net.input_lists.append(input_list)
+        
+        pynml.write_neuroml2_file(new_net_doc, new_net_loc)
+        
         generate_lems_file_for_neuroml(cell_dir,
-                                       nml_net_loc,
+                                       new_net_loc,
                                        "network",
-                                       3000,
+                                       stim_sim_duration,
                                        0.025,
                                        "LEMS_%s.xml"%cell_dir,
                                        '../../NeuroML2',

@@ -96,7 +96,7 @@ def parse_templates_json(templates_json="templates.json",
                         variable_parameters = None
                         if parameter_dict['distribution']['disttype'] == "uniform":
                             value = parameter_dict['distribution']['value']
-                            cond_density = "%s mS_per_cm2" % value
+                            cond_density = "%s S_per_cm2" % value
                         else:
                             variable_parameters = [
                                 neuroml.VariableParameter(
@@ -190,7 +190,7 @@ def parse_templates_json(templates_json="templates.json",
         #
         resistivities = []
         resistivities.append(neuroml.Resistivity(
-            value="1 ohm_cm", segment_groups='all'))
+            value="100 ohm_cm", segment_groups='all'))
 
         intracellular_properties = neuroml.IntracellularProperties(
             resistivities=resistivities,
