@@ -5,7 +5,7 @@ target: Test_L1.hoc
 engine: NEURON
 mep: .test.l1.mep
 experiments:
-  stepcurrent3:
+  stepcurrent3_-70:
     observables:
       spike times:
         file: 
@@ -14,5 +14,16 @@ experiments:
           scaling: [1, 1]
         spike detection: 
           method: threshold
-          threshold: 0
+          threshold: -70
+        tolerance: 0
+  stepcurrent3_-20:
+    observables:
+      spike times:
+        file: 
+          path: hoc_recordings/soma_voltage.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: -20
         tolerance: 0

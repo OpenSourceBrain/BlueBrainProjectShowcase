@@ -3,3 +3,27 @@
 
 target: LEMS_L1_HAC_cNAC187_1.xml 
 engine: jNeuroML_NEURON
+mep: ../NEURON/.test.l1.mep
+experiments:
+  stepcurrent3_-70:
+    observables:
+      spike times:
+        file: 
+          path: L1_HAC_cNAC187_1.Pop_cNAC187_L1_HAC_f8c9772d9d_0_0.v.dat
+          columns: [0,1]
+          scaling: [1000, 1000]
+        spike detection: 
+          method: threshold
+          threshold: -70
+        tolerance: 0.00118
+  stepcurrent3_-20:
+    observables:
+      spike times:
+        file: 
+          path: L1_HAC_cNAC187_1.Pop_cNAC187_L1_HAC_f8c9772d9d_0_0.v.dat
+          columns: [0,1]
+          scaling: [1000, 1000]
+        spike detection: 
+          method: threshold
+          threshold: -20
+        tolerance: 0.00577

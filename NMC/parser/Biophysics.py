@@ -178,7 +178,7 @@ def parse_templates_json(templates_json="templates.json",
                                             segment_groups=section_list))
 
         init_memb_potentials = [neuroml.InitMembPotential(
-            value="-65 mV", segment_groups='all')]
+            value="-80 mV", segment_groups='all')]
 
         membrane_properties = neuroml.MembraneProperties(
             channel_densities=channel_densities,
