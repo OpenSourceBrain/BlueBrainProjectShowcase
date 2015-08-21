@@ -12,10 +12,10 @@ forall {if (ismembrane("SKv3_1")) { uninsert SKv3_1 } }
 forall {if (ismembrane("SK_E2")) { uninsert SK_E2 } }
 forall {if (ismembrane("Nap_Et2")) { uninsert Nap_Et2 } }
 forall {if (ismembrane("Im")) { uninsert Im } }
-forall {if (ismembrane("K_Tst")) { uninsert K_Tst } }
+//forall {if (ismembrane("K_Tst")) { uninsert K_Tst } }
 forall {if (ismembrane("NaTa_t")) { uninsert NaTa_t } }
-forall {if (ismembrane("K_Pst")) { uninsert K_Pst } }
-forall {if (ismembrane("NaTs2_t")) { uninsert NaTs2_t } }
+//forall {if (ismembrane("K_Pst")) { uninsert K_Pst } }
+//forall {if (ismembrane("NaTs2_t")) { uninsert NaTs2_t } }
 
 tstop=3000
 
@@ -30,4 +30,8 @@ simulate()
 save_recording()
 
 access cNAC187_L1_HAC_f8c9772d9d[0].dend[0]
+
+psection()
+
+quit()
 

@@ -15,8 +15,8 @@ experiments:
         spike detection: 
           method: threshold
           threshold: -70
-        tolerance: 0.000138
-  stepcurrent3_-20:
+        tolerance: 3.46e-05
+  stepcurrent3_-30:
     observables:
       spike times:
         file: 
@@ -25,5 +25,5 @@ experiments:
           scaling: [1000, 1000]
         spike detection: 
           method: threshold
-          threshold: -20
-        tolerance: 0.000121
+          threshold: -30
+        tolerance: 0.00046

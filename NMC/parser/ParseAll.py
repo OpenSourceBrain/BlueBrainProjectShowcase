@@ -195,6 +195,10 @@ wopen()
         ignore_chans=['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 
                       "SKv3_1", "SK_E2", "CaDynamics_E2", "Nap_Et2", "Im",
                       "K_Tst", "NaTa_t", "K_Pst", "NaTs2_t"]
+                      
+        ignore_chans=['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 
+                      "SKv3_1", "SK_E2", "CaDynamics_E2", "Im",
+                      "NaTa_t" ]
             
         bp, incl_chans = get_biophysical_properties(cell_info['e-type'], 
                                                     ignore_chans=ignore_chans,
@@ -232,6 +236,8 @@ wopen()
         
         new_net_loc = "../../NeuroML2/%s.%s.net.nml"%(bbp_ref, stim_ref)
         new_net_doc = pynml.read_neuroml2_file(nml_net_loc)
+        
+        new_net_doc.notes = notes
         
         #<pulseGenerator id="Gran_10pA" delay="100.0ms" duration="500.0ms" amplitude="1.0E-5uA"/>
         stim_hyp = PulseGenerator(id=stim_ref_hyp, delay="0ms", duration="%sms"%stim_sim_duration, amplitude=stim_hyp_amp)

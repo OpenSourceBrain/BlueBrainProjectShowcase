@@ -16,13 +16,16 @@
     
     <Include file="cNAC187_L1_HAC_f8c9772d9d.stepcurrent3.net.nml"/>
     <Include file="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"/>
+    <Include file="K_Tst.channel.nml"/>
+    <Include file="NaTs2_t.channel.nml"/>
     <Include file="pas.channel.nml"/>
+    <Include file="K_Pst.channel.nml"/>
     <Include file="CaDynamics_E2_NML2.nml"/>
    
     <Simulation id="L1_HAC_cNAC187_1" length="3000ms" step="0.025ms" target="network">
         
         <Display id="DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" title="Voltages of DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
-            <Line id="v Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0_cNAC187_L1_HAC_f8c9772d9d_0_0_v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v" scale="1mV" color="#f0e029" timeScale="1ms"/>
+            <Line id="v Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0_cNAC187_L1_HAC_f8c9772d9d_0_0_v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v" scale="1mV" color="#554f95" timeScale="1ms"/>
         </Display>
         
         <OutputFile id="Volts_file__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" fileName="L1_HAC_cNAC187_1.Pop_cNAC187_L1_HAC_f8c9772d9d_0_0.v.dat">
