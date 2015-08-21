@@ -25,7 +25,7 @@
     <Simulation id="L1_HAC_cNAC187_1" length="3000ms" step="0.025ms" target="network">
         
         <Display id="DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" title="Voltages of DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
-            <Line id="v Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0_cNAC187_L1_HAC_f8c9772d9d_0_0_v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v" scale="1mV" color="#c8f70c" timeScale="1ms"/>
+            <Line id="v Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0_cNAC187_L1_HAC_f8c9772d9d_0_0_v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v" scale="1mV" color="#0f6e58" timeScale="1ms"/>
         </Display>
         
         <OutputFile id="Volts_file__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" fileName="L1_HAC_cNAC187_1.Pop_cNAC187_L1_HAC_f8c9772d9d_0_0.v.dat">

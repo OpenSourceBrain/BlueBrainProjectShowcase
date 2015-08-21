@@ -159,7 +159,8 @@ wopen()
         
         nml_file_name = "%s.net.nml"%bbp_ref
         nml_net_loc = "../../NeuroML2/%s"%nml_file_name
-        nml_cell_loc = "../../NeuroML2/%s_0_0.cell.nml"%bbp_ref
+        nml_cell_file = "%s_0_0.cell.nml"%bbp_ref
+        nml_cell_loc = "../../NeuroML2/%s"%nml_cell_file
         
     
         print(' > Loading %s and exporting to %s'%(load_cell_file,nml_net_loc))
@@ -290,7 +291,7 @@ wopen()
         
         clear_neuron()
         
-        net_doc.includes.append(IncludeType(nml_file_name))
+        net_doc.includes.append(IncludeType(nml_cell_file))
 
         pop = Population(id="Pop_%s"%bbp_ref, component=bbp_ref+'_0_0', type="populationList")
 
