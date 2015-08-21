@@ -49,7 +49,7 @@ default_capacitances = {
     'apical': "1.0 uF_per_cm2",
 }
 
-biophysical_properties_vs_etypes = {}
+biophysical_properties_vs_types = {}
 
 included_channels = {}
 
@@ -68,14 +68,14 @@ def parse_templates_json(templates_json="templates.json",
     for cell_name in json_cells:
         cell_dict = json_cells[cell_name]
         
-        etype = cell_name.split('_')[0]
+        type = cell_name
 
         nml_doc = neuroml.NeuroMLDocument(id=cell_name)
 
         # Membrane properties
         #
 
-        included_channels[etype] = []
+        included_channels[type] = []
         channel_densities = []
         channel_density_nernsts = []
         species = []
@@ -104,12 +104,12 @@ def parse_templates_json(templates_json="templates.json",
                                     parameter=parameter_name)]
 
                         channel_nml2_file = "%s.channel.nml"%channel
-                        if channel_nml2_file not in included_channels[etype]:
+                        if channel_nml2_file not in included_channels[type]:
                             nml_doc.includes.append(
                                 neuroml.IncludeType(
                                     href="../../channels/nml/%s" %
                                     channel_nml2_file))
-                            included_channels[etype].append(channel_nml2_file)
+                            included_channels[type].append(channel_nml2_file)
 
                         arguments['ion'] = channel_ions[channel]
                         erev = ion_erevs[arguments["ion"]]
@@ -156,8 +156,8 @@ def parse_templates_json(templates_json="templates.json",
                         segment_groups=section_list))
                         
                     channel_nml2_file = 'CaDynamics_E2_NML2.nml'
-                    if channel_nml2_file not in included_channels[etype]:
-                        included_channels[etype].append(channel_nml2_file)
+                    if channel_nml2_file not in included_channels[type]:
+                        included_channels[type].append(channel_nml2_file)
 
         capacitance_overwrites = {}
         for section_list in cell_dict['forsecs']:
@@ -205,7 +205,7 @@ def parse_templates_json(templates_json="templates.json",
                                           membrane_properties=
                                           membrane_properties)
 
-        biophysical_properties_vs_etypes[etype] = biophysical_properties
+        biophysical_properties_vs_types[type] = biophysical_properties
 
         if save_example_files:
             cell = neuroml.Cell(id=cell_name,
@@ -227,11 +227,27 @@ def parse_templates_json(templates_json="templates.json",
             with open(nml_filename, 'r') as nml_file:
                 neuroml.utils.validate_neuroml2(nml_file)
 
-def get_biophysical_properties(etype, ignore_chans=[], templates_json="templates.json"):
+cell_type_vs_firing_type = {'bNAC':'bNAC_1',
+                            'cAC':'cACint_237',
+                            'cNAC':'cNAC_149',
+                            'dNAC':'dNAC_1',
+                            'bAC':'bAC_1',
+                            'bIR':'bIR_1',
+                            'bSTUT':'bSTUT_1',
+                            'cIR':'cIR_1',
+                            'cSTUT':'cSTUT_7',
+                            'dSTUT':'dSTUT_1',
+                            'L23PC':'cADpyr_229',
+                            'L4PC':'cADpyr_230',
+                            'L5PC':'cADpyr_232',  
+                            'L6PC':'cADpyr_231'}
+
+def get_biophysical_properties(cell_type, ignore_chans=[], templates_json="templates.json"):
     
     parse_templates_json(templates_json=templates_json, ignore_chans=ignore_chans, save_example_files=False)
-    print("Retrieving biophys props for: %s from %s"%(etype,biophysical_properties_vs_etypes.keys()))
-    return biophysical_properties_vs_etypes[str(etype)], included_channels[str(etype)]
+    firing_type = cell_type_vs_firing_type[cell_type]
+    print("Retrieving biophys props for: %s (%s) from %s"%(cell_type,firing_type,biophysical_properties_vs_types.keys()))
+    return biophysical_properties_vs_types[str(firing_type)], included_channels[str(firing_type)]
 
 if __name__ == "__main__":
     main()

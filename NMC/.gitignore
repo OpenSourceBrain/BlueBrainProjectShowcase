@@ -11,7 +11,7 @@ NeuroML2/*nrn.py
 NEURON/*.dat
 NeuroML2/old
 parser/L*/hoc_recordings/
-
+parser/old
 *.png
 *.pov
 *.ini

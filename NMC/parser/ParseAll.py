@@ -74,16 +74,13 @@ for cell_dir in cell_dirs:
 
     load_cell_file = 'loadcell.hoc'
     
-    if not os.path.isfile(load_cell_file):
         
-        print(' > No %s yet!!'%load_cell_file)
-        
-        variables = {}
-        
-        variables['cell'] = bbp_ref
-        variables['groups_info_file'] = groups_info_file
-        
-        template = """
+    variables = {}
+
+    variables['cell'] = bbp_ref
+    variables['groups_info_file'] = groups_info_file
+
+    template = """
 load_file("nrngui.hoc")
 
 objref cvode
@@ -106,7 +103,12 @@ objref cell
 load_file(1, "constants.hoc")
 load_file(1, "morphology.hoc")
 load_file(1, "biophysics.hoc")
+print "Loaded morphology and biophysics..."
+
 load_file(1, "synapses/synapses.hoc")
+load_file(1, "template.hoc")
+print "Loaded template..."
+
 load_file(1, "createsimulation.hoc")
 
 
@@ -139,16 +141,16 @@ forsec {{ cell }}[0].apical {
 }
 wopen()
         """
-        
-        t = Template(template)
 
-        contents = t.render(variables)
+    t = Template(template)
 
-        load_cell = open(load_cell_file, 'w')
-        load_cell.write(contents)
-        load_cell.close()
-        
-        print(' > Written %s'%load_cell_file)
+    contents = t.render(variables)
+
+    load_cell = open(load_cell_file, 'w')
+    load_cell.write(contents)
+    load_cell.close()
+
+    print(' > Written %s'%load_cell_file)
         
         
     if os.path.isfile(load_cell_file):
@@ -159,6 +161,8 @@ wopen()
         nml_net_loc = "../../NeuroML2/%s"%nml_file_name
         nml_cell_loc = "../../NeuroML2/%s_0_0.cell.nml"%bbp_ref
         
+    
+        print(' > Loading %s and exporting to %s'%(load_cell_file,nml_net_loc))
     
         export_to_neuroml2(load_cell_file, 
                            nml_net_loc, 
@@ -197,7 +201,7 @@ wopen()
                       "K_Tst", "NaTa_t", "K_Pst", "NaTs2_t"]
                       
         ignore_chans=['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 
-                      "SKv3_1", "SK_E2", "CaDynamics_E2", "Im",
+                      "SKv3_1", "SK_E2", "CaDynamics_E2", "Nap_Et2", "Im",
                       "NaTa_t" ]
             
         bp, incl_chans = get_biophysical_properties(cell_info['e-type'], 

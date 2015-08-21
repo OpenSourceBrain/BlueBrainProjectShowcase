@@ -1,0 +1,36 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.1.3 (libNeuroML v0.2.9)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="L23_PC_cADpyr229_1"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="cADpyr229_L23_PC_5ecbf9b163.stepcurrent3.net.nml"/>
+    <Include file="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"/>
+    <Include file="NaTs2_t.channel.nml"/>
+    <Include file="K_Tst.channel.nml"/>
+    <Include file="K_Pst.channel.nml"/>
+    <Include file="CaDynamics_E2_NML2.nml"/>
+   
+    <Simulation id="L23_PC_cADpyr229_1" length="3000ms" step="0.025ms" target="network">
+        
+        <Display id="DispPop__Pop_cADpyr229_L23_PC_5ecbf9b163_0_0" title="Voltages of DispPop__Pop_cADpyr229_L23_PC_5ecbf9b163_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
+            <Line id="v Pop_cADpyr229_L23_PC_5ecbf9b163_0_0_0_cADpyr229_L23_PC_5ecbf9b163_0_0_v" quantity="Pop_cADpyr229_L23_PC_5ecbf9b163_0_0/0/cADpyr229_L23_PC_5ecbf9b163_0_0/v" scale="1mV" color="#645175" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Volts_file__Pop_cADpyr229_L23_PC_5ecbf9b163_0_0" fileName="L23_PC_cADpyr229_1.Pop_cADpyr229_L23_PC_5ecbf9b163_0_0.v.dat">
+            <OutputColumn id="v_Pop_cADpyr229_L23_PC_5ecbf9b163_0_0_0_cADpyr229_L23_PC_5ecbf9b163_0_0_v" quantity="Pop_cADpyr229_L23_PC_5ecbf9b163_0_0/0/cADpyr229_L23_PC_5ecbf9b163_0_0/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>

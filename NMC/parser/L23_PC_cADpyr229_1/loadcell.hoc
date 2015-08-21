@@ -31,7 +31,7 @@ load_file(1, "createsimulation.hoc")
 
 
 create_cell(0)
-print "Created new cell using loadcell.hoc: cNAC187_L1_HAC_f8c9772d9d"
+print "Created new cell using loadcell.hoc: cADpyr229_L23_PC_5ecbf9b163"
 
 define_shape()
 
@@ -40,21 +40,21 @@ wopen("groups.txt")
 fprint("//Saving information on groups in this cell...\n")
 
 fprint("- somatic\n")
-forsec cNAC187_L1_HAC_f8c9772d9d[0].somatic {
+forsec cADpyr229_L23_PC_5ecbf9b163[0].somatic {
     fprint("%s\n",secname())
 }
 
 fprint("- basal\n")
-forsec cNAC187_L1_HAC_f8c9772d9d[0].basal {
+forsec cADpyr229_L23_PC_5ecbf9b163[0].basal {
     fprint("%s\n",secname())
 }
 
 fprint("- axonal\n")
-forsec cNAC187_L1_HAC_f8c9772d9d[0].axonal {
+forsec cADpyr229_L23_PC_5ecbf9b163[0].axonal {
     fprint("%s\n",secname())
 }
 fprint("- apical\n")
-forsec cNAC187_L1_HAC_f8c9772d9d[0].apical {
+forsec cADpyr229_L23_PC_5ecbf9b163[0].apical {
     fprint("%s\n",secname())
 }
 wopen()
