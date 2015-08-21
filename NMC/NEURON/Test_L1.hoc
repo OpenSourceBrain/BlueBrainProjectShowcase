@@ -29,5 +29,5 @@ simulate()
 
 save_recording()
 
-load_file("../parser/L1_HAC_cNAC187_1/loadcell.hoc")
+access cNAC187_L1_HAC_f8c9772d9d[0].dend[0]
 

@@ -176,6 +176,7 @@ proc morph() {
     print "++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
     print "+    Number of 3D info points: ", n3d()
 
+    totalL = 0 
     for i=0,n3d()-1{
 
 		delx = x3d(i)-lastx
@@ -192,8 +193,10 @@ proc morph() {
 		lastx = x3d(i)
 		lasty = y3d(i)
 		lastz = z3d(i)
+        totalL = totalL + len
 
 	}
+    print "+    Total length: ", totalL
 
     print "++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
