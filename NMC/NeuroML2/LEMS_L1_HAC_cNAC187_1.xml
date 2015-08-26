@@ -17,12 +17,17 @@
     <Include file="cNAC187_L1_HAC_f8c9772d9d.stepcurrent3.net.nml"/>
     <Include file="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"/>
     <Include file="K_Tst.channel.nml"/>
+    <Include file="SKv3_1.channel.nml"/>
     <Include file="Nap_Et2.channel.nml"/>
     <Include file="NaTs2_t.channel.nml"/>
     <Include file="pas.channel.nml"/>
+    <Include file="Im.channel.nml"/>
+    <Include file="NaTa_t.channel.nml"/>
     <Include file="Ca_LVAst.channel.nml"/>
+    <Include file="SK_E2.channel.nml"/>
     <Include file="K_Pst.channel.nml"/>
     <Include file="CaDynamics_E2_NML2.nml"/>
+    <Include file="Ca.channel.nml"/>
    
     <Simulation id="L1_HAC_cNAC187_1" length="3000ms" step="0.025ms" target="network">
         
