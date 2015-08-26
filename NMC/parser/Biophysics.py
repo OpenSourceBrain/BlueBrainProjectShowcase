@@ -80,6 +80,7 @@ def parse_templates_json(templates_json="templates.json",
     with open(templates_json, "r") as templates_json_file:
         json_cells = json.load(templates_json_file)
 
+    concentrationModels = ''
 
     for firing_type_u in json_cells:
         firing_type = str(firing_type_u)
@@ -94,6 +95,7 @@ def parse_templates_json(templates_json="templates.json",
         channel_densities = []
         channel_density_nernsts = []
         species = []
+        
         
         for section_list in cell_dict['parameters']:
             for parameter_name in \
@@ -157,22 +159,36 @@ def parse_templates_json(templates_json="templates.json",
                             channel_density_nernsts.append(density)
                         else:
                             channel_densities.append(density)
-                        
+                            
+                elif 'gamma_CaDynamics_E2' in parameter_name:
+                    
+                    parameter_dict = cell_dict['parameters'][section_list][parameter_name]
+                    
+                    model = 'CaDynamics_E2_NML2__%s_%s'%(firing_type,section_list)
+                    value = parameter_dict['distribution']['value']    
+                    concentrationModels+='<concentrationModel id="%s" ion="ca" '%model +\
+                                         'type="concentrationModelHayEtAl" minCai="1e-4 mM" ' +\
+                                         'gamma="%s" '%value
+                                         
                 elif 'decay_CaDynamics_E2' in parameter_name:
                     # calcium_model = \
                     #    neuroml.DecayingPoolConcentrationModel(ion='ca')
-
+                    model = 'CaDynamics_E2_NML2__%s_%s'%(firing_type,section_list)
                     species.append(neuroml.Species(
                         id='ca',
                         ion='ca',
                         initial_concentration='5.0E-11 mol_per_cm3',
                         initial_ext_concentration='2.0E-6 mol_per_cm3',
-                        concentration_model='CaDynamics_E2_NML2',
+                        concentration_model=model,
                         segment_groups=section_list))
                         
                     channel_nml2_file = 'CaDynamics_E2_NML2.nml'
                     if channel_nml2_file not in included_channels[firing_type]:
                         included_channels[firing_type].append(channel_nml2_file)
+                        
+                    parameter_dict = cell_dict['parameters'][section_list][parameter_name]
+                    value = parameter_dict['distribution']['value']  
+                    concentrationModels+='decay="%s ms" depth="0.1 um"/>  <!-- For group %s in %s-->\n\n'%(value,section_list,firing_type)
 
         capacitance_overwrites = {}
         for section_list in cell_dict['forsecs']:
@@ -284,6 +300,12 @@ def parse_templates_json(templates_json="templates.json",
             logging.debug("Written cell file to: %s", nml_filename)
 
             neuroml.utils.validate_neuroml2(nml_filename)
+            
+            
+            conc_mod_file = open('test/concentrationModel.txt','w')
+            conc_mod_file.write(concentrationModels)
+            conc_mod_file.close()
+            
 
 
 def get_biophysical_properties(cell_type, ignore_chans=[], templates_json="templates.json"):

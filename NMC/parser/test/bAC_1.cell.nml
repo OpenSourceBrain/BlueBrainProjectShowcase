@@ -118,8 +118,8 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <initMembPotential segmentGroup="all" value="-80 mV"/>
             </membraneProperties>
             <intracellularProperties>
-                <species segmentGroup="axonal" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
-                <species segmentGroup="somatic" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
+                <species segmentGroup="axonal" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2__bAC_1_axonal" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
+                <species segmentGroup="somatic" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2__bAC_1_somatic" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
                 <resistivity segmentGroup="all" value="100 ohm_cm"/>
             </intracellularProperties>
         </biophysicalProperties>

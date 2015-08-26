@@ -13,7 +13,7 @@ Export of a cell model obtained from the BBP Neocortical Microcircuit Collaborat
 *  Use with caution!!
 ******************************************************
 
-Ignored channels = ['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 'SKv3_1', 'SK_E2', 'CaDynamics_E2', 'Nap_Et2', 'Im', 'NaTa_t']
+Ignored channels = ['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 'SKv3_1', 'SK_E2', 'Nap_Et2', 'Im', 'NaTa_t']
 
 For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L23_PC_L23PC/details
 
@@ -7032,8 +7032,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <initMembPotential segmentGroup="all" value="-80 mV"/>
             </membraneProperties>
             <intracellularProperties>
-                <species segmentGroup="axonal" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
-                <species segmentGroup="somatic" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
+                <species segmentGroup="axonal" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2__cADpyr_229_axonal" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
+                <species segmentGroup="somatic" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2__cADpyr_229_somatic" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
                 <resistivity segmentGroup="all" value="100 ohm_cm"/>
             </intracellularProperties>
         </biophysicalProperties>

@@ -8,7 +8,7 @@ Export of a cell model obtained from the BBP Neocortical Microcircuit Collaborat
 *  Use with caution!!
 ******************************************************
 
-Ignored channels = ['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 'SKv3_1', 'SK_E2', 'CaDynamics_E2', 'Nap_Et2', 'Im', 'NaTa_t']
+Ignored channels = ['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 'SKv3_1', 'SK_E2', 'Nap_Et2', 'Im', 'NaTa_t']
 
 For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L1_HAC_cNAC/details
 
