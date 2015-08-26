@@ -38,17 +38,29 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <proximal y="2.000000e+01" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
                 <distal y="1.200000e+02" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
             </segment>
-            <segmentGroup id="somatic">
+            <segmentGroup neuroLexId="sao864921383" id="soma">
                 <member segment="0"/>
             </segmentGroup>
-            <segmentGroup id="axonal">
+            <segmentGroup neuroLexId="sao864921383" id="axon">
                 <member segment="1"/>
             </segmentGroup>
-            <segmentGroup id="basal">
+            <segmentGroup neuroLexId="sao864921383" id="basal_dend">
                 <member segment="2"/>
             </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="apical_dend">
+                <member segment="2"/>
+            </segmentGroup>
+            <segmentGroup id="somatic">
+                <include segmentGroup="soma"/>
+            </segmentGroup>
+            <segmentGroup id="axonal">
+                <include segmentGroup="axon"/>
+            </segmentGroup>
+            <segmentGroup id="basal">
+                <include segmentGroup="basal_dend"/>
+            </segmentGroup>
             <segmentGroup id="apical">
-                <member segment="3"/>
+                <include segmentGroup="apical_dend"/>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="biophys">
@@ -98,8 +110,8 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <initMembPotential segmentGroup="all" value="-80 mV"/>
             </membraneProperties>
             <intracellularProperties>
-                <species segmentGroup="axonal" ion="ca" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
-                <species segmentGroup="somatic" ion="ca" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
+                <species segmentGroup="axonal" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
+                <species segmentGroup="somatic" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
                 <resistivity segmentGroup="all" value="100 ohm_cm"/>
             </intracellularProperties>
         </biophysicalProperties>

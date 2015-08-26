@@ -1,0 +1,85 @@
+<Lems xmlns="http://www.neuroml.org/lems/0.7.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/lems/0.7.2  https://raw.github.com/LEMS/LEMS/development/Schemas/LEMS/LEMS_v0.7.2.xsd">
+
+    <Target component="sim1" reportFile="simulator.props" timesFile="time.dat"/>
+
+        <!--Include standard NeuroML 2 ComponentType definitions-->
+
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+
+        <!--   Channel/synapse files-->
+    <Include file="../../NeuroML2/Ca_HVA.channel.nml"/>
+    <Include file="../../NeuroML2/Ca_LVAst.channel.nml"/>
+    <Include file="../../NeuroML2/Ih.channel.nml"/>
+    <Include file="../../NeuroML2/Im.channel.nml"/>
+    <Include file="../../NeuroML2/K_Pst.channel.nml"/>
+    <Include file="../../NeuroML2/K_Tst.channel.nml"/>
+    <Include file="../../NeuroML2/KdShu2007.channel.nml"/>
+    <Include file="../../NeuroML2/Nap_Et2.channel.nml"/>
+    <Include file="../../NeuroML2/NaTa_t.channel.nml"/>
+    <Include file="../../NeuroML2/NaTs2_t.channel.nml"/>
+    <Include file="../../NeuroML2/SK_E2.channel.nml"/>
+    <Include file="../../NeuroML2/SKv3_1.channel.nml"/>
+
+    <Include file="../../NeuroML2/CaDynamics_E2_NML2.nml"/>
+    <Include file="../../NeuroML2/pas.channel.nml"/>
+
+        <!--   Cell files-->
+    <Include file="cADpyr_229.cell.nml"/>
+    
+    
+    <pulseGenerator id="Input" delay="100.0ms" duration="400.0ms" amplitude="2.0E-5uA"/>
+    
+    
+    <network id="network_cADpyr_229" type="networkWithTemperature" temperature="6.3 degC">
+
+       
+        <population id="CG_Test" component="cADpyr_229" type="populationList" size="1">
+            <instance id="0">
+                <location x="105.841934" y="19.6415" z="55.338722"/>
+            </instance>
+        </population>
+
+
+        <inputList id="Input" component="Input" population="CG_Test">
+            <input id="0" target="../CG_Test/0/cADpyr_229" destination="synapses"/>
+        </inputList>
+
+
+    </network>
+
+        <!--Note: this could be: Simulation id="sim1" ... , but Component type="Simulation" ... 
+        is used to allow validation of this file according to the LEMS schema specified above...-->
+    <Component type="Simulation" id="sim1" length="600.0ms" step="0.01ms" target="network_cADpyr_229">
+        
+        <Display id="V" title="BBP Soma VOLTAGE" xmin="-60.0" xmax="660.0" ymin="-104.0" ymax="64.0" timeScale="1ms">
+            <Line id="VOLTAGE" timeScale="1ms" quantity="CG_Test/0/cADpyr_229/v" scale="1 mV" color="#000000"/>
+        </Display>
+    
+    
+        <Display id="GraphWin_5" title="BBP Soma CaDynamics_E2_NML2:CONC:ca" xmin="-60.0" xmax="660.0" ymin="-1e-8" ymax="1e-9" timeScale="1ms">
+            <Line id="CaDynamics_E2_NML2_CONC_ca" timeScale="1ms" quantity="CG_Test/0/cADpyr_229/caConc" scale="1 mM" color="#000000"/>
+        </Display>
+    
+        <Display id="GraphWin_4" title="BBP Ca erev" xmin="-60.0" xmax="660.0" ymin="70" ymax="130" timeScale="1ms">
+            <Line id="Ca_erev" timeScale="1ms" quantity="CG_Test/0/cADpyr_229/biophys/membraneProperties/Ca_HVA_all/erev" scale="1mV" color="#000000"/>
+        
+        </Display>
+        
+        
+        
+        
+        <OutputFile id="CG_Test_v_OF" fileName="CG_Test_0.dat">
+            <OutputColumn id="v" quantity="CG_Test/0/cADpyr_229/v"/>
+        </OutputFile>
+        
+        <OutputFile id="Var_35_OF" fileName="CG_Test_0.CaDynamics_E2_NML2_CONC_ca.dat">
+            <OutputColumn id="caConc" quantity="CG_Test/0/cADpyr_229/caConc"/>
+        </OutputFile>
+        
+    </Component>
+
+
+</Lems>

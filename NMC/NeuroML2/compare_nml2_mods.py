@@ -3,7 +3,7 @@ import matplotlib.pyplot as pylab
 import os.path
 
 
-chans = ['K_Tst', 'K_Pst', 'NaTa_t', 'Nap_Et2', 'NaTs2_t', 'Ih', 'Ca_LVAst', 'Ca', 'SKv3_1', 'KdShu2007']
+chans = ['K_Tst', 'K_Pst', 'NaTa_t', 'Nap_Et2', 'NaTs2_t', 'Ih', 'Ca_LVAst', 'Ca_HVA', 'SKv3_1', 'KdShu2007']
 
 problematic = ['Im']
 
@@ -39,7 +39,7 @@ for channel_id in chans:
 
             pylab.plot(volts, taus, linestyle='-', linewidth=2, label="LEMS %s %s tau"%(channel_id, gate))
 
-            tau_mod_file  = '../channels/%s.%s.tau.dat'%(channel_id, gate)
+            tau_mod_file  = '../NEURON/%s.%s.tau.dat'%(channel_id, gate)
             vs = []
             taus = []
             for line in open(tau_mod_file):
@@ -70,7 +70,7 @@ for channel_id in chans:
 
             pylab.plot(volts, infs, linestyle='-', linewidth=2, label="LEMS %s %s inf"%(channel_id, gate))
             
-            inf_mod_file  = '../channels/%s.%s.inf.dat'%(channel_id, gate)
+            inf_mod_file  = '../NEURON/%s.%s.inf.dat'%(channel_id, gate)
             vs = []
             infs = []
             for line in open(inf_mod_file):

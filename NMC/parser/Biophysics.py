@@ -165,8 +165,8 @@ def parse_templates_json(templates_json="templates.json",
                     species.append(neuroml.Species(
                         id='ca',
                         ion='ca',
-                        initial_concentration='1.0E-4 mM',
-                        initial_ext_concentration='1.0E-4 mM',
+                        initial_concentration='5.0E-11 mol_per_cm3',
+                        initial_ext_concentration='2.0E-6 mol_per_cm3',
                         concentration_model='CaDynamics_E2_NML2',
                         segment_groups=section_list))
                         
@@ -237,11 +237,19 @@ def parse_templates_json(templates_json="templates.json",
                                                             proximal=neuroml.Point3DWithDiam(x=0,y=0,z=0,diameter=10),
                                                             distal=neuroml.Point3DWithDiam(x=0,y=20,z=0,diameter=10)))
                                                             
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="soma",
+                                                                       neuro_lex_id="sao864921383",
+                                                                       members=[neuroml.Member("0")]))
+                                                            
             cell.morphology.segments.append(neuroml.Segment(id='1',
                                                             name='axon',
                                                             parent=neuroml.SegmentParent(segments='0',fraction_along="0"),
                                                             proximal=neuroml.Point3DWithDiam(x=0,y=0,z=0,diameter=2),
                                                             distal=neuroml.Point3DWithDiam(x=0,y=-50,z=0,diameter=2)))
+                                                            
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="axon",
+                                                                       neuro_lex_id="sao864921383",
+                                                                       members=[neuroml.Member("1")]))
                                                             
             cell.morphology.segments.append(neuroml.Segment(id='2',
                                                             name='basal_dend',
@@ -249,16 +257,25 @@ def parse_templates_json(templates_json="templates.json",
                                                             proximal=neuroml.Point3DWithDiam(x=0,y=20,z=0,diameter=3),
                                                             distal=neuroml.Point3DWithDiam(x=50,y=20,z=0,diameter=3)))
                                                             
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="basal_dend",
+                                                                       neuro_lex_id="sao864921383",
+                                                                       members=[neuroml.Member("2")]))
+                                                            
             cell.morphology.segments.append(neuroml.Segment(id='3',
                                                             name='apical_dend',
                                                             parent=neuroml.SegmentParent(segments='0'),
                                                             proximal=neuroml.Point3DWithDiam(x=0,y=20,z=0,diameter=3),
                                                             distal=neuroml.Point3DWithDiam(x=0,y=120,z=0,diameter=3)))
                                                             
-            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="somatic",members=[neuroml.Member("0")]))
-            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="axonal",members=[neuroml.Member("1")]))
-            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="basal",members=[neuroml.Member("2")]))
-            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="apical",members=[neuroml.Member("3")]))
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="apical_dend",
+                                                                       neuro_lex_id="sao864921383",
+                                                                       members=[neuroml.Member("2")]))
+                                                            
+                                                            
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="somatic",includes=[neuroml.Include("soma")]))
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="axonal", includes=[neuroml.Include("axon")]))
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="basal",  includes=[neuroml.Include("basal_dend")]))
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="apical", includes=[neuroml.Include("apical_dend")]))
                                                             
 
             nml_filename = 'test/%s.cell.nml' % firing_type
