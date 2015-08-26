@@ -9,6 +9,7 @@
 import json
 import logging
 logging.basicConfig(level=logging.DEBUG, format='%(message)s')
+
 import neuroml
 import neuroml.writers
 import neuroml.utils
@@ -49,6 +50,21 @@ default_capacitances = {
     'apical': "1.0 uF_per_cm2",
 }
 
+cell_type_vs_firing_type = {'bNAC':'bNAC_1',
+                            'cAC':'cACint_237',
+                            'cNAC':'cNAC_149',
+                            'dNAC':'dNAC_1',
+                            'bAC':'bAC_1',
+                            'bIR':'bIR_1',
+                            'bSTUT':'bSTUT_1',
+                            'cIR':'cIR_1',
+                            'cSTUT':'cSTUT_7',
+                            'dSTUT':'dSTUT_1',
+                            'L23PC':'cADpyr_229',
+                            'L4PC':'cADpyr_230',
+                            'L5PC':'cADpyr_232',  
+                            'L6PC':'cADpyr_231'}
+
 biophysical_properties_vs_types = {}
 
 included_channels = {}
@@ -65,24 +81,23 @@ def parse_templates_json(templates_json="templates.json",
         json_cells = json.load(templates_json_file)
 
 
-    for cell_name in json_cells:
-        cell_dict = json_cells[cell_name]
-        
-        type = cell_name
+    for firing_type_u in json_cells:
+        firing_type = str(firing_type_u)
+        cell_dict = json_cells[firing_type]
 
-        nml_doc = neuroml.NeuroMLDocument(id=cell_name)
+        nml_doc = neuroml.NeuroMLDocument(id=firing_type)
 
         # Membrane properties
         #
 
-        included_channels[type] = []
+        included_channels[firing_type] = []
         channel_densities = []
         channel_density_nernsts = []
         species = []
         
         for section_list in cell_dict['parameters']:
             for parameter_name in \
-                    json_cells[cell_name]['parameters'][section_list]:
+                    json_cells[firing_type]['parameters'][section_list]:
                 if parameter_name != 'e_pas' and 'CaDynamics_E2' not in parameter_name:
                     
                     parameter_dict = cell_dict['parameters'][section_list][parameter_name]
@@ -104,12 +119,12 @@ def parse_templates_json(templates_json="templates.json",
                                     parameter=parameter_name)]
 
                         channel_nml2_file = "%s.channel.nml"%channel
-                        if channel_nml2_file not in included_channels[type]:
+                        if channel_nml2_file not in included_channels[firing_type]:
                             nml_doc.includes.append(
                                 neuroml.IncludeType(
-                                    href="../../channels/nml/%s" %
+                                    href="../../NeuroML2/%s" %
                                     channel_nml2_file))
-                            included_channels[type].append(channel_nml2_file)
+                            included_channels[firing_type].append(channel_nml2_file)
 
                         arguments['ion'] = channel_ions[channel]
                         erev = ion_erevs[arguments["ion"]]
@@ -156,8 +171,8 @@ def parse_templates_json(templates_json="templates.json",
                         segment_groups=section_list))
                         
                     channel_nml2_file = 'CaDynamics_E2_NML2.nml'
-                    if channel_nml2_file not in included_channels[type]:
-                        included_channels[type].append(channel_nml2_file)
+                    if channel_nml2_file not in included_channels[firing_type]:
+                        included_channels[firing_type].append(channel_nml2_file)
 
         capacitance_overwrites = {}
         for section_list in cell_dict['forsecs']:
@@ -205,42 +220,52 @@ def parse_templates_json(templates_json="templates.json",
                                           membrane_properties=
                                           membrane_properties)
 
-        biophysical_properties_vs_types[type] = biophysical_properties
+        biophysical_properties_vs_types[firing_type] = biophysical_properties
 
         if save_example_files:
-            cell = neuroml.Cell(id=cell_name,
+            cell = neuroml.Cell(id=firing_type,
                                 biophysical_properties=biophysical_properties)
-            cell.name = cell_name
-            cell.id = cell_name
-
-            print cell_name
 
             nml_doc.cells.append(cell)
+            
+            cell.morphology = neuroml.Morphology(id="morph")
+            
+            cell.morphology.segments.append(neuroml.Segment(id='0',
+                                                            name='soma',
+                                                            proximal=neuroml.Point3DWithDiam(x=0,y=0,z=0,diameter=10),
+                                                            distal=neuroml.Point3DWithDiam(x=0,y=20,z=0,diameter=10)))
+                                                            
+            cell.morphology.segments.append(neuroml.Segment(id='1',
+                                                            name='axon',
+                                                            parent=neuroml.SegmentParent(segments='0',fraction_along="0"),
+                                                            proximal=neuroml.Point3DWithDiam(x=0,y=0,z=0,diameter=2),
+                                                            distal=neuroml.Point3DWithDiam(x=0,y=-50,z=0,diameter=2)))
+                                                            
+            cell.morphology.segments.append(neuroml.Segment(id='2',
+                                                            name='basal_dend',
+                                                            parent=neuroml.SegmentParent(segments='0'),
+                                                            proximal=neuroml.Point3DWithDiam(x=0,y=20,z=0,diameter=3),
+                                                            distal=neuroml.Point3DWithDiam(x=50,y=20,z=0,diameter=3)))
+                                                            
+            cell.morphology.segments.append(neuroml.Segment(id='3',
+                                                            name='apical_dend',
+                                                            parent=neuroml.SegmentParent(segments='0'),
+                                                            proximal=neuroml.Point3DWithDiam(x=0,y=20,z=0,diameter=3),
+                                                            distal=neuroml.Point3DWithDiam(x=0,y=120,z=0,diameter=3)))
+                                                            
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="somatic",members=[neuroml.Member("0")]))
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="axonal",members=[neuroml.Member("1")]))
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="basal",members=[neuroml.Member("2")]))
+            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="apical",members=[neuroml.Member("3")]))
+                                                            
 
+            nml_filename = 'test/%s.cell.nml' % firing_type
+            neuroml.writers.NeuroMLWriter.write(nml_doc, nml_filename)
 
-            nml_filename = '%s.cell.nml' % cell_name
-            with open(nml_filename, 'w') as nml_file:
-                neuroml.writers.NeuroMLWriter.write(nml_doc, nml_file)
+            logging.debug("Written cell file to: %s", nml_filename)
 
-            logging.debug("Written channel file to: %s", nml_filename)
+            neuroml.utils.validate_neuroml2(nml_filename)
 
-            with open(nml_filename, 'r') as nml_file:
-                neuroml.utils.validate_neuroml2(nml_file)
-
-cell_type_vs_firing_type = {'bNAC':'bNAC_1',
-                            'cAC':'cACint_237',
-                            'cNAC':'cNAC_149',
-                            'dNAC':'dNAC_1',
-                            'bAC':'bAC_1',
-                            'bIR':'bIR_1',
-                            'bSTUT':'bSTUT_1',
-                            'cIR':'cIR_1',
-                            'cSTUT':'cSTUT_7',
-                            'dSTUT':'dSTUT_1',
-                            'L23PC':'cADpyr_229',
-                            'L4PC':'cADpyr_230',
-                            'L5PC':'cADpyr_232',  
-                            'L6PC':'cADpyr_231'}
 
 def get_biophysical_properties(cell_type, ignore_chans=[], templates_json="templates.json"):
     

@@ -1,0 +1,109 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="bAC_1">
+    <include href="../../NeuroML2/K_Tst.channel.nml"></include>
+    <include href="../../NeuroML2/SKv3_1.channel.nml"></include>
+    <include href="../../NeuroML2/Nap_Et2.channel.nml"></include>
+    <include href="../../NeuroML2/NaTs2_t.channel.nml"></include>
+    <include href="../../NeuroML2/Ih.channel.nml"></include>
+    <include href="../../NeuroML2/pas.channel.nml"></include>
+    <include href="../../NeuroML2/Im.channel.nml"></include>
+    <include href="../../NeuroML2/NaTa_t.channel.nml"></include>
+    <include href="../../NeuroML2/Ca_LVAst.channel.nml"></include>
+    <include href="../../NeuroML2/SK_E2.channel.nml"></include>
+    <include href="../../NeuroML2/K_Pst.channel.nml"></include>
+    <include href="../../NeuroML2/Ca.channel.nml"></include>
+    <cell id="bAC_1">
+        <morphology id="morph">
+            <segment id="0" name="soma">
+                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="1.000000e+01"/>
+                <distal y="2.000000e+01" x="0.000000e+00" z="0.000000e+00" diameter="1.000000e+01"/>
+            </segment>
+            <segment id="1" name="axon">
+                <parent fractionAlong="0" segment="0"/>
+                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="2.000000e+00"/>
+                <distal y="-5.000000e+01" x="0.000000e+00" z="0.000000e+00" diameter="2.000000e+00"/>
+            </segment>
+            <segment id="2" name="basal_dend">
+                <parent fractionAlong="1" segment="0"/>
+                <proximal y="2.000000e+01" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
+                <distal y="2.000000e+01" x="5.000000e+01" z="0.000000e+00" diameter="3.000000e+00"/>
+            </segment>
+            <segment id="3" name="apical_dend">
+                <parent fractionAlong="1" segment="0"/>
+                <proximal y="2.000000e+01" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
+                <distal y="1.200000e+02" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
+            </segment>
+            <segmentGroup id="somatic">
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup id="axonal">
+                <member segment="1"/>
+            </segmentGroup>
+            <segmentGroup id="basal">
+                <member segment="2"/>
+            </segmentGroup>
+            <segmentGroup id="apical">
+                <member segment="3"/>
+            </segmentGroup>
+        </morphology>
+        <biophysicalProperties id="biophys">
+            <membraneProperties>
+                <channelDensity id="basal_gK_Tstbar_K_Tst" segmentGroup="basal" ion="k" ionChannel="K_Tst" erev="-85.0 mV">
+                    <variableParameter segmentGroup="basal" parameter="gK_Tstbar_K_Tst"/>
+                </channelDensity>
+                <channelDensity id="basal_gSKv3_1bar_SKv3_1" segmentGroup="basal" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.005450 S_per_cm2"/>
+                <channelDensity id="basal_gNap_Et2bar_Nap_Et2" segmentGroup="basal" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000001 S_per_cm2"/>
+                <channelDensity id="basal_gNaTs2_tbar_NaTs2_t" segmentGroup="basal" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.004119 S_per_cm2"/>
+                <channelDensity id="basal_gIhbar_Ih" segmentGroup="basal" ion="hcn" ionChannel="Ih" erev="-45.0 mV">
+                    <variableParameter segmentGroup="basal" parameter="gIhbar_Ih"/>
+                </channelDensity>
+                <channelDensity id="basal_g_pas" segmentGroup="basal" ion="non_specific" ionChannel="pas" erev="-60.065872 mV" condDensity="0.000006 S_per_cm2"/>
+                <channelDensity id="basal_gImbar_Im" segmentGroup="basal" ion="k" ionChannel="Im" erev="-85.0 mV">
+                    <variableParameter segmentGroup="basal" parameter="gImbar_Im"/>
+                </channelDensity>
+                <channelDensity id="apical_gK_Tstbar_K_Tst" segmentGroup="apical" ion="k" ionChannel="K_Tst" erev="-85.0 mV">
+                    <variableParameter segmentGroup="apical" parameter="gK_Tstbar_K_Tst"/>
+                </channelDensity>
+                <channelDensity id="apical_gSKv3_1bar_SKv3_1" segmentGroup="apical" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.005450 S_per_cm2"/>
+                <channelDensity id="apical_gNap_Et2bar_Nap_Et2" segmentGroup="apical" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000001 S_per_cm2"/>
+                <channelDensity id="apical_gNaTs2_tbar_NaTs2_t" segmentGroup="apical" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.004119 S_per_cm2"/>
+                <channelDensity id="apical_gIhbar_Ih" segmentGroup="apical" ion="hcn" ionChannel="Ih" erev="-45.0 mV">
+                    <variableParameter segmentGroup="apical" parameter="gIhbar_Ih"/>
+                </channelDensity>
+                <channelDensity id="apical_g_pas" segmentGroup="apical" ion="non_specific" ionChannel="pas" erev="-60.065872 mV" condDensity="0.000006 S_per_cm2"/>
+                <channelDensity id="apical_gImbar_Im" segmentGroup="apical" ion="k" ionChannel="Im" erev="-85.0 mV">
+                    <variableParameter segmentGroup="apical" parameter="gImbar_Im"/>
+                </channelDensity>
+                <channelDensity id="axonal_gNaTa_tbar_NaTa_t" segmentGroup="axonal" ion="na" ionChannel="NaTa_t" erev="50.0 mV" condDensity="3.418459 S_per_cm2"/>
+                <channelDensity id="axonal_gK_Tstbar_K_Tst" segmentGroup="axonal" ion="k" ionChannel="K_Tst" erev="-85.0 mV" condDensity="0.026009 S_per_cm2"/>
+                <channelDensity id="axonal_gNap_Et2bar_Nap_Et2" segmentGroup="axonal" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000001 S_per_cm2"/>
+                <channelDensity id="axonal_gSK_E2bar_SK_E2" segmentGroup="axonal" ion="k" ionChannel="SK_E2" erev="-85.0 mV" condDensity="0.000009 S_per_cm2"/>
+                <channelDensity id="axonal_gK_Pstbar_K_Pst" segmentGroup="axonal" ion="k" ionChannel="K_Pst" erev="-85.0 mV" condDensity="0.025854 S_per_cm2"/>
+                <channelDensity id="axonal_gSKv3_1bar_SKv3_1" segmentGroup="axonal" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.196957 S_per_cm2"/>
+                <channelDensity id="axonal_g_pas" segmentGroup="axonal" ion="non_specific" ionChannel="pas" erev="-60.250899 mV" condDensity="0.000002 S_per_cm2"/>
+                <channelDensity id="axonal_gImbar_Im" segmentGroup="axonal" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.000599 S_per_cm2"/>
+                <channelDensity id="somatic_gK_Tstbar_K_Tst" segmentGroup="somatic" ion="k" ionChannel="K_Tst" erev="-85.0 mV" condDensity="0.008343 S_per_cm2"/>
+                <channelDensity id="somatic_gNap_Et2bar_Nap_Et2" segmentGroup="somatic" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000001 S_per_cm2"/>
+                <channelDensity id="somatic_gSK_E2bar_SK_E2" segmentGroup="somatic" ion="k" ionChannel="SK_E2" erev="-85.0 mV" condDensity="0.026900 S_per_cm2"/>
+                <channelDensity id="somatic_gK_Pstbar_K_Pst" segmentGroup="somatic" ion="k" ionChannel="K_Pst" erev="-85.0 mV" condDensity="0.502333 S_per_cm2"/>
+                <channelDensity id="somatic_gSKv3_1bar_SKv3_1" segmentGroup="somatic" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.653374 S_per_cm2"/>
+                <channelDensity id="somatic_g_pas" segmentGroup="somatic" ion="non_specific" ionChannel="pas" erev="-76.498119 mV" condDensity="0.000057 S_per_cm2"/>
+                <channelDensity id="somatic_gImbar_Im" segmentGroup="somatic" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.000784 S_per_cm2"/>
+                <channelDensity id="somatic_gNaTs2_tbar_NaTs2_t" segmentGroup="somatic" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.300054 S_per_cm2"/>
+                <channelDensityNernst id="axonal_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="0.002256 S_per_cm2" segmentGroup="axonal" ion="ca"/>
+                <channelDensityNernst id="axonal_gCabar_Ca" ionChannel="Ca" condDensity="0.000138 S_per_cm2" segmentGroup="axonal" ion="ca"/>
+                <channelDensityNernst id="somatic_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="0.005574 S_per_cm2" segmentGroup="somatic" ion="ca"/>
+                <channelDensityNernst id="somatic_gCabar_Ca" ionChannel="Ca" condDensity="0.000792 S_per_cm2" segmentGroup="somatic" ion="ca"/>
+                <specificCapacitance segmentGroup="basal" value="1.0 uF_per_cm2"/>
+                <specificCapacitance segmentGroup="apical" value="1.0 uF_per_cm2"/>
+                <specificCapacitance segmentGroup="axonal" value="1.0 uF_per_cm2"/>
+                <specificCapacitance segmentGroup="somatic" value="1.0 uF_per_cm2"/>
+                <initMembPotential segmentGroup="all" value="-80 mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <species segmentGroup="axonal" ion="ca" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
+                <species segmentGroup="somatic" ion="ca" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
+                <resistivity segmentGroup="all" value="100 ohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+</neuroml>

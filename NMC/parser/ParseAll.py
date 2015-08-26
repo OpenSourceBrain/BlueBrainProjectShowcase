@@ -285,7 +285,8 @@ wopen()
                                        0.025,
                                        "LEMS_%s.xml"%cell_dir,
                                        '../../NeuroML2',
-                                       copy_neuroml = False)
+                                       copy_neuroml = False,
+                                       seed=1234)
         
         pynml.nml2_to_svg(nml_net_loc)
         
