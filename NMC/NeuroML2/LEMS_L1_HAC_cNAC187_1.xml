@@ -17,8 +17,10 @@
     <Include file="cNAC187_L1_HAC_f8c9772d9d.stepcurrent3.net.nml"/>
     <Include file="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"/>
     <Include file="K_Tst.channel.nml"/>
+    <Include file="Nap_Et2.channel.nml"/>
     <Include file="NaTs2_t.channel.nml"/>
     <Include file="pas.channel.nml"/>
+    <Include file="Ca_LVAst.channel.nml"/>
     <Include file="K_Pst.channel.nml"/>
     <Include file="CaDynamics_E2_NML2.nml"/>
    

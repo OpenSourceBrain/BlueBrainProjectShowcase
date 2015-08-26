@@ -201,8 +201,8 @@ wopen()
                       "SKv3_1", "SK_E2", "CaDynamics_E2", "Nap_Et2", "Im",
                       "K_Tst", "NaTa_t", "K_Pst", "NaTs2_t"]
                       
-        ignore_chans=['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 
-                      "SKv3_1", "SK_E2", "Nap_Et2", "Im",
+        ignore_chans=['Ih', 'Ca', 
+                      "SKv3_1", "SK_E2", "Im",
                       "NaTa_t" ]
             
         bp, incl_chans = get_biophysical_properties(cell_info['e-type'], 

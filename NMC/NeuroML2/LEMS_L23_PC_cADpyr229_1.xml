@@ -18,8 +18,11 @@
     <Include file="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"/>
     <Include file="NaTs2_t.channel.nml"/>
     <Include file="K_Tst.channel.nml"/>
+    <Include file="Nap_Et2.channel.nml"/>
+    <Include file="Ca_HVA.channel.nml"/>
     <Include file="K_Pst.channel.nml"/>
     <Include file="CaDynamics_E2_NML2.nml"/>
+    <Include file="Ca_LVAst.channel.nml"/>
    
     <Simulation id="L23_PC_cADpyr229_1" length="3000ms" step="0.025ms" target="network">
         
