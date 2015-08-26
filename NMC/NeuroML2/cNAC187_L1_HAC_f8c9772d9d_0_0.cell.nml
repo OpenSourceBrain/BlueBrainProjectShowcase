@@ -7228,9 +7228,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="774"/>
                 <member segment="775"/>
                 <member segment="776"/>
@@ -7426,9 +7425,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="184"/>
                 <member segment="185"/>
                 <member segment="186"/>
@@ -7505,9 +7503,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="7"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="7"/>
+                <annotation/>
                 <member segment="32"/>
                 <member segment="33"/>
                 <member segment="34"/>
@@ -7672,9 +7669,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="7"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="7"/>
+                <annotation/>
                 <member segment="1641"/>
                 <member segment="1642"/>
                 <member segment="1643"/>
@@ -7797,9 +7793,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="5"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="5"/>
+                <annotation/>
                 <member segment="1554"/>
                 <member segment="1555"/>
                 <member segment="1556"/>
@@ -7892,9 +7887,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="1514"/>
                 <member segment="1515"/>
                 <member segment="1516"/>
@@ -7981,9 +7975,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="1131"/>
                 <member segment="1132"/>
                 <member segment="1133"/>
@@ -8089,9 +8082,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="865"/>
                 <member segment="866"/>
                 <member segment="867"/>
@@ -8167,9 +8159,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="5"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="5"/>
+                <annotation/>
                 <member segment="665"/>
                 <member segment="666"/>
                 <member segment="667"/>
@@ -8292,9 +8283,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="425"/>
                 <member segment="426"/>
                 <member segment="427"/>
@@ -8371,9 +8361,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="5"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="5"/>
+                <annotation/>
                 <member segment="353"/>
                 <member segment="354"/>
                 <member segment="355"/>
@@ -8480,9 +8469,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="255"/>
                 <member segment="256"/>
                 <member segment="257"/>
@@ -8557,9 +8545,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="7"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="7"/>
+                <annotation/>
                 <member segment="1419"/>
                 <member segment="1420"/>
                 <member segment="1421"/>
@@ -8660,9 +8647,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="1357"/>
                 <member segment="1358"/>
                 <member segment="1359"/>
@@ -8763,9 +8749,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="1228"/>
                 <member segment="1229"/>
                 <member segment="1230"/>
@@ -8876,9 +8861,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="1031"/>
                 <member segment="1032"/>
                 <member segment="1033"/>
@@ -8941,9 +8925,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="968"/>
                 <member segment="969"/>
                 <member segment="970"/>
@@ -8989,9 +8972,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="935"/>
                 <member segment="936"/>
                 <member segment="937"/>
@@ -9061,9 +9043,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
              neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
-                <annotation>
-                    <property tag="numberInternalDivisions" value="3"/>
-                </annotation>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
                 <member segment="623"/>
                 <member segment="624"/>
                 <member segment="625"/>
@@ -9573,8 +9554,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <initMembPotential segmentGroup="all" value="-80 mV"/>
             </membraneProperties>
             <intracellularProperties>
-                <species segmentGroup="axonal" ion="ca" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
-                <species segmentGroup="somatic" ion="ca" initialExtConcentration="1.0E-4 mM" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="1.0E-4 mM"/>
+                <species segmentGroup="axonal" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
+                <species segmentGroup="somatic" ion="ca" initialExtConcentration="2.0E-6 mol_per_cm3" concentrationModel="CaDynamics_E2_NML2" id="ca" initialConcentration="5.0E-11 mol_per_cm3"/>
                 <resistivity segmentGroup="all" value="100 ohm_cm"/>
             </intracellularProperties>
         </biophysicalProperties>
