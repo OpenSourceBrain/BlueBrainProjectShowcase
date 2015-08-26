@@ -224,6 +224,8 @@ def parse_templates_json(templates_json="templates.json",
 
         if save_example_files:
             cell = neuroml.Cell(id=firing_type,
+                                notes="\n*************************\nThis is not a physiologically constrained cell model!!\n"+\
+                                      "It is only for testing formatting of the biophysicalProperties extracted from templates.json\n*************************\n",
                                 biophysical_properties=biophysical_properties)
 
             nml_doc.cells.append(cell)

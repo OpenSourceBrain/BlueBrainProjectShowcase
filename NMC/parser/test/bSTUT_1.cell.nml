@@ -13,6 +13,12 @@
     <include href="../../NeuroML2/K_Pst.channel.nml"></include>
     <include href="../../NeuroML2/Ca.channel.nml"></include>
     <cell id="bSTUT_1">
+        <notes>
+*************************
+This is not a physiologically constrained cell model!!
+It is only for testing formatting of the biophysicalProperties extracted from templates.json
+*************************
+</notes>
         <morphology id="morph">
             <segment id="0" name="soma">
                 <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="1.000000e+01"/>

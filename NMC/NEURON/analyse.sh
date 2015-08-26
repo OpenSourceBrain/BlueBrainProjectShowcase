@@ -11,7 +11,7 @@ pynml-modchananalysis NaTa_t -stepV 5 -temperature 22 -nogui
 pynml-modchananalysis Nap_Et2 -stepV 5 -temperature 22 -nogui
 pynml-modchananalysis NaTs2_t -stepV 5 -temperature 22 -nogui
 
-pynml-modchananalysis Ca -stepV 5 -temperature 22 -nogui
+pynml-modchananalysis Ca_HVA -stepV 5 -temperature 22 -nogui
 pynml-modchananalysis Ca_LVAst -stepV 5 -temperature 22 -nogui
 
 pynml-modchananalysis SKv3_1 -stepV 5 -temperature 22 -nogui

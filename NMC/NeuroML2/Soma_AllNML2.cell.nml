@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Soma_AllNML2">
 
-    <include href="Ca.channel.nml"/>
+    <include href="Ca_HVA.channel.nml"/>
 
     <include href="Ca_LVAst.channel.nml"/>
 
@@ -89,7 +89,7 @@
 
                 <channelDensityNernst condDensity="3.43 mS_per_cm2" id="Ca_LVAst_all" ionChannel="Ca_LVAst" ion="ca"/>
                 
-                <channelDensityNernst condDensity="0.992 mS_per_cm2" id="Ca_all" ionChannel="Ca" ion="ca"/>
+                <channelDensityNernst condDensity="0.992 mS_per_cm2" id="Ca_HVA_all" ionChannel="Ca_HVA" ion="ca"/>
 
                 <spikeThresh value="0 mV"/>
 

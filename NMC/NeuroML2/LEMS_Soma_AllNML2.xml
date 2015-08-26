@@ -10,7 +10,7 @@
 
 
         <!--   Channel/synapse files-->
-    <Include file="Ca.channel.nml"/>
+    <Include file="Ca_HVA.channel.nml"/>
     <Include file="Ca_LVAst.channel.nml"/>
     <Include file="Ih.channel.nml"/>
     <Include file="Im.channel.nml"/>
@@ -46,7 +46,7 @@
         </Display>
     
         <Display id="GraphWin_4" title="BBP Ca erev" xmin="-60.0" xmax="660.0" ymin="70" ymax="130" timeScale="1ms">
-            <Line id="Ca_erev" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_all/erev" scale="1mV" color="#000000"/>
+            <Line id="Ca_erev" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_HVA_all/erev" scale="1mV" color="#000000"/>
         
         </Display>
         
@@ -59,8 +59,8 @@
             <Line id="KdShu2007_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/KdShu2007_all/KdShu2007/m/q" scale="1" color="#0000ff"/>
             <Line id="KdShu2007_h" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/KdShu2007_all/KdShu2007/h/q" scale="1" color="#00ff00"/>
             
-            <Line id="Ca_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_all/Ca/m/q" scale="1" color="#ffff00"/>
-            <Line id="Ca_h" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_all/Ca/h/q" scale="1" color="#ff00ff"/>
+            <Line id="Ca_HVA_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_HVA_all/Ca_HVA/m/q" scale="1" color="#ffff00"/>
+            <Line id="Ca_HVA_h" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/Ca_HVA_all/Ca_HVA/h/q" scale="1" color="#ff00ff"/>
             
             <!--
             <Line id="NaTa_t_m" timeScale="1ms" quantity="CG_TestCML/0/Soma_AllNML2/biophys/membraneProperties/NaTa_t_all/NaTa_t/m/q" scale="1" color="#FF0000"/>
