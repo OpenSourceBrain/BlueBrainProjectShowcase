@@ -96,7 +96,7 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <channelDensityNernst id="somatic_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="0.000778 S_per_cm2" segmentGroup="somatic" ion="ca"/>
                 <channelDensityNonUniform id="apical_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
                     <variableParameter segmentGroup="apical" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x-0.000000)*0.003100))*0.000080" inhomogeneousParameter="PathLengthOver_apical"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p-0.000000)*0.003100))*0.000080)" inhomogeneousParameter="PathLengthOver_apical"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <specificCapacitance segmentGroup="basal" value="2 uF_per_cm2"/>

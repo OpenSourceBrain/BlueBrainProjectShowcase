@@ -111,32 +111,32 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <channelDensityNernst id="somatic_gCabar_Ca" ionChannel="Ca" condDensity="0.000792 S_per_cm2" segmentGroup="somatic" ion="ca"/>
                 <channelDensityNonUniform id="basal_gK_Tstbar_K_Tst" ionChannel="K_Tst" erev="-85.0 mV" ion="k">
                     <variableParameter segmentGroup="basal" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.002940" inhomogeneousParameter="PathLengthOver_basal"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p--1000.000000)*-0.003000))*0.002940)" inhomogeneousParameter="PathLengthOver_basal"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <channelDensityNonUniform id="basal_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
                     <variableParameter segmentGroup="basal" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000051" inhomogeneousParameter="PathLengthOver_basal"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p-0.000000)*0.003000))*0.000051)" inhomogeneousParameter="PathLengthOver_basal"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <channelDensityNonUniform id="basal_gImbar_Im" ionChannel="Im" erev="-85.0 mV" ion="k">
                     <variableParameter segmentGroup="basal" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.000371" inhomogeneousParameter="PathLengthOver_basal"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p--1000.000000)*-0.003000))*0.000371)" inhomogeneousParameter="PathLengthOver_basal"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <channelDensityNonUniform id="apical_gK_Tstbar_K_Tst" ionChannel="K_Tst" erev="-85.0 mV" ion="k">
                     <variableParameter segmentGroup="apical" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.002940" inhomogeneousParameter="PathLengthOver_apical"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p--1000.000000)*-0.003000))*0.002940)" inhomogeneousParameter="PathLengthOver_apical"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <channelDensityNonUniform id="apical_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
                     <variableParameter segmentGroup="apical" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000051" inhomogeneousParameter="PathLengthOver_apical"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p-0.000000)*0.003000))*0.000051)" inhomogeneousParameter="PathLengthOver_apical"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <channelDensityNonUniform id="apical_gImbar_Im" ionChannel="Im" erev="-85.0 mV" ion="k">
                     <variableParameter segmentGroup="apical" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x--1000.000000)*-0.003000))*0.000371" inhomogeneousParameter="PathLengthOver_apical"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p--1000.000000)*-0.003000))*0.000371)" inhomogeneousParameter="PathLengthOver_apical"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <specificCapacitance segmentGroup="basal" value="1.0 uF_per_cm2"/>

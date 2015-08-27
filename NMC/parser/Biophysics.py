@@ -117,9 +117,9 @@ def parse_templates_json(templates_json="templates.json",
                             value = parameter_dict['distribution']['value']
                             cond_density = "%s S_per_cm2" % value
                         else:
-
+                            new_expr = '1e4 * (%s)'%parameter_dict['distribution']['value'].replace('x','p').replace('epp','exp')
                             iv = neuroml.InhomogeneousValue(inhomogeneous_parameters="PathLengthOver_%s"%section_list,
-                                                            value=parameter_dict['distribution']['value'])
+                                                            value=new_expr)
                             variable_parameters = [
                                 neuroml.VariableParameter(
                                     segment_groups=section_list,

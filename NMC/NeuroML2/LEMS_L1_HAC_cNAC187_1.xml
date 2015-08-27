@@ -20,6 +20,7 @@
     <Include file="SKv3_1.channel.nml"/>
     <Include file="Nap_Et2.channel.nml"/>
     <Include file="NaTs2_t.channel.nml"/>
+    <Include file="Ih.channel.nml"/>
     <Include file="pas.channel.nml"/>
     <Include file="Im.channel.nml"/>
     <Include file="NaTa_t.channel.nml"/>

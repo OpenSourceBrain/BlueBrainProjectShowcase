@@ -4,7 +4,7 @@ load_file("utils/cellCheck.hoc")
 
 // For testing...
                       
-forall {if (ismembrane("Ih")) { uninsert Ih } }
+//forall {if (ismembrane("Ih")) { uninsert Ih } }
 //forall {if (ismembrane("Ca_HVA")) { uninsert Ca_HVA } }
 //forall {if (ismembrane("Ca_LVAst")) { uninsert Ca_LVAst } }
 //forall {if (ismembrane("Ca")) { uninsert Ca } }
@@ -33,5 +33,5 @@ access cNAC187_L1_HAC_f8c9772d9d[0].dend[0]
 
 psection()
 
-quit()
+//quit()
 

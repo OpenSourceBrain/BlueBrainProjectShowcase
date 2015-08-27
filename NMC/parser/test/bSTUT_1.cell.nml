@@ -115,12 +115,12 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <channelDensityNernst id="somatic_gCabar_Ca" ionChannel="Ca" condDensity="0.000174 S_per_cm2" segmentGroup="somatic" ion="ca"/>
                 <channelDensityNonUniform id="basal_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
                     <variableParameter segmentGroup="basal" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000049" inhomogeneousParameter="PathLengthOver_basal"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p-0.000000)*0.003000))*0.000049)" inhomogeneousParameter="PathLengthOver_basal"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <channelDensityNonUniform id="apical_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
                     <variableParameter segmentGroup="apical" parameter="condDensity">
-                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000049" inhomogeneousParameter="PathLengthOver_apical"/>
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p-0.000000)*0.003000))*0.000049)" inhomogeneousParameter="PathLengthOver_apical"/>
                     </variableParameter>
                 </channelDensityNonUniform>
                 <specificCapacitance segmentGroup="basal" value="1.0 uF_per_cm2"/>

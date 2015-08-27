@@ -1,4 +1,5 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="NeuroML2_file_exported_from_NEURON">
+    <include href="Ih.channel.nml"></include>
     <include href="NaTs2_t.channel.nml"></include>
     <include href="SKv3_1.channel.nml"></include>
     <include href="Im.channel.nml"></include>
@@ -19,8 +20,6 @@ Export of a cell model obtained from the BBP Neocortical Microcircuit Collaborat
 *  This export to NeuroML2 has not yet been fully validated!!
 *  Use with caution!!
 ******************************************************
-
-Ignored channels = ['Ih']
 
 For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L23_PC_L23PC/details
 
@@ -6992,7 +6991,7 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <include segmentGroup="dend_63"/>
                 <include segmentGroup="dend_64"/>
                 <include segmentGroup="dend_65"/>
-                <inhomogeneousParameter id="PathLengthOver_basal" variable="x" metric="Path Length from root">
+                <inhomogeneousParameter id="PathLengthOver_basal" variable="p" metric="Path Length from root">
                     <proximal translationStart="0.000000e+00"/>
                 </inhomogeneousParameter>
             </segmentGroup>
@@ -7020,7 +7019,7 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <include segmentGroup="apic_20"/>
                 <include segmentGroup="apic_21"/>
                 <include segmentGroup="apic_22"/>
-                <inhomogeneousParameter id="PathLengthOver_apical" variable="x" metric="Path Length from root">
+                <inhomogeneousParameter id="PathLengthOver_apical" variable="p" metric="Path Length from root">
                     <proximal translationStart="0.000000e+00"/>
                 </inhomogeneousParameter>
             </segmentGroup>
@@ -7034,6 +7033,7 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
         </morphology>
         <biophysicalProperties id="biophys">
             <membraneProperties>
+                <channelDensity id="basal_gIhbar_Ih" segmentGroup="basal" ion="hcn" ionChannel="Ih" erev="-45.0 mV" condDensity="0.000080 S_per_cm2"/>
                 <channelDensity id="apical_gNaTs2_tbar_NaTs2_t" segmentGroup="apical" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.012009 S_per_cm2"/>
                 <channelDensity id="apical_gSKv3_1bar_SKv3_1" segmentGroup="apical" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.000513 S_per_cm2"/>
                 <channelDensity id="apical_gImbar_Im" segmentGroup="apical" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.000740 S_per_cm2"/>
@@ -7046,10 +7046,16 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <channelDensity id="somatic_gSKv3_1bar_SKv3_1" segmentGroup="somatic" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.102517 S_per_cm2"/>
                 <channelDensity id="somatic_gSK_E2bar_SK_E2" segmentGroup="somatic" ion="k" ionChannel="SK_E2" erev="-85.0 mV" condDensity="0.099433 S_per_cm2"/>
                 <channelDensity id="somatic_gNaTs2_tbar_NaTs2_t" segmentGroup="somatic" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.926705 S_per_cm2"/>
+                <channelDensity id="somatic_gIhbar_Ih" segmentGroup="somatic" ion="hcn" ionChannel="Ih" erev="-45.0 mV" condDensity="0.000080 S_per_cm2"/>
                 <channelDensityNernst id="axonal_gCa_HVAbar_Ca_HVA" ionChannel="Ca_HVA" condDensity="0.000306 S_per_cm2" segmentGroup="axonal" ion="ca"/>
                 <channelDensityNernst id="axonal_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="0.000050 S_per_cm2" segmentGroup="axonal" ion="ca"/>
                 <channelDensityNernst id="somatic_gCa_HVAbar_Ca_HVA" ionChannel="Ca_HVA" condDensity="0.000374 S_per_cm2" segmentGroup="somatic" ion="ca"/>
                 <channelDensityNernst id="somatic_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="0.000778 S_per_cm2" segmentGroup="somatic" ion="ca"/>
+                <channelDensityNonUniform id="apical_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
+                    <variableParameter segmentGroup="apical" parameter="condDensity">
+                        <inhomogeneousValue value="1e4 * ((-0.869600 + 2.087000*exp((p-0.000000)*0.003100))*0.000080)" inhomogeneousParameter="PathLengthOver_apical"/>
+                    </variableParameter>
+                </channelDensityNonUniform>
                 <specificCapacitance segmentGroup="basal" value="2 uF_per_cm2"/>
                 <specificCapacitance segmentGroup="apical" value="2 uF_per_cm2"/>
                 <specificCapacitance segmentGroup="axonal" value="1.0 uF_per_cm2"/>

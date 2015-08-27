@@ -8,8 +8,6 @@ Export of a cell model obtained from the BBP Neocortical Microcircuit Collaborat
 *  Use with caution!!
 ******************************************************
 
-Ignored channels = ['Ih']
-
 For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L1_HAC_cNAC/details
 
 </notes>
