@@ -195,6 +195,11 @@ wopen()
             cell.morphology.segment_groups.append(new_seg_group)
             for sg in groups[g]:
                 new_seg_group.includes.append(neuroml.Include(sg))
+            if g in ['basal', 'apical']:
+                new_seg_group.inhomogeneous_parameters.append(neuroml.InhomogeneousParameter(id="PathLengthOver_"+g,
+                                                              variable="x",
+                                                              metric="Path Length from root",
+                                                              proximal=neuroml.ProximalDetails(translation_start="0")))
                 
     
         ignore_chans=['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca', 

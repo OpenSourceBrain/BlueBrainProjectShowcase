@@ -94,6 +94,8 @@ def parse_templates_json(templates_json="templates.json",
         included_channels[firing_type] = []
         channel_densities = []
         channel_density_nernsts = []
+        channel_density_non_uniform_nernsts = []
+        channel_density_non_uniforms = []
         species = []
         
         
@@ -115,10 +117,14 @@ def parse_templates_json(templates_json="templates.json",
                             value = parameter_dict['distribution']['value']
                             cond_density = "%s S_per_cm2" % value
                         else:
+
+                            iv = neuroml.InhomogeneousValue(inhomogeneous_parameters="PathLengthOver_%s"%section_list,
+                                                            value=parameter_dict['distribution']['value'])
                             variable_parameters = [
                                 neuroml.VariableParameter(
                                     segment_groups=section_list,
-                                    parameter=parameter_name)]
+                                    parameter='condDensity',
+                                    inhomogeneous_value=iv)]
 
                         channel_nml2_file = "%s.channel.nml"%channel
                         if channel_nml2_file not in included_channels[firing_type]:
@@ -142,13 +148,17 @@ def parse_templates_json(templates_json="templates.json",
                                 ['value']
                             erev = "%s mV" % erev
                             arguments["ion"] = "non_specific"
+                            
+                        if variable_parameters is not None:
+                            channel_class += 'NonUniform'
+                        else:
+                            arguments["segment_groups"] = section_list
 
                         if erev is not None:
                             arguments["erev"] = erev
                         arguments["id"] = "%s_%s" % (section_list, parameter_name)
                         if cond_density is not None:
                             arguments["cond_density"] = cond_density
-                        arguments["segment_groups"] = section_list
                         arguments['ion_channel'] = channel
                         if variable_parameters is not None:
                             arguments['variable_parameters'] = variable_parameters
@@ -157,6 +167,10 @@ def parse_templates_json(templates_json="templates.json",
 
                         if channel_class == "ChannelDensityNernst":
                             channel_density_nernsts.append(density)
+                        elif channel_class == "ChannelDensityNernstNonUniform":
+                            channel_density_non_uniform_nernsts.append(density)
+                        elif channel_class == "ChannelDensityNonUniform":
+                            channel_density_non_uniforms.append(density)
                         else:
                             channel_densities.append(density)
                             
@@ -214,6 +228,8 @@ def parse_templates_json(templates_json="templates.json",
         membrane_properties = neuroml.MembraneProperties(
             channel_densities=channel_densities,
             channel_density_nernsts=channel_density_nernsts,
+            channel_density_non_uniform_nernsts=channel_density_non_uniform_nernsts,
+            channel_density_non_uniforms=channel_density_non_uniforms,
             specific_capacitances=specific_capacitances,
             init_memb_potentials=init_memb_potentials)
 
@@ -278,20 +294,37 @@ def parse_templates_json(templates_json="templates.json",
                                                                        members=[neuroml.Member("2")]))
                                                             
             cell.morphology.segments.append(neuroml.Segment(id='3',
-                                                            name='apical_dend',
+                                                            name='apical_dend1',
                                                             parent=neuroml.SegmentParent(segments='0'),
                                                             proximal=neuroml.Point3DWithDiam(x=0,y=20,z=0,diameter=3),
                                                             distal=neuroml.Point3DWithDiam(x=0,y=120,z=0,diameter=3)))
+            cell.morphology.segments.append(neuroml.Segment(id='4',
+                                                            name='apical_dend2',
+                                                            parent=neuroml.SegmentParent(segments='0'),
+                                                            proximal=neuroml.Point3DWithDiam(x=0,y=120,z=0,diameter=3),
+                                                            distal=neuroml.Point3DWithDiam(x=0,y=220,z=0,diameter=3)))
                                                             
             cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="apical_dend",
                                                                        neuro_lex_id="sao864921383",
-                                                                       members=[neuroml.Member("2")]))
+                                                                       members=[neuroml.Member("3"),neuroml.Member("4")]))
                                                             
                                                             
             cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="somatic",includes=[neuroml.Include("soma")]))
             cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="axonal", includes=[neuroml.Include("axon")]))
-            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="basal",  includes=[neuroml.Include("basal_dend")]))
-            cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="apical", includes=[neuroml.Include("apical_dend")]))
+            
+            sg = neuroml.SegmentGroup(id="basal", includes=[neuroml.Include("basal_dend")])
+            sg.inhomogeneous_parameters.append(neuroml.InhomogeneousParameter(id="PathLengthOver_"+"basal",
+                                                                              variable="x",
+                                                                              metric="Path Length from root",
+                                                                              proximal=neuroml.ProximalDetails(translation_start="0")))
+            cell.morphology.segment_groups.append(sg)
+            
+            sg = neuroml.SegmentGroup(id="apical", includes=[neuroml.Include("apical_dend")])
+            sg.inhomogeneous_parameters.append(neuroml.InhomogeneousParameter(id="PathLengthOver_"+"apical",
+                                                                              variable="x",
+                                                                              metric="Path Length from root",
+                                                                              proximal=neuroml.ProximalDetails(translation_start="0")))
+            cell.morphology.segment_groups.append(sg)
                                                             
 
             nml_filename = 'test/%s.cell.nml' % firing_type

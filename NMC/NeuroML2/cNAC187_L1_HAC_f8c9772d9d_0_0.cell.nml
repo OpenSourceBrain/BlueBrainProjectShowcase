@@ -9529,8 +9529,15 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <include segmentGroup="dend_40"/>
                 <include segmentGroup="dend_41"/>
                 <include segmentGroup="dend_42"/>
+                <inhomogeneousParameter id="PathLengthOver_basal" variable="x" metric="Path Length from root">
+                    <proximal translationStart="0.000000e+00"/>
+                </inhomogeneousParameter>
             </segmentGroup>
-            <segmentGroup id="apical"/>
+            <segmentGroup id="apical">
+                <inhomogeneousParameter id="PathLengthOver_apical" variable="x" metric="Path Length from root">
+                    <proximal translationStart="0.000000e+00"/>
+                </inhomogeneousParameter>
+            </segmentGroup>
             <segmentGroup id="axonal">
                 <include segmentGroup="axon_0"/>
                 <include segmentGroup="axon_1"/>

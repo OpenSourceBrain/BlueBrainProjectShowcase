@@ -33,10 +33,15 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <proximal y="2.000000e+01" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
                 <distal y="2.000000e+01" x="5.000000e+01" z="0.000000e+00" diameter="3.000000e+00"/>
             </segment>
-            <segment id="3" name="apical_dend">
+            <segment id="3" name="apical_dend1">
                 <parent fractionAlong="1" segment="0"/>
                 <proximal y="2.000000e+01" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
                 <distal y="1.200000e+02" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
+            </segment>
+            <segment id="4" name="apical_dend2">
+                <parent fractionAlong="1" segment="0"/>
+                <proximal y="1.200000e+02" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
+                <distal y="2.200000e+02" x="0.000000e+00" z="0.000000e+00" diameter="3.000000e+00"/>
             </segment>
             <segmentGroup neuroLexId="sao864921383" id="soma">
                 <member segment="0"/>
@@ -48,7 +53,8 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <member segment="2"/>
             </segmentGroup>
             <segmentGroup neuroLexId="sao864921383" id="apical_dend">
-                <member segment="2"/>
+                <member segment="3"/>
+                <member segment="4"/>
             </segmentGroup>
             <segmentGroup id="somatic">
                 <include segmentGroup="soma"/>
@@ -58,9 +64,15 @@ It is only for testing formatting of the biophysicalProperties extracted from te
             </segmentGroup>
             <segmentGroup id="basal">
                 <include segmentGroup="basal_dend"/>
+                <inhomogeneousParameter id="PathLengthOver_basal" variable="x" metric="Path Length from root">
+                    <proximal translationStart="0.000000e+00"/>
+                </inhomogeneousParameter>
             </segmentGroup>
             <segmentGroup id="apical">
                 <include segmentGroup="apical_dend"/>
+                <inhomogeneousParameter id="PathLengthOver_apical" variable="x" metric="Path Length from root">
+                    <proximal translationStart="0.000000e+00"/>
+                </inhomogeneousParameter>
             </segmentGroup>
         </morphology>
         <biophysicalProperties id="biophys">
@@ -69,18 +81,12 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <channelDensity id="basal_gSKv3_1bar_SKv3_1" segmentGroup="basal" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.000083 S_per_cm2"/>
                 <channelDensity id="basal_gNap_Et2bar_Nap_Et2" segmentGroup="basal" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000000 S_per_cm2"/>
                 <channelDensity id="basal_gNaTs2_tbar_NaTs2_t" segmentGroup="basal" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.000229 S_per_cm2"/>
-                <channelDensity id="basal_gIhbar_Ih" segmentGroup="basal" ion="hcn" ionChannel="Ih" erev="-45.0 mV">
-                    <variableParameter segmentGroup="basal" parameter="gIhbar_Ih"/>
-                </channelDensity>
                 <channelDensity id="basal_g_pas" segmentGroup="basal" ion="non_specific" ionChannel="pas" erev="-60.295916 mV" condDensity="0.000001 S_per_cm2"/>
                 <channelDensity id="basal_gImbar_Im" segmentGroup="basal" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.000022 S_per_cm2"/>
                 <channelDensity id="apical_gK_Tstbar_K_Tst" segmentGroup="apical" ion="k" ionChannel="K_Tst" erev="-85.0 mV" condDensity="0.001511 S_per_cm2"/>
                 <channelDensity id="apical_gSKv3_1bar_SKv3_1" segmentGroup="apical" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.000083 S_per_cm2"/>
                 <channelDensity id="apical_gNap_Et2bar_Nap_Et2" segmentGroup="apical" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000000 S_per_cm2"/>
                 <channelDensity id="apical_gNaTs2_tbar_NaTs2_t" segmentGroup="apical" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.000229 S_per_cm2"/>
-                <channelDensity id="apical_gIhbar_Ih" segmentGroup="apical" ion="hcn" ionChannel="Ih" erev="-45.0 mV">
-                    <variableParameter segmentGroup="apical" parameter="gIhbar_Ih"/>
-                </channelDensity>
                 <channelDensity id="apical_g_pas" segmentGroup="apical" ion="non_specific" ionChannel="pas" erev="-60.295916 mV" condDensity="0.000001 S_per_cm2"/>
                 <channelDensity id="apical_gImbar_Im" segmentGroup="apical" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.000022 S_per_cm2"/>
                 <channelDensity id="axonal_gNaTa_tbar_NaTa_t" segmentGroup="axonal" ion="na" ionChannel="NaTa_t" erev="50.0 mV" condDensity="3.999855 S_per_cm2"/>
@@ -103,6 +109,16 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <channelDensityNernst id="axonal_gCabar_Ca" ionChannel="Ca" condDensity="0.000400 S_per_cm2" segmentGroup="axonal" ion="ca"/>
                 <channelDensityNernst id="somatic_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="0.003242 S_per_cm2" segmentGroup="somatic" ion="ca"/>
                 <channelDensityNernst id="somatic_gCabar_Ca" ionChannel="Ca" condDensity="0.000174 S_per_cm2" segmentGroup="somatic" ion="ca"/>
+                <channelDensityNonUniform id="basal_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
+                    <variableParameter segmentGroup="basal" parameter="condDensity">
+                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000049" inhomogeneousParameter="PathLengthOver_basal"/>
+                    </variableParameter>
+                </channelDensityNonUniform>
+                <channelDensityNonUniform id="apical_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
+                    <variableParameter segmentGroup="apical" parameter="condDensity">
+                        <inhomogeneousValue value="(-0.869600 + 2.087000*exp((x-0.000000)*0.003000))*0.000049" inhomogeneousParameter="PathLengthOver_apical"/>
+                    </variableParameter>
+                </channelDensityNonUniform>
                 <specificCapacitance segmentGroup="basal" value="1.0 uF_per_cm2"/>
                 <specificCapacitance segmentGroup="apical" value="1.0 uF_per_cm2"/>
                 <specificCapacitance segmentGroup="axonal" value="1.0 uF_per_cm2"/>
