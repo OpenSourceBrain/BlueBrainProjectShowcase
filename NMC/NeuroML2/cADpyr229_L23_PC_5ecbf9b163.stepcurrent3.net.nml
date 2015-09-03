@@ -12,8 +12,8 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
 
 </notes>
     <include href="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"></include>
-    <pulseGenerator id="stepcurrent3_hyp" delay="0ms" duration="3000ms" amplitude="-0.025513nA"/>
-    <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.0665952nA"/>
+    <pulseGenerator id="stepcurrent3_hyp" delay="0ms" duration="3000ms" amplitude="-0.071777nA"/>
+    <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.189792nA"/>
     <network id="network" type="networkWithTemperature" temperature="34 degC">
         <population id="Pop_cADpyr229_L23_PC_5ecbf9b163_0_0" type="populationList" component="cADpyr229_L23_PC_5ecbf9b163_0_0" size="1">
             <instance id="0">

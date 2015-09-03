@@ -1,4 +1,5 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="cADpyr_232">
+    <include href="../../NeuroML2/pas.channel.nml"></include>
     <include href="../../NeuroML2/Ih.channel.nml"></include>
     <include href="../../NeuroML2/NaTs2_t.channel.nml"></include>
     <include href="../../NeuroML2/SKv3_1.channel.nml"></include>
@@ -76,6 +77,7 @@ It is only for testing formatting of the biophysicalProperties extracted from te
         </morphology>
         <biophysicalProperties id="biophys">
             <membraneProperties>
+                <channelDensity id="all_g_pas" segmentGroup="all" ion="non_specific" ionChannel="pas" erev="-75 mV" condDensity="3e-5 S_per_cm2"/>
                 <channelDensity id="basal_gIhbar_Ih" segmentGroup="basal" ion="hcn" ionChannel="Ih" erev="-45.0 mV" condDensity="0.000080 S_per_cm2"/>
                 <channelDensity id="apical_gNaTs2_tbar_NaTs2_t" segmentGroup="apical" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.026145 S_per_cm2"/>
                 <channelDensity id="apical_gSKv3_1bar_SKv3_1" segmentGroup="apical" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.004226 S_per_cm2"/>

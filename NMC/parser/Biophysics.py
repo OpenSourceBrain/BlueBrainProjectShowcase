@@ -68,14 +68,12 @@ cell_type_vs_firing_type = {'bNAC':'bNAC_1',
 biophysical_properties_vs_types = {}
 
 included_channels = {}
-
-def main():
-    parse_templates_json(save_example_files=True)
     
     
 def parse_templates_json(templates_json="templates.json",
                          ignore_chans = [],
-                         save_example_files=False):
+                         save_example_files=False,
+                         verbose=False):
 
     with open(templates_json, "r") as templates_json_file:
         json_cells = json.load(templates_json_file)
@@ -83,6 +81,8 @@ def parse_templates_json(templates_json="templates.json",
     concentrationModels = ''
 
     for firing_type_u in json_cells:
+        
+        if verbose: print("\n ---------------   %s "%(firing_type_u))
         firing_type = str(firing_type_u)
         cell_dict = json_cells[firing_type]
 
@@ -98,14 +98,44 @@ def parse_templates_json(templates_json="templates.json",
         channel_density_non_uniforms = []
         species = []
         
+        for section_list in cell_dict['forsecs']:
+            for parameter_name in cell_dict['forsecs'][section_list]:
+                value = cell_dict['forsecs'][section_list][parameter_name]
+                if verbose: print("   --- %s, %s: %s "%(section_list,parameter_name,value))
+                if parameter_name == 'g_pas':
+                    channel = 'pas'
+                    arguments = {}
+                    cond_density = "%s S_per_cm2" % value
+                    if verbose: print('    - Adding %s with %s'%(channel, cond_density))
+                    
+                    channel_nml2_file = "%s.channel.nml"%channel
+                    if channel_nml2_file not in included_channels[firing_type]:
+                        nml_doc.includes.append(
+                            neuroml.IncludeType(
+                                href="../../NeuroML2/%s" %
+                                channel_nml2_file))
+                        included_channels[firing_type].append(channel_nml2_file)
+
+                    erev = cell_dict['forsecs'][section_list]['e_pas']
+                    erev = "%s mV" % erev
+                    
+                    arguments["cond_density"] = cond_density
+                    arguments['ion_channel'] = channel
+                    arguments["ion"] = "non_specific"
+                    arguments["erev"] = erev
+                    arguments["id"] = "%s_%s" % (section_list, parameter_name)
+                    
+                    channel_class = 'ChannelDensity'
+                    density = getattr(neuroml, channel_class)(**arguments)
+
+                    channel_densities.append(density)
         
         for section_list in cell_dict['parameters']:
-            for parameter_name in \
-                    json_cells[firing_type]['parameters'][section_list]:
+            for parameter_name in cell_dict['parameters'][section_list]:
                 if parameter_name != 'e_pas' and 'CaDynamics_E2' not in parameter_name:
                     
                     parameter_dict = cell_dict['parameters'][section_list][parameter_name]
-                    
+                    if verbose: print("   --- %s, %s: %s "%(section_list,parameter_name,parameter_dict))
                     channel = parameter_dict['channel']
                     
                     if channel not in ignore_chans:
@@ -348,5 +378,9 @@ def get_biophysical_properties(cell_type, ignore_chans=[], templates_json="templ
     print("Retrieving biophys props for: %s (%s) from %s"%(cell_type,firing_type,biophysical_properties_vs_types.keys()))
     return biophysical_properties_vs_types[str(firing_type)], included_channels[str(firing_type)]
 
+
+def main():
+    parse_templates_json(save_example_files=True, verbose=True)
+    
 if __name__ == "__main__":
     main()

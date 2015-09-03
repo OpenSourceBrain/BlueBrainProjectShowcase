@@ -18,6 +18,13 @@ import json
 import os.path
 
 
+def get_stimulus_amplitudes(bbp_ref):
+    if bbp_ref=='cNAC187_L1_HAC_f8c9772d9d': return '-0.025513nA', '0.0665952nA'
+    if bbp_ref=='cADpyr229_L23_PC_5ecbf9b163': return '-0.071777nA', '0.189792nA'
+    else:
+        print('Cannot determine stimulation amplitudes for %s.\nPlease add this in ParseAll.py'%bbp_ref)
+        exit()
+
 
 def parse_cell_info_file(cell_dir):
     
@@ -237,8 +244,7 @@ wopen()
         stim_ref = 'stepcurrent3'
         stim_ref_hyp = '%s_hyp'%stim_ref
         stim_sim_duration = 3000
-        stim_hyp_amp = '-0.025513nA'
-        stim_amp = '0.0665952nA'
+        stim_hyp_amp, stim_amp = get_stimulus_amplitudes(bbp_ref)
         stim_del = '700ms'
         stim_dur = '2000ms'
         
