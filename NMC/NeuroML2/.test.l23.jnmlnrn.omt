@@ -1,5 +1,4 @@
 # Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
-# Still in development, subject to change without notice!!
 
 target: LEMS_L23_PC_cADpyr229_1.xml 
 engine: jNeuroML_NEURON
@@ -14,5 +13,5 @@ experiments:
           scaling: [1000, 1000]
         spike detection: 
           method: threshold
-          threshold: -25
-        tolerance: 0.0157
+          threshold: 0
+        tolerance: 0.0158

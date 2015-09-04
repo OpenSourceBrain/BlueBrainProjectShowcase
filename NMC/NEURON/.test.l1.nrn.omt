@@ -1,21 +1,9 @@
 # Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
-# Still in development, subject to change without notice!!
 
 target: Test_L1.hoc
 engine: NEURON
 mep: .test.l1.mep
 experiments:
-#  stepcurrent3_-70:
-#    observables:
-#      spike times:
-#        file: 
-#          path: hoc_recordings/soma_voltage.dat
-#          columns: [0,1]
-#          scaling: [1, 1]
-#        spike detection: 
-#          method: threshold
-#          threshold: -70
-#        tolerance: 0
   stepcurrent3_-25:
     observables:
       spike times:

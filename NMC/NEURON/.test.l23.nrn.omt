@@ -1,5 +1,4 @@
 # Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
-# Still in development, subject to change without notice!!
 
 target: Test_L23.hoc
 engine: NEURON

@@ -1,0 +1,30 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="NeuroML2_file_exported_from_NEURON">
+    <notes>
+
+Export of a cell model obtained from the BBP Neocortical Microcircuit Collaboration Portal into NeuroML2
+
+******************************************************
+*  This export to NeuroML2 has not yet been fully validated!!
+*  Use with caution!!
+******************************************************
+
+For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L5_TTPC1_L5PC/details
+
+</notes>
+    <include href="cADpyr232_L5_TTPC1_0fb1ca4724_0_0.cell.nml"></include>
+    <pulseGenerator id="stepcurrent3_hyp" delay="0ms" duration="3000ms" amplitude="-0.247559nA"/>
+    <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.646625nA"/>
+    <network id="network" type="networkWithTemperature" temperature="34 degC">
+        <population id="Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0" type="populationList" component="cADpyr232_L5_TTPC1_0fb1ca4724_0_0" size="1">
+            <instance id="0">
+                <location y="0." x="0." z="0."/>
+            </instance>
+        </population>
+        <inputList id="stepcurrent3_hyp_input" component="stepcurrent3_hyp" population="Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0">
+            <input destination="synapses" id="0" target="../Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0/0/cADpyr232_L5_TTPC1_0fb1ca4724_0_0"/>
+        </inputList>
+        <inputList id="stepcurrent3_input" component="stepcurrent3" population="Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0">
+            <input destination="synapses" id="0" target="../Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0/0/cADpyr232_L5_TTPC1_0fb1ca4724_0_0"/>
+        </inputList>
+    </network>
+</neuroml>
