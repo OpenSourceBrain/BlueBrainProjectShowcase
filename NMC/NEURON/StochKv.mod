@@ -1,5 +1,5 @@
 TITLE skm95.mod  
- 
+
 COMMENT
 ----------------------------------------------------------------
 Stochastic version of the K channel mechanism kd3h5.mod by
@@ -60,20 +60,20 @@ PARAMETER {
     v           (mV)
     dt      (ms)
     area    (um2)
-    
+
     gamma  =  30          (pS)
     eta              (1/um2)
     gkbar = .75      (S/cm2)
-    
+
     tha  = -40   (mV)        : v 1/2 for inf
     qa   = 9            : inf slope     
     Ra   = 0.02 (/ms)       : max act rate
     Rb   = 0.002    (/ms)       : max deact rate
-    
+
     celsius (degC)
     temp = 23 (degC)   : original temperature for kinetic set
     q10 = 2.3               : temperature sensitivity
-    
+
     deterministic = 0   : if non-zero, will use deterministic version
     vmin = -120 (mV)    : range to construct tables for
     vmax = 100  (mV)
@@ -111,7 +111,7 @@ COMMENT
 The Verbatim block is needed to generate random nos. from a uniform distribution between 0 and 1 
 for comparison with Pr to decide whether to activate the synapse or not
 ENDCOMMENT
-   
+
 VERBATIM
 #include <stdlib.h>
 #include <stdio.h>
@@ -129,10 +129,10 @@ INITIAL {
     n = ninf
     scale_dens = gamma/area
     N = floor(eta*area + 0.5)
-    
+
     N1 = floor(n * N + 0.5)
     N0 = N-N1       : any round off into non-conducting state
-    
+
     n0_n1 = 0
     n1_n0 = 0
 }
@@ -141,9 +141,9 @@ INITIAL {
 : Breakpoint for each integration step
 BREAKPOINT {
   SOLVE states
-  
+
   gk =  (strap(N1) * scale_dens * tadj)
-  
+
   ik = 1e-4 * gk * (v - ek)
 } 
 
@@ -153,14 +153,14 @@ BREAKPOINT {
 PROCEDURE states() {
 
     trates(v)
-    
+
     P_a = strap(a*dt)
     P_b = strap(b*dt)
 
     : check that will represent probabilities when used
     ChkProb( P_a)
     ChkProb( P_b)
-    
+
     : transitions
     n0_n1 = BnlDev(P_a, N0)
     n1_n0 = BnlDev(P_b, N1)
@@ -176,7 +176,7 @@ PROCEDURE trates(v (mV)) {
     TABLE ntau, ninf, a, b, tadj
     DEPEND dt, Ra, Rb, tha, qa, q10, temp, celsius
     FROM vmin TO vmax WITH 199
-    
+
     tadj = q10 ^ ((celsius - temp)/(10 (K)))
     a = SigmoidRate(v, tha, Ra, qa)
     a = a * tadj
@@ -336,10 +336,10 @@ VERBATIM
         static int nold=(-1);
         double am,em,g,angle,p,bnl,sq,bt,y;
         static double pold=(-1.0),pc,plog,pclog,en,oldg;
-        
+
         /* prepare to always ignore errors within this routine */
-         
-        
+
+
         p=(_lppr <= 0.5 ? _lppr : 1.0-_lppr);
         am=_lnnr*p;
         if (_lnnr < 25) {
@@ -383,13 +383,13 @@ VERBATIM
             bnl=em;
         }
         if (p != _lppr) bnl=_lnnr-bnl;
-        
+
         /* recover error if changed during this routine, thus ignoring
             any errors during this routine */
-       
-        
+
+
         return bnl;
-        
+
     ENDVERBATIM
     BnlDev = bnl
 }  

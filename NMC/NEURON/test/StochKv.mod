@@ -1,5 +1,5 @@
 TITLE skm95.mod  
- 
+
 COMMENT
 ----------------------------------------------------------------
 Stochastic version of the K channel mechanism kd3h5.mod by
@@ -62,20 +62,20 @@ PARAMETER {
     v           (mV)
     dt      (ms)
     area    (um2)
-    
+
     gamma  =  30          (pS)
     eta              (1/um2)
     gkbar = .75      (S/cm2)
-    
+
     tha  = -40   (mV)        : v 1/2 for inf
     qa   = 9            : inf slope     
     Ra   = 0.02 (/ms)       : max act rate
     Rb   = 0.002    (/ms)       : max deact rate
-    
+
     celsius (degC)
     temp = 23 (degC)   : original temperature for kinetic set
     q10 = 2.3               : temperature sensitivity
-    
+
     deterministic = 0   : if non-zero, will use deterministic version
     vmin = -120 (mV)    : range to construct tables for
     vmax = 100  (mV)
@@ -115,7 +115,7 @@ COMMENT
 The Verbatim block is needed to generate random nos. from a uniform distribution between 0 and 1 
 for comparison with Pr to decide whether to activate the synapse or not
 ENDCOMMENT
-   
+
 VERBATIM
 #include "nrnran123.h"
 extern int cvode_active_;
@@ -125,12 +125,12 @@ ENDVERBATIM
 INITIAL { 
 
     VERBATIM
-	if (_p_rng) {
+    if (_p_rng) {
 //	      nrnran123_setseq((nrnran123_State*)_p_rng, 0, 0);
-	}
-	if (cvode_active_ && !deterministic) {
-		hoc_execerror("StochKv with deterministic=0", "cannot be used with cvode");
-	}
+    }
+    if (cvode_active_ && !deterministic) {
+        hoc_execerror("StochKv with deterministic=0", "cannot be used with cvode");
+    }
     ENDVERBATIM
 
     eta = gkbar / gamma
@@ -138,13 +138,13 @@ INITIAL {
     n = ninf
     scale_dens = gamma/area
     N = floor(eta*area + 0.5)
-    
+
     N1 = n*N
   if (!deterministic) {
     N1 = floor(N1 + 0.5)
   }
     N0 = N-N1       : any round off into non-conducting state
-    
+
     n0_n1 = 0
     n1_n0 = 0
 }
@@ -153,9 +153,9 @@ INITIAL {
 : Breakpoint for each integration step
 BREAKPOINT {
   SOLVE states METHOD cnexp
-  
+
   gk =  (strap(N1) * scale_dens * tadj)
-  
+
   ik = 1e-4 * gk * (v - ek)
 } 
 
@@ -168,16 +168,16 @@ DERIVATIVE states {
 
         n' = a - (a + b)*n
     if (deterministic || dt > 1) { : ForwardSkip is also deterministic
-	N1 = n*N
+    N1 = n*N
     }else{
-    
+
     P_a = strap(a*dt)
     P_b = strap(b*dt)
 
     : check that will represent probabilities when used
     ChkProb( P_a)
     ChkProb( P_b)
-    
+
     : transitions
     n0_n1 = BnlDev(P_a, N0)
     n1_n0 = BnlDev(P_b, N1)
@@ -197,7 +197,7 @@ PROCEDURE trates(v (mV)) {
     TABLE ntau, ninf, a, b, tadj
     DEPEND dt, Ra, Rb, tha, qa, q10, temp, celsius
     FROM vmin TO vmax WITH 199
-    
+
     tadj = q10 ^ ((celsius - temp)/(10 (K)))
     a = SigmoidRate(v, tha, Ra, qa)
     a = a * tadj
@@ -252,18 +252,18 @@ PROCEDURE setRNG() {
 VERBATIM
     {
 #if !NRNBBCORE
-	nrnran123_State** pv = (nrnran123_State**)(&_p_rng);
-	uint32_t a2 = 0;
-	if (*pv) {
-		nrnran123_deletestream(*pv);
-		*pv = (nrnran123_State*)0;
-	} 
-	if (ifarg(2)) {
-		a2 = (uint32_t)*getarg(2);
-	}
-	if (ifarg(1)) {
-		*pv = nrnran123_newstream((uint32_t)*getarg(1), a2);
-	}
+    nrnran123_State** pv = (nrnran123_State**)(&_p_rng);
+    uint32_t a2 = 0;
+    if (*pv) {
+        nrnran123_deletestream(*pv);
+        *pv = (nrnran123_State*)0;
+    } 
+    if (ifarg(2)) {
+        a2 = (uint32_t)*getarg(2);
+    }
+    if (ifarg(1)) {
+        *pv = nrnran123_newstream((uint32_t)*getarg(1), a2);
+    }
 #endif
     }
 ENDVERBATIM
@@ -271,49 +271,49 @@ ENDVERBATIM
 
 FUNCTION urand() {
 VERBATIM
-	double value;
-	if (_p_rng) {
-		/*
-		:Supports separate independent but reproducible streams for
-		: each instance.
-	        : distribution MUST be set to Random.uniform(0,1)
-		*/
-		value = nrnran123_dblpick((nrnran123_State*)_p_rng);
-		//printf("random stream for this simulation = %lf\n",value);
-		return value;
-	}else{
-		//assert(0);
-		value = 0.0;
-	}
-	_lurand = value;
+    double value;
+    if (_p_rng) {
+        /*
+        :Supports separate independent but reproducible streams for
+        : each instance.
+            : distribution MUST be set to Random.uniform(0,1)
+        */
+        value = nrnran123_dblpick((nrnran123_State*)_p_rng);
+        //printf("random stream for this simulation = %lf\n",value);
+        return value;
+    }else{
+        //assert(0);
+        value = 0.0;
+    }
+    _lurand = value;
 ENDVERBATIM
 }
 
 VERBATIM
 static void bbcore_write(double* x, int* d, int* xx, int* offset, _threadargsproto_) {
-	if (d) {
-		uint32_t* di = ((uint32_t*)d) + *offset;
-	  // temporary just enough to see how much space is being used
-	  if (!_p_rng) {
-		di[0] = 0; di[1] = 0;
-	  }else{
-		nrnran123_State** pv = (nrnran123_State**)(&_p_rng);
-		nrnran123_getids(*pv, di, di+1);
-	  }
+    if (d) {
+        uint32_t* di = ((uint32_t*)d) + *offset;
+      // temporary just enough to see how much space is being used
+      if (!_p_rng) {
+        di[0] = 0; di[1] = 0;
+      }else{
+        nrnran123_State** pv = (nrnran123_State**)(&_p_rng);
+        nrnran123_getids(*pv, di, di+1);
+      }
 //printf("StochKv.mod %p: bbcore_write offset=%d %d %d\n", _p, *offset, d?di[0]:-1, d?di[1]:-1);
-	}
-	*offset += 2;
+    }
+    *offset += 2;
 }
 static void bbcore_read(double* x, int* d, int* xx, int* offset, _threadargsproto_) {
-	assert(!_p_rng);
-	uint32_t* di = ((uint32_t*)d) + *offset;
+    assert(!_p_rng);
+    uint32_t* di = ((uint32_t*)d) + *offset;
         if (di[0] != 0 || di[1] != 0)
         {
-	  nrnran123_State** pv = (nrnran123_State**)(&_p_rng);
-	  *pv = nrnran123_newstream(di[0], di[1]);
+      nrnran123_State** pv = (nrnran123_State**)(&_p_rng);
+      *pv = nrnran123_newstream(di[0], di[1]);
         }
 //printf("StochKv.mod %p: bbcore_read offset=%d %d %d\n", _p, *offset, di[0], di[1]);
-	*offset += 2;
+    *offset += 2;
 }
 ENDVERBATIM
 
@@ -386,9 +386,9 @@ VERBATIM
         int j;
         double am,em,g,angle,p,bnl,sq,bt,y;
         double pc,plog,pclog,en,oldg;
-        
+
         /* prepare to always ignore errors within this routine */
-         
+
         p=(_lppr <= 0.5 ? _lppr : 1.0-_lppr);
         am=_lnnr*p;
         if (_lnnr < 25) {
@@ -430,13 +430,13 @@ VERBATIM
             bnl=em;
         }
         if (p != _lppr) bnl=_lnnr-bnl;
-        
+
         /* recover error if changed during this routine, thus ignoring
             any errors during this routine */
-       
-        
+
+
         return bnl;
-        
+
     ENDVERBATIM
     BnlDev = bnl
 }  
