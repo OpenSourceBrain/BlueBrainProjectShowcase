@@ -117,7 +117,7 @@ for comparison with Pr to decide whether to activate the synapse or not
 ENDCOMMENT
    
 VERBATIM
-
+#include "nrnran123.h"
 extern int cvode_active_;
 ENDVERBATIM
 : ----------------------------------------------------------------
