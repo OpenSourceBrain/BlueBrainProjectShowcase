@@ -1,0 +1,224 @@
+{load_file("nrngui.hoc")}
+objectvar save_window_, rvp_
+objectvar scene_vector_[5]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin SingleCompartment
+{
+load_file("single.hoc")
+}
+ocbox_ = new SingleCompartment(0)
+ocbox_.inserter = new Inserter(0)
+{object_push(ocbox_.inserter)}
+{
+mt.select("StochKv") i = mt.selected()
+ms[i] = new MechanismStandard("StochKv")
+ms[i].set("gamma_StochKv", 30, 0)
+ms[i].set("eta_StochKv", 0.125, 0)
+ms[i].set("gkbar_StochKv", 3.75, 0)
+mstate[i]= 1
+maction(i)
+}
+{object_pop() doNotify()}
+{object_push(ocbox_)}
+{inserter.v1.map()}
+{endbox()}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.vbox
+ocbox_.map("SingleCompartment", 438, 121, 90.24, 115.2)
+}
+objref ocbox_
+//End SingleCompartment
+
+
+//Begin PointProcessManager
+{
+load_file("pointman.hoc")
+}
+{
+soma ocbox_ = new PointProcessManager(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("SEClamp") i = mt.selected()
+ms[i] = new MechanismStandard("SEClamp")
+ms[i].set("rs", 0.1, 0)
+ms[i].set("dur1", 10, 0)
+ms[i].set("amp1", -90, 0)
+ms[i].set("dur2", 1e+09, 0)
+ms[i].set("amp2", -50, 0)
+ms[i].set("dur3", 0, 0)
+ms[i].set("amp3", 0, 0)
+mt.select("SEClamp") i = mt.selected() maction(i)
+hoc_ac_ = 0.5
+sec.sec move() d1.flip_to(0)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("PointProcessManager", 158, 652, 208.32, 326.4)
+}
+objref ocbox_
+//End PointProcessManager
+
+{
+xpanel("RunControl", 0)
+v_init = -90
+xvalue("Init","v_init", 1,"stdinit()", 1, 1 )
+xbutton("Init & Run","run()")
+xbutton("Stop","stoprun=1")
+runStopAt = 5
+xvalue("Continue til","runStopAt", 1,"{continuerun(runStopAt) stoprun=1}", 1, 1 )
+runStopIn = 1
+xvalue("Continue for","runStopIn", 1,"{continuerun(t + runStopIn) stoprun=1}", 1, 1 )
+xbutton("Single Step","steprun()")
+t = 100
+xvalue("t","t", 2 )
+tstop = 100
+xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
+dt = 0.025
+xvalue("dt","dt", 1,"setdt()", 0, 1 )
+steps_per_ms = 40
+xvalue("Points plotted/ms","steps_per_ms", 1,"setdt()", 0, 1 )
+screen_update_invl = 0.05
+xvalue("Scrn update invl","screen_update_invl", 1,"", 0, 1 )
+realtime = 0.02
+xvalue("Real Time","realtime", 0,"", 0, 1 )
+xpanel(81,212)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-80,40)
+scene_vector_[3] = save_window_
+{save_window_.view(0, -80, 100, 120, 419, 282, 300.48, 200.32)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("v(.5)", 1, 1, 0.8, 0.9, 2)
+}
+{
+xpanel("StochKv (Globals)", 0)
+tha_StochKv = -40
+xvalue("tha_StochKv","tha_StochKv", 1,"", 0, 0 )
+qa_StochKv = 9
+xvalue("qa_StochKv","qa_StochKv", 1,"", 0, 0 )
+Ra_StochKv = 0.02
+xvalue("Ra_StochKv","Ra_StochKv", 1,"", 0, 0 )
+Rb_StochKv = 0.002
+xvalue("Rb_StochKv","Rb_StochKv", 1,"", 0, 0 )
+temp_StochKv = 23
+xvalue("temp_StochKv","temp_StochKv", 1,"", 0, 0 )
+q10_StochKv = 2.3
+xvalue("q10_StochKv","q10_StochKv", 1,"", 0, 0 )
+deterministic_StochKv = 0
+xvalue("deterministic_StochKv","deterministic_StochKv", 1,"", 0, 0 )
+vmin_StochKv = -120
+xvalue("vmin_StochKv","vmin_StochKv", 1,"", 0, 0 )
+vmax_StochKv = 100
+xvalue("vmax_StochKv","vmax_StochKv", 1,"", 0, 0 )
+a_StochKv = 0.0244334
+xvalue("a_StochKv","a_StochKv", 1,"", 0, 0 )
+b_StochKv = 0.00742018
+xvalue("b_StochKv","b_StochKv", 1,"", 0, 0 )
+ninf_StochKv = 0.766844
+xvalue("ninf_StochKv","ninf_StochKv", 1,"", 0, 0 )
+ntau_StochKv = 31.4069
+xvalue("ntau_StochKv","ntau_StochKv", 1,"", 0, 0 )
+tadj_StochKv = 0.248837
+xvalue("tadj_StochKv","tadj_StochKv", 1,"", 0, 0 )
+P_a_StochKv = 0.000610836
+xvalue("P_a_StochKv","P_a_StochKv", 1,"", 0, 0 )
+P_b_StochKv = 0.000185504
+xvalue("P_b_StochKv","P_b_StochKv", 1,"", 0, 0 )
+usetable_StochKv = 1
+xvalue("usetable_StochKv","usetable_StochKv", 1,"", 0, 0 )
+xpanel(775,243)
+}
+{
+xpanel("soma(0 - 1) (Parameters)", 0)
+xlabel("soma(0 - 1) (Parameters)")
+xlabel("nseg = 1")
+soma.L = 3.1831
+xvalue("L","soma.L", 1,"define_shape()", 0, 0 )
+soma.Ra = 35.4
+xvalue("Ra","soma.Ra", 1,"soma.Ra += 0", 0, 1 )
+soma.diam = 10
+xvalue("diam","soma.diam", 1,"", 0, 0 )
+soma.cm = 1
+xvalue("cm","soma.cm", 1,"", 0, 0 )
+soma.gamma_StochKv = 30
+xvalue("gamma_StochKv","soma.gamma_StochKv", 1,"", 0, 0 )
+soma.eta_StochKv = 0.125
+xvalue("eta_StochKv","soma.eta_StochKv", 1,"", 0, 0 )
+soma.gkbar_StochKv = 3.75
+xvalue("gkbar_StochKv","soma.gkbar_StochKv", 1,"", 0, 0 )
+soma.ek = -77
+xvalue("ek","soma.ek", 1,"", 0, 0 )
+xpanel(1381,261)
+}
+{
+xpanel("soma(0.5) (Assigned)", 0)
+xlabel("soma(0.5) (Assigned)")
+soma.v(0.5) = -50.0002
+xvalue("v","soma.v(0.5)", 0,"", 0, 1 )
+soma.i_cap(0.5) = -8.24333e-18
+xvalue("i_cap","soma.i_cap(0.5)", 0,"", 0, 1 )
+soma.ik_StochKv(0.5) = 0.00201556
+xvalue("ik_StochKv","soma.ik_StochKv(0.5)", 0,"", 0, 1 )
+soma.gk_StochKv(0.5) = 0.74651
+xvalue("gk_StochKv","soma.gk_StochKv(0.5)", 0,"", 0, 1 )
+soma.N_StochKv(0.5) = 13
+xvalue("N_StochKv","soma.N_StochKv(0.5)", 0,"", 0, 1 )
+soma.N0_StochKv(0.5) = 3
+xvalue("N0_StochKv","soma.N0_StochKv(0.5)", 0,"", 0, 1 )
+soma.N1_StochKv(0.5) = 10
+xvalue("N1_StochKv","soma.N1_StochKv(0.5)", 0,"", 0, 1 )
+soma.n0_n1_StochKv(0.5) = 0
+xvalue("n0_n1_StochKv","soma.n0_n1_StochKv(0.5)", 0,"", 0, 1 )
+soma.n1_n0_StochKv(0.5) = 0
+xvalue("n1_n0_StochKv","soma.n1_n0_StochKv(0.5)", 0,"", 0, 1 )
+soma.ik(0.5) = 0.00201556
+xvalue("ik","soma.ik(0.5)", 0,"", 0, 1 )
+soma.dik_dv_(0.5) = 7.4651e-05
+xvalue("dik_dv_","soma.dik_dv_(0.5)", 0,"", 0, 1 )
+xpanel(1130,411)
+}
+{
+xpanel("soma(0.5) (States)", 0)
+xlabel("soma(0.5) (States)")
+soma.v(0.5) = -50.0002
+xvalue("v","soma.v(0.5)", 0,"", 0, 1 )
+soma.n_StochKv(0.5) = 0.725543
+xvalue("n_StochKv","soma.n_StochKv(0.5)", 0,"", 0, 1 )
+xpanel(1134,262)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,110,2.38419e-07,13)
+scene_vector_[4] = save_window_
+{save_window_.view(0, 2.38419e-07, 110, 13, 416, 592, 300.48, 200.32)}
+graphList[2].append(save_window_)
+save_window_.save_name("graphList[2].")
+save_window_.addvar("soma.N1_StochKv( 0.5 )", 1, 1, 0.307987, 0.933546, 2)
+}
+
+//Begin VariableTimeStep
+{
+ocbox_ = NumericalMethodPanel[0]
+}
+{object_push(ocbox_)}
+{
+atol_ = 0.001  CVode[0].atol(atol_)
+restore(1, 1)
+}
+{object_pop()}
+{
+ocbox_.map("VariableTimeStep", 404, 872, 264.96, 113.28)
+}
+objref ocbox_
+//End VariableTimeStep
+
+objectvar scene_vector_[1]
+{doNotify()}

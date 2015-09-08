@@ -1,0 +1,5 @@
+{load_file("test.ses")}
+{
+  soma setdata_StochKv(0.5)
+  setRNG_StochKv(0,0)
+}
