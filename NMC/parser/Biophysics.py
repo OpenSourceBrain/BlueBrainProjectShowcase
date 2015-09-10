@@ -43,6 +43,10 @@ channel_ions = {
     'CaDynamics_E2': 'ca'
 }
 
+channel_substitutes = {
+    'StochKv': 'StochKv_deterministic'
+}
+
 default_capacitances = {
     'axonal': "1.0 uF_per_cm2",
     'somatic': "1.0 uF_per_cm2",
@@ -156,7 +160,11 @@ def parse_templates_json(templates_json="templates.json",
                                     parameter='condDensity',
                                     inhomogeneous_value=iv)]
 
-                        channel_nml2_file = "%s.channel.nml"%channel
+                        channel_name  = channel
+                        if channel_substitutes.has_key(channel):
+                            channel_name = channel_substitutes[channel]
+                            
+                        channel_nml2_file = "%s.channel.nml"%channel_name
                         if channel_nml2_file not in included_channels[firing_type]:
                             nml_doc.includes.append(
                                 neuroml.IncludeType(
@@ -189,7 +197,7 @@ def parse_templates_json(templates_json="templates.json",
                         arguments["id"] = "%s_%s" % (section_list, parameter_name)
                         if cond_density is not None:
                             arguments["cond_density"] = cond_density
-                        arguments['ion_channel'] = channel
+                        arguments['ion_channel'] = channel_name
                         if variable_parameters is not None:
                             arguments['variable_parameters'] = variable_parameters
 

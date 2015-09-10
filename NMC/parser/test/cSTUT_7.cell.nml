@@ -1,7 +1,7 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="cSTUT_7">
     <include href="../../NeuroML2/K_Tst.channel.nml"></include>
     <include href="../../NeuroML2/SKv3_1.channel.nml"></include>
-    <include href="../../NeuroML2/StochKv.channel.nml"></include>
+    <include href="../../NeuroML2/StochKv_deterministic.channel.nml"></include>
     <include href="../../NeuroML2/Nap_Et2.channel.nml"></include>
     <include href="../../NeuroML2/NaTs2_t.channel.nml"></include>
     <include href="../../NeuroML2/Ih.channel.nml"></include>
@@ -80,14 +80,14 @@ It is only for testing formatting of the biophysicalProperties extracted from te
             <membraneProperties>
                 <channelDensity id="basal_gK_Tstbar_K_Tst" segmentGroup="basal" ion="k" ionChannel="K_Tst" erev="-85.0 mV" condDensity="0.009500 S_per_cm2"/>
                 <channelDensity id="basal_gSKv3_1bar_SKv3_1" segmentGroup="basal" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.004399 S_per_cm2"/>
-                <channelDensity id="basal_gkbar_StochKv" segmentGroup="basal" ion="k" ionChannel="StochKv" erev="-85.0 mV" condDensity="0.567935 S_per_cm2"/>
+                <channelDensity id="basal_gkbar_StochKv" segmentGroup="basal" ion="k" ionChannel="StochKv_deterministic" erev="-85.0 mV" condDensity="0.567935 S_per_cm2"/>
                 <channelDensity id="basal_gNap_Et2bar_Nap_Et2" segmentGroup="basal" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000001 S_per_cm2"/>
                 <channelDensity id="basal_gNaTs2_tbar_NaTs2_t" segmentGroup="basal" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.000010 S_per_cm2"/>
                 <channelDensity id="basal_g_pas" segmentGroup="basal" ion="non_specific" ionChannel="pas" erev="-79.315740 mV" condDensity="0.000001 S_per_cm2"/>
                 <channelDensity id="basal_gImbar_Im" segmentGroup="basal" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.000008 S_per_cm2"/>
                 <channelDensity id="apical_gK_Tstbar_K_Tst" segmentGroup="apical" ion="k" ionChannel="K_Tst" erev="-85.0 mV" condDensity="0.009500 S_per_cm2"/>
                 <channelDensity id="apical_gSKv3_1bar_SKv3_1" segmentGroup="apical" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.004399 S_per_cm2"/>
-                <channelDensity id="apical_gkbar_StochKv" segmentGroup="apical" ion="k" ionChannel="StochKv" erev="-85.0 mV" condDensity="0.567935 S_per_cm2"/>
+                <channelDensity id="apical_gkbar_StochKv" segmentGroup="apical" ion="k" ionChannel="StochKv_deterministic" erev="-85.0 mV" condDensity="0.567935 S_per_cm2"/>
                 <channelDensity id="apical_gNap_Et2bar_Nap_Et2" segmentGroup="apical" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000001 S_per_cm2"/>
                 <channelDensity id="apical_gNaTs2_tbar_NaTs2_t" segmentGroup="apical" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.000010 S_per_cm2"/>
                 <channelDensity id="apical_g_pas" segmentGroup="apical" ion="non_specific" ionChannel="pas" erev="-79.315740 mV" condDensity="0.000001 S_per_cm2"/>
@@ -101,7 +101,7 @@ It is only for testing formatting of the biophysicalProperties extracted from te
                 <channelDensity id="axonal_g_pas" segmentGroup="axonal" ion="non_specific" ionChannel="pas" erev="-60.216510 mV" condDensity="0.000094 S_per_cm2"/>
                 <channelDensity id="axonal_gImbar_Im" segmentGroup="axonal" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.000999 S_per_cm2"/>
                 <channelDensity id="somatic_gK_Tstbar_K_Tst" segmentGroup="somatic" ion="k" ionChannel="K_Tst" erev="-85.0 mV" condDensity="0.092965 S_per_cm2"/>
-                <channelDensity id="somatic_gkbar_StochKv" segmentGroup="somatic" ion="k" ionChannel="StochKv" erev="-85.0 mV" condDensity="0.367950 S_per_cm2"/>
+                <channelDensity id="somatic_gkbar_StochKv" segmentGroup="somatic" ion="k" ionChannel="StochKv_deterministic" erev="-85.0 mV" condDensity="0.367950 S_per_cm2"/>
                 <channelDensity id="somatic_gNap_Et2bar_Nap_Et2" segmentGroup="somatic" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.000001 S_per_cm2"/>
                 <channelDensity id="somatic_gSK_E2bar_SK_E2" segmentGroup="somatic" ion="k" ionChannel="SK_E2" erev="-85.0 mV" condDensity="0.019726 S_per_cm2"/>
                 <channelDensity id="somatic_gK_Pstbar_K_Pst" segmentGroup="somatic" ion="k" ionChannel="K_Pst" erev="-85.0 mV" condDensity="0.156376 S_per_cm2"/>
