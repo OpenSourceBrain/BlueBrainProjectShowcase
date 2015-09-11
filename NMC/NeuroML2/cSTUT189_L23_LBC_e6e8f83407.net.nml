@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd"
+    id = "NeuroML2_file_exported_from_NEURON">
+
+  <notes> NeuroML 2 file generated from ModelView by: NEURON -- Release 7.4 (1351:8f462ea7e030) 2015-07-21
+          Authors: Michael Hines, Sushil Kambampati and Padraig Gleeson,
+          Yale University and UCL 
+  </notes>
+
+  <include href="cSTUT189_L23_LBC_e6e8f83407_0_0.cell.nml"/>
+
+
+  <network id="network" type="networkWithTemperature" temperature="34 degC">
+    <population id="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" component="cSTUT189_L23_LBC_e6e8f83407_0_0" size="1" type="populationList">
+        <instance id="0">
+            <location x="0" y="0" z="0"/>
+        </instance>
+    </population>
+  </network>
+ 
+</neuroml>

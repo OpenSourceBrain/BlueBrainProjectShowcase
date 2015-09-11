@@ -22,8 +22,9 @@ def get_stimulus_amplitudes(bbp_ref):
     if bbp_ref=='cNAC187_L1_HAC_f8c9772d9d': return '-0.025513nA', '0.0665952nA'
     if bbp_ref=='cADpyr229_L23_PC_5ecbf9b163': return '-0.071777nA', '0.189792nA'
     if bbp_ref=='cADpyr232_L5_TTPC1_0fb1ca4724': return '-0.247559nA','0.646625nA'
+    if bbp_ref=='cSTUT189_L23_LBC_e6e8f83407': return '-0.042603nA', '0.289843nA'
     else:
-        print('Cannot determine stimulation amplitudes for %s.\nPlease add this in ParseAll.py'%bbp_ref)
+        print('\n****************\n  Cannot determine stimulation amplitudes for %s.\n  Please add this in ParseAll.py\n****************\n'%bbp_ref)
         exit()
 
 
@@ -222,6 +223,7 @@ wopen()
                       "SKv3_1", "SK_E2", "CaDynamics_E2", "Nap_Et2", "Im",
                       "K_Tst", "NaTa_t", "K_Pst", "NaTs2_t"]
                       
+        #ignore_chans=['StochKv','StochKv_deterministic']
         ignore_chans=[]
             
         bp, incl_chans = get_biophysical_properties(cell_info['e-type'], 

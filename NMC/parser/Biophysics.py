@@ -47,6 +47,13 @@ channel_substitutes = {
     'StochKv': 'StochKv_deterministic'
 }
 
+
+''' Due to the use of 1e-4 in BREAKPOINT in StochKv.mod: ik = 1e-4 * gk * (v - ek) '''
+density_scales = {
+    'StochKv': 1e-4
+}
+
+
 default_capacitances = {
     'axonal': "1.0 uF_per_cm2",
     'somatic': "1.0 uF_per_cm2",
@@ -148,7 +155,9 @@ def parse_templates_json(templates_json="templates.json",
                         cond_density = None
                         variable_parameters = None
                         if parameter_dict['distribution']['disttype'] == "uniform":
-                            value = parameter_dict['distribution']['value']
+                            value = float(parameter_dict['distribution']['value'])
+                            if channel in density_scales:
+                                value = value * density_scales[channel]
                             cond_density = "%s S_per_cm2" % value
                         else:
                             new_expr = '1e4 * (%s)'%parameter_dict['distribution']['value'].replace('x','p').replace('epp','exp')

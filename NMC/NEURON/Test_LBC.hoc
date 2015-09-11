@@ -1,5 +1,5 @@
 
-load_file("../parser/L5_TTPC1_cADpyr232_1/loadcell.hoc")
+load_file("../parser/L23_LBC_cSTUT189_1/loadcell.hoc")
 load_file("utils/cellCheck.hoc")
 // load_file("../NEURON/utils/cellCheck.hoc")
 
@@ -17,6 +17,14 @@ load_file("utils/cellCheck.hoc")
 //forall {if (ismembrane("NaTa_t")) { uninsert NaTa_t } }
 //forall {if (ismembrane("K_Pst")) { uninsert K_Pst } }
 //forall {if (ismembrane("NaTs2_t")) { uninsert NaTs2_t } }
+
+forall {if (ismembrane("StochKv")) { 
+
+insert StochKv_det
+gkbar_StochKv_det = gkbar_StochKv
+uninsert StochKv 
+
+} }
 
 tstop=3000
 

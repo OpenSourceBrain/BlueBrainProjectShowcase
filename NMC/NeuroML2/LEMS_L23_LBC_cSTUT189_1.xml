@@ -1,0 +1,46 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.1.3 (libNeuroML v0.2.10)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="L23_LBC_cSTUT189_1"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="cSTUT189_L23_LBC_e6e8f83407.stepcurrent3.net.nml"/>
+    <Include file="cSTUT189_L23_LBC_e6e8f83407_0_0.cell.nml"/>
+    <Include file="K_Tst.channel.nml"/>
+    <Include file="SKv3_1.channel.nml"/>
+    <Include file="StochKv_deterministic.channel.nml"/>
+    <Include file="Nap_Et2.channel.nml"/>
+    <Include file="NaTs2_t.channel.nml"/>
+    <Include file="Ih.channel.nml"/>
+    <Include file="pas.channel.nml"/>
+    <Include file="Im.channel.nml"/>
+    <Include file="NaTa_t.channel.nml"/>
+    <Include file="Ca_LVAst.channel.nml"/>
+    <Include file="SK_E2.channel.nml"/>
+    <Include file="K_Pst.channel.nml"/>
+    <Include file="CaDynamics_E2_NML2.nml"/>
+    <Include file="Ca.channel.nml"/>
+   
+    <Simulation id="L23_LBC_cSTUT189_1" length="3000ms" step="0.025ms" target="network">
+        
+        <Display id="DispPop__Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" title="Voltages of DispPop__Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
+            <Line id="v Pop_cSTUT189_L23_LBC_e6e8f83407_0_0_0_cSTUT189_L23_LBC_e6e8f83407_0_0_v" quantity="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0/0/cSTUT189_L23_LBC_e6e8f83407_0_0/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Volts_file__Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" fileName="L23_LBC_cSTUT189_1.Pop_cSTUT189_L23_LBC_e6e8f83407_0_0.v.dat">
+            <OutputColumn id="v_Pop_cSTUT189_L23_LBC_e6e8f83407_0_0_0_cSTUT189_L23_LBC_e6e8f83407_0_0_v" quantity="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0/0/cSTUT189_L23_LBC_e6e8f83407_0_0/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>

@@ -7035,10 +7035,10 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
         <biophysicalProperties id="biophys">
             <membraneProperties>
                 <channelDensity id="all_g_pas" segmentGroup="all" ion="non_specific" ionChannel="pas" erev="-75 mV" condDensity="3e-5 S_per_cm2"/>
-                <channelDensity id="basal_gIhbar_Ih" segmentGroup="basal" ion="hcn" ionChannel="Ih" erev="-45.0 mV" condDensity="0.000080 S_per_cm2"/>
+                <channelDensity id="basal_gIhbar_Ih" segmentGroup="basal" ion="hcn" ionChannel="Ih" erev="-45.0 mV" condDensity="8e-05 S_per_cm2"/>
                 <channelDensity id="apical_gNaTs2_tbar_NaTs2_t" segmentGroup="apical" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.012009 S_per_cm2"/>
                 <channelDensity id="apical_gSKv3_1bar_SKv3_1" segmentGroup="apical" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.000513 S_per_cm2"/>
-                <channelDensity id="apical_gImbar_Im" segmentGroup="apical" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.000740 S_per_cm2"/>
+                <channelDensity id="apical_gImbar_Im" segmentGroup="apical" ion="k" ionChannel="Im" erev="-85.0 mV" condDensity="0.00074 S_per_cm2"/>
                 <channelDensity id="axonal_gNaTa_tbar_NaTa_t" segmentGroup="axonal" ion="na" ionChannel="NaTa_t" erev="50.0 mV" condDensity="3.429725 S_per_cm2"/>
                 <channelDensity id="axonal_gK_Tstbar_K_Tst" segmentGroup="axonal" ion="k" ionChannel="K_Tst" erev="-85.0 mV" condDensity="0.001035 S_per_cm2"/>
                 <channelDensity id="axonal_gNap_Et2bar_Nap_Et2" segmentGroup="axonal" ion="na" ionChannel="Nap_Et2" erev="50.0 mV" condDensity="0.009803 S_per_cm2"/>
@@ -7048,9 +7048,9 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                 <channelDensity id="somatic_gSKv3_1bar_SKv3_1" segmentGroup="somatic" ion="k" ionChannel="SKv3_1" erev="-85.0 mV" condDensity="0.102517 S_per_cm2"/>
                 <channelDensity id="somatic_gSK_E2bar_SK_E2" segmentGroup="somatic" ion="k" ionChannel="SK_E2" erev="-85.0 mV" condDensity="0.099433 S_per_cm2"/>
                 <channelDensity id="somatic_gNaTs2_tbar_NaTs2_t" segmentGroup="somatic" ion="na" ionChannel="NaTs2_t" erev="50.0 mV" condDensity="0.926705 S_per_cm2"/>
-                <channelDensity id="somatic_gIhbar_Ih" segmentGroup="somatic" ion="hcn" ionChannel="Ih" erev="-45.0 mV" condDensity="0.000080 S_per_cm2"/>
+                <channelDensity id="somatic_gIhbar_Ih" segmentGroup="somatic" ion="hcn" ionChannel="Ih" erev="-45.0 mV" condDensity="8e-05 S_per_cm2"/>
                 <channelDensityNernst id="axonal_gCa_HVAbar_Ca_HVA" ionChannel="Ca_HVA" condDensity="0.000306 S_per_cm2" segmentGroup="axonal" ion="ca"/>
-                <channelDensityNernst id="axonal_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="0.000050 S_per_cm2" segmentGroup="axonal" ion="ca"/>
+                <channelDensityNernst id="axonal_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="5e-05 S_per_cm2" segmentGroup="axonal" ion="ca"/>
                 <channelDensityNernst id="somatic_gCa_HVAbar_Ca_HVA" ionChannel="Ca_HVA" condDensity="0.000374 S_per_cm2" segmentGroup="somatic" ion="ca"/>
                 <channelDensityNernst id="somatic_gCa_LVAstbar_Ca_LVAst" ionChannel="Ca_LVAst" condDensity="0.000778 S_per_cm2" segmentGroup="somatic" ion="ca"/>
                 <channelDensityNonUniform id="apical_gIhbar_Ih" ionChannel="Ih" erev="-45.0 mV" ion="hcn">
