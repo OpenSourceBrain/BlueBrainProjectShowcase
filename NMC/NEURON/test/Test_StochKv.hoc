@@ -23,7 +23,8 @@ forall {
 
 }
 
-test_cond_dens =0.002 
+test_cond_dens =0.000036 
+test_cond_dens =0.000211 
 
 Soma2 {
     insert StochKv_deterministic 
@@ -31,16 +32,32 @@ Soma2 {
     ek = -85 
 }
 
+objref rng1
 Soma3 {
     insert StochKv_det 
-     gmax_StochKv_det = test_cond_dens
+    gkbar_StochKv_det = 1e4*test_cond_dens
+    /*
+    rng1 = new Random()
+    rng1.MCellRan4( 1232, 123 )
+    rng1.uniform(0,1)
+    setdata_StochKv_det(0.5)
+    setRNG_StochKv_det(rng1)*/
+    
      ek = -85 
 }
 
+
+objref rng2
 Soma4 {
     insert StochKv_bbp 
-     gmax_StochKv_bbp = test_cond_dens
-     ek = -85 
+    gkbar_StochKv_bbp = 1e4*test_cond_dens
+
+    rng2 = new Random()
+    rng2.MCellRan4( 1232, 123 )
+    rng2.uniform(0,1)
+    setdata_StochKv_bbp(0.5)
+    setRNG_StochKv_bbp(rng2)
+    ek = -85 
 }
 
 
@@ -118,19 +135,26 @@ if (usegui==1) {
         GraphWin_0.addexpr("BBP", "Soma4.v(0.5)", 4, 1, 0.8, 0.9, 2)
         graphList[0].append(GraphWin_0)
     }
-/*
+
     GraphWin_1 = new Graph(0)
     {GraphWin_1.size(0, tstop,-0.1,1.1)}
     {GraphWin_1.view(0, -0.1, tstop, 1.2, 80, 330, 330, 250)}
     {
-        GraphWin_1.addexpr("m_Ih", "m_Ih", 1, 1, 0.8, 0.9, 2)
-        GraphWin_1.addexpr("m_Im", "m_Im", 2, 1, 0.8, 0.9, 2)
-        GraphWin_1.addexpr("m_KdShu2007", "m_KdShu2007", 3, 1, 0.8, 0.9, 2)
-        GraphWin_1.addexpr("h_KdShu2007", "h_KdShu2007", 4, 1, 0.8, 0.9, 2)
-        GraphWin_1.addexpr("m_Ca", "m_Ca", 5, 1, 0.8, 0.9, 2)
-        GraphWin_1.addexpr("h_Ca", "h_Ca", 6, 1, 0.8, 0.9, 2)
-        //graphList[0].append(GraphWin_1)
-    }*/
+        GraphWin_1.addexpr("NML2", "Soma2.n_q_StochKv_deterministic(0.5)", 1, 1, 0.8, 0.9, 2)
+        GraphWin_1.addexpr("M_Hines", "Soma3.n_StochKv_det(0.5)", 2, 1, 0.8, 0.9, 2)
+        GraphWin_1.addexpr("BBP", "Soma4.N1_StochKv_bbp(0.5)/Soma4.N_StochKv_bbp(0.5)", 3, 1, 0.8, 0.9, 2)
+        graphList[0].append(GraphWin_1)
+    }
+
+    GraphWin_2 = new Graph(0)
+    {GraphWin_2.size(0, tstop,-0.1,1.1)}
+    {GraphWin_2.view(0, -0.1e-6, tstop, 3e-5, 80, 330, 330, 250)}
+    {
+        GraphWin_2.addexpr("NML2", "Soma2.gion_StochKv_deterministic(0.5)", 1, 1, 0.8, 0.9, 2)
+        GraphWin_2.addexpr("M_Hines", "Soma3.gk_StochKv_det(0.5)*1e-4", 2, 1, 0.8, 0.9, 2)
+        GraphWin_2.addexpr("BBP", "Soma4.gk_StochKv_bbp(0.5)*1e-4", 3, 1, 0.8, 0.9, 2)
+        graphList[0].append(GraphWin_2)
+    }
 
 }
 
@@ -174,7 +198,6 @@ if (usegui==1) {
     xbutton("Stop","stoprun=1")
     t = 0
     xvalue("t","t", 2 )
-    tstop = 700.0
     xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
     dt = 0.01
      xvalue("dt","dt", 1,"setdt()", 0, 1 )

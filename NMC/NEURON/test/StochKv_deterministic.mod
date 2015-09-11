@@ -83,10 +83,10 @@ PARAMETER {
     
     conductance = 1.0E-5 (uS)
     n_instances = 1 
-    n_reverseRate_rate = 1.8E-5 (kHz)
+    n_reverseRate_rate = 0.018000001 (kHz)
     n_reverseRate_midpoint = -40 (mV)
     n_reverseRate_scale = -9 (mV)
-    n_forwardRate_rate = 1.8000002E-4 (kHz)
+    n_forwardRate_rate = 0.18 (kHz)
     n_forwardRate_midpoint = -40 (mV)
     n_forwardRate_scale = 9 (mV)
     n_q10Settings_q10Factor = 2.3 
