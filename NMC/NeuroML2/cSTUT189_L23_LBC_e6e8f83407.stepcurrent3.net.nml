@@ -13,7 +13,7 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
 </notes>
     <include href="cSTUT189_L23_LBC_e6e8f83407_0_0.cell.nml"></include>
     <pulseGenerator id="stepcurrent3_hyp" delay="0ms" duration="3000ms" amplitude="-0.042603nA"/>
-    <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.289843nA"/>
+    <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.2898434nA"/>
     <network id="network" type="networkWithTemperature" temperature="34 degC">
         <population id="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" type="populationList" component="cSTUT189_L23_LBC_e6e8f83407_0_0" size="1">
             <instance id="0">

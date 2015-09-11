@@ -5,13 +5,12 @@
 
     <ionChannel id="StochKv_deterministic" conductance="10pS" type="ionChannelHH" species="k">
 
-        <notes>Deterministic version of StochKv channel</notes>
+        <notes>Deterministic version of StochKv channel. See https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/tree/master/NMC/NEURON/test</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                 <rdf:Description rdf:about="StochKv_deterministic">
                     
-
                 
                     <bqbiol:isVersionOf xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
                         <rdf:Bag>

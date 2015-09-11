@@ -7,6 +7,8 @@ from pyneuroml.lems import generate_lems_file_for_neuroml
 from pyneuroml import pynml
 import neuroml
 
+import shutil
+
 from Biophysics import get_biophysical_properties
 
 from jinja2 import Template
@@ -17,16 +19,18 @@ from nrn import *
 import json
 import os.path
 
+groups_info_file = 'groups.txt'
+iclamp_info_file = 'current_amps.dat'
 
 def get_stimulus_amplitudes(bbp_ref):
-    if bbp_ref=='cNAC187_L1_HAC_f8c9772d9d': return '-0.025513nA', '0.0665952nA'
-    if bbp_ref=='cADpyr229_L23_PC_5ecbf9b163': return '-0.071777nA', '0.189792nA'
-    if bbp_ref=='cADpyr232_L5_TTPC1_0fb1ca4724': return '-0.247559nA','0.646625nA'
-    if bbp_ref=='cSTUT189_L23_LBC_e6e8f83407': return '-0.042603nA', '0.289843nA'
-    else:
-        print('\n****************\n  Cannot determine stimulation amplitudes for %s.\n  Please add this in ParseAll.py\n****************\n'%bbp_ref)
-        exit()
-
+    
+    hyp=''
+    dep=''
+    for line in open(iclamp_info_file):
+        words = line.split(' ')
+        hyp = '%snA'%words[0]
+        dep = '%snA'%words[3]
+    return hyp, dep
 
 def parse_cell_info_file(cell_dir):
     
@@ -49,6 +53,11 @@ def parse_cell_info_file(cell_dir):
         
         return data
 
+make_zips = '-zip' in sys.argv
+
+nml2_cell_dir = '../../NeuroML2/'
+
+
 net_ref = "ManyCells"
 net_doc = NeuroMLDocument(id=net_ref)
 
@@ -59,20 +68,29 @@ cell_dirs = []
 
 cell_dirs = [ f for f in os.listdir('.') if (os.path.isdir(f) and os.path.isfile(f+'/.provenance.json')) ]
 
-groups_info_file = 'groups.txt'
 
 clear_neuron()
         
 count = 0
 for cell_dir in cell_dirs:
     
-    print('------------------------------\n  Parsing %s'%cell_dir)
+    print('\n\n************************************************\n    Parsing %s\n'%cell_dir)
     
+        
+
     if os.path.isdir(cell_dir):
         os.chdir(cell_dir)
     else:
         os.chdir('../'+cell_dir)
 
+    if make_zips: 
+        nml2_cell_dir = '../zips/%s'%cell_dir
+        if not os.path.isdir(nml2_cell_dir):
+            os.mkdir(nml2_cell_dir)
+            
+    print("Generating into %s"%nml2_cell_dir)
+    
+    
     bbp_ref = None
     
     template_file = open('template.hoc','r')
@@ -175,9 +193,9 @@ wopen()
         cell_info = parse_cell_info_file(cell_dir)
         
         nml_file_name = "%s.net.nml"%bbp_ref
-        nml_net_loc = "../../NeuroML2/%s"%nml_file_name
+        nml_net_loc = "%s/%s"%(nml2_cell_dir,nml_file_name)
         nml_cell_file = "%s_0_0.cell.nml"%bbp_ref
-        nml_cell_loc = "../../NeuroML2/%s"%nml_cell_file
+        nml_cell_loc = "%s/%s"%(nml2_cell_dir,nml_cell_file)
         
     
         print(' > Loading %s and exporting to %s'%(load_cell_file,nml_net_loc))
@@ -232,6 +250,8 @@ wopen()
         
         cell.biophysical_properties = bp
         
+        print("Set biophysical properties")
+        
         notes = ''
         notes+="\n\nExport of a cell model obtained from the BBP Neocortical Microcircuit Collaboration Portal into NeuroML2"+\
                "\n\n******************************************************\n*  This export to NeuroML2 has not yet been fully validated!!"+ \
@@ -248,6 +268,10 @@ wopen()
         
             nml_doc.includes.append(neuroml.IncludeType(
                                 href="%s" % channel))
+                                
+            if make_zips:
+                print("Copying %s to zip folder"%channel)
+                shutil.copyfile('../../NeuroML2/%s'%channel, '%s/%s'%(nml2_cell_dir,channel))
         
         pynml.write_neuroml2_file(nml_doc, nml_cell_loc)
         
@@ -259,7 +283,7 @@ wopen()
         stim_del = '700ms'
         stim_dur = '2000ms'
         
-        new_net_loc = "../../NeuroML2/%s.%s.net.nml"%(bbp_ref, stim_ref)
+        new_net_loc = "%s/%s.%s.net.nml"%(nml2_cell_dir,bbp_ref, stim_ref)
         new_net_doc = pynml.read_neuroml2_file(nml_net_loc)
         
         new_net_doc.notes = notes
@@ -304,7 +328,7 @@ wopen()
                                        stim_sim_duration,
                                        0.025,
                                        "LEMS_%s.xml"%cell_dir,
-                                       '../../NeuroML2',
+                                       nml2_cell_dir,
                                        copy_neuroml = False,
                                        seed=1234)
         
@@ -328,10 +352,10 @@ wopen()
         
         count+=1
 
+if not make_zips:
+    net_file = '%s/%s.net.nml'%(nml2_cell_dir,net_ref)
+    writers.NeuroMLWriter.write(net_doc, net_file)
 
-net_file = '../../NeuroML2/'+net_ref+'.net.nml'
-writers.NeuroMLWriter.write(net_doc, net_file)
+    print("Written network with %i cells in network to: %s"%(count,net_file))
 
-print("Written network with %i cells in network to: %s"%(count,net_file))
-
-pynml.nml2_to_svg(net_file)
+    pynml.nml2_to_svg(net_file)

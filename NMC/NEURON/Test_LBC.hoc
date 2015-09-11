@@ -21,14 +21,13 @@ load_file("utils/cellCheck.hoc")
 forall {
     if (ismembrane("StochKv")) { 
 
-        insert StochKv_det
-        gkbar_StochKv_det = gkbar_StochKv
+        insert StochKv_deterministic
+        gmax_StochKv_deterministic = 1e-4 * gkbar_StochKv
         uninsert StochKv 
     } 
 }
 
 tstop=3000
-dt=0.01
 
 create_recording()
 
