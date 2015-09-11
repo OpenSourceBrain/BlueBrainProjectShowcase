@@ -12,11 +12,14 @@ NEURON/*.dat
 NEURON/test/*.dat
 NeuroML2/old
 parser/L*/hoc_recordings/
+parser/L*/iclamp.txt
+parser/L*/groups.txt
 parser/test/*.dat
 parser/test/*.mod
 parser/test/*.hoc
 parser/test/*nrn.py
 parser/old
+parser/vv
 *.pov
 *.ini
 *.svg

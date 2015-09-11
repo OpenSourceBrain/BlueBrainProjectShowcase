@@ -1,2 +1,2 @@
-pynml-modchananalysis -stepV 5 -temperature 22 StochKv_deterministic
+pynml-modchananalysis -stepV 5 -temperature 34 StochKv_deterministic
 

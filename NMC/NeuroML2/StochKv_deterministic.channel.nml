@@ -23,6 +23,8 @@
                 </rdf:Description>
             </rdf:RDF>
         </annotation>
+        
+        <q10ConductanceScaling q10Factor="2.3" experimentalTemp="23 degC"/>
 
         <gate id="n" type="gateHHrates" instances="1">
             <q10Settings type="q10ExpTemp" q10Factor="2.3" experimentalTemp="23 degC"/>

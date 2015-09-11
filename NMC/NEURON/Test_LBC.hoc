@@ -18,15 +18,17 @@ load_file("utils/cellCheck.hoc")
 //forall {if (ismembrane("K_Pst")) { uninsert K_Pst } }
 //forall {if (ismembrane("NaTs2_t")) { uninsert NaTs2_t } }
 
-forall {if (ismembrane("StochKv")) { 
+forall {
+    if (ismembrane("StochKv")) { 
 
-insert StochKv_det
-gkbar_StochKv_det = gkbar_StochKv
-uninsert StochKv 
-
-} }
+        insert StochKv_det
+        gkbar_StochKv_det = gkbar_StochKv
+        uninsert StochKv 
+    } 
+}
 
 tstop=3000
+dt=0.01
 
 create_recording()
 
