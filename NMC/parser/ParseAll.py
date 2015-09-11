@@ -9,6 +9,8 @@ import neuroml
 
 import shutil
 
+import zipfile
+
 from Biophysics import get_biophysical_properties
 
 from jinja2 import Template
@@ -54,6 +56,7 @@ def parse_cell_info_file(cell_dir):
         return data
 
 make_zips = '-zip' in sys.argv
+zips_dir = '../zips'
 
 nml2_cell_dir = '../../NeuroML2/'
 
@@ -74,7 +77,7 @@ clear_neuron()
 count = 0
 for cell_dir in cell_dirs:
     
-    print('\n\n************************************************\n    Parsing %s\n'%cell_dir)
+    print('\n\n************************************************************\n\n    Parsing %s (cell %i/%i)\n'%(cell_dir, count, len(cell_dirs)))
     
         
 
@@ -84,7 +87,7 @@ for cell_dir in cell_dirs:
         os.chdir('../'+cell_dir)
 
     if make_zips: 
-        nml2_cell_dir = '../zips/%s'%cell_dir
+        nml2_cell_dir = '%s/%s'%(zips_dir,cell_dir)
         if not os.path.isdir(nml2_cell_dir):
             os.mkdir(nml2_cell_dir)
             
@@ -351,6 +354,18 @@ wopen()
         inst.location = Location(x=300*X, y=0, z=300*Z)
         
         count+=1
+        
+        
+        if make_zips:
+            zip_file = "%s/%s.zip"%(zips_dir,cell_dir)
+            print("Creating zip file: %s"%zip_file)
+            with zipfile.ZipFile(zip_file, 'w') as myzip:
+                
+                for next_file in os.listdir(nml2_cell_dir):
+                    next_file = '%s/%s'%(nml2_cell_dir, next_file)
+                    arcname = next_file[len(zips_dir):]
+                    print("Adding : %s as %s"%(next_file, arcname))
+                    myzip.write(next_file, arcname)
 
 if not make_zips:
     net_file = '%s/%s.net.nml'%(nml2_cell_dir,net_ref)
