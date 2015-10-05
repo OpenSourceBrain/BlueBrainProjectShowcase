@@ -5,6 +5,8 @@
 /NMC/parser/L1_HAC_cNAC187_1/loadcell.hoc0
 /NMC/parser/L1_HAC_cNAC187_1/groups.txt
 /NMC/parser/zips
+/NMC/parser/old2
+/NMC/parser/hoc_combos_syn.1_0_10.allzips
 /NMC/NeuroML2/simulator.props
 /Channelpedia/clean.sh
 i386
