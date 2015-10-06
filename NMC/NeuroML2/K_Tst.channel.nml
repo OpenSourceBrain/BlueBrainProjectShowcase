@@ -5,7 +5,13 @@
 
     <ionChannel id="K_Tst" conductance="10pS" type="ionChannelHH" species="k">
 
-        <notes>Fast inactivating K+ current</notes>
+        <notes>Fast inactivating K+ current
+            
+Comment from original mod file: 
+:Comment : The transient component of the K current
+:Reference : :		Voltage-gated K+ channels in layer 5 neocortical pyramidal neurones from young rats:subtypes and gradients,Korngreen and Sakmann, J. Physiology, 2000
+:Comment : shifted -10 mv to correct for junction potential
+:Comment: corrected rates using q10 = 2.3, target temperature 34, orginal 21</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">

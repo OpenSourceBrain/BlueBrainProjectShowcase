@@ -5,7 +5,10 @@
 
     <ionChannel id="NaTa_t" conductance="10pS" type="ionChannelHH" species="na">
 
-        <notes>Fast inactivating Na+ current</notes>
+        <notes>Fast inactivating Na+ current
+            
+Comment from original mod file: 
+:Reference :Colbert and Pan 2002</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">

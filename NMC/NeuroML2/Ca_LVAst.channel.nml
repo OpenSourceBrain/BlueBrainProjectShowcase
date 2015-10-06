@@ -5,7 +5,13 @@
 
     <ionChannel id="Ca_LVAst" conductance="10pS" type="ionChannelHH" species="ca">
 
-        <notes>Low voltage activated Ca2+ current</notes>
+        <notes>Low voltage activated Ca2+ current
+            
+Comment from original mod file: 
+Note: mtau is an approximation from the plots
+:Reference : :		Avery and Johnston 1996, tau from Randall 1997
+:Comment: shifted by -10 mv to correct for junction potential
+:Comment: corrected rates using q10 = 2.3, target temperature 34, orginal 21</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">

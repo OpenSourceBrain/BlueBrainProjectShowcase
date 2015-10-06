@@ -5,7 +5,11 @@
 
     <ionChannel id="Im" conductance="10pS" type="ionChannelHH" species="k">
 
-        <notes>Muscarinic K+ current</notes>
+        <notes>Muscarinic K+ current
+            
+Comment from original mod file: 
+:Reference : :		Adams et al. 1982 - M-currents and other potassium currents in bullfrog sympathetic neurones
+:Comment: corrected rates using q10 = 2.3, target temperature 34, orginal 21</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">

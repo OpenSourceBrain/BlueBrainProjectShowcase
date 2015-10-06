@@ -5,7 +5,13 @@
 
     <ionChannel id="Nap_Et2" conductance="10pS" type="ionChannelHH" species="na">
 
-        <notes>Persistent Na+ current</notes>
+        <notes>Persistent Na+ current
+            
+Comment from original mod file: 
+:Comment : mtau deduced from text (said to be 6 times faster than for NaTa)
+:Comment : so I used the equations from NaT and multiplied by 6
+:Reference : Modeled according to kinetics derived from Magistretti and Alonso 1999
+:Comment: corrected rates using q10 = 2.3, target temperature 34, orginal 21</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">

@@ -5,7 +5,10 @@
 
     <ionChannel id="SKv3_1" conductance="10pS" type="ionChannelHH" species="k">
 
-        <notes>Fast, non inactivating K+ current</notes>
+        <notes>Fast, non inactivating K+ current
+            
+Comment from original mod file: 
+:Reference : :		Characterization of a Shaw-related potassium channel family in rat brain, The EMBO Journal, vol.11, no.7,2473-2486 (1992)</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">

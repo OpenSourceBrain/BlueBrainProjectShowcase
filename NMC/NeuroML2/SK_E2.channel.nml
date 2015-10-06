@@ -5,7 +5,11 @@
 
     <ionChannel id="SK_E2" conductance="10pS" type="ionChannelHH" species="k">
 
-        <notes>Small-conductance, Ca2+ activated K+ current</notes>
+        <notes>Small-conductance, Ca2+ activated K+ current
+            
+Comment from original mod file: 
+: SK-type calcium-activated potassium current
+: Reference : Kohler et al. 1996</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">

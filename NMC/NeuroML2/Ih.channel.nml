@@ -5,7 +5,10 @@
 
     <ionChannel id="Ih" conductance="10pS" type="ionChannelHH" species="hcn">
 
-        <notes>Non-specific cation current</notes>
+        <notes>Non-specific cation current
+            
+Comment from original mod file: 
+Reference : :		Kole,Hallermann,and Stuart, J. Neurosci. 2006</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">

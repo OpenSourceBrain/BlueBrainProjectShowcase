@@ -5,7 +5,10 @@
 
     <ionChannel id="Ca_HVA" conductance="10pS" type="ionChannelHH" species="ca">
 
-        <notes>High voltage activated Ca2+ current</notes>
+        <notes>High voltage activated Ca2+ current. 
+            
+Comment from original mod file: 
+Reuveni, Friedman, Amitai, and Gutnick, J.Neurosci. 1993</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
