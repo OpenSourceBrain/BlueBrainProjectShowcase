@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta2.xsd" 
          id="AMPAR">
 
-    <notes>ChannelML file describing a single synaptic mechanism</notes>
+    <notes>NeuroML file describing a single synaptic mechanism</notes>
 
     <expTwoSynapse id="AMPAR" tauRise="1ms" tauDecay="2ms" gbase="10E-7mS" erev="0mV">
 

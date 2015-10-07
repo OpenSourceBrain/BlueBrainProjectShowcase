@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta2.xsd" 
          id="NMDAR">
 
-    <notes>ChannelML file describing a single synaptic mechanism</notes>
+    <notes>NeuroML file describing a single synaptic mechanism</notes>
 
     <blockingPlasticSynapse id="NMDAR" gbase="4.25nS" erev="0mV" tauRise="2ms" tauDecay="28ms">
         <blockMechanism type="voltageConcDepBlockMechanism"
