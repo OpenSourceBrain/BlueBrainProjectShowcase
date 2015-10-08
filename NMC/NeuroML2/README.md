@@ -26,9 +26,17 @@ To check validity of the NeuroML2 files use:
 
 #### Convert cells and networks to graphical format
 
-    jnml cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml -svg
+Image files of NeuroML 2 cells and networks can be generated in SVG format:
+
+    jnml cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml -svg
+
+There is also a (less well developed) export to PNG format:
+
+    jnml cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml -png
 
 #### Map models to NEURON format
+
+Install [NEURON](http://www.neuron.yale.edu/neuron/download). 
 
     jnml LEMS_L1_HAC_cNAC187_1.xml -neuron
     nrnivmodl
