@@ -29,6 +29,8 @@ To check validity of the NeuroML2 files use:
 Image files of NeuroML 2 cells and networks can be generated in SVG format:
 
     jnml cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml -svg
+    
+![L23](https://raw.githubusercontent.com/OpenSourceBrain/BlueBrainProjectShowcase/master/NMC/NeuroML2/images/L23.png)
 
 There is also a (less well developed) export to PNG format:
 
