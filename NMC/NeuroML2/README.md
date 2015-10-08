@@ -36,6 +36,14 @@ There is also a (less well developed) export to PNG format:
 
     jnml cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml -png
 
+
+#### Analyse channel properties
+
+Information can be extracted from ion channels in neuroML2 format using [pyNeuroML](https://github.com/NeuroML/pyNeuroML):
+
+![NaTa](https://raw.githubusercontent.com/OpenSourceBrain/BlueBrainProjectShowcase/master/NMC/NeuroML2/images/NaTa.png)
+
+
 #### Map models to NEURON format
 
 Install [NEURON](http://www.neuron.yale.edu/neuron/download). 
@@ -43,3 +51,5 @@ Install [NEURON](http://www.neuron.yale.edu/neuron/download).
     jnml LEMS_L1_HAC_cNAC187_1.xml -neuron
     nrnivmodl
     nrngui LEMS_L1_HAC_cNAC187_1_nrn.py
+
+![NEURON](https://raw.githubusercontent.com/OpenSourceBrain/BlueBrainProjectShowcase/master/NMC/NeuroML2/images/NEURON.png)
