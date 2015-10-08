@@ -55,3 +55,12 @@ Install [NEURON](http://www.neuron.yale.edu/neuron/download).
     nrngui LEMS_L1_HAC_cNAC187_1_nrn.py
 
 ![NEURON](https://raw.githubusercontent.com/OpenSourceBrain/BlueBrainProjectShowcase/master/NMC/NeuroML2/images/NEURON.png)
+
+
+#### Visualise the cell models with the OSB 3D Explorer
+
+Cells and networks in valid NeuroML 2 can be visualised and analysed in the Open Source Brain 3D explorer. See 
+[here](http://opensourcebrain.org/projects/blue-brain-project-showcase/repository/revisions/master/show/NMC/NeuroML2?explorer=https%3A%2F%2Fraw.githubusercontent.com%2FOpenSourceBrain%2FBlueBrainProjectShowcase%2Fmaster%2FNMC%2FNeuroML2%2FcADpyr232_L5_TTPC1_0fb1ca4724_0_0.cell.nml) for an example:
+
+
+![OSB](https://raw.githubusercontent.com/OpenSourceBrain/BlueBrainProjectShowcase/master/NMC/NeuroML2/images/OSB.png)
