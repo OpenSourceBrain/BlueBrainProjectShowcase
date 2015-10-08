@@ -20,9 +20,6 @@ from Biophysics import get_biophysical_properties
 
 from jinja2 import Template
 
-# from neuroml import *
-# from neuron import *
-# from nrn import *
 import json
 import os.path
 
@@ -67,17 +64,12 @@ def parse_cell_info_file(cell_dir):
 
 zips_dir = '../zips'
 make_zips = '-zip' in sys.argv
-nml2_cell_dir = '../../NeuroML2/'
-
-cell_dirs = []
-net_doc = None
-net = None
 
 
 def main():
     """Main"""
 
-    global cell_dirs, nml2_cell_dir, net, net_doc
+    nml2_cell_dir = '../NeuroML2/'
 
     net_ref = "ManyCells"
     net_doc = neuroml.NeuroMLDocument(id=net_ref)
@@ -93,7 +85,19 @@ def main():
 
     clear_neuron()
 
-    map(process_celldir, enumerate(cell_dirs))
+    # Parallelise
+    import multiprocessing
+    pool = multiprocessing.Pool(maxtasksperchild=1)  # pylint: disable=E1123
+
+    inputs_list = []
+    for index, cell_dir in enumerate(cell_dirs):
+        inputs_list.append((index, cell_dir, nml2_cell_dir, len(cell_dirs)))
+
+    nml_cell_files = pool.map(process_celldir, inputs_list, chunksize=1)
+
+    for nml_cell_file, pop in nml_cell_files:
+        net.populations.append(pop)
+        net_doc.includes.append(neuroml.IncludeType(nml_cell_file))
 
     count = len(cell_dirs)
     if not make_zips:
@@ -107,21 +111,22 @@ def main():
         pynml.nml2_to_svg(net_file)
 
 
-def process_celldir(count_cell_dir):
+def process_celldir(inputs):
     """Process cell directory"""
 
-    global cell_dirs, nml2_cell_dir, net_doc, net
-
-    count, cell_dir = count_cell_dir
+    count, cell_dir, nml2_cell_dir, total_count = inputs
+    local_nml2_cell_dir = os.path.join("..", nml2_cell_dir)
 
     print(
         '\n\n************************************************************\n\n'
         'Parsing %s (cell %i/%i)\n' %
-        (cell_dir, count, len(cell_dirs)))
+        (cell_dir, count, total_count))
 
     if os.path.isdir(cell_dir):
+        old_cwd = os.getcwd()
         os.chdir(cell_dir)
     else:
+        old_cwd = os.getcwd()
         os.chdir('../' + cell_dir)
 
     if make_zips:
@@ -234,9 +239,9 @@ wopen()
         cell_info = parse_cell_info_file(cell_dir)
 
         nml_file_name = "%s.net.nml" % bbp_ref
-        nml_net_loc = "%s/%s" % (nml2_cell_dir, nml_file_name)
+        nml_net_loc = "%s/%s" % (local_nml2_cell_dir, nml_file_name)
         nml_cell_file = "%s_0_0.cell.nml" % bbp_ref
-        nml_cell_loc = "%s/%s" % (nml2_cell_dir, nml_cell_file)
+        nml_cell_loc = "%s/%s" % (local_nml2_cell_dir, nml_cell_file)
 
         print(
             ' > Loading %s and exporting to %s' %
@@ -325,7 +330,7 @@ wopen()
                 shutil.copyfile(
                     '../../NeuroML2/%s' %
                     channel, '%s/%s' %
-                    (nml2_cell_dir, channel))
+                    (local_nml2_cell_dir, channel))
 
         pynml.write_neuroml2_file(nml_doc, nml_cell_loc)
 
@@ -336,7 +341,9 @@ wopen()
         stim_del = '700ms'
         stim_dur = '2000ms'
 
-        new_net_loc = "%s/%s.%s.net.nml" % (nml2_cell_dir, bbp_ref, stim_ref)
+        new_net_loc = "%s/%s.%s.net.nml" % (local_nml2_cell_dir,
+                                            bbp_ref,
+                                            stim_ref)
         new_net_doc = pynml.read_neuroml2_file(nml_net_loc)
 
         new_net_doc.notes = notes
@@ -389,7 +396,7 @@ wopen()
                                        stim_sim_duration,
                                        0.025,
                                        "LEMS_%s.xml" % cell_dir,
-                                       nml2_cell_dir,
+                                       local_nml2_cell_dir,
                                        copy_neuroml=False,
                                        seed=1234)
 
@@ -397,16 +404,12 @@ wopen()
 
         clear_neuron()
 
-        net_doc.includes.append(neuroml.IncludeType(nml_cell_file))
-
         pop = neuroml.Population(
             id="Pop_%s" %
             bbp_ref,
             component=bbp_ref +
             '_0_0',
             type="populationList")
-
-        net.populations.append(pop)
 
         inst = neuroml.Instance(id="0")
         pop.instances.append(inst)
@@ -423,11 +426,15 @@ wopen()
             print("Creating zip file: %s" % zip_file)
             with zipfile.ZipFile(zip_file, 'w') as myzip:
 
-                for next_file in os.listdir(nml2_cell_dir):
-                    next_file = '%s/%s' % (nml2_cell_dir, next_file)
+                for next_file in os.listdir(local_nml2_cell_dir):
+                    next_file = '%s/%s' % (local_nml2_cell_dir, next_file)
                     arcname = next_file[len(zips_dir):]
                     print("Adding : %s as %s" % (next_file, arcname))
                     myzip.write(next_file, arcname)
+
+        os.chdir(old_cwd)
+
+        return nml_cell_file, pop
 
 
 if __name__ == '__main__':
