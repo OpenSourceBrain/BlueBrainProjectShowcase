@@ -41,6 +41,8 @@ There is also a (less well developed) export to PNG format:
 
 Information can be extracted from ion channels in neuroML2 format using [pyNeuroML](https://github.com/NeuroML/pyNeuroML):
 
+    pynml-channelanalysis NaTa_t.channel.nml  -erev 55 -stepTargetVoltage 10 -clampDuration 5 -i -duration 7 -clampDelay 1
+
 ![NaTa](https://raw.githubusercontent.com/OpenSourceBrain/BlueBrainProjectShowcase/master/NMC/NeuroML2/images/NaTa.png)
 
 
