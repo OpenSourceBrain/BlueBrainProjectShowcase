@@ -1,6 +1,6 @@
 """Script to parse models download from NMC portal and convert to NML2"""
 
-# pylint: disable=F0401, C0325, W0603, R0914, R0912, W0602
+# pylint: disable=F0401, C0325, W0603, R0914, R0912, W0602, E1103
 
 import os
 import sys
@@ -64,6 +64,7 @@ def parse_cell_info_file(cell_dir):
 
 zips_dir = '../zips'
 make_zips = '-zip' in sys.argv
+parallel = '-parallel' in sys.argv
 
 
 def main():
@@ -85,15 +86,18 @@ def main():
 
     clear_neuron()
 
-    # Parallelise
-    import multiprocessing
-    pool = multiprocessing.Pool(maxtasksperchild=1)  # pylint: disable=E1123
-
     inputs_list = []
     for index, cell_dir in enumerate(cell_dirs):
         inputs_list.append((index, cell_dir, nml2_cell_dir, len(cell_dirs)))
 
-    nml_cell_files = pool.map(process_celldir, inputs_list, chunksize=1)
+    # Parallelise the generation of the files using multiprocessing if the
+    # -parallel option is specified
+    if parallel:
+        import multiprocessing
+        pool = multiprocessing.Pool(maxtasksperchild=1)  # pylint: disable=E1123
+        nml_cell_files = pool.map(process_celldir, inputs_list, chunksize=1)
+    else:
+        nml_cell_files = map(process_celldir, inputs_list)
 
     for nml_cell_file, pop in nml_cell_files:
         net.populations.append(pop)
@@ -162,7 +166,7 @@ def process_celldir(inputs):
 //
 //////////////////////////////////////////////////////////////////////////////
 
-load_file("nrngui.hoc")
+load_file("stdrun.hoc")
 
 objref cvode
 cvode = new CVode()

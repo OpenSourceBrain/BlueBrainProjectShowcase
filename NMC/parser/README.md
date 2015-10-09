@@ -10,6 +10,8 @@ Requirements:
         https://github.com/NeuroML/pyNeuroML
     - To install the pyNeuroML dependencies, see:
         https://github.com/NeuroML/pyNeuroML/issues/13
+    - Neuron with python support, in case you want to run the parser in parallel
+      Neuron should be compiled without X11 support
 
 To execute these scripts, first run:
 
@@ -18,3 +20,7 @@ To execute these scripts, first run:
 This compiles the NMODL files for the ion channels into this directory. Then type:
 
     python  ParseAll.py
+
+To run the parallel version of the parser:
+    
+    python ParseAll.py -parallel
