@@ -64,3 +64,10 @@ Cells and networks in valid NeuroML 2 can be visualised and analysed in the Open
 
 
 ![OSB](https://raw.githubusercontent.com/OpenSourceBrain/BlueBrainProjectShowcase/master/NMC/NeuroML2/images/OSB.jpg)
+
+
+#### Current limitations
+
+The majority of the cell models in the BBP circuit are fully deterministic, but there are some (stuttering cells) which include stochastic ion channels, which introduces random fluctuations into the voltage traces. The NEURON mechanism for this channel (StochKv) is [here](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/NMC/NEURON/StochKv.mod). 
+
+A deterministic version of this ion channel is used in the NeuroML2 models. A comparison of the stochastic and deterministic mod files can be found [here](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/tree/master/NMC/NEURON/test) and a NeuroML2/LEMS version of the stochastic StochKv channel model is planned.
