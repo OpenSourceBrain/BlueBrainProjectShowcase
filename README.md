@@ -9,7 +9,7 @@ Some scripts for converting channel files in [Channelpedia](http://channelpedia.
 #### BBP Neocortical Microcircuit to NeuroML 2
 
 Code for converting cell models from the [Neocortical Microcircuit Collaboration Portal](https://bbp.epfl.ch/nmc-portal/microcircuit)
-to NeuroML 2. See [here](NMC) for more details.
+to NeuroML 2. See [here](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/NMC/NeuroML2/README.md) for more details.
 
 
 [![Build Status](https://travis-ci.org/OpenSourceBrain/BlueBrainProjectShowcase.svg?branch=master)](https://travis-ci.org/OpenSourceBrain/BlueBrainProjectShowcase)
