@@ -3,7 +3,7 @@
 This directory contains code for converting cell models from the [Neocortical Microcircuit Collaboration Portal](https://bbp.epfl.ch/nmc-portal/microcircuit)
 to NeuroML 2.
 
-#### [Parser](NEURON)
+#### [Parser](parser)
 
 This directory contains a number of examples of cell models in NEURON format downloaded as zip files from the NMC site, e.g. 
 [L23_PC_cADpyr229_1](parser/L23_PC_cADpyr229_1). It also contains scripts in python for [parsing these](parser/ParseAll.py) 
