@@ -36,10 +36,10 @@ count = 0
 cells = {}
 cells['L1'] = ['bNAC219_L1_DAC_a9ae5cbbf5_0_0.cell.nml', 
                'cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml']
-cells['L23'] = ['cSTUT189_L23_LBC_e6e8f83407_0_0.cell.nml']
-cells['L4'] = []
+cells['L23'] = ['cSTUT189_L23_LBC_e6e8f83407_0_0.cell.nml', 'cADpyr229_L23_PC_c292d67a2e_0_0.cell.nml']
+cells['L4'] = ['bAC217_L4_MC_5fa0a62bd0_0_0.cell.nml','cADpyr230_L4_SS_1afeb14f17_0_0.cell.nml']
 cells['L5'] = ['cADpyr232_L5_TTPC1_0fb1ca4724_0_0.cell.nml']
-cells['L6'] = []
+cells['L6'] = ['cADpyr231_L6_TPC_L1_44f2206f70_0_0.cell.nml']
 
 
 for layer in ['L1','L23','L4','L5','L6']:
