@@ -1,33 +1,63 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="CellTypesPerLayer">
     <include href="bNAC219_L1_DAC_a9ae5cbbf5_0_0.cell.nml"></include>
+    <include href="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"></include>
+    <include href="cSTUT189_L23_LBC_e6e8f83407_0_0.cell.nml"></include>
     <include href="cADpyr229_L23_PC_c292d67a2e_0_0.cell.nml"></include>
     <include href="bAC217_L4_MC_5fa0a62bd0_0_0.cell.nml"></include>
+    <include href="cADpyr230_L4_SS_1afeb14f17_0_0.cell.nml"></include>
     <include href="cADpyr232_L5_TTPC1_0fb1ca4724_0_0.cell.nml"></include>
+    <include href="cADpyr232_L5_UTPC_d736225429_0_0.cell.nml"></include>
     <include href="cADpyr231_L6_TPC_L1_44f2206f70_0_0.cell.nml"></include>
+    <include href="cADpyr231_L6_TPC_L4_117b9dfb71_0_0.cell.nml"></include>
     <network id="CellTypesPerLayer">
         <population id="Pop_bNAC219_L1_DAC_a9ae5cbbf5_0_0" type="populationList" component="bNAC219_L1_DAC_a9ae5cbbf5_0_0">
             <instance id="0">
                 <location y="-82.5" x="0." z="0."/>
             </instance>
         </population>
+        <population id="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" type="populationList" component="cNAC187_L1_HAC_f8c9772d9d_0_0">
+            <instance id="0">
+                <location y="-82.5" x="300." z="0."/>
+            </instance>
+        </population>
+        <population id="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" type="populationList" component="cSTUT189_L23_LBC_e6e8f83407_0_0">
+            <instance id="0">
+                <location y="-416." x="600." z="0."/>
+            </instance>
+        </population>
         <population id="Pop_cADpyr229_L23_PC_c292d67a2e_0_0" type="populationList" component="cADpyr229_L23_PC_c292d67a2e_0_0">
             <instance id="0">
-                <location y="-416." x="300." z="0."/>
+                <location y="-416." x="900." z="0."/>
             </instance>
         </population>
         <population id="Pop_bAC217_L4_MC_5fa0a62bd0_0_0" type="populationList" component="bAC217_L4_MC_5fa0a62bd0_0_0">
             <instance id="0">
-                <location y="-762." x="600." z="0."/>
+                <location y="-762." x="1200." z="0."/>
+            </instance>
+        </population>
+        <population id="Pop_cADpyr230_L4_SS_1afeb14f17_0_0" type="populationList" component="cADpyr230_L4_SS_1afeb14f17_0_0">
+            <instance id="0">
+                <location y="-762." x="1500." z="0."/>
             </instance>
         </population>
         <population id="Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0" type="populationList" component="cADpyr232_L5_TTPC1_0fb1ca4724_0_0">
             <instance id="0">
-                <location y="-1120." x="900." z="0."/>
+                <location y="-1120." x="1800." z="0."/>
+            </instance>
+        </population>
+        <population id="Pop_cADpyr232_L5_UTPC_d736225429_0_0" type="populationList" component="cADpyr232_L5_UTPC_d736225429_0_0">
+            <instance id="0">
+                <location y="-1120." x="2100." z="0."/>
             </instance>
         </population>
         <population id="Pop_cADpyr231_L6_TPC_L1_44f2206f70_0_0" type="populationList" component="cADpyr231_L6_TPC_L1_44f2206f70_0_0">
             <instance id="0">
-                <location y="-1733." x="1200." z="0."/>
+                <location y="-1733." x="2400." z="0."/>
+            </instance>
+        </population>
+        <population id="Pop_cADpyr231_L6_TPC_L4_117b9dfb71_0_0" type="populationList" component="cADpyr231_L6_TPC_L4_117b9dfb71_0_0">
+            <instance id="0">
+                <location y="-1733." x="2700." z="0."/>
             </instance>
         </population>
     </network>
