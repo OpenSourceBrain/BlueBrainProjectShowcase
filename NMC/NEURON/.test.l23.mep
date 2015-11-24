@@ -5,5 +5,5 @@ system: Testing L23
 experiments:
   stepcurrent3_0:
     expected:
-      spike times: [748.875, 1103.375, 1548.875, 1986.075, 2419.475]
+      spike times: [748.975, 1103.475, 1548.975, 1986.175, 2419.575]
       
