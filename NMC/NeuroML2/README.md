@@ -5,6 +5,8 @@ Collaboration Portal](https://bbp.epfl.ch/nmc-portal/microcircuit) are in NEURON
 have been converted to [NeuroML 2](https://www.neuroml.org/neuromlv2) format using the code 
 [here](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/tree/master/NMC/parser).
 
+These are the cell models used in the publication: Reconstruction and Simulation of Neocortical Microcircuitry, Markram et al. 2015, [Cell, Volume 163, Issue 2, 456-492](http://www.cell.com/cell/pdf/S0092-8674%2815%2901191-5.pdf)
+
 ### Using the NeuroML 2 models
 
 #### Installation
