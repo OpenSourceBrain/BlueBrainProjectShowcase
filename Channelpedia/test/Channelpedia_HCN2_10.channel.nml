@@ -1,5 +1,5 @@
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Channelpedia_HCN2_10">
-    <ionChannelHH id="Channelpedia_HCN2_10" conductance="10pS" species="Hcn">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="Channelpedia_HCN2_10">
+    <ionChannelHH id="Channelpedia_HCN2_10" species="Hcn" conductance="10pS">
         <notes>This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. 
 The original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/62
 

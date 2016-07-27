@@ -58,9 +58,9 @@ for link in soup.find_all('a'):
                 for g in ic.gates:
                     gates.append(g.id)
 
-        new_lems_file = "test/LEMS_Test_%s.xml"%channel_id
+        new_lems_file = "LEMS_Test_%s.xml"%channel_id
     
-        lems_helper = generate(nml2_file_name, channel_id, gates, temperature, ion=doc.ion_channel_hhs[0].species)
+        lems_helper = generate(nml2_file_path, channel_id, gates, temperature, ion=doc.ion_channel_hhs[0].species)
         
         file_out = open(new_lems_file, 'w')
         file_out.write(lems_helper)
@@ -70,7 +70,7 @@ for link in soup.find_all('a'):
                            nogui=True, 
                            load_saved_data=False, 
                            plot=False, 
-                           exec_in_dir = "test/",
+                           exec_in_dir = ".",
                            verbose=True,
                            exit_on_fail = False)
                            

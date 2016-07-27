@@ -20,7 +20,7 @@ x86_64
 /Channelpedia/test/*.xml
 /Channelpedia/unknowns
 Channelpedia/*.dat
-Channelpedia/LEMS_Test_k*
+Channelpedia/LEMS_Test*
 
 Channelpedia/test/html
 *.pyc

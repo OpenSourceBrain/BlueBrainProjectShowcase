@@ -16,6 +16,7 @@ default_parameters["ca"] =                    (-100,   20,     100,   50,    400
 
 def generate(channel_file, channel, gates, temperature, ion = '?'):
     
+    print("Generating LEMS analyser for %s"%channel_file)
     ca_conc = 1e-5
     ion = ion.lower()
     print('---- Generating for %s in %s (gates: %s) with ion: %s'%(channel, channel_file, gates, ion))
