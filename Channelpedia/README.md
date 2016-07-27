@@ -13,4 +13,6 @@ This can be used to convert XML files for channels in Channelpedia's native form
 
 ### [test](test)
 
-This folder contains examples of Channelpedia channels converted to NeuroML2
+This folder contains examples of Channelpedia channels converted to NeuroML2. 
+
+**Generated plots of the activation/inactivation variables** of these channels can be found [here](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/tree/master/Channelpedia/test/channel_summary).
