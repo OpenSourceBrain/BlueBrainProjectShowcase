@@ -132,6 +132,12 @@
         </Display>
 #end## 
 
+#foreach ($tv in $target_voltages)##
+        <OutputFile id="i_${tv.v_str}_of1" fileName="i_${tv.v_str}.lems.dat">
+            <OutputColumn id="${tv.v_str}" quantity="holderCellPop_${tv.v_str}[0]/test/i"/> 
+        </OutputFile>
+#end## 
+
 #foreach ($g in $gates)##
         <OutputFile id="${g}_inf_of1" fileName="${channel}.${g}.inf.lems.dat">
             <OutputColumn id="${g}" quantity="rampCellPop0[0]/test/${channel}/${g}/inf"/> 
