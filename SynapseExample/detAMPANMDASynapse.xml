@@ -1,0 +1,68 @@
+<Lems xmlns="http://www.neuroml.org/lems/0.7.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.neuroml.org/lems/0.7.1 https://raw.github.com/LEMS/LEMS/master/Schemas/LEMS/LEMS_v0.7.1.xsd">
+
+    <ComponentType name="detAMPANMDASynapse"
+                   extends="baseSynapse"
+                   description="A description" >
+
+        <Parameter name="tauRise_AMPA" dimension="time" />
+        <Parameter name="tauDecay_AMPA" dimension="time" />
+        <Parameter name="tauRise_NMDA" dimension="time" />
+        <Parameter name="tauDecay_NMDA" dimension="time" />
+        <Parameter name="ratio_NMDA" dimension="none" />
+        <Parameter name="gbase" dimension="conductance" description="A description" />
+        <Parameter name="erev" dimension="voltage" description="Reversal potential of the synapse" />
+    
+        <DerivedParameter name="peakTime_AMPA" dimension="time" value="log(tauDecay_AMPA / tauRise_AMPA)  * (tauRise_AMPA * tauDecay_AMPA)/(tauDecay_AMPA - tauRise_AMPA)" />
+        <DerivedParameter name="waveformFactor_AMPA" dimension="none" value="1 / (-1 * exp(-1 * peakTime_AMPA / tauRise_AMPA) + exp(-1 * peakTime_AMPA / tauDecay_AMPA))" />
+        
+        <DerivedParameter name="peakTime_NMDA" dimension="time" value="log(tauDecay_NMDA / tauRise_NMDA) * (tauRise_NMDA * tauDecay_NMDA)/(tauDecay_NMDA - tauRise_NMDA)" />
+        <DerivedParameter name="waveformFactor_NMDA" dimension="none" value="1 / (-1 * exp(-1 * peakTime_NMDA / tauRise_NMDA) + exp(-1 * peakTime_NMDA / tauDecay_NMDA))" />
+        
+        <DerivedParameter name="gbase_AMPA" dimension="conductance" value="gbase * (1 - ratio_NMDA)" />
+        <DerivedParameter name="gbase_NMDA" dimension="conductance" value="gbase * ratio_NMDA" />
+
+        <Exposure name="g_AMPA" dimension="conductance" />
+        <Exposure name="i_AMPA" dimension="current" />
+        <Exposure name="g_NMDA" dimension="conductance" />
+        <Exposure name="i_NMDA" dimension="current" />
+
+        <Dynamics>
+            <StateVariable name="A_AMPA" dimension="none" />
+            <StateVariable name="B_AMPA" dimension="none" />
+            <StateVariable name="A_NMDA" dimension="none" />
+            <StateVariable name="B_NMDA" dimension="none" />
+
+            <!-- TODO: catch tauRise = 0..! -->
+
+            <DerivedVariable name="g_AMPA" dimension="conductance" exposure="g_AMPA" value="gbase_AMPA * (B_AMPA - A_AMPA)" />
+            <DerivedVariable name="i_AMPA" exposure="i_AMPA" dimension="current" value="g_AMPA * (erev - v)" />
+            <DerivedVariable name="g_NMDA" dimension="conductance" exposure="g_NMDA" value="gbase_NMDA * (B_NMDA - A_NMDA)" />
+            <DerivedVariable name="i_NMDA" exposure="i_NMDA" dimension="current" value="g_NMDA * (erev - v)" />
+
+            <DerivedVariable name="i" exposure="i" dimension="current" value="i_AMPA + i_NMDA" />
+
+            <TimeDerivative variable="A_AMPA" value="-A_AMPA / tauRise_AMPA" />
+            <TimeDerivative variable="B_AMPA" value="-B_AMPA / tauDecay_AMPA" />
+            <TimeDerivative variable="A_NMDA" value="-A_NMDA / tauRise_NMDA" />
+            <TimeDerivative variable="B_NMDA" value="-B_NMDA / tauDecay_NMDA" />
+
+            <OnStart>
+                <StateAssignment variable="A_AMPA" value="0" />
+                <StateAssignment variable="B_AMPA" value="0" />
+                <StateAssignment variable="A_NMDA" value="0" />
+                <StateAssignment variable="B_NMDA" value="0" />
+            </OnStart>
+
+            <OnEvent port="in">
+                <StateAssignment variable="A_AMPA" value="A_AMPA + waveformFactor_AMPA" />
+                <StateAssignment variable="B_AMPA" value="B_AMPA + waveformFactor_AMPA" />
+                <StateAssignment variable="A_NMDA" value="A_NMDA + waveformFactor_NMDA" />
+                <StateAssignment variable="B_NMDA" value="B_NMDA + waveformFactor_NMDA" />
+            </OnEvent>
+
+        </Dynamics>
+    </ComponentType>
+
+</Lems>

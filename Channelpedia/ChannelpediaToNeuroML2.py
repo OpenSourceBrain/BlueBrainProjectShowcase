@@ -33,7 +33,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                           conductance='10pS',
                           species=ion.attrib['Name'],
                           notes="This is an automated conversion to NeuroML 2 of an ion channel model from Channelpedia. "+
-                          "\nThe original channel model file can be found at: http://channelpedia.epfl.ch/ionchannels/%s"%root.attrib['ID']+
+                          "\nThe original model can be found at: http://channelpedia.epfl.ch/ionchannels/%s"%root.attrib['ID']+
                           "\n\nConversion scripts at https://github.com/OpenSourceBrain/BlueBrainProjectShowcase")
     
     chan.annotation = neuroml.Annotation()
@@ -105,12 +105,14 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
         
         eq_type = gate.attrib['EqType']
         gate_name = gate.attrib['Name']
-        target = chan.gates
+        target = None
         
         if eq_type == '1':
-            g = neuroml.GateHHUndetermined(id=gate_name, type='gateHHtauInf', instances=int(float(gate.attrib['Power'])))
+            g = neuroml.GateHHTauInf(id=gate_name,instances=int(float(gate.attrib['Power'])))
+            target = chan.gate_hh_tau_infs
         elif eq_type == '2':
-            g = neuroml.GateHHUndetermined(id=gate_name, type='gateHHrates', instances=int(float(gate.attrib['Power'])))
+            g = neuroml.GateHHRates(id=gate_name,instances=int(float(gate.attrib['Power'])))
+            target = chan.gate_hh_rates
         
         for inf in gate.findall('Inf_Alpha'):
             equation = check_equation(inf.findall('Equation')[0].text)
@@ -124,8 +126,8 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                 comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
                 comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
 
-                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
                 comp_type.dynamics.add(lems.DerivedVariable(name='x', dimension="none", value="%s"%equation, exposure="x"))
+                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
 
                 comp_types[new_comp_type] = comp_type
                 
@@ -138,8 +140,8 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                 comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
                 comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
 
-                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
                 comp_type.dynamics.add(lems.DerivedVariable(name='r', dimension="per_time", value="%s / TIME_SCALE"%equation, exposure="r"))
+                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
 
                 comp_types[new_comp_type] = comp_type
                 
@@ -156,8 +158,8 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                 comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
                 comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
 
-                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
                 comp_type.dynamics.add(lems.DerivedVariable(name='t', dimension="none", value="(%s) * TIME_SCALE"%equation, exposure="t"))
+                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
 
                 comp_types[new_comp_type] = comp_type
                 
@@ -170,8 +172,8 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
                 comp_type.add(lems.Constant('TIME_SCALE', '1 ms', 'time'))
                 comp_type.add(lems.Constant('VOLT_SCALE', '1 mV', 'voltage'))
 
-                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
                 comp_type.dynamics.add(lems.DerivedVariable(name='r', dimension="per_time", value="%s  / TIME_SCALE"%equation, exposure="r"))
+                comp_type.dynamics.add(lems.DerivedVariable(name='V', dimension="none", value="v / VOLT_SCALE"))
 
                 comp_types[new_comp_type] = comp_type
         

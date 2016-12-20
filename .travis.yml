@@ -2,58 +2,40 @@ language: python
 python: 2.7
 
 
-env:
-    - OMV_ENGINE=jNeuroML
-    - OMV_ENGINE=jNeuroML_NEURON
-    - OMV_ENGINE=NEURON
-    - OMV_ENGINE=jNeuroML_validate
-    - OMV_ENGINE=NON_OMV_TESTS
-
 install:
-    
-    # Install OMV
-    - pip install git+https://github.com/OpenSourceBrain/osb-model-validation
-
-
-    # Install libNeuroML (development version) & dependencies
-
+    - cd
+    #   Install jNeuroML
+    - svn checkout https://svn.code.sf.net/p/neuroml/code/jNeuroMLJar
+    - export JNML_HOME=$HOME/jNeuroMLJar
+    #   Install libNeuroML (development version) & dependencies
+    - pip install lxml
     - git clone https://github.com/NeuralEnsemble/libNeuroML.git
     - cd libNeuroML
     - git checkout development
+    - python setup.py install 
+    - cd
+    #   Install PyLEMS  (development version)
+    - git clone https://github.com/LEMS/pylems.git
+    - cd pylems
+    - git checkout development
     - python setup.py install
     - cd
-    
-
-    # Install pyNeuroML
-    - pip install git+https://github.com/NeuroML/pyNeuroML.git
-
-
     #   Install OSB API
     - git clone https://github.com/OpenSourceBrain/OSB_API.git
     - cd OSB_API/python
     - python setup.py install
-
-
+    #   Install airspeed
+    - pip install git+https://github.com/purcell/airspeed.git
+    # Go back to main installation dir for travis
     - cd $TRAVIS_BUILD_DIR
+    
 
 script:
-
-    - omv all -V; export OMV_SUCCESS=$?; echo $OMV_SUCCESS
-    - echo "Finished all OMV tests"
-    - if [[ ${OMV_ENGINE} == "NON_OMV_TESTS" ]]; then echo "Continuing with tests not under OMV..."; else exit $OMV_SUCCESS; fi
-    - echo "Running non OMV tests..."
-    
-    # Test Channelpedia related scripts
     - cd Channelpedia
     - python ChannelpediaToNeuroML2.py HCN1
+    - $JNML_HOME/jnml LEMS_Test_HCN1.xml -nogui
     - python analyse.py
-    - pynml LEMS_Test_HCN1.xml -nogui
-    
-    # Test NMC related scripts
-    #- omv install NEURON             # broken...
-    #- cd ../NMC/parser
-    #- python ParseAll.py
-    
-
+    - python NML2ChannelAnalyse.py Nav1.3.channel.nml Channelpedia_Nav1_3_43
+    - $JNML_HOME/jnml LEMS_Test_Channelpedia_Nav1_3_43.xml -nogui
     
     

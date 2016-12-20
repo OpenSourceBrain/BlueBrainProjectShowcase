@@ -1,14 +1,3 @@
-/NMC/parser/CheckPortal.py
-/NMC/parser/microcircuit
-/NMC/NeuroML2/analyse.hoq
-/NMC/NEURON/hoc_recordings/soma_voltage.dat
-/NMC/parser/L1_HAC_cNAC187_1/loadcell.hoc0
-/NMC/parser/L1_HAC_cNAC187_1/groups.txt
-/NMC/parser/zips
-/NMC/parser/old2
-/NMC/parser/hoc_combos_syn.1_0_10.allzips
-/NMC/NeuroML2/simulator.props
-/Channelpedia/clean.sh
 i386
 umac
 x86_64
@@ -16,13 +5,13 @@ x86_64
 /Channelpedia/LEMS_Test_inact_kv.xml
 /Channelpedia/m_inf.lems.dat
 /Channelpedia/m_tau.lems.dat
-/Channelpedia/test/*.dat
-/Channelpedia/test/*.xml
+/Channelpedia/test/m_inf.lems.dat
+/Channelpedia/test/m_tau.lems.dat
 /Channelpedia/unknowns
+Channelpedia/test/*.*ml
 Channelpedia/*.dat
-Channelpedia/LEMS_Test*
+Channelpedia/LEMS_Test_k*
 
-Channelpedia/test/html
 *.pyc
 *~
 
