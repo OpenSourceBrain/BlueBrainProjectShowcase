@@ -291,6 +291,10 @@ wopen()
                         metric="Path Length from root",
                         proximal=neuroml.ProximalDetails(
                             translation_start="0")))
+                            
+        cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="soma_group", includes=[neuroml.Include("somatic")]))
+        cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="axon_group", includes=[neuroml.Include("axonal")]))
+        cell.morphology.segment_groups.append(neuroml.SegmentGroup(id="dendrite_group", includes=[neuroml.Include("basal"),neuroml.Include("apical")]))
 
         ignore_chans = ['Ih', 'Ca_HVA', 'Ca_LVAst', 'Ca',
                         "SKv3_1", "SK_E2", "CaDynamics_E2", "Nap_Et2", "Im",

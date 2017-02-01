@@ -9551,6 +9551,16 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
             <segmentGroup id="somatic">
                 <include segmentGroup="soma_0"/>
             </segmentGroup>
+            <segmentGroup id="soma_group">
+                <include segmentGroup="somatic"/>
+            </segmentGroup>
+            <segmentGroup id="axon_group">
+                <include segmentGroup="axonal"/>
+            </segmentGroup>
+            <segmentGroup id="dendrite_group">
+                <include segmentGroup="basal"/>
+                <include segmentGroup="apical"/>
+            </segmentGroup>
         </morphology>
         <biophysicalProperties id="biophys">
             <membraneProperties>
