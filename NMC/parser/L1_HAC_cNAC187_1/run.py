@@ -52,7 +52,7 @@ def create_cell(add_synapses=True):
 
     # Instantiate the cell from the template
 
-    print "Loading cell cNAC187_L1_HAC_f8c9772d9d"
+    print("Loading cell cNAC187_L1_HAC_f8c9772d9d")
     cell = neuron.h.cNAC187_L1_HAC_f8c9772d9d(1 if add_synapses else 0)
     return cell
 
@@ -132,7 +132,12 @@ def run_step(step_number, plot_traces=None):
     soma_voltage_filename = os.path.join(
         recordings_dir,
         'soma_voltage_step%d.dat' % step_number)
-    numpy.savetxt(soma_voltage_filename, zip(time, soma_voltage))
+    numpy.savetxt(
+            soma_voltage_filename,
+            numpy.transpose(
+               numpy.vstack((
+                    time,
+                    soma_voltage))))
 
     print('Soma voltage for step %d saved to: %s'
           % (step_number, soma_voltage_filename))
