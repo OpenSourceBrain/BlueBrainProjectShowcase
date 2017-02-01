@@ -17,14 +17,21 @@
 
 Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaboration Portal into NeuroML2
 
+For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L23_PC_cADpyr/details
+
 ******************************************************
 *  This export to NeuroML2 has not yet been fully validated!!
 *  Use with caution!!
 ******************************************************
 
-For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L23_PC_L23PC/details
-
-</notes>
+        </notes>
+        <property tag="BBP:layer" value="L3"/>
+        <property tag="BBP:me-type" value="L23_PC_cADpyr"/>
+        <property tag="BBP:m-type" value="L23_PC"/>
+        <property tag="BBP:cell name" value="cADpyr229_L23_PC_3_dend-C170897A-P3_axon-C260897C-P4_-_Clone_4"/>
+        <property tag="BBP:gid" value="35954"/>
+        <property tag="BBP:e-type" value="L23PC"/>
+        <property tag="BBP:morphology" value="dend-C170897A-P3_axon-C260897C-P4_-_Clone_4"/>
         <morphology id="morphology">
             <segment id="0" name="Seg0_soma_0">
                 <proximal x="2.575320e-01" y="-8.049430e+00" z="0.000000e+00" diameter="3.02824"/>

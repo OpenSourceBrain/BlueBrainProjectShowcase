@@ -17,14 +17,21 @@
 
 Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaboration Portal into NeuroML2
 
+For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L5_TTPC1_cADpyr/details
+
 ******************************************************
 *  This export to NeuroML2 has not yet been fully validated!!
 *  Use with caution!!
 ******************************************************
 
-For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L5_TTPC1_L5PC/details
-
-</notes>
+        </notes>
+        <property tag="BBP:layer" value="L5"/>
+        <property tag="BBP:me-type" value="L5_TTPC1_cADpyr"/>
+        <property tag="BBP:m-type" value="L5_TTPC1"/>
+        <property tag="BBP:cell name" value="cADpyr232_L5_TTPC1_5_dend-C060114A2_axon-C060114A5"/>
+        <property tag="BBP:gid" value="12858"/>
+        <property tag="BBP:e-type" value="L5PC"/>
+        <property tag="BBP:morphology" value="dend-C060114A2_axon-C060114A5"/>
         <morphology id="morphology">
             <segment id="0" name="Seg0_soma_0">
                 <proximal x="3.947040e+00" y="-1.382970e+01" z="0.000000e+00" diameter="3.61096"/>

@@ -17,14 +17,21 @@
 
 Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaboration Portal into NeuroML2
 
+For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L1_HAC_cNAC/details
+
 ******************************************************
 *  This export to NeuroML2 has not yet been fully validated!!
 *  Use with caution!!
 ******************************************************
 
-For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L1_HAC_cNAC/details
-
-</notes>
+        </notes>
+        <property tag="BBP:layer" value="L1"/>
+        <property tag="BBP:me-type" value="L1_HAC_cNAC"/>
+        <property tag="BBP:m-type" value="L1_HAC"/>
+        <property tag="BBP:cell name" value="cNAC187_L1_HAC_1_sm081119a6"/>
+        <property tag="BBP:gid" value="31362"/>
+        <property tag="BBP:e-type" value="cNAC"/>
+        <property tag="BBP:morphology" value="sm081119a6"/>
         <morphology id="morphology">
             <segment id="0" name="Seg0_soma_0">
                 <proximal x="-3.809550e+00" y="-7.565470e+00" z="0.000000e+00" diameter="2.78828"/>

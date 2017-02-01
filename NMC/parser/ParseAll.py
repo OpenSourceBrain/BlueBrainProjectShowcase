@@ -13,7 +13,7 @@ from pyneuroml import pynml
 import neuroml
 
 import shutil
-
+import re
 import zipfile
 
 from Biophysics import get_biophysical_properties
@@ -310,20 +310,33 @@ wopen()
         notes = ''
         notes += \
             "\n\nExport of a cell model obtained from the BBP Neocortical" \
-            "Microcircuit Collaboration Portal into NeuroML2" \
-            "\n\n******************************************************\n*" \
-            "  This export to NeuroML2 has not yet been fully validated!!" \
-            "\n*  Use with caution!!\n***********************************" \
-            "*******************\n\n"
+            "Microcircuit Collaboration Portal into NeuroML2\n\n" 
 
         if len(ignore_chans) > 0:
             notes += "Ignored channels = %s\n\n" % ignore_chans
+            
+        #### Fix me-type
+        cell_name = cell_info['cell name']
+        
+        cell_info['me-type'] = cell_info['m-type'] + '_' + re.split('[0-9]',cell_name)[0]
 
         notes += "For more information on this cell model see: " \
             "https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/%s/" \
             "details\n\n" % cell_info['me-type']
+            
+        notes += "******************************************************\n*" \
+            "  This export to NeuroML2 has not yet been fully validated!!" \
+            "\n*  Use with caution!!\n***********************************" \
+            "*******************\n\n        "
 
         cell.notes = notes
+        
+        for k in cell_info.keys():
+            p = neuroml.Property(tag='BBP:%s'%k, value=cell_info[k])
+            cell.properties.append(p)
+        
+        
+        
         for channel in incl_chans:
 
             nml_doc.includes.append(neuroml.IncludeType(

@@ -3,14 +3,14 @@
 
 Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaboration Portal into NeuroML2
 
+For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L1_HAC_cNAC/details
+
 ******************************************************
 *  This export to NeuroML2 has not yet been fully validated!!
 *  Use with caution!!
 ******************************************************
 
-For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L1_HAC_cNAC/details
-
-</notes>
+        </notes>
     <include href="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"></include>
     <pulseGenerator id="stepcurrent3_hyp" delay="0ms" duration="3000ms" amplitude="-0.025513nA"/>
     <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.0665952nA"/>
