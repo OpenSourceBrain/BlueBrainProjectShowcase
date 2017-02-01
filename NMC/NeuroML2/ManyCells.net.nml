@@ -1,27 +1,27 @@
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="ManyCells">
-    <include href="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"></include>
-    <include href="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"></include>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="ManyCells">
     <include href="cADpyr232_L5_TTPC1_0fb1ca4724_0_0.cell.nml"></include>
+    <include href="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"></include>
     <include href="cSTUT189_L23_LBC_e6e8f83407_0_0.cell.nml"></include>
+    <include href="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"></include>
     <network id="ManyCells">
-        <population id="Pop_cNAC187_L1_HAC_f8c9772d9d" type="populationList" component="cNAC187_L1_HAC_f8c9772d9d_0_0">
+        <population id="Pop_cADpyr232_L5_TTPC1_0fb1ca4724" component="cADpyr232_L5_TTPC1_0fb1ca4724_0_0" type="populationList">
             <instance id="0">
-                <location y="0." x="0." z="0."/>
+                <location x="0." y="0." z="0."/>
             </instance>
         </population>
-        <population id="Pop_cADpyr229_L23_PC_5ecbf9b163" type="populationList" component="cADpyr229_L23_PC_5ecbf9b163_0_0">
+        <population id="Pop_cADpyr229_L23_PC_5ecbf9b163" component="cADpyr229_L23_PC_5ecbf9b163_0_0" type="populationList">
             <instance id="0">
-                <location y="0." x="300." z="0."/>
+                <location x="300." y="0." z="0."/>
             </instance>
         </population>
-        <population id="Pop_cADpyr232_L5_TTPC1_0fb1ca4724" type="populationList" component="cADpyr232_L5_TTPC1_0fb1ca4724_0_0">
+        <population id="Pop_cSTUT189_L23_LBC_e6e8f83407" component="cSTUT189_L23_LBC_e6e8f83407_0_0" type="populationList">
             <instance id="0">
-                <location y="0." x="600." z="0."/>
+                <location x="600." y="0." z="0."/>
             </instance>
         </population>
-        <population id="Pop_cSTUT189_L23_LBC_e6e8f83407" type="populationList" component="cSTUT189_L23_LBC_e6e8f83407_0_0">
+        <population id="Pop_cNAC187_L1_HAC_f8c9772d9d" component="cNAC187_L1_HAC_f8c9772d9d_0_0" type="populationList">
             <instance id="0">
-                <location y="0." x="900." z="0."/>
+                <location x="900." y="0." z="0."/>
             </instance>
         </population>
     </network>

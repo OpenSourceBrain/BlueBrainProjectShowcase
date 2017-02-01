@@ -2,7 +2,7 @@
     
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.1.4 (libNeuroML v0.2.10)
+        This LEMS file has been automatically generated using PyNeuroML v0.2.6 (libNeuroML v0.2.26)
 
      -->
     
@@ -30,10 +30,10 @@
     <Include file="CaDynamics_E2_NML2.nml"/>
     <Include file="Ca.channel.nml"/>
    
-    <Simulation id="L1_HAC_cNAC187_1" length="3000ms" step="0.025ms" target="network">
+    <Simulation id="L1_HAC_cNAC187_1" length="3000ms" step="0.025ms" target="network" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
         
-        <Display id="DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" title="Voltages of DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
-            <Line id="v Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0_cNAC187_L1_HAC_f8c9772d9d_0_0_v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
+        <Display id="DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" title="Membrane potentials of cells in Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
+            <Line id="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0[0]: v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
         </Display>
         
         <OutputFile id="Volts_file__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" fileName="L1_HAC_cNAC187_1.Pop_cNAC187_L1_HAC_f8c9772d9d_0_0.v.dat">

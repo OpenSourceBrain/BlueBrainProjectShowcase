@@ -2,7 +2,7 @@
     
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.1.4 (libNeuroML v0.2.10)
+        This LEMS file has been automatically generated using PyNeuroML v0.2.6 (libNeuroML v0.2.26)
 
      -->
     
@@ -30,10 +30,10 @@
     <Include file="CaDynamics_E2_NML2.nml"/>
     <Include file="Ca_LVAst.channel.nml"/>
    
-    <Simulation id="L5_TTPC1_cADpyr232_1" length="3000ms" step="0.025ms" target="network">
+    <Simulation id="L5_TTPC1_cADpyr232_1" length="3000ms" step="0.025ms" target="network" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
         
-        <Display id="DispPop__Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0" title="Voltages of DispPop__Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
-            <Line id="v Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0_0_cADpyr232_L5_TTPC1_0fb1ca4724_0_0_v" quantity="Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0/0/cADpyr232_L5_TTPC1_0fb1ca4724_0_0/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
+        <Display id="DispPop__Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0" title="Membrane potentials of cells in Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
+            <Line id="Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0[0]: v" quantity="Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0/0/cADpyr232_L5_TTPC1_0fb1ca4724_0_0/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
         </Display>
         
         <OutputFile id="Volts_file__Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0" fileName="L5_TTPC1_cADpyr232_1.Pop_cADpyr232_L5_TTPC1_0fb1ca4724_0_0.v.dat">
