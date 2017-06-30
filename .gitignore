@@ -31,3 +31,5 @@ ChannelTest/*nrn.py
 ChannelTest/*.hoc
 ChannelTest/*.dat
 ChannelTest/*.log
+/NMC/NeuroML2/*_netpyne.py
+/NMC/NeuroML2/*_main.json

@@ -1,0 +1,45 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.3.0 (libNeuroML v0.2.32)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="L23_NBC_cNAC187_1"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="cNAC187_L23_NBC_9d37c4b1f8.stepcurrent3.net.nml"/>
+    <Include file="cNAC187_L23_NBC_9d37c4b1f8_0_0.cell.nml"/>
+    <Include file="K_Tst.channel.nml"/>
+    <Include file="SKv3_1.channel.nml"/>
+    <Include file="Nap_Et2.channel.nml"/>
+    <Include file="NaTs2_t.channel.nml"/>
+    <Include file="Ih.channel.nml"/>
+    <Include file="pas.channel.nml"/>
+    <Include file="Im.channel.nml"/>
+    <Include file="NaTa_t.channel.nml"/>
+    <Include file="Ca_LVAst.channel.nml"/>
+    <Include file="SK_E2.channel.nml"/>
+    <Include file="K_Pst.channel.nml"/>
+    <Include file="CaDynamics_E2_NML2.nml"/>
+    <Include file="Ca.channel.nml"/>
+   
+    <Simulation id="L23_NBC_cNAC187_1" length="3000ms" step="0.025ms" target="network" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
+        
+        <Display id="DispPop__Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0" title="Membrane potentials of cells in Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
+            <Line id="Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0[0]: v" quantity="Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0/0/cNAC187_L23_NBC_9d37c4b1f8_0_0/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Volts_file__Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0" fileName="L23_NBC_cNAC187_1.Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0.v.dat">
+            <OutputColumn id="v_Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0_0_cNAC187_L23_NBC_9d37c4b1f8_0_0_v" quantity="Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0/0/cNAC187_L23_NBC_9d37c4b1f8_0_0/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>

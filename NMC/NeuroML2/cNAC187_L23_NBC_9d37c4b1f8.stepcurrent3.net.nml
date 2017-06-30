@@ -1,0 +1,30 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="NeuroML2_file_exported_from_NEURON">
+    <notes>
+
+Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaboration Portal into NeuroML2
+
+For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L23_NBC_cNAC/details
+
+******************************************************
+*  This export to NeuroML2 has not yet been fully validated!!
+*  Use with caution!!
+******************************************************
+
+        </notes>
+    <include href="cNAC187_L23_NBC_9d37c4b1f8_0_0.cell.nml"></include>
+    <pulseGenerator id="stepcurrent3_hyp" delay="0ms" duration="3000ms" amplitude="-0.031494nA"/>
+    <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.0712516nA"/>
+    <network id="network" type="networkWithTemperature" temperature="34 degC">
+        <population id="Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0" component="cNAC187_L23_NBC_9d37c4b1f8_0_0" size="1" type="populationList">
+            <instance id="0">
+                <location x="0." y="0." z="0."/>
+            </instance>
+        </population>
+        <inputList id="stepcurrent3_hyp_input" population="Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0" component="stepcurrent3_hyp">
+            <input id="0" target="../Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0/0/cNAC187_L23_NBC_9d37c4b1f8_0_0" destination="synapses"/>
+        </inputList>
+        <inputList id="stepcurrent3_input" population="Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0" component="stepcurrent3">
+            <input id="0" target="../Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0/0/cNAC187_L23_NBC_9d37c4b1f8_0_0" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>
