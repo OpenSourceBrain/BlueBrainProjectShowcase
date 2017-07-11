@@ -5,11 +5,11 @@
     <include href="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"></include>
     <include href="cNAC187_L23_NBC_9d37c4b1f8_0_0.cell.nml"></include>
     <network id="ManyCells">
-        <population id="Pop_cADpyr232_L5_TTPC1_0fb1ca4724" component="cADpyr232_L5_TTPC1_0fb1ca4724_0_0" type="populationList">
+        <!--<population id="Pop_cADpyr232_L5_TTPC1_0fb1ca4724" component="cADpyr232_L5_TTPC1_0fb1ca4724_0_0" type="populationList">
             <instance id="0">
                 <location x="0." y="0." z="0."/>
             </instance>
-        </population>
+        </population>-->
         <population id="Pop_cADpyr229_L23_PC_5ecbf9b163" component="cADpyr229_L23_PC_5ecbf9b163_0_0" type="populationList">
             <instance id="0">
                 <location x="300." y="0." z="0."/>
@@ -20,14 +20,15 @@
                 <location x="600." y="0." z="0."/>
             </instance>
         </population>
+        <!--
         <population id="Pop_cNAC187_L1_HAC_f8c9772d9d" component="cNAC187_L1_HAC_f8c9772d9d_0_0" type="populationList">
             <instance id="0">
                 <location x="900." y="0." z="0."/>
             </instance>
-        </population>
+        </population>-->
         <population id="Pop_cNAC187_L23_NBC_9d37c4b1f8" component="cNAC187_L23_NBC_9d37c4b1f8_0_0" type="populationList">
             <instance id="0">
-                <location x="1200." y="0." z="0."/>
+                <location x="900." y="0." z="0."/>
             </instance>
         </population>
     </network>
