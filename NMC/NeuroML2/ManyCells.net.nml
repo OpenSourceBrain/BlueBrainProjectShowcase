@@ -12,7 +12,7 @@
         </population>-->
         <population id="Pop_cADpyr229_L23_PC_5ecbf9b163" component="cADpyr229_L23_PC_5ecbf9b163_0_0" type="populationList">
             <instance id="0">
-                <location x="300." y="0." z="0."/>
+                <location x="400." y="0." z="0."/>
             </instance>
         </population>
         <population id="Pop_cSTUT189_L23_LBC_e6e8f83407" component="cSTUT189_L23_LBC_e6e8f83407_0_0" type="populationList">
@@ -28,7 +28,7 @@
         </population>-->
         <population id="Pop_cNAC187_L23_NBC_9d37c4b1f8" component="cNAC187_L23_NBC_9d37c4b1f8_0_0" type="populationList">
             <instance id="0">
-                <location x="900." y="0." z="0."/>
+                <location x="800." y="0." z="0."/>
             </instance>
         </population>
     </network>
