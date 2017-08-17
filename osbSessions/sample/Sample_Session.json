@@ -1,0 +1,168 @@
+{
+  "id": 485,
+  "name": "network",
+  "experiments": [
+    {
+      "id": 884,
+      "aspectConfigurations": [
+        {
+          "id": 866,
+          "instance": "network",
+          "watchedVariables": [
+            
+          ],
+          "modelParameters": [
+            
+          ],
+          "simulatorConfiguration": {
+            "id": 838,
+            "simulatorId": "neuronSimulator",
+            "timestep": 2.5e-5,
+            "length": 0.3,
+            "parameters": {
+              "target": "network"
+            }
+          }
+        }
+      ],
+      "name": "cADpyr229_L23_PC_5ecbf9b163 - net",
+      "creationDate": 1502962318000,
+      "lastModified": 1502962318000,
+      "status": "DESIGN",
+      "simulationResults": [
+        
+      ],
+      "script": "\/script.js",
+      "isPublic": false,
+      "view": {
+        "id": 946,
+        "viewStates": {
+          "views": {
+            "Popup1": {
+              "widgetType": 1,
+              "isWidget": true,
+              "transparentBackground": false,
+              "name": "Model Description - network",
+              "size": {
+                "height": 350.8,
+                "width": 494.8
+              },
+              "position": {
+                "left": 95,
+                "top": 140
+              },
+              "dataType": "string",
+              "data": "<div id='Popup3_network_el_2' class='collapse in popup-html'>Network: <a href=\"#\" instancePath=\"Model.neuroml.network\">network<\/a><br\/><br\/>\n<a target=\"_blank\" href=\"https:\/\/raw.githubusercontent.com\/OpenSourceBrain\/OSB_Samples\/master\/L23\/cADpyr229_L23_PC_5ecbf9b163.net.nml\"><i>View NeuroML 2 source file<\/i><\/a><br\/><br\/>\n<b>Populations<\/b><br\/>\nPop_cADpyr229_L23_PC_5ecbf9b163_0_0: <a href=\"#\" instancePath=\"Model.neuroml.cADpyr229_L23_PC_5ecbf9b163_0_0.Pop_cADpyr229_L23_PC_5ecbf9b163_0_0[0]\">1 cells of type cADpyr229_L23_PC_5ecbf9b163_0_0<\/a><br\/>\n<br\/>\n<b>Cells<\/b><br\/>  \n<a href=\"#\" instancePath=\"Model.neuroml.cADpyr229_L23_PC_5ecbf9b163_0_0\">cADpyr229_L23_PC_5ecbf9b163_0_0<\/a>\n<br\/><br\/>\n<b>Ion channels<\/b><br\/>\n<a href=\"#\" instancePath=\"Model.neuroml.Ca_HVA\">Ca_HVA<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.Ca_LVAst\">Ca_LVAst<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.Ih\">Ih<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.Im\">Im<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.K_Pst\">K_Pst<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.K_Tst\">K_Tst<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.NaTa_t\">NaTa_t<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.NaTs2_t\">NaTs2_t<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.Nap_Et2\">Nap_Et2<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.SK_E2\">SK_E2<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.SKv3_1\">SKv3_1<\/a> | \n<a href=\"#\" instancePath=\"Model.neuroml.pas\">pas<\/a><br\/><br\/>\n<\/div>",
+              "componentSpecific": {
+                "customHandlers": [
+                  {
+                    "funct": "function customHandler(node, path, widget) {\n\t            var n;\n\t            try {\n\t                n = eval(path);\n\t            } catch (ex) {\n\t                node = undefined;\n\t            }\n\t\n\t            var metaType = n.getMetaType();\n\t            if (metaType == GEPPETTO.Resources.VARIABLE_NODE) {\n\t                \/\/A plot function inside a channel\n\t                G.addWidget(Widgets.PLOT).plotFunctionNode(n);\n\t            } else if (metaType == GEPPETTO.Resources.VISUAL_GROUP_NODE) {\n\t                \/\/A visual group\n\t                n.show(true);\n\t            } else if (metaType == GEPPETTO.Resources.COMPOSITE_TYPE_NODE) {\n\t                \/\/Another composite\n\t                var target = widget;\n\t                if (GEPPETTO.isKeyPressed(\"meta\")) {\n\t                    target = G.addWidget(1).addCustomNodeHandler(customHandler, 'click');\n\t                }\n\t                target.setName('Information for ' + n.getId()).setData(n, [GEPPETTO.Resources.HTML_TYPE]);\n\t            }\n\t        }",
+                    "event": "click"
+                  }
+                ]
+              }
+            },
+              "Popup2": {
+              "widgetType": 1,
+              "isWidget": true,
+              "transparentBackground": false,
+              "name": "Info",
+              "size": {
+                "height": 150,
+                "width": 459.8
+              },
+              "position": {
+                "left": 1301.5,
+                "top": 356.5
+              },
+              "dataType": "string",
+              "data": "Layer 2\/3 pyramidal cell model from the <a target='_blank' href='https:\/\/bbp.epfl.ch\/nmc-portal\/microcircuit'>Blue Brain Project's Neocortical Microcircuit Collaboration Portal<\/a>.<br\/><br\/> The <b>original OSB project<\/b> for this model is <a target='_blank' href='http:\/\/opensourcebrain.org\/projects\/blue-brain-project-showcase'>here<\/a>.",
+              "componentSpecific": {
+                "customHandlers": [
+                  
+                ]
+              }
+            },              
+            "Canvas1": {
+              "widgetType": "CANVAS",
+              "isWidget": false,
+              "dataType": "instances",
+              "data": [
+                "network"
+              ],
+              "componentSpecific": {
+                "cameraPosition": {
+                  "x": 5.815,
+                  "y": 97.75,
+                  "z": 788.416
+                },
+                "cameraRotation": {
+                  "rx": 0,
+                  "ry": 0,
+                  "rz": 0,
+                  "radius": 781.12
+                },
+                "colorMap": {
+                  
+                },
+                "opacityMap": {
+                  
+                },
+                "geometryTypeMap": {
+                  
+                },
+                "backgroundColor": "0x101010"
+              }
+            },
+            "Tutorial1": {
+              "widgetType": "TUTORIAL",
+              "isWidget": true,
+              "dataType": "array",
+              "data": [
+                
+              ],
+              "componentSpecific": {
+                "activeTutorial": "Open Source Brain Tutorial",
+                "currentStep": 0
+              },
+              "size": {
+                "height": 300,
+                "width": 350
+              },
+              "position": {
+                "left": "50%",
+                "top": "50%"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "activeExperimentId": 884,
+  "geppettoModel": {
+    "id": 1120,
+    "url": "\/cADpyr229_L23_PC_5ecbf9b163_MODEL91ebba9650aab2f5f80935e59972924a.xmi",
+    "type": "GEPPETTO_PROJECT"
+  },
+  "isPublic": false,
+  "isReadOnly": false,
+  "view": {
+    "id": 945,
+    "viewStates": {
+      "views": {
+        "Canvas1": {
+          "widgetType": "CANVAS",
+          "componentSpecific": {
+            "radiusMap": {
+              
+            },
+            "colorMap": {
+              
+            }
+          }
+        }
+      }
+    }
+  }
+}
