@@ -51,7 +51,7 @@ class BlueBrainConnectomeParser():
             if node._c_classid == 'GROUP':
                 if g._v_name=='populations':
                     pop_id = node._v_name.replace('-','_')
-                    self.current_population = PopulationContainer(id=pop_id, component=self.DUMMY_CELL_ID, size=0)
+                    self.current_population = PopulationContainer(id=pop_id, component=self.DUMMY_CELL_ID, size=0, type='populationList')
                     print("  Adding new Population: %s"%self.current_population)
                     self.network.populations.append(self.current_population)
                     
