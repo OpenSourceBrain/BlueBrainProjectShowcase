@@ -1,0 +1,2032 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="Example5_bbpNet">
+    <notes>Network read in from BBP connectome: /home/padraig/git/NetworkShorthand/proposal/test_files/cons_locs_pathways_mc0_Column.h5</notes>
+    <include href="test_files/ampa.synapse.nml"></include>
+    <include href="test_files/gaba.synapse.nml"></include>
+    <include href="test_files/inputs.nml"></include>
+    <include href="test_files/hhcell.cell.nml"></include>
+    <network id="Example5_bbpNet">
+        <notes>Network read in from BBP connectome: /home/padraig/git/NetworkShorthand/proposal/test_files/cons_locs_pathways_mc0_Column.h5</notes>
+        <population id="L23_BTC" component="hhcell" size="1" type="populationList">
+            <instance id="0">
+                <location x="356.236337999999989" y="1792.841529000000037" z="21.168126999999998"/>
+            </instance>
+        </population>
+        <population id="L23_DBC" component="hhcell" size="1" type="populationList">
+            <instance id="0">
+                <location x="196.658643000000012" y="1832.851582000000008" z="115.746105999999997"/>
+            </instance>
+        </population>
+        <population id="L23_LBC" component="hhcell" size="4" type="populationList">
+            <instance id="0">
+                <location x="241.599814000000009" y="1820.348322999999937" z="158.950753999999989"/>
+            </instance>
+            <instance id="1">
+                <location x="325.220248000000026" y="1866.872078999999985" z="313.31481500000001"/>
+            </instance>
+            <instance id="2">
+                <location x="212.328920000000011" y="1859.893516000000091" z="171.620958000000002"/>
+            </instance>
+            <instance id="3">
+                <location x="549.503876999999989" y="1887.226222000000007" z="140.791730999999999"/>
+            </instance>
+        </population>
+        <population id="L23_MC" component="hhcell" size="3" type="populationList">
+            <instance id="0">
+                <location x="375.624229000000014" y="1794.0024370000001" z="186.224415999999991"/>
+            </instance>
+            <instance id="1">
+                <location x="326.328603999999984" y="1778.210863000000018" z="73.343790999999996"/>
+            </instance>
+            <instance id="2">
+                <location x="261.815400000000011" y="1789.54695700000002" z="32.791604"/>
+            </instance>
+        </population>
+        <population id="L23_NBC" component="hhcell" size="2" type="populationList">
+            <instance id="0">
+                <location x="237.848330000000004" y="1791.852521999999908" z="73.395139"/>
+            </instance>
+            <instance id="1">
+                <location x="178.910986000000008" y="1822.38373700000011" z="92.192785000000001"/>
+            </instance>
+        </population>
+        <population id="L23_PC" component="hhcell" size="58" type="populationList">
+            <instance id="0">
+                <location x="367.868552000000022" y="1815.695946999999933" z="194.611066999999991"/>
+            </instance>
+            <instance id="1">
+                <location x="351.25714499999998" y="1871.524454999999989" z="177.144738999999987"/>
+            </instance>
+            <instance id="2">
+                <location x="396.609372000000008" y="1838.957824999999957" z="233.799651000000011"/>
+            </instance>
+            <instance id="3">
+                <location x="271.723747000000003" y="1783.129318000000012" z="155.181837999999999"/>
+            </instance>
+            <instance id="4">
+                <location x="266.754957999999988" y="1904.09108399999991" z="229.998997000000003"/>
+            </instance>
+            <instance id="5">
+                <location x="428.715269999999975" y="1885.481581000000006" z="188.517081999999988"/>
+            </instance>
+            <instance id="6">
+                <location x="238.297926999999987" y="1883.155393999999887" z="201.979816999999997"/>
+            </instance>
+            <instance id="7">
+                <location x="489.934176999999977" y="1845.936388999999963" z="165.294972999999999"/>
+            </instance>
+            <instance id="8">
+                <location x="226.135739000000001" y="1827.326886000000059" z="123.221731000000005"/>
+            </instance>
+            <instance id="9">
+                <location x="287.093707999999992" y="1915.722023000000036" z="90.006809000000004"/>
+            </instance>
+            <instance id="10">
+                <location x="383.160605999999973" y="1869.198266999999987" z="34.472698999999999"/>
+            </instance>
+            <instance id="11">
+                <location x="199.852559000000014" y="1870.942907999999989" z="150.399642"/>
+            </instance>
+            <instance id="12">
+                <location x="506.745270000000005" y="1908.161912999999913" z="139.870325000000008"/>
+            </instance>
+            <instance id="13">
+                <location x="366.697301999999979" y="1824.419151000000056" z="44.379621999999998"/>
+            </instance>
+            <instance id="14">
+                <location x="227.363942000000009" y="1861.638155999999981" z="297.582404999999994"/>
+            </instance>
+            <instance id="15">
+                <location x="277.246871999999996" y="1843.02865399999996" z="42.414299"/>
+            </instance>
+            <instance id="16">
+                <location x="241.492457999999999" y="1829.07152700000006" z="72.143567000000004"/>
+            </instance>
+            <instance id="17">
+                <location x="435.045781999999974" y="1894.204786000000013" z="41.936700000000002"/>
+            </instance>
+            <instance id="18">
+                <location x="174.10105200000001" y="1910.488100999999915" z="244.677434000000005"/>
+            </instance>
+            <instance id="19">
+                <location x="538.117710999999986" y="1873.269095000000107" z="176.021556000000004"/>
+            </instance>
+            <instance id="20">
+                <location x="157.675356999999991" y="1817.440587999999934" z="228.030327999999997"/>
+            </instance>
+            <instance id="21">
+                <location x="508.716559000000018" y="1789.526333999999906" z="311.066759999999988"/>
+            </instance>
+            <instance id="22">
+                <location x="248.123239000000012" y="1775.569207000000006" z="361.246770000000026"/>
+            </instance>
+            <instance id="23">
+                <location x="296.660738999999978" y="1840.702465999999959" z="14.499269999999999"/>
+            </instance>
+            <instance id="24">
+                <location x="468.265895" y="1846.517935999999963" z="55.3322"/>
+            </instance>
+            <instance id="25">
+                <location x="563.505430000000047" y="1883.736940999999888" z="233.507765000000006"/>
+            </instance>
+            <instance id="26">
+                <location x="410.155738999999983" y="1906.998818999999912" z="249.451301000000001"/>
+            </instance>
+            <instance id="27">
+                <location x="326.239019999999982" y="1825.582245000000057" z="100.489699999999999"/>
+            </instance>
+            <instance id="28">
+                <location x="264.464931999999976" y="1867.453625999999986" z="153.286190000000005"/>
+            </instance>
+            <instance id="29">
+                <location x="482.97324500000002" y="1802.320367000000033" z="198.403513000000004"/>
+            </instance>
+            <instance id="30">
+                <location x="267.521464999999978" y="1839.539371999999958" z="106.036321999999998"/>
+            </instance>
+            <instance id="31">
+                <location x="426.240309000000025" y="1783.710865000000013" z="291.488947999999993"/>
+            </instance>
+            <instance id="32">
+                <location x="300.007211999999981" y="1886.353902000000062" z="352.330457000000024"/>
+            </instance>
+            <instance id="33">
+                <location x="378.770582999999988" y="1849.13489699999991" z="62.660167999999999"/>
+            </instance>
+            <instance id="34">
+                <location x="206.163395000000008" y="1900.311028999999962" z="134.135286000000008"/>
+            </instance>
+            <instance id="35">
+                <location x="493.591963000000021" y="1863.092024000000038" z="239.723455999999999"/>
+            </instance>
+            <instance id="36">
+                <location x="484.906286000000023" y="1807.263515999999981" z="152.084396999999996"/>
+            </instance>
+            <instance id="37">
+                <location x="508.088458000000003" y="1909.615780000000086" z="217.788812000000007"/>
+            </instance>
+            <instance id="38">
+                <location x="173.367813000000012" y="1891.006278000000066" z="193.517090999999994"/>
+            </instance>
+            <instance id="39">
+                <location x="509.157145000000014" y="1902.637216999999964" z="111.351223000000005"/>
+            </instance>
+            <instance id="40">
+                <location x="184.92261400000001" y="1772.370699000000059" z="315.737707"/>
+            </instance>
+            <instance id="41">
+                <location x="510.789019999999994" y="1856.113460000000032" z="160.752785999999986"/>
+            </instance>
+            <instance id="42">
+                <location x="533.759019999999964" y="1878.212244999999939" z="273.327316999999994"/>
+            </instance>
+            <instance id="43">
+                <location x="200.932341000000008" y="1906.126498000000083" z="301.950744999999984"/>
+            </instance>
+            <instance id="44">
+                <location x="290.793394999999975" y="1854.950366000000031" z="377.972004000000027"/>
+            </instance>
+            <instance id="45">
+                <location x="520.406052000000045" y="1873.559868999999935" z="186.384152999999998"/>
+            </instance>
+            <instance id="46">
+                <location x="360.655114000000026" y="1910.778874000000087" z="8.978332"/>
+            </instance>
+            <instance id="47">
+                <location x="481.755466000000013" y="1875.886056999999937" z="40.406525999999999"/>
+            </instance>
+            <instance id="48">
+                <location x="455.776364000000001" y="1857.276554000000033" z="378.746145000000013"/>
+            </instance>
+            <instance id="49">
+                <location x="543.536988999999949" y="1866.581304999999929" z="252.979581999999994"/>
+            </instance>
+            <instance id="50">
+                <location x="508.02331700000002" y="1796.795671000000084" z="85.506193999999994"/>
+            </instance>
+            <instance id="51">
+                <location x="294.584463000000028" y="1850.879537999999911" z="-4.82799"/>
+            </instance>
+            <instance id="52">
+                <location x="130.52390299999999" y="1832.270035000000007" z="183.481916000000012"/>
+            </instance>
+            <instance id="53">
+                <location x="286.521989000000019" y="1785.746278999999959" z="388.534699999999987"/>
+            </instance>
+            <instance id="54">
+                <location x="480.334527999999978" y="1799.703406000000086" z="389.836448000000019"/>
+            </instance>
+            <instance id="55">
+                <location x="230.020649999999989" y="1836.922411000000011" z="18.147098"/>
+            </instance>
+            <instance id="56">
+                <location x="118.884161000000006" y="1818.312908000000107" z="190.638959"/>
+            </instance>
+            <instance id="57">
+                <location x="324.698126000000002" y="1846.227161999999907" z="165.020138000000003"/>
+            </instance>
+        </population>
+        <population id="L23_SBC" component="hhcell" size="1" type="populationList">
+            <instance id="0">
+                <location x="435.83981399999999" y="1837.213183999999956" z="9.738761999999999"/>
+            </instance>
+        </population>
+        <population id="L4_LBC" component="hhcell" size="1" type="populationList">
+            <instance id="0">
+                <location x="190.790134999999992" y="1399.200133000000051" z="332.861484000000019"/>
+            </instance>
+        </population>
+        <population id="L4_MC" component="hhcell" size="1" type="populationList">
+            <instance id="0">
+                <location x="401.96072700000002" y="1389.573437999999896" z="178.71651"/>
+            </instance>
+        </population>
+        <population id="L4_PC" component="hhcell" size="26" type="populationList">
+            <instance id="0">
+                <location x="413.076017999999976" y="1330.332239000000072" z="196.098367999999994"/>
+            </instance>
+            <instance id="1">
+                <location x="384.224923999999987" y="1325.889149000000089" z="275.521611000000007"/>
+            </instance>
+            <instance id="2">
+                <location x="425.394764000000009" y="1314.040909000000056" z="190.648390000000006"/>
+            </instance>
+            <instance id="3">
+                <location x="252.560928999999987" y="1414.750948000000108" z="227.600493"/>
+            </instance>
+            <instance id="4">
+                <location x="318.290548999999999" y="1296.268548999999894" z="120.163329000000004"/>
+            </instance>
+            <instance id="5">
+                <location x="432.779963000000009" y="1260.723829000000023" z="279.197109000000012"/>
+            </instance>
+            <instance id="6">
+                <location x="397.877861999999993" y="1402.902708000000075" z="270.409797000000026"/>
+            </instance>
+            <instance id="7">
+                <location x="456.911955999999975" y="1299.230608999999959" z="191.785751000000005"/>
+            </instance>
+            <instance id="8">
+                <location x="240.074768000000006" y="1364.395929000000024" z="273.293055999999979"/>
+            </instance>
+            <instance id="9">
+                <location x="221.101642999999996" y="1411.788888000000043" z="144.369461999999999"/>
+            </instance>
+            <instance id="10">
+                <location x="291.347233000000017" y="1406.605283000000099" z="37.060281000000003"/>
+            </instance>
+            <instance id="11">
+                <location x="274.727457000000015" y="1329.591724000000113" z="339.322248999999999"/>
+            </instance>
+            <instance id="12">
+                <location x="369.399025999999992" y="1388.832922999999937" z="46.380468"/>
+            </instance>
+            <instance id="13">
+                <location x="533.806798999999955" y="1308.857304000000113" z="277.468211999999994"/>
+            </instance>
+            <instance id="14">
+                <location x="370.630548999999974" y="1261.464343999999983" z="365.770868000000007"/>
+            </instance>
+            <instance id="15">
+                <location x="554.786643000000026" y="1320.705543999999918" z="205.898173000000014"/>
+            </instance>
+            <instance id="16">
+                <location x="188.904025999999988" y="1291.08494399999995" z="122.144998999999999"/>
+            </instance>
+            <instance id="17">
+                <location x="184.752501999999993" y="1292.565974000000097" z="65.305605"/>
+            </instance>
+            <instance id="18">
+                <location x="241.040706" y="1384.389832999999953" z="23.633759000000001"/>
+            </instance>
+            <instance id="19">
+                <location x="239.229026000000005" y="1277.755673999999999" z="368.040467999999976"/>
+            </instance>
+            <instance id="20">
+                <location x="119.056782999999996" y="1325.148633999999902" z="216.904384999999991"/>
+            </instance>
+            <instance id="21">
+                <location x="347.627424000000019" y="1402.162192999999888" z="155.276337000000012"/>
+            </instance>
+            <instance id="22">
+                <location x="401.185861999999986" y="1271.461297000000059" z="173.11497"/>
+            </instance>
+            <instance id="23">
+                <location x="428.768673999999976" y="1289.23365600000011" z="225.091025000000002"/>
+            </instance>
+            <instance id="24">
+                <location x="356.855103999999983" y="1241.840697000000091" z="112.988749999999996"/>
+            </instance>
+            <instance id="25">
+                <location x="404.94426900000002" y="1339.588676000000078" z="280.218390999999997"/>
+            </instance>
+        </population>
+        <population id="L4_SP" component="hhcell" size="10" type="populationList">
+            <instance id="0">
+                <location x="347.197268000000008" y="1377.725198000000091" z="120.294461999999996"/>
+            </instance>
+            <instance id="1">
+                <location x="387.834377000000018" y="1401.421677999999929" z="160.226425000000006"/>
+            </instance>
+            <instance id="2">
+                <location x="438.433463000000017" y="1367.357989000000089" z="235.680459000000013"/>
+            </instance>
+            <instance id="3">
+                <location x="328.296331000000009" y="1275.534128999999893" z="104.484345000000005"/>
+            </instance>
+            <instance id="4">
+                <location x="275.604243999999994" y="1334.775329000000056" z="107.780264000000003"/>
+            </instance>
+            <instance id="5">
+                <location x="400.433673999999996" y="1328.851208999999926" z="66.550048000000004"/>
+            </instance>
+            <instance id="6">
+                <location x="176.534791000000013" y="1252.578164000000015" z="269.29906299999999"/>
+            </instance>
+            <instance id="7">
+                <location x="389.826526000000001" y="1276.27464400000008" z="359.034843000000023"/>
+            </instance>
+            <instance id="8">
+                <location x="207.099299000000002" y="1391.794983000000002" z="73.770087000000004"/>
+            </instance>
+            <instance id="9">
+                <location x="464.948440000000005" y="1374.022623999999951" z="365.988222000000007"/>
+            </instance>
+        </population>
+        <population id="L4_SS" component="hhcell" size="4" type="populationList">
+            <instance id="0">
+                <location x="285.59619600000002" y="1229.62219899999991" z="193.900806999999986"/>
+            </instance>
+            <instance id="1">
+                <location x="254.031977000000012" y="1251.837649000000056" z="256.480065000000025"/>
+            </instance>
+            <instance id="2">
+                <location x="373.297166000000004" y="1359.212324000000081" z="357.536719000000005"/>
+            </instance>
+            <instance id="3">
+                <location x="527.579516000000012" y="1246.654044000000113" z="254.338609999999989"/>
+            </instance>
+        </population>
+        <population id="L5_LBC" component="hhcell" size="2" type="populationList">
+            <instance id="0">
+                <location x="327.473118999999997" y="838.234251999999969" z="28.599463"/>
+            </instance>
+            <instance id="1">
+                <location x="295.599057000000016" y="891.560237000000029" z="401.774463000000026"/>
+            </instance>
+        </population>
+        <population id="L5_MC" component="hhcell" size="3" type="populationList">
+            <instance id="0">
+                <location x="275.976283000000024" y="757.219774000000029" z="229.408652999999987"/>
+            </instance>
+            <instance id="1">
+                <location x="311.765190000000018" y="1052.563693000000058" z="271.532208000000026"/>
+            </instance>
+            <instance id="2">
+                <location x="255.990267999999986" y="719.276284000000032" z="349.607714999999985"/>
+            </instance>
+        </population>
+        <population id="L5_NBC" component="hhcell" size="2" type="populationList">
+            <instance id="0">
+                <location x="459.779368999999974" y="1002.31420700000001" z="40.237119999999997"/>
+            </instance>
+            <instance id="1">
+                <location x="417.980149999999981" y="1205.3631519999999" z="81.310947999999996"/>
+            </instance>
+        </population>
+        <population id="L5_STPC" component="hhcell" size="3" type="populationList">
+            <instance id="0">
+                <location x="370.752257999999983" y="1134.603671000000077" z="284.254276000000004"/>
+            </instance>
+            <instance id="1">
+                <location x="264.323802000000001" y="1142.807669000000033" z="120.545007999999996"/>
+            </instance>
+            <instance id="2">
+                <location x="197.48739599999999" y="1027.951700000000073" z="228.784773999999999"/>
+            </instance>
+        </population>
+        <population id="L5_TTPC1" component="hhcell" size="24" type="populationList">
+            <instance id="0">
+                <location x="326.708333999999979" y="1101.787679999999909" z="199.996375"/>
+            </instance>
+            <instance id="1">
+                <location x="372.276145999999983" y="904.891733000000045" z="249.009460999999988"/>
+            </instance>
+            <instance id="2">
+                <location x="344.02730200000002" y="740.811778000000004" z="250.650838999999991"/>
+            </instance>
+            <instance id="3">
+                <location x="261.123646000000008" y="1200.235652999999957" z="176.047585999999995"/>
+            </instance>
+            <instance id="4">
+                <location x="282.151498000000004" y="1216.643647999999985" z="176.393436000000008"/>
+            </instance>
+            <instance id="5">
+                <location x="270.463176999999973" y="1183.827657000000045" z="253.197977000000009"/>
+            </instance>
+            <instance id="6">
+                <location x="277.575443000000007" y="1109.991678000000093" z="259.137713000000019"/>
+            </instance>
+            <instance id="7">
+                <location x="426.764664999999979" y="1011.543704000000048" z="236.409724000000011"/>
+            </instance>
+            <instance id="8">
+                <location x="469.535730000000001" y="1093.583681999999953" z="177.955668000000003"/>
+            </instance>
+            <instance id="9">
+                <location x="219.969623000000013" y="1192.031655000000001" z="195.259685999999988"/>
+            </instance>
+            <instance id="10">
+                <location x="506.214607000000001" y="895.662236000000007" z="215.605859000000009"/>
+            </instance>
+            <instance id="11">
+                <location x="476.485092000000009" y="1026.926200000000108" z="142.547108000000009"/>
+            </instance>
+            <instance id="12">
+                <location x="413.226341999999988" y="1174.598160000000007" z="344.525389000000018"/>
+            </instance>
+            <instance id="13">
+                <location x="491.206342000000006" y="977.702214000000026" z="87.800388999999996"/>
+            </instance>
+            <instance id="14">
+                <location x="202.645092000000005" y="985.906210999999985" z="256.480076999999994"/>
+            </instance>
+            <instance id="15">
+                <location x="497.256384000000025" y="756.19427399999995" z="113.055582999999999"/>
+            </instance>
+            <instance id="16">
+                <location x="428.780092000000025" y="752.092274999999972" z="344.914919999999995"/>
+            </instance>
+            <instance id="17">
+                <location x="347.427395999999987" y="735.684278999999947" z="363.908524"/>
+            </instance>
+            <instance id="18">
+                <location x="282.153351999999984" y="932.580226000000039" z="39.315761000000002"/>
+            </instance>
+            <instance id="19">
+                <location x="185.814467000000008" y="801.316262000000052" z="321.512108000000012"/>
+            </instance>
+            <instance id="20">
+                <location x="304.363021000000003" y="834.132252999999992" z="393.314617999999996"/>
+            </instance>
+            <instance id="21">
+                <location x="390.801638000000025" y="1031.028199000000086" z="19.720507000000001"/>
+            </instance>
+            <instance id="22">
+                <location x="261.800896000000023" y="907.968233000000055" z="380.746541999999977"/>
+            </instance>
+            <instance id="23">
+                <location x="428.007864999999981" y="819.775257000000011" z="384.780438000000004"/>
+            </instance>
+        </population>
+        <population id="L5_TTPC2" component="hhcell" size="19" type="populationList">
+            <instance id="0">
+                <location x="373.583489999999983" y="970.523716000000036" z="142.660046999999992"/>
+            </instance>
+            <instance id="1">
+                <location x="420.803373000000022" y="978.727712999999994" z="170.359217000000001"/>
+            </instance>
+            <instance id="2">
+                <location x="401.13848999999999" y="1044.359695000000102" z="104.062703999999997"/>
+            </instance>
+            <instance id="3">
+                <location x="239.751638000000014" y="1077.175686000000042" z="136.024061999999986"/>
+            </instance>
+            <instance id="4">
+                <location x="467.592435000000023" y="732.607780000000048" z="259.42581899999999"/>
+            </instance>
+            <instance id="5">
+                <location x="468.349088999999992" y="1092.558181999999988" z="249.159818999999999"/>
+            </instance>
+            <instance id="6">
+                <location x="194.942396000000002" y="747.990275999999994" z="218.471336000000008"/>
+            </instance>
+            <instance id="7">
+                <location x="214.845364999999987" y="1149.986167000000023" z="82.459539000000007"/>
+            </instance>
+            <instance id="8">
+                <location x="165.053842000000003" y="1215.618148999999903" z="185.581169999999986"/>
+            </instance>
+            <instance id="9">
+                <location x="211.773021" y="916.172230000000013" z="143.182118000000003"/>
+            </instance>
+            <instance id="10">
+                <location x="168.883489999999995" y="711.072285999999963" z="144.220632999999992"/>
+            </instance>
+            <instance id="11">
+                <location x="448.341654000000005" y="983.855212000000051" z="404.018905000000018"/>
+            </instance>
+            <instance id="12">
+                <location x="238.137903999999992" y="1115.119175999999925" z="398.580936000000008"/>
+            </instance>
+            <instance id="13">
+                <location x="552.647204999999985" y="1180.751158000000032" z="168.471765000000005"/>
+            </instance>
+            <instance id="14">
+                <location x="373.178039000000012" y="1065.895189999999957" z="284.992556999999977"/>
+            </instance>
+            <instance id="15">
+                <location x="335.035404000000028" y="1000.263206999999966" z="265.155935999999997"/>
+            </instance>
+            <instance id="16">
+                <location x="394.075221999999997" y="992.059210000000007" z="111.596312999999995"/>
+            </instance>
+            <instance id="17">
+                <location x="416.479153999999994" y="926.427228000000014" z="144.941248000000002"/>
+            </instance>
+            <instance id="18">
+                <location x="261.438723999999979" y="1172.547160000000076" z="275.063494999999989"/>
+            </instance>
+        </population>
+        <population id="L5_UTPC" component="hhcell" size="3" type="populationList">
+            <instance id="0">
+                <location x="348.870520999999997" y="797.21426299999996" z="57.424773999999999"/>
+            </instance>
+            <instance id="1">
+                <location x="369.259271000000012" y="1164.343163000000004" z="141.71082899999999"/>
+            </instance>
+            <instance id="2">
+                <location x="472.155403999999976" y="1028.977200000000039" z="95.432811000000001"/>
+            </instance>
+        </population>
+        <population id="L6_BPC" component="hhcell" size="31" type="populationList">
+            <instance id="0">
+                <location x="375.063679999999977" y="566.965114999999969" z="189.017955000000001"/>
+            </instance>
+            <instance id="1">
+                <location x="317.799930000000018" y="129.228577999999999" z="187.95623599999999"/>
+            </instance>
+            <instance id="2">
+                <location x="341.362257999999997" y="457.530980999999997" z="243.911120000000011"/>
+            </instance>
+            <instance id="3">
+                <location x="330.668551999999977" y="74.511510999999999" z="181.612042000000002"/>
+            </instance>
+            <instance id="4">
+                <location x="398.458780999999988" y="380.927086999999972" z="180.685856000000001"/>
+            </instance>
+            <instance id="5">
+                <location x="381.147429999999986" y="468.474394000000018" z="200.805141999999989"/>
+            </instance>
+            <instance id="6">
+                <location x="374.258015999999998" y="577.908528000000047" z="155.10386299999999"/>
+            </instance>
+            <instance id="7">
+                <location x="313.536805000000015" y="506.776341000000002" z="128.476079999999996"/>
+            </instance>
+            <instance id="8">
+                <location x="409.227355999999986" y="681.870955999999978" z="237.274563999999998"/>
+            </instance>
+            <instance id="9">
+                <location x="422.35632099999998" y="397.342206999999974" z="194.385456000000005"/>
+            </instance>
+            <instance id="10">
+                <location x="300.936179999999979" y="517.719754999999964" z="120.89358"/>
+            </instance>
+            <instance id="11">
+                <location x="294.442157000000009" y="255.077832000000001" z="298.695434999999975"/>
+            </instance>
+            <instance id="12">
+                <location x="250.306438000000014" y="539.606581000000006" z="226.167496999999997"/>
+            </instance>
+            <instance id="13">
+                <location x="312.404305000000022" y="627.153889000000049" z="297.624048000000016"/>
+            </instance>
+            <instance id="14">
+                <location x="365.660398999999984" y="497.200853999999993" z="86.745259000000004"/>
+            </instance>
+            <instance id="15">
+                <location x="444.633835999999974" y="234.558931999999999" z="220.996782999999994"/>
+            </instance>
+            <instance id="16">
+                <location x="415.784641000000022" y="540.974508000000014" z="119.645904999999999"/>
+            </instance>
+            <instance id="17">
+                <location x="460.922396999999989" y="343.993065999999999" z="193.372285000000005"/>
+            </instance>
+            <instance id="18">
+                <location x="368.984735000000001" y="267.389171999999974" z="330.351089000000002"/>
+            </instance>
+            <instance id="19">
+                <location x="261.285710999999992" y="201.728691999999995" z="135.654282999999992"/>
+            </instance>
+            <instance id="20">
+                <location x="450.794735000000003" y="404.181840000000022" z="136.581088999999992"/>
+            </instance>
+            <instance id="21">
+                <location x="464.783836000000008" y="272.860879000000011" z="237.542720000000003"/>
+            </instance>
+            <instance id="22">
+                <location x="215.440569000000011" y="207.200398000000007" z="270.544484000000011"/>
+            </instance>
+            <instance id="23">
+                <location x="203.360953999999992" y="439.747933999999987" z="230.161658999999986"/>
+            </instance>
+            <instance id="24">
+                <location x="505.185829000000012" y="111.445531000000003" z="248.41312099999999"/>
+            </instance>
+            <instance id="25">
+                <location x="346.283953999999994" y="494.465000999999972" z="353.375621000000024"/>
+            </instance>
+            <instance id="26">
+                <location x="516.110203999999953" y="62.20017" z="106.003589000000005"/>
+            </instance>
+            <instance id="27">
+                <location x="529.103563000000008" y="478.049881000000028" z="237.298207999999988"/>
+            </instance>
+            <instance id="28">
+                <location x="425.06332900000001" y="226.351371999999998" z="367.515464000000009"/>
+            </instance>
+            <instance id="29">
+                <location x="349.206610000000012" y="73.143584000000004" z="388.123706000000027"/>
+            </instance>
+            <instance id="30">
+                <location x="174.235399000000001" y="467.106467000000009" z="310.37170500000002"/>
+            </instance>
+        </population>
+        <population id="L6_IPC" component="hhcell" size="34" type="populationList">
+            <instance id="0">
+                <location x="315.930915000000027" y="413.757326999999975" z="251.266482999999994"/>
+            </instance>
+            <instance id="1">
+                <location x="314.569304999999986" y="337.153433000000007" z="233.771861000000001"/>
+            </instance>
+            <instance id="2">
+                <location x="269.608484999999973" y="594.323649000000046" z="182.438902000000013"/>
+            </instance>
+            <instance id="3">
+                <location x="431.206180000000018" y="419.229034000000013" z="197.409048000000013"/>
+            </instance>
+            <instance id="4">
+                <location x="384.83535999999998" y="375.455379999999991" z="245.211088999999987"/>
+            </instance>
+            <instance id="5">
+                <location x="332.542704000000015" y="178.473938000000004" z="135.723980000000012"/>
+            </instance>
+            <instance id="6">
+                <location x="382.846180000000004" y="616.210475999999971" z="302.962173000000007"/>
+            </instance>
+            <instance id="7">
+                <location x="252.688739999999996" y="134.700284000000011" z="172.524382000000003"/>
+            </instance>
+            <instance id="8">
+                <location x="406.620867999999973" y="364.511967000000027" z="126.877525000000006"/>
+            </instance>
+            <instance id="9">
+                <location x="235.468054999999993" y="583.380234999999971" z="210.350766999999991"/>
+            </instance>
+            <instance id="10">
+                <location x="228.262899000000004" y="606.634989000000019" z="189.581509000000011"/>
+            </instance>
+            <instance id="11">
+                <location x="357.811994000000027" y="48.520904000000002" z="86.622343000000001"/>
+            </instance>
+            <instance id="12">
+                <location x="388.96883600000001" y="114.181383999999994" z="84.597564000000006"/>
+            </instance>
+            <instance id="13">
+                <location x="300.730710999999985" y="644.936935999999946" z="93.028032999999994"/>
+            </instance>
+            <instance id="14">
+                <location x="336.555985000000021" y="469.842321000000027" z="329.936245999999983"/>
+            </instance>
+            <instance id="15">
+                <location x="497.545710999999983" y="163.426745000000011" z="205.359283000000005"/>
+            </instance>
+            <instance id="16">
+                <location x="447.964460999999972" y="688.710590000000025" z="82.806000999999995"/>
+            </instance>
+            <instance id="17">
+                <location x="240.469460999999995" y="327.577945999999997" z="86.173969999999997"/>
+            </instance>
+            <instance id="18">
+                <location x="371.590828999999985" y="480.785733999999991" z="36.376987999999997"/>
+            </instance>
+            <instance id="19">
+                <location x="439.663719000000015" y="655.880349000000024" z="76.980082999999993"/>
+            </instance>
+            <instance id="20">
+                <location x="367.508835999999974" y="524.559388000000013" z="361.243500999999981"/>
+            </instance>
+            <instance id="21">
+                <location x="208.098329000000007" y="658.616203000000041" z="300.095620999999994"/>
+            </instance>
+            <instance id="22">
+                <location x="288.574148999999977" y="483.521588000000008" z="350.999672999999973"/>
+            </instance>
+            <instance id="23">
+                <location x="480.869641000000001" y="198.992838000000006" z="188.605241000000007"/>
+            </instance>
+            <instance id="24">
+                <location x="311.444148999999982" y="286.540145999999993" z="355.060923000000003"/>
+            </instance>
+            <instance id="25">
+                <location x="341.510203999999987" y="12.95481" z="368.094838999999979"/>
+            </instance>
+            <instance id="26">
+                <location x="472.537860000000023" y="669.559616000000005" z="312.333863000000008"/>
+            </instance>
+            <instance id="27">
+                <location x="172.037273999999996" y="385.030867000000001" z="186.177330000000012"/>
+            </instance>
+            <instance id="28">
+                <location x="184.395828999999992" y="368.615746999999999" z="161.779683000000006"/>
+            </instance>
+            <instance id="29">
+                <location x="182.186453999999998" y="281.068439000000012" z="121.659370999999993"/>
+            </instance>
+            <instance id="30">
+                <location x="169.938172000000009" y="609.370842000000039" z="299.421324000000027"/>
+            </instance>
+            <instance id="31">
+                <location x="264.823641000000009" y="215.407959000000005" z="32.057690999999998"/>
+            </instance>
+            <instance id="32">
+                <location x="374.621594000000016" y="116.233273999999994" z="5.818581"/>
+            </instance>
+            <instance id="33">
+                <location x="487.390165000000025" y="597.743465000000015" z="60.674615000000003"/>
+            </instance>
+        </population>
+        <population id="L6_LBC" component="hhcell" size="4" type="populationList">
+            <instance id="0">
+                <location x="251.828866000000005" y="692.814370000000054" z="188.071368000000007"/>
+            </instance>
+            <instance id="1">
+                <location x="480.644047999999998" y="386.398793000000012" z="200.392729000000003"/>
+            </instance>
+            <instance id="2">
+                <location x="377.951938999999982" y="672.295469000000026" z="283.736634999999978"/>
+            </instance>
+            <instance id="3">
+                <location x="189.722876000000014" y="43.049196999999999" z="175.292103999999995"/>
+            </instance>
+        </population>
+        <population id="L6_MC" component="hhcell" size="3" type="populationList">
+            <instance id="0">
+                <location x="316.079556000000025" y="249.606125999999989" z="176.094437999999997"/>
+            </instance>
+            <instance id="1">
+                <location x="288.198345000000018" y="600.479319000000032" z="246.732163000000014"/>
+            </instance>
+            <instance id="2">
+                <location x="410.202446000000009" y="69.723766999999995" z="143.876791999999995"/>
+            </instance>
+        </population>
+        <population id="L6_NBC" component="hhcell" size="1" type="populationList">
+            <instance id="0">
+                <location x="311.787162000000023" y="546.446215000000052" z="344.92715800000002"/>
+            </instance>
+        </population>
+        <population id="L6_TPC_L1" component="hhcell" size="16" type="populationList">
+            <instance id="0">
+                <location x="353.219891000000018" y="391.870499999999993" z="192.746363000000002"/>
+            </instance>
+            <instance id="1">
+                <location x="298.216180000000008" y="665.455835999999977" z="234.179673000000008"/>
+            </instance>
+            <instance id="2">
+                <location x="424.580359999999985" y="353.568553000000009" z="228.493588999999986"/>
+            </instance>
+            <instance id="3">
+                <location x="397.689122999999995" y="572.436822000000006" z="134.411924999999997"/>
+            </instance>
+            <instance id="4">
+                <location x="345.473640999999986" y="475.314028000000008" z="102.476011"/>
+            </instance>
+            <instance id="5">
+                <location x="409.839735000000019" y="486.257440999999972" z="319.697338999999999"/>
+            </instance>
+            <instance id="6">
+                <location x="252.691827999999987" y="354.936480000000017" z="104.593755999999999"/>
+            </instance>
+            <instance id="7">
+                <location x="407.104493999999988" y="26.634077000000001" z="89.682343000000003"/>
+            </instance>
+            <instance id="8">
+                <location x="313.655515999999977" y="579.276455000000055" z="334.968510999999978"/>
+            </instance>
+            <instance id="9">
+                <location x="389.048640999999975" y="152.483330999999993" z="325.86585500000001"/>
+            </instance>
+            <instance id="10">
+                <location x="296.061515999999983" y="437.012081000000023" z="52.504499000000003"/>
+            </instance>
+            <instance id="11">
+                <location x="450.278484999999989" y="220.879664999999989" z="313.295737999999972"/>
+            </instance>
+            <instance id="12">
+                <location x="494.261083999999983" y="417.861107000000004" z="267.557350999999983"/>
+            </instance>
+            <instance id="13">
+                <location x="182.161691999999988" y="330.313800000000015" z="153.32908599999999"/>
+            </instance>
+            <instance id="14">
+                <location x="529.887703999999985" y="209.936251999999996" z="152.398588999999987"/>
+            </instance>
+            <instance id="15">
+                <location x="330.008562999999981" y="291.327889000000027" z="-12.730141"/>
+            </instance>
+        </population>
+        <population id="L6_TPC_L4" component="hhcell" size="14" type="populationList">
+            <instance id="0">
+                <location x="361.452079000000026" y="205.832471999999996" z="230.672573999999997"/>
+            </instance>
+            <instance id="1">
+                <location x="318.433557000000008" y="603.899135000000001" z="39.000390000000003"/>
+            </instance>
+            <instance id="2">
+                <location x="448.998954000000026" y="166.162598000000003" z="333.598120999999992"/>
+            </instance>
+            <instance id="3">
+                <location x="369.155282" y="675.031323000000043" z="31.414068"/>
+            </instance>
+            <instance id="4">
+                <location x="269.944825999999978" y="553.969812000000047" z="366.170539000000019"/>
+            </instance>
+            <instance id="5">
+                <location x="412.441008000000011" y="564.913225000000011" z="412.440074999999979"/>
+            </instance>
+            <instance id="6">
+                <location x="192.536218999999988" y="34.157674" z="350.751031000000012"/>
+            </instance>
+            <instance id="7">
+                <location x="408.821062999999981" y="428.120557000000019" z="7.348296"/>
+            </instance>
+            <instance id="8">
+                <location x="258.647536000000002" y="570.384932000000049" z="-14.055517"/>
+            </instance>
+            <instance id="9">
+                <location x="220.891921999999994" y="526.61127799999997" z="27.945727999999999"/>
+            </instance>
+            <instance id="10">
+                <location x="361.848875000000021" y="173.686194999999998" z="176.582749000000007"/>
+            </instance>
+            <instance id="11">
+                <location x="447.614032000000009" y="518.403718000000026" z="177.996734000000004"/>
+            </instance>
+            <instance id="12">
+                <location x="330.808602000000008" y="211.988142000000011" z="308.737818000000004"/>
+            </instance>
+            <instance id="13">
+                <location x="313.297468999999978" y="365.195929999999976" z="94.426460000000006"/>
+            </instance>
+        </population>
+        <population id="L6_UTPC" component="hhcell" size="17" type="populationList">
+            <instance id="0">
+                <location x="360.022277999999972" y="698.28607599999998" z="169.744769999999988"/>
+            </instance>
+            <instance id="1">
+                <location x="369.278953999999999" y="326.210019999999986" z="170.016792000000009"/>
+            </instance>
+            <instance id="2">
+                <location x="339.493055000000027" y="638.097302000000013" z="278.057485999999983"/>
+            </instance>
+            <instance id="3">
+                <location x="446.792547000000013" y="661.352055999999948" z="291.995971999999995"/>
+            </instance>
+            <instance id="4">
+                <location x="207.698641000000009" y="683.238882999999987" z="203.395542000000006"/>
+            </instance>
+            <instance id="5">
+                <location x="464.632413999999983" y="64.936024000000003" z="200.593697999999989"/>
+            </instance>
+            <instance id="6">
+                <location x="232.160437999999999" y="642.201082000000042" z="56.606332999999999"/>
+            </instance>
+            <instance id="7">
+                <location x="157.044641000000013" y="422.648849999999982" z="295.217359999999985"/>
+            </instance>
+            <instance id="8">
+                <location x="424.830789999999979" y="488.309330999999986" z="0.522271"/>
+            </instance>
+            <instance id="9">
+                <location x="543.055164999999988" y="346.044956000000013" z="177.389146000000011"/>
+            </instance>
+            <instance id="10">
+                <location x="147.375046999999995" y="630.573706000000016" z="189.878228000000007"/>
+            </instance>
+            <instance id="11">
+                <location x="443.141297000000009" y="504.724450999999988" z="20.569946999999999"/>
+            </instance>
+            <instance id="12">
+                <location x="499.776531999999975" y="45.101087" z="383.584506999999974"/>
+            </instance>
+            <instance id="13">
+                <location x="274.351999999999975" y="147.695587999999987" z="259.396812000000011"/>
+            </instance>
+            <instance id="14">
+                <location x="390.770979000000011" y="541.658470999999963" z="82.443144000000004"/>
+            </instance>
+            <instance id="15">
+                <location x="277.919735000000003" y="563.545298000000003" z="329.138462000000004"/>
+            </instance>
+            <instance id="16">
+                <location x="280.588313000000028" y="388.450683000000026" z="110.539557000000002"/>
+            </instance>
+        </population>
+        <projection id="Proj__L23_BTC__L23_PC" presynapticPopulation="L23_BTC" postsynapticPopulation="L23_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_BTC/0/hhcell" postCellId="../L23_PC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_BTC/0/hhcell" postCellId="../L23_PC/16/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_BTC__L4_PC" presynapticPopulation="L23_BTC" postsynapticPopulation="L4_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_BTC/0/hhcell" postCellId="../L4_PC/22/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_DBC__L23_PC" presynapticPopulation="L23_DBC" postsynapticPopulation="L23_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_DBC/0/hhcell" postCellId="../L23_PC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_DBC/0/hhcell" postCellId="../L23_PC/34/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_LBC__L23_PC" presynapticPopulation="L23_LBC" postsynapticPopulation="L23_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_LBC/1/hhcell" postCellId="../L23_PC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_LBC/3/hhcell" postCellId="../L23_PC/36/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_LBC__L5_TTPC1" presynapticPopulation="L23_LBC" postsynapticPopulation="L5_TTPC1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_LBC/0/hhcell" postCellId="../L5_TTPC1/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_LBC/1/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_LBC/2/hhcell" postCellId="../L5_TTPC1/3/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_MC__L23_MC" presynapticPopulation="L23_MC" postsynapticPopulation="L23_MC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_MC/0/hhcell" postCellId="../L23_MC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_MC/1/hhcell" postCellId="../L23_MC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_MC__L23_NBC" presynapticPopulation="L23_MC" postsynapticPopulation="L23_NBC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_MC/2/hhcell" postCellId="../L23_NBC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_MC__L23_PC" presynapticPopulation="L23_MC" postsynapticPopulation="L23_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_MC/1/hhcell" postCellId="../L23_PC/27/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_MC/1/hhcell" postCellId="../L23_PC/51/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_MC/2/hhcell" postCellId="../L23_PC/27/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_MC__L4_SP" presynapticPopulation="L23_MC" postsynapticPopulation="L4_SP" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_MC/1/hhcell" postCellId="../L4_SP/3/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_NBC__L23_PC" presynapticPopulation="L23_NBC" postsynapticPopulation="L23_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L23_NBC/0/hhcell" postCellId="../L23_PC/30/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L23_BTC" presynapticPopulation="L23_PC" postsynapticPopulation="L23_BTC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/15/hhcell" postCellId="../L23_BTC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L23_LBC" presynapticPopulation="L23_PC" postsynapticPopulation="L23_LBC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/12/hhcell" postCellId="../L23_LBC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/34/hhcell" postCellId="../L23_LBC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/36/hhcell" postCellId="../L23_LBC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/46/hhcell" postCellId="../L23_LBC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L23_PC/50/hhcell" postCellId="../L23_LBC/3/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L23_MC" presynapticPopulation="L23_PC" postsynapticPopulation="L23_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/57/hhcell" postCellId="../L23_MC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L23_NBC" presynapticPopulation="L23_PC" postsynapticPopulation="L23_NBC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/4/hhcell" postCellId="../L23_NBC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/6/hhcell" postCellId="../L23_NBC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/9/hhcell" postCellId="../L23_NBC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/16/hhcell" postCellId="../L23_NBC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L23_PC/33/hhcell" postCellId="../L23_NBC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L23_PC" presynapticPopulation="L23_PC" postsynapticPopulation="L23_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/0/hhcell" postCellId="../L23_PC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/5/hhcell" postCellId="../L23_PC/29/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/5/hhcell" postCellId="../L23_PC/50/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/6/hhcell" postCellId="../L23_PC/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L23_PC/6/hhcell" postCellId="../L23_PC/28/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L23_PC/6/hhcell" postCellId="../L23_PC/30/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L23_PC/6/hhcell" postCellId="../L23_PC/43/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L23_PC/8/hhcell" postCellId="../L23_PC/23/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L23_PC/12/hhcell" postCellId="../L23_PC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L23_PC/17/hhcell" postCellId="../L23_PC/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L23_PC/18/hhcell" postCellId="../L23_PC/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L23_PC/18/hhcell" postCellId="../L23_PC/43/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L23_PC/19/hhcell" postCellId="../L23_PC/45/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L23_PC/21/hhcell" postCellId="../L23_PC/54/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L23_PC/25/hhcell" postCellId="../L23_PC/39/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="15" preCellId="../L23_PC/31/hhcell" postCellId="../L23_PC/54/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="16" preCellId="../L23_PC/34/hhcell" postCellId="../L23_PC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="17" preCellId="../L23_PC/36/hhcell" postCellId="../L23_PC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="18" preCellId="../L23_PC/36/hhcell" postCellId="../L23_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="19" preCellId="../L23_PC/37/hhcell" postCellId="../L23_PC/29/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="20" preCellId="../L23_PC/40/hhcell" postCellId="../L23_PC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="21" preCellId="../L23_PC/40/hhcell" postCellId="../L23_PC/53/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="22" preCellId="../L23_PC/42/hhcell" postCellId="../L23_PC/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="23" preCellId="../L23_PC/43/hhcell" postCellId="../L23_PC/53/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="24" preCellId="../L23_PC/45/hhcell" postCellId="../L23_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="25" preCellId="../L23_PC/45/hhcell" postCellId="../L23_PC/41/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="26" preCellId="../L23_PC/47/hhcell" postCellId="../L23_PC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="27" preCellId="../L23_PC/49/hhcell" postCellId="../L23_PC/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="28" preCellId="../L23_PC/49/hhcell" postCellId="../L23_PC/45/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="29" preCellId="../L23_PC/52/hhcell" postCellId="../L23_PC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="30" preCellId="../L23_PC/52/hhcell" postCellId="../L23_PC/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="31" preCellId="../L23_PC/52/hhcell" postCellId="../L23_PC/30/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="32" preCellId="../L23_PC/57/hhcell" postCellId="../L23_PC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="33" preCellId="../L23_PC/57/hhcell" postCellId="../L23_PC/37/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L4_PC" presynapticPopulation="L23_PC" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/5/hhcell" postCellId="../L4_PC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/6/hhcell" postCellId="../L4_PC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/11/hhcell" postCellId="../L4_PC/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/18/hhcell" postCellId="../L4_PC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L23_PC/19/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L23_PC/23/hhcell" postCellId="../L4_PC/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L23_PC/26/hhcell" postCellId="../L4_PC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L23_PC/29/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L23_PC/31/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L23_PC/31/hhcell" postCellId="../L4_PC/23/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L23_PC/31/hhcell" postCellId="../L4_PC/25/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L23_PC/34/hhcell" postCellId="../L4_PC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L23_PC/34/hhcell" postCellId="../L4_PC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L23_PC/35/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L23_PC/40/hhcell" postCellId="../L4_PC/19/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="15" preCellId="../L23_PC/46/hhcell" postCellId="../L4_PC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="16" preCellId="../L23_PC/47/hhcell" postCellId="../L4_PC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="17" preCellId="../L23_PC/56/hhcell" postCellId="../L4_PC/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="18" preCellId="../L23_PC/56/hhcell" postCellId="../L4_PC/20/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L4_SP" presynapticPopulation="L23_PC" postsynapticPopulation="L4_SP" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/33/hhcell" postCellId="../L4_SP/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/36/hhcell" postCellId="../L4_SP/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/48/hhcell" postCellId="../L4_SP/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/57/hhcell" postCellId="../L4_SP/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L4_SS" presynapticPopulation="L23_PC" postsynapticPopulation="L4_SS" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/20/hhcell" postCellId="../L4_SS/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/27/hhcell" postCellId="../L4_SS/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/28/hhcell" postCellId="../L4_SS/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/38/hhcell" postCellId="../L4_SS/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L5_MC" presynapticPopulation="L23_PC" postsynapticPopulation="L5_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/43/hhcell" postCellId="../L5_MC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L5_NBC" presynapticPopulation="L23_PC" postsynapticPopulation="L5_NBC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/16/hhcell" postCellId="../L5_NBC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L5_STPC" presynapticPopulation="L23_PC" postsynapticPopulation="L5_STPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/3/hhcell" postCellId="../L5_STPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/4/hhcell" postCellId="../L5_STPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/20/hhcell" postCellId="../L5_STPC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L5_TTPC1" presynapticPopulation="L23_PC" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/0/hhcell" postCellId="../L5_TTPC1/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/2/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/2/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/7/hhcell" postCellId="../L5_TTPC1/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L23_PC/9/hhcell" postCellId="../L5_TTPC1/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L23_PC/10/hhcell" postCellId="../L5_TTPC1/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L23_PC/13/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L23_PC/13/hhcell" postCellId="../L5_TTPC1/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L23_PC/21/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L23_PC/22/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L23_PC/25/hhcell" postCellId="../L5_TTPC1/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L23_PC/26/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L23_PC/29/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L23_PC/29/hhcell" postCellId="../L5_TTPC1/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L23_PC/31/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="15" preCellId="../L23_PC/34/hhcell" postCellId="../L5_TTPC1/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="16" preCellId="../L23_PC/36/hhcell" postCellId="../L5_TTPC1/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="17" preCellId="../L23_PC/36/hhcell" postCellId="../L5_TTPC1/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="18" preCellId="../L23_PC/44/hhcell" postCellId="../L5_TTPC1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="19" preCellId="../L23_PC/44/hhcell" postCellId="../L5_TTPC1/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="20" preCellId="../L23_PC/45/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="21" preCellId="../L23_PC/51/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="22" preCellId="../L23_PC/51/hhcell" postCellId="../L5_TTPC1/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="23" preCellId="../L23_PC/51/hhcell" postCellId="../L5_TTPC1/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="24" preCellId="../L23_PC/52/hhcell" postCellId="../L5_TTPC1/3/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L5_TTPC2" presynapticPopulation="L23_PC" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/1/hhcell" postCellId="../L5_TTPC2/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/5/hhcell" postCellId="../L5_TTPC2/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/8/hhcell" postCellId="../L5_TTPC2/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/17/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L23_PC/22/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L23_PC/22/hhcell" postCellId="../L5_TTPC2/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L23_PC/33/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L23_PC/34/hhcell" postCellId="../L5_TTPC2/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L23_PC/36/hhcell" postCellId="../L5_TTPC2/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L23_PC/40/hhcell" postCellId="../L5_TTPC2/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L23_PC/43/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L23_PC/45/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L23_PC/47/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L5_UTPC" presynapticPopulation="L23_PC" postsynapticPopulation="L5_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/15/hhcell" postCellId="../L5_UTPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/27/hhcell" postCellId="../L5_UTPC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L6_BPC" presynapticPopulation="L23_PC" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/0/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/12/hhcell" postCellId="../L6_BPC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/40/hhcell" postCellId="../L6_BPC/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L6_IPC" presynapticPopulation="L23_PC" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/14/hhcell" postCellId="../L6_IPC/9/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L6_MC" presynapticPopulation="L23_PC" postsynapticPopulation="L6_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/28/hhcell" postCellId="../L6_MC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L6_TPC_L1" presynapticPopulation="L23_PC" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/3/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/12/hhcell" postCellId="../L6_TPC_L1/11/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L23_PC__L6_UTPC" presynapticPopulation="L23_PC" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L23_PC/9/hhcell" postCellId="../L6_UTPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L23_PC/19/hhcell" postCellId="../L6_UTPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L23_PC/23/hhcell" postCellId="../L6_UTPC/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L23_PC/38/hhcell" postCellId="../L6_UTPC/4/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_LBC__L23_PC" presynapticPopulation="L4_LBC" postsynapticPopulation="L23_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_LBC/0/hhcell" postCellId="../L23_PC/40/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_MC__L4_PC" presynapticPopulation="L4_MC" postsynapticPopulation="L4_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_MC/0/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_MC/0/hhcell" postCellId="../L4_PC/21/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L23_MC" presynapticPopulation="L4_PC" postsynapticPopulation="L23_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/21/hhcell" postCellId="../L23_MC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L23_PC" presynapticPopulation="L4_PC" postsynapticPopulation="L23_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/4/hhcell" postCellId="../L23_PC/53/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/21/hhcell" postCellId="../L23_PC/5/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L4_PC" presynapticPopulation="L4_PC" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/2/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/3/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/6/hhcell" postCellId="../L4_PC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/6/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L4_PC/6/hhcell" postCellId="../L4_PC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L4_PC/7/hhcell" postCellId="../L4_PC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L4_PC/13/hhcell" postCellId="../L4_PC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L4_PC/18/hhcell" postCellId="../L4_PC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L4_PC/19/hhcell" postCellId="../L4_PC/25/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L4_PC/20/hhcell" postCellId="../L4_PC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L4_PC/24/hhcell" postCellId="../L4_PC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L4_PC/25/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L4_SP" presynapticPopulation="L4_PC" postsynapticPopulation="L4_SP" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/2/hhcell" postCellId="../L4_SP/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/10/hhcell" postCellId="../L4_SP/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/10/hhcell" postCellId="../L4_SP/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/12/hhcell" postCellId="../L4_SP/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L4_PC/18/hhcell" postCellId="../L4_SP/5/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L4_SS" presynapticPopulation="L4_PC" postsynapticPopulation="L4_SS" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/3/hhcell" postCellId="../L4_SS/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L5_STPC" presynapticPopulation="L4_PC" postsynapticPopulation="L5_STPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/1/hhcell" postCellId="../L5_STPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/5/hhcell" postCellId="../L5_STPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/24/hhcell" postCellId="../L5_STPC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L5_TTPC1" presynapticPopulation="L4_PC" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/2/hhcell" postCellId="../L5_TTPC1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/3/hhcell" postCellId="../L5_TTPC1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/3/hhcell" postCellId="../L5_TTPC1/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/3/hhcell" postCellId="../L5_TTPC1/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L4_PC/7/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L4_PC/7/hhcell" postCellId="../L5_TTPC1/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L4_PC/7/hhcell" postCellId="../L5_TTPC1/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L4_PC/12/hhcell" postCellId="../L5_TTPC1/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L4_PC/17/hhcell" postCellId="../L5_TTPC1/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L4_PC/18/hhcell" postCellId="../L5_TTPC1/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L4_PC/19/hhcell" postCellId="../L5_TTPC1/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L4_PC/21/hhcell" postCellId="../L5_TTPC1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L4_PC/21/hhcell" postCellId="../L5_TTPC1/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L4_PC/21/hhcell" postCellId="../L5_TTPC1/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L4_PC/24/hhcell" postCellId="../L5_TTPC1/11/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L5_TTPC2" presynapticPopulation="L4_PC" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/4/hhcell" postCellId="../L5_TTPC2/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/5/hhcell" postCellId="../L5_TTPC2/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/7/hhcell" postCellId="../L5_TTPC2/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/7/hhcell" postCellId="../L5_TTPC2/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L4_PC/11/hhcell" postCellId="../L5_TTPC2/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L4_PC/17/hhcell" postCellId="../L5_TTPC2/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L4_PC/19/hhcell" postCellId="../L5_TTPC2/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L4_PC/21/hhcell" postCellId="../L5_TTPC2/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L4_PC/22/hhcell" postCellId="../L5_TTPC2/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L4_PC/24/hhcell" postCellId="../L5_TTPC2/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L5_UTPC" presynapticPopulation="L4_PC" postsynapticPopulation="L5_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/24/hhcell" postCellId="../L5_UTPC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L6_BPC" presynapticPopulation="L4_PC" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/1/hhcell" postCellId="../L6_BPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/3/hhcell" postCellId="../L6_BPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/4/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/7/hhcell" postCellId="../L6_BPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L4_PC/10/hhcell" postCellId="../L6_BPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L4_PC/21/hhcell" postCellId="../L6_BPC/25/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L4_PC/23/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L6_IPC" presynapticPopulation="L4_PC" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/5/hhcell" postCellId="../L6_IPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/5/hhcell" postCellId="../L6_IPC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/12/hhcell" postCellId="../L6_IPC/33/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/21/hhcell" postCellId="../L6_IPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L4_PC/21/hhcell" postCellId="../L6_IPC/29/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L4_PC/24/hhcell" postCellId="../L6_IPC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L6_TPC_L1" presynapticPopulation="L4_PC" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/2/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/3/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/4/hhcell" postCellId="../L6_TPC_L1/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/7/hhcell" postCellId="../L6_TPC_L1/11/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L6_TPC_L4" presynapticPopulation="L4_PC" postsynapticPopulation="L6_TPC_L4" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/0/hhcell" postCellId="../L6_TPC_L4/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/5/hhcell" postCellId="../L6_TPC_L4/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/6/hhcell" postCellId="../L6_TPC_L4/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/11/hhcell" postCellId="../L6_TPC_L4/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L4_PC/22/hhcell" postCellId="../L6_TPC_L4/10/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_PC__L6_UTPC" presynapticPopulation="L4_PC" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_PC/4/hhcell" postCellId="../L6_UTPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_PC/5/hhcell" postCellId="../L6_UTPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_PC/21/hhcell" postCellId="../L6_UTPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_PC/24/hhcell" postCellId="../L6_UTPC/14/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SP__L4_PC" presynapticPopulation="L4_SP" postsynapticPopulation="L4_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_SP/1/hhcell" postCellId="../L4_PC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_SP/2/hhcell" postCellId="../L4_PC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_SP/3/hhcell" postCellId="../L4_PC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_SP/3/hhcell" postCellId="../L4_PC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L4_SP/4/hhcell" postCellId="../L4_PC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L4_SP/4/hhcell" postCellId="../L4_PC/23/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L4_SP/6/hhcell" postCellId="../L4_PC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L4_SP/9/hhcell" postCellId="../L4_PC/14/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SP__L5_STPC" presynapticPopulation="L4_SP" postsynapticPopulation="L5_STPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_SP/2/hhcell" postCellId="../L5_STPC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SP__L5_TTPC1" presynapticPopulation="L4_SP" postsynapticPopulation="L5_TTPC1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_SP/2/hhcell" postCellId="../L5_TTPC1/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_SP/5/hhcell" postCellId="../L5_TTPC1/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_SP/8/hhcell" postCellId="../L5_TTPC1/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_SP/8/hhcell" postCellId="../L5_TTPC1/22/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SP__L5_TTPC2" presynapticPopulation="L4_SP" postsynapticPopulation="L5_TTPC2" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_SP/4/hhcell" postCellId="../L5_TTPC2/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_SP/4/hhcell" postCellId="../L5_TTPC2/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_SP/7/hhcell" postCellId="../L5_TTPC2/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_SP/8/hhcell" postCellId="../L5_TTPC2/10/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SP__L6_BPC" presynapticPopulation="L4_SP" postsynapticPopulation="L6_BPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_SP/1/hhcell" postCellId="../L6_BPC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_SP/2/hhcell" postCellId="../L6_BPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_SP/3/hhcell" postCellId="../L6_BPC/19/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L4_SP/4/hhcell" postCellId="../L6_BPC/10/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SP__L6_TPC_L1" presynapticPopulation="L4_SP" postsynapticPopulation="L6_TPC_L1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_SP/1/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SP__L6_TPC_L4" presynapticPopulation="L4_SP" postsynapticPopulation="L6_TPC_L4" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_SP/0/hhcell" postCellId="../L6_TPC_L4/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_SP/4/hhcell" postCellId="../L6_TPC_L4/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_SP/4/hhcell" postCellId="../L6_TPC_L4/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SP__L6_UTPC" presynapticPopulation="L4_SP" postsynapticPopulation="L6_UTPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L4_SP/5/hhcell" postCellId="../L6_UTPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_SP/9/hhcell" postCellId="../L6_UTPC/3/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SS__L4_PC" presynapticPopulation="L4_SS" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_SS/2/hhcell" postCellId="../L4_PC/14/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SS__L4_SP" presynapticPopulation="L4_SS" postsynapticPopulation="L4_SP" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_SS/0/hhcell" postCellId="../L4_SP/4/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SS__L5_TTPC2" presynapticPopulation="L4_SS" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_SS/0/hhcell" postCellId="../L5_TTPC2/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_SS/1/hhcell" postCellId="../L5_TTPC2/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L4_SS/3/hhcell" postCellId="../L5_TTPC2/11/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SS__L6_BPC" presynapticPopulation="L4_SS" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_SS/0/hhcell" postCellId="../L6_BPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L4_SS/2/hhcell" postCellId="../L6_BPC/5/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L4_SS__L6_TPC_L1" presynapticPopulation="L4_SS" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L4_SS/0/hhcell" postCellId="../L6_TPC_L1/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_MC__L5_TTPC1" presynapticPopulation="L5_MC" postsynapticPopulation="L5_TTPC1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L5_MC/0/hhcell" postCellId="../L5_TTPC1/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_MC/1/hhcell" postCellId="../L5_TTPC1/5/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_MC__L5_TTPC2" presynapticPopulation="L5_MC" postsynapticPopulation="L5_TTPC2" synapse="gaba">
+            <connectionWD id="0" preCellId="../L5_MC/1/hhcell" postCellId="../L5_TTPC2/5/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_NBC__L5_TTPC1" presynapticPopulation="L5_NBC" postsynapticPopulation="L5_TTPC1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L5_NBC/0/hhcell" postCellId="../L5_TTPC1/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_NBC/1/hhcell" postCellId="../L5_TTPC1/8/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_NBC__L6_BPC" presynapticPopulation="L5_NBC" postsynapticPopulation="L6_BPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L5_NBC/0/hhcell" postCellId="../L6_BPC/26/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_NBC__L6_UTPC" presynapticPopulation="L5_NBC" postsynapticPopulation="L6_UTPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L5_NBC/0/hhcell" postCellId="../L6_UTPC/11/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_STPC__L4_PC" presynapticPopulation="L5_STPC" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_STPC/0/hhcell" postCellId="../L4_PC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_STPC__L5_TTPC1" presynapticPopulation="L5_STPC" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_STPC/2/hhcell" postCellId="../L5_TTPC1/14/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_STPC__L5_TTPC2" presynapticPopulation="L5_STPC" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_STPC/0/hhcell" postCellId="../L5_TTPC2/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_STPC/1/hhcell" postCellId="../L5_TTPC2/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_STPC/2/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_STPC__L6_BPC" presynapticPopulation="L5_STPC" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_STPC/0/hhcell" postCellId="../L6_BPC/6/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_STPC__L6_TPC_L1" presynapticPopulation="L5_STPC" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_STPC/0/hhcell" postCellId="../L6_TPC_L1/11/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_STPC__L6_UTPC" presynapticPopulation="L5_STPC" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_STPC/1/hhcell" postCellId="../L6_UTPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_STPC/1/hhcell" postCellId="../L6_UTPC/15/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L4_PC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/3/hhcell" postCellId="../L4_PC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/3/hhcell" postCellId="../L4_PC/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC1/5/hhcell" postCellId="../L4_PC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC1/10/hhcell" postCellId="../L4_PC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC1/12/hhcell" postCellId="../L4_PC/25/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L4_SS" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L4_SS" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/4/hhcell" postCellId="../L4_SS/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L4_SS/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L5_MC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L5_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/23/hhcell" postCellId="../L5_MC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L5_STPC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L5_STPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/3/hhcell" postCellId="../L5_STPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/14/hhcell" postCellId="../L5_STPC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L5_TTPC1" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/0/hhcell" postCellId="../L5_TTPC1/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/3/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC1/3/hhcell" postCellId="../L5_TTPC1/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC1/3/hhcell" postCellId="../L5_TTPC1/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC1/4/hhcell" postCellId="../L5_TTPC1/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC1/5/hhcell" postCellId="../L5_TTPC1/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L5_TTPC1/5/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L5_TTPC1/7/hhcell" postCellId="../L5_TTPC1/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L5_TTPC1/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L5_TTPC1/9/hhcell" postCellId="../L5_TTPC1/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L5_TTPC1/17/hhcell" postCellId="../L5_TTPC1/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L5_TTPC1/17/hhcell" postCellId="../L5_TTPC1/23/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L5_TTPC1/19/hhcell" postCellId="../L5_TTPC1/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="15" preCellId="../L5_TTPC1/20/hhcell" postCellId="../L5_TTPC1/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="16" preCellId="../L5_TTPC1/23/hhcell" postCellId="../L5_TTPC1/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L5_TTPC2" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/0/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/2/hhcell" postCellId="../L5_TTPC2/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC1/3/hhcell" postCellId="../L5_TTPC2/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC1/4/hhcell" postCellId="../L5_TTPC2/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC1/5/hhcell" postCellId="../L5_TTPC2/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L5_TTPC2/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L5_TTPC2/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L5_TTPC1/12/hhcell" postCellId="../L5_TTPC2/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L5_TTPC1/13/hhcell" postCellId="../L5_TTPC2/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L5_TTPC1/14/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L5_UTPC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L5_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L5_UTPC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L6_BPC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/0/hhcell" postCellId="../L6_BPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/0/hhcell" postCellId="../L6_BPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC1/7/hhcell" postCellId="../L6_BPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L6_BPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC1/10/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC1/12/hhcell" postCellId="../L6_BPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L5_TTPC1/12/hhcell" postCellId="../L6_BPC/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L5_TTPC1/15/hhcell" postCellId="../L6_BPC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L5_TTPC1/20/hhcell" postCellId="../L6_BPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L5_TTPC1/23/hhcell" postCellId="../L6_BPC/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L6_IPC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/2/hhcell" postCellId="../L6_IPC/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/15/hhcell" postCellId="../L6_IPC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC1/17/hhcell" postCellId="../L6_IPC/25/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC1/17/hhcell" postCellId="../L6_IPC/26/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC1/18/hhcell" postCellId="../L6_IPC/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC1/18/hhcell" postCellId="../L6_IPC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L5_TTPC1/19/hhcell" postCellId="../L6_IPC/30/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L5_TTPC1/20/hhcell" postCellId="../L6_IPC/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L5_TTPC1/20/hhcell" postCellId="../L6_IPC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L5_TTPC1/21/hhcell" postCellId="../L6_IPC/18/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L6_LBC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L6_LBC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/2/hhcell" postCellId="../L6_LBC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/3/hhcell" postCellId="../L6_LBC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC1/9/hhcell" postCellId="../L6_LBC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L6_MC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L6_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/19/hhcell" postCellId="../L6_MC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L6_TPC_L1" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/10/hhcell" postCellId="../L6_TPC_L1/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/15/hhcell" postCellId="../L6_TPC_L1/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC1/17/hhcell" postCellId="../L6_TPC_L1/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC1/18/hhcell" postCellId="../L6_TPC_L1/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L6_TPC_L4" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L6_TPC_L4" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/9/hhcell" postCellId="../L6_TPC_L4/9/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC1__L6_UTPC" presynapticPopulation="L5_TTPC1" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC1/7/hhcell" postCellId="../L6_UTPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC1/8/hhcell" postCellId="../L6_UTPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC1/12/hhcell" postCellId="../L6_UTPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC1/19/hhcell" postCellId="../L6_UTPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC1/19/hhcell" postCellId="../L6_UTPC/10/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L23_PC" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L23_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/3/hhcell" postCellId="../L23_PC/55/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L4_PC" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/3/hhcell" postCellId="../L4_PC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/3/hhcell" postCellId="../L4_PC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC2/3/hhcell" postCellId="../L4_PC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC2/7/hhcell" postCellId="../L4_PC/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC2/8/hhcell" postCellId="../L4_PC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC2/8/hhcell" postCellId="../L4_PC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L5_TTPC2/8/hhcell" postCellId="../L4_PC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L5_TTPC2/12/hhcell" postCellId="../L4_PC/8/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L4_SP" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L4_SP" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/15/hhcell" postCellId="../L4_SP/8/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L4_SS" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L4_SS" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/7/hhcell" postCellId="../L4_SS/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L4_SS/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L5_MC" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L5_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/15/hhcell" postCellId="../L5_MC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L5_TTPC1" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/0/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/2/hhcell" postCellId="../L5_TTPC1/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC2/4/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC2/9/hhcell" postCellId="../L5_TTPC1/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC2/9/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC2/11/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L5_TTPC2/11/hhcell" postCellId="../L5_TTPC1/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L5_TTPC1/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L5_TTPC2/14/hhcell" postCellId="../L5_TTPC1/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L5_TTPC2/15/hhcell" postCellId="../L5_TTPC1/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L5_TTPC2/17/hhcell" postCellId="../L5_TTPC1/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L5_TTPC2" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/5/hhcell" postCellId="../L5_TTPC2/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/5/hhcell" postCellId="../L5_TTPC2/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC2/9/hhcell" postCellId="../L5_TTPC2/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L5_TTPC2/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L5_TTPC2/14/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L5_UTPC" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L5_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/2/hhcell" postCellId="../L5_UTPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L5_UTPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC2/16/hhcell" postCellId="../L5_UTPC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L6_BPC" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/0/hhcell" postCellId="../L6_BPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/1/hhcell" postCellId="../L6_BPC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC2/4/hhcell" postCellId="../L6_BPC/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC2/4/hhcell" postCellId="../L6_BPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC2/5/hhcell" postCellId="../L6_BPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC2/5/hhcell" postCellId="../L6_BPC/27/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L5_TTPC2/10/hhcell" postCellId="../L6_BPC/19/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L6_BPC/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L6_BPC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L6_BPC/27/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L6_IPC" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/0/hhcell" postCellId="../L6_IPC/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/1/hhcell" postCellId="../L6_IPC/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC2/4/hhcell" postCellId="../L6_IPC/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC2/6/hhcell" postCellId="../L6_IPC/30/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC2/15/hhcell" postCellId="../L6_IPC/26/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L6_LBC" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L6_LBC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/9/hhcell" postCellId="../L6_LBC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/17/hhcell" postCellId="../L6_LBC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L6_TPC_L1" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/0/hhcell" postCellId="../L6_TPC_L1/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/2/hhcell" postCellId="../L6_TPC_L1/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC2/5/hhcell" postCellId="../L6_TPC_L1/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC2/13/hhcell" postCellId="../L6_TPC_L1/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC2/14/hhcell" postCellId="../L6_TPC_L1/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC2/17/hhcell" postCellId="../L6_TPC_L1/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L6_TPC_L4" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L6_TPC_L4" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/0/hhcell" postCellId="../L6_TPC_L4/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/1/hhcell" postCellId="../L6_TPC_L4/7/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_TTPC2__L6_UTPC" presynapticPopulation="L5_TTPC2" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_TTPC2/2/hhcell" postCellId="../L6_UTPC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_TTPC2/2/hhcell" postCellId="../L6_UTPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_TTPC2/6/hhcell" postCellId="../L6_UTPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_TTPC2/6/hhcell" postCellId="../L6_UTPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L5_TTPC2/6/hhcell" postCellId="../L6_UTPC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L5_TTPC2/7/hhcell" postCellId="../L6_UTPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L5_TTPC2/17/hhcell" postCellId="../L6_UTPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L5_TTPC2/17/hhcell" postCellId="../L6_UTPC/4/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_UTPC__L4_PC" presynapticPopulation="L5_UTPC" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_UTPC/0/hhcell" postCellId="../L4_PC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_UTPC/2/hhcell" postCellId="../L4_PC/7/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_UTPC__L4_SP" presynapticPopulation="L5_UTPC" postsynapticPopulation="L4_SP" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_UTPC/2/hhcell" postCellId="../L4_SP/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_UTPC__L4_SS" presynapticPopulation="L5_UTPC" postsynapticPopulation="L4_SS" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_UTPC/1/hhcell" postCellId="../L4_SS/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_UTPC__L5_TTPC1" presynapticPopulation="L5_UTPC" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_UTPC/1/hhcell" postCellId="../L5_TTPC1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_UTPC/1/hhcell" postCellId="../L5_TTPC1/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_UTPC/1/hhcell" postCellId="../L5_TTPC1/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L5_UTPC/2/hhcell" postCellId="../L5_TTPC1/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_UTPC__L6_BPC" presynapticPopulation="L5_UTPC" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_UTPC/1/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L5_UTPC/2/hhcell" postCellId="../L6_BPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L5_UTPC/2/hhcell" postCellId="../L6_BPC/19/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_UTPC__L6_IPC" presynapticPopulation="L5_UTPC" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_UTPC/0/hhcell" postCellId="../L6_IPC/18/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_UTPC__L6_LBC" presynapticPopulation="L5_UTPC" postsynapticPopulation="L6_LBC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_UTPC/0/hhcell" postCellId="../L6_LBC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L5_UTPC__L6_UTPC" presynapticPopulation="L5_UTPC" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L5_UTPC/0/hhcell" postCellId="../L6_UTPC/4/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L4_PC" presynapticPopulation="L6_BPC" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/8/hhcell" postCellId="../L4_PC/8/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L5_STPC" presynapticPopulation="L6_BPC" postsynapticPopulation="L5_STPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/0/hhcell" postCellId="../L5_STPC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L5_TTPC1" presynapticPopulation="L6_BPC" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/1/hhcell" postCellId="../L5_TTPC1/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_BPC/5/hhcell" postCellId="../L5_TTPC1/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_BPC/10/hhcell" postCellId="../L5_TTPC1/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_BPC/11/hhcell" postCellId="../L5_TTPC1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_BPC/25/hhcell" postCellId="../L5_TTPC1/20/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L5_TTPC2" presynapticPopulation="L6_BPC" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/0/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_BPC/0/hhcell" postCellId="../L5_TTPC2/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_BPC/4/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_BPC/5/hhcell" postCellId="../L5_TTPC2/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_BPC/5/hhcell" postCellId="../L5_TTPC2/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_BPC/8/hhcell" postCellId="../L5_TTPC2/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_BPC/11/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_BPC/11/hhcell" postCellId="../L5_TTPC2/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_BPC/18/hhcell" postCellId="../L5_TTPC2/4/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L6_BPC" presynapticPopulation="L6_BPC" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/0/hhcell" postCellId="../L6_BPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_BPC/0/hhcell" postCellId="../L6_BPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_BPC/5/hhcell" postCellId="../L6_BPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_BPC/6/hhcell" postCellId="../L6_BPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_BPC/6/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_BPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_BPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_BPC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_BPC/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_BPC/12/hhcell" postCellId="../L6_BPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_BPC/14/hhcell" postCellId="../L6_BPC/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L6_BPC/16/hhcell" postCellId="../L6_BPC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L6_BPC/17/hhcell" postCellId="../L6_BPC/26/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L6_BPC/18/hhcell" postCellId="../L6_BPC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L6_BPC/19/hhcell" postCellId="../L6_BPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="15" preCellId="../L6_BPC/20/hhcell" postCellId="../L6_BPC/26/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="16" preCellId="../L6_BPC/25/hhcell" postCellId="../L6_BPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="17" preCellId="../L6_BPC/25/hhcell" postCellId="../L6_BPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="18" preCellId="../L6_BPC/25/hhcell" postCellId="../L6_BPC/28/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="19" preCellId="../L6_BPC/27/hhcell" postCellId="../L6_BPC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="20" preCellId="../L6_BPC/28/hhcell" postCellId="../L6_BPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="21" preCellId="../L6_BPC/30/hhcell" postCellId="../L6_BPC/23/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L6_IPC" presynapticPopulation="L6_BPC" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/0/hhcell" postCellId="../L6_IPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_BPC/0/hhcell" postCellId="../L6_IPC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_BPC/2/hhcell" postCellId="../L6_IPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_BPC/2/hhcell" postCellId="../L6_IPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_BPC/7/hhcell" postCellId="../L6_IPC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_IPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_IPC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_IPC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_IPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_BPC/11/hhcell" postCellId="../L6_IPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_BPC/12/hhcell" postCellId="../L6_IPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L6_BPC/14/hhcell" postCellId="../L6_IPC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L6_BPC/14/hhcell" postCellId="../L6_IPC/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L6_BPC/14/hhcell" postCellId="../L6_IPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L6_BPC/15/hhcell" postCellId="../L6_IPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="15" preCellId="../L6_BPC/18/hhcell" postCellId="../L6_IPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="16" preCellId="../L6_BPC/18/hhcell" postCellId="../L6_IPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="17" preCellId="../L6_BPC/20/hhcell" postCellId="../L6_IPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="18" preCellId="../L6_BPC/21/hhcell" postCellId="../L6_IPC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="19" preCellId="../L6_BPC/28/hhcell" postCellId="../L6_IPC/26/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="20" preCellId="../L6_BPC/29/hhcell" postCellId="../L6_IPC/25/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="21" preCellId="../L6_BPC/30/hhcell" postCellId="../L6_IPC/30/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L6_LBC" presynapticPopulation="L6_BPC" postsynapticPopulation="L6_LBC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/5/hhcell" postCellId="../L6_LBC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L6_MC" presynapticPopulation="L6_BPC" postsynapticPopulation="L6_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/4/hhcell" postCellId="../L6_MC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L6_TPC_L1" presynapticPopulation="L6_BPC" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/0/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_BPC/2/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_BPC/6/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_BPC/8/hhcell" postCellId="../L6_TPC_L1/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_BPC/12/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_BPC/14/hhcell" postCellId="../L6_TPC_L1/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_BPC/18/hhcell" postCellId="../L6_TPC_L1/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_BPC/21/hhcell" postCellId="../L6_TPC_L1/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_BPC/27/hhcell" postCellId="../L6_TPC_L1/12/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L6_TPC_L4" presynapticPopulation="L6_BPC" postsynapticPopulation="L6_TPC_L4" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/2/hhcell" postCellId="../L6_TPC_L4/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_BPC/4/hhcell" postCellId="../L6_TPC_L4/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_BPC/10/hhcell" postCellId="../L6_TPC_L4/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_BPC/15/hhcell" postCellId="../L6_TPC_L4/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_BPC/18/hhcell" postCellId="../L6_TPC_L4/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_BPC/26/hhcell" postCellId="../L6_TPC_L4/7/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_BPC__L6_UTPC" presynapticPopulation="L6_BPC" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_BPC/5/hhcell" postCellId="../L6_UTPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_BPC/7/hhcell" postCellId="../L6_UTPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_UTPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_BPC/9/hhcell" postCellId="../L6_UTPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_BPC/11/hhcell" postCellId="../L6_UTPC/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_BPC/12/hhcell" postCellId="../L6_UTPC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_BPC/15/hhcell" postCellId="../L6_UTPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_BPC/18/hhcell" postCellId="../L6_UTPC/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_BPC/22/hhcell" postCellId="../L6_UTPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_BPC/22/hhcell" postCellId="../L6_UTPC/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_BPC/24/hhcell" postCellId="../L6_UTPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L6_BPC/24/hhcell" postCellId="../L6_UTPC/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L6_BPC/28/hhcell" postCellId="../L6_UTPC/12/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L5_MC" presynapticPopulation="L6_IPC" postsynapticPopulation="L5_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/26/hhcell" postCellId="../L5_MC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L5_TTPC1" presynapticPopulation="L6_IPC" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/2/hhcell" postCellId="../L5_TTPC1/15/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L5_TTPC2" presynapticPopulation="L6_IPC" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/10/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L6_BPC" presynapticPopulation="L6_IPC" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/2/hhcell" postCellId="../L6_BPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_IPC/2/hhcell" postCellId="../L6_BPC/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_IPC/3/hhcell" postCellId="../L6_BPC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_IPC/4/hhcell" postCellId="../L6_BPC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_IPC/4/hhcell" postCellId="../L6_BPC/26/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_IPC/5/hhcell" postCellId="../L6_BPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_IPC/10/hhcell" postCellId="../L6_BPC/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_IPC/12/hhcell" postCellId="../L6_BPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_IPC/15/hhcell" postCellId="../L6_BPC/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_IPC/15/hhcell" postCellId="../L6_BPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_IPC/17/hhcell" postCellId="../L6_BPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L6_IPC/17/hhcell" postCellId="../L6_BPC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L6_IPC/19/hhcell" postCellId="../L6_BPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L6_IPC/20/hhcell" postCellId="../L6_BPC/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L6_IPC/23/hhcell" postCellId="../L6_BPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="15" preCellId="../L6_IPC/23/hhcell" postCellId="../L6_BPC/26/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="16" preCellId="../L6_IPC/24/hhcell" postCellId="../L6_BPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="17" preCellId="../L6_IPC/24/hhcell" postCellId="../L6_BPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="18" preCellId="../L6_IPC/24/hhcell" postCellId="../L6_BPC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="19" preCellId="../L6_IPC/33/hhcell" postCellId="../L6_BPC/26/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L6_IPC" presynapticPopulation="L6_IPC" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/0/hhcell" postCellId="../L6_IPC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_IPC/1/hhcell" postCellId="../L6_IPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_IPC/2/hhcell" postCellId="../L6_IPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_IPC/4/hhcell" postCellId="../L6_IPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_IPC/5/hhcell" postCellId="../L6_IPC/28/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_IPC/6/hhcell" postCellId="../L6_IPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_IPC/8/hhcell" postCellId="../L6_IPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_IPC/9/hhcell" postCellId="../L6_IPC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_IPC/10/hhcell" postCellId="../L6_IPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_IPC/10/hhcell" postCellId="../L6_IPC/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_IPC/12/hhcell" postCellId="../L6_IPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L6_IPC/14/hhcell" postCellId="../L6_IPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L6_IPC/16/hhcell" postCellId="../L6_IPC/19/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="13" preCellId="../L6_IPC/17/hhcell" postCellId="../L6_IPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="14" preCellId="../L6_IPC/17/hhcell" postCellId="../L6_IPC/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="15" preCellId="../L6_IPC/19/hhcell" postCellId="../L6_IPC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="16" preCellId="../L6_IPC/27/hhcell" postCellId="../L6_IPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="17" preCellId="../L6_IPC/30/hhcell" postCellId="../L6_IPC/6/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L6_MC" presynapticPopulation="L6_IPC" postsynapticPopulation="L6_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/7/hhcell" postCellId="../L6_MC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_IPC/21/hhcell" postCellId="../L6_MC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L6_TPC_L1" presynapticPopulation="L6_IPC" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/2/hhcell" postCellId="../L6_TPC_L1/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_IPC/3/hhcell" postCellId="../L6_TPC_L1/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_IPC/11/hhcell" postCellId="../L6_TPC_L1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_IPC/12/hhcell" postCellId="../L6_TPC_L1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_IPC/15/hhcell" postCellId="../L6_TPC_L1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_IPC/21/hhcell" postCellId="../L6_TPC_L1/8/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L6_TPC_L4" presynapticPopulation="L6_IPC" postsynapticPopulation="L6_TPC_L4" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/1/hhcell" postCellId="../L6_TPC_L4/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_IPC/10/hhcell" postCellId="../L6_TPC_L4/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_IPC/13/hhcell" postCellId="../L6_TPC_L4/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_IPC/14/hhcell" postCellId="../L6_TPC_L4/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_IPC/18/hhcell" postCellId="../L6_TPC_L4/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_IPC/24/hhcell" postCellId="../L6_TPC_L4/12/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_IPC__L6_UTPC" presynapticPopulation="L6_IPC" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_IPC/10/hhcell" postCellId="../L6_UTPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_IPC/20/hhcell" postCellId="../L6_UTPC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_IPC/28/hhcell" postCellId="../L6_UTPC/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_LBC__L5_TTPC1" presynapticPopulation="L6_LBC" postsynapticPopulation="L5_TTPC1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_LBC/2/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_LBC__L5_TTPC2" presynapticPopulation="L6_LBC" postsynapticPopulation="L5_TTPC2" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_LBC/0/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_LBC__L6_BPC" presynapticPopulation="L6_LBC" postsynapticPopulation="L6_BPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_LBC/1/hhcell" postCellId="../L6_BPC/5/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_LBC__L6_IPC" presynapticPopulation="L6_LBC" postsynapticPopulation="L6_IPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_LBC/2/hhcell" postCellId="../L6_IPC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_LBC__L6_TPC_L1" presynapticPopulation="L6_LBC" postsynapticPopulation="L6_TPC_L1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_LBC/2/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_LBC/2/hhcell" postCellId="../L6_TPC_L1/8/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_LBC__L6_TPC_L4" presynapticPopulation="L6_LBC" postsynapticPopulation="L6_TPC_L4" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_LBC/2/hhcell" postCellId="../L6_TPC_L4/11/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_MC__L4_PC" presynapticPopulation="L6_MC" postsynapticPopulation="L4_PC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_MC/1/hhcell" postCellId="../L4_PC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_MC/1/hhcell" postCellId="../L4_PC/10/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_MC__L4_SP" presynapticPopulation="L6_MC" postsynapticPopulation="L4_SP" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_MC/1/hhcell" postCellId="../L4_SP/3/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_MC__L5_TTPC1" presynapticPopulation="L6_MC" postsynapticPopulation="L5_TTPC1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_MC/1/hhcell" postCellId="../L5_TTPC1/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_MC/1/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_MC__L6_BPC" presynapticPopulation="L6_MC" postsynapticPopulation="L6_BPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_MC/1/hhcell" postCellId="../L6_BPC/22/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_MC__L6_TPC_L1" presynapticPopulation="L6_MC" postsynapticPopulation="L6_TPC_L1" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_MC/1/hhcell" postCellId="../L6_TPC_L1/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_MC__L6_UTPC" presynapticPopulation="L6_MC" postsynapticPopulation="L6_UTPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_MC/1/hhcell" postCellId="../L6_UTPC/15/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_NBC__L6_MC" presynapticPopulation="L6_NBC" postsynapticPopulation="L6_MC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_NBC/0/hhcell" postCellId="../L6_MC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_NBC__L6_UTPC" presynapticPopulation="L6_NBC" postsynapticPopulation="L6_UTPC" synapse="gaba">
+            <connectionWD id="0" preCellId="../L6_NBC/0/hhcell" postCellId="../L6_UTPC/15/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L4_PC" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/4/hhcell" postCellId="../L4_PC/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L5_MC" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L5_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/8/hhcell" postCellId="../L5_MC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L5_TTPC1" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/3/hhcell" postCellId="../L5_TTPC1/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L1/4/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L1/5/hhcell" postCellId="../L5_TTPC1/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_TPC_L1/12/hhcell" postCellId="../L5_TTPC1/19/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L5_TTPC2" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/1/hhcell" postCellId="../L5_TTPC2/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L1/1/hhcell" postCellId="../L5_TTPC2/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L1/2/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_TPC_L1/3/hhcell" postCellId="../L5_TTPC2/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_TPC_L1/4/hhcell" postCellId="../L5_TTPC2/5/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L5_UTPC" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L5_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/1/hhcell" postCellId="../L5_UTPC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L6_BPC" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/2/hhcell" postCellId="../L6_BPC/21/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L1/3/hhcell" postCellId="../L6_BPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L1/3/hhcell" postCellId="../L6_BPC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_TPC_L1/4/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_TPC_L1/5/hhcell" postCellId="../L6_BPC/25/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_TPC_L1/5/hhcell" postCellId="../L6_BPC/28/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_TPC_L1/11/hhcell" postCellId="../L6_BPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_TPC_L1/11/hhcell" postCellId="../L6_BPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_TPC_L1/12/hhcell" postCellId="../L6_BPC/27/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_TPC_L1/13/hhcell" postCellId="../L6_BPC/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_TPC_L1/13/hhcell" postCellId="../L6_BPC/27/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L6_TPC_L1/14/hhcell" postCellId="../L6_BPC/15/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L6_IPC" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/0/hhcell" postCellId="../L6_IPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L1/1/hhcell" postCellId="../L6_IPC/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L1/2/hhcell" postCellId="../L6_IPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_TPC_L1/2/hhcell" postCellId="../L6_IPC/30/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_TPC_L1/4/hhcell" postCellId="../L6_IPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_TPC_L1/4/hhcell" postCellId="../L6_IPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_TPC_L1/5/hhcell" postCellId="../L6_IPC/20/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_TPC_L1/6/hhcell" postCellId="../L6_IPC/29/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_TPC_L1/10/hhcell" postCellId="../L6_IPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_TPC_L1/13/hhcell" postCellId="../L6_IPC/27/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_TPC_L1/13/hhcell" postCellId="../L6_IPC/28/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L6_TPC_L1" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/2/hhcell" postCellId="../L6_TPC_L1/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L1/5/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L6_TPC_L4" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L6_TPC_L4" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/0/hhcell" postCellId="../L6_TPC_L4/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L1/4/hhcell" postCellId="../L6_TPC_L4/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L1/13/hhcell" postCellId="../L6_TPC_L4/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L1__L6_UTPC" presynapticPopulation="L6_TPC_L1" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L1/1/hhcell" postCellId="../L6_UTPC/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L1/4/hhcell" postCellId="../L6_UTPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L1/5/hhcell" postCellId="../L6_UTPC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_TPC_L1/8/hhcell" postCellId="../L6_UTPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_TPC_L1/10/hhcell" postCellId="../L6_UTPC/10/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L4__L5_TTPC1" presynapticPopulation="L6_TPC_L4" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L4/0/hhcell" postCellId="../L5_TTPC1/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L4/4/hhcell" postCellId="../L5_TTPC1/20/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L4__L5_TTPC2" presynapticPopulation="L6_TPC_L4" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L4/9/hhcell" postCellId="../L5_TTPC2/3/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L4__L6_BPC" presynapticPopulation="L6_TPC_L4" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L4/2/hhcell" postCellId="../L6_BPC/19/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L4/3/hhcell" postCellId="../L6_BPC/19/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L4/8/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_TPC_L4/11/hhcell" postCellId="../L6_BPC/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_TPC_L4/11/hhcell" postCellId="../L6_BPC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_TPC_L4/11/hhcell" postCellId="../L6_BPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_TPC_L4/12/hhcell" postCellId="../L6_BPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_TPC_L4/12/hhcell" postCellId="../L6_BPC/18/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L4__L6_IPC" presynapticPopulation="L6_TPC_L4" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L4/0/hhcell" postCellId="../L6_IPC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L4/7/hhcell" postCellId="../L6_IPC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L4/11/hhcell" postCellId="../L6_IPC/18/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L4__L6_TPC_L1" presynapticPopulation="L6_TPC_L4" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L4/8/hhcell" postCellId="../L6_TPC_L1/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L4/11/hhcell" postCellId="../L6_TPC_L1/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L4/13/hhcell" postCellId="../L6_TPC_L1/15/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L4__L6_TPC_L4" presynapticPopulation="L6_TPC_L4" postsynapticPopulation="L6_TPC_L4" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L4/3/hhcell" postCellId="../L6_TPC_L4/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L4/8/hhcell" postCellId="../L6_TPC_L4/9/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_TPC_L4__L6_UTPC" presynapticPopulation="L6_TPC_L4" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_TPC_L4/1/hhcell" postCellId="../L6_UTPC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_TPC_L4/4/hhcell" postCellId="../L6_UTPC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_TPC_L4/7/hhcell" postCellId="../L6_UTPC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_TPC_L4/10/hhcell" postCellId="../L6_UTPC/8/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_TPC_L4/10/hhcell" postCellId="../L6_UTPC/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L23_PC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L23_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/8/hhcell" postCellId="../L23_PC/24/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L4_PC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L4_PC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/1/hhcell" postCellId="../L4_PC/4/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L4_SP" presynapticPopulation="L6_UTPC" postsynapticPopulation="L4_SP" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/14/hhcell" postCellId="../L4_SP/3/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L5_MC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L5_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/2/hhcell" postCellId="../L5_MC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L5_STPC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L5_STPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/10/hhcell" postCellId="../L5_STPC/1/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L5_TTPC1" presynapticPopulation="L6_UTPC" postsynapticPopulation="L5_TTPC1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/1/hhcell" postCellId="../L5_TTPC1/3/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_UTPC/1/hhcell" postCellId="../L5_TTPC1/18/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_UTPC/8/hhcell" postCellId="../L5_TTPC1/11/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_UTPC/8/hhcell" postCellId="../L5_TTPC1/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_UTPC/14/hhcell" postCellId="../L5_TTPC1/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_UTPC/14/hhcell" postCellId="../L5_TTPC1/12/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L5_TTPC2" presynapticPopulation="L6_UTPC" postsynapticPopulation="L5_TTPC2" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/1/hhcell" postCellId="../L5_TTPC2/17/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_UTPC/4/hhcell" postCellId="../L5_TTPC2/6/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L5_UTPC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L5_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/8/hhcell" postCellId="../L5_UTPC/2/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L6_BPC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L6_BPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/0/hhcell" postCellId="../L6_BPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_UTPC/1/hhcell" postCellId="../L6_BPC/4/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_UTPC/1/hhcell" postCellId="../L6_BPC/16/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_UTPC/4/hhcell" postCellId="../L6_BPC/23/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_UTPC/6/hhcell" postCellId="../L6_BPC/10/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_UTPC/8/hhcell" postCellId="../L6_BPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_UTPC/11/hhcell" postCellId="../L6_BPC/14/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_UTPC/13/hhcell" postCellId="../L6_BPC/29/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_UTPC/14/hhcell" postCellId="../L6_BPC/26/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_UTPC/15/hhcell" postCellId="../L6_BPC/6/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_UTPC/15/hhcell" postCellId="../L6_BPC/12/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L6_UTPC/15/hhcell" postCellId="../L6_BPC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L6_UTPC/16/hhcell" postCellId="../L6_BPC/7/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L6_IPC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L6_IPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/0/hhcell" postCellId="../L6_IPC/26/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_UTPC/1/hhcell" postCellId="../L6_IPC/22/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_UTPC/4/hhcell" postCellId="../L6_IPC/9/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_UTPC/6/hhcell" postCellId="../L6_IPC/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="4" preCellId="../L6_UTPC/7/hhcell" postCellId="../L6_IPC/5/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="5" preCellId="../L6_UTPC/7/hhcell" postCellId="../L6_IPC/28/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="6" preCellId="../L6_UTPC/9/hhcell" postCellId="../L6_IPC/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="7" preCellId="../L6_UTPC/9/hhcell" postCellId="../L6_IPC/15/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="8" preCellId="../L6_UTPC/12/hhcell" postCellId="../L6_IPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="9" preCellId="../L6_UTPC/13/hhcell" postCellId="../L6_IPC/24/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="10" preCellId="../L6_UTPC/15/hhcell" postCellId="../L6_IPC/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="11" preCellId="../L6_UTPC/15/hhcell" postCellId="../L6_IPC/2/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="12" preCellId="../L6_UTPC/15/hhcell" postCellId="../L6_IPC/22/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L6_MC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L6_MC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/1/hhcell" postCellId="../L6_MC/0/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L6_TPC_L1" presynapticPopulation="L6_UTPC" postsynapticPopulation="L6_TPC_L1" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/0/hhcell" postCellId="../L6_TPC_L1/0/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_UTPC/0/hhcell" postCellId="../L6_TPC_L1/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_UTPC/4/hhcell" postCellId="../L6_TPC_L1/13/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="3" preCellId="../L6_UTPC/8/hhcell" postCellId="../L6_TPC_L1/15/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L6_TPC_L4" presynapticPopulation="L6_UTPC" postsynapticPopulation="L6_TPC_L4" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/4/hhcell" postCellId="../L6_TPC_L4/1/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="1" preCellId="../L6_UTPC/8/hhcell" postCellId="../L6_TPC_L4/7/hhcell" weight="1." delay="1ms"/>
+            <connectionWD id="2" preCellId="../L6_UTPC/11/hhcell" postCellId="../L6_TPC_L4/13/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <projection id="Proj__L6_UTPC__L6_UTPC" presynapticPopulation="L6_UTPC" postsynapticPopulation="L6_UTPC" synapse="ampa">
+            <connectionWD id="0" preCellId="../L6_UTPC/11/hhcell" postCellId="../L6_UTPC/8/hhcell" weight="1." delay="1ms"/>
+        </projection>
+        <inputList id="stim_L23_PC" population="L23_PC" component="iclamp0">
+            <input id="0" target="../L23_PC/1/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/2/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/5/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/6/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/7/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/8/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/9/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/10/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/11/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/12/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/13/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/14/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/15/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/16/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/17/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/18/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/19/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/21/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/22/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/23/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/24/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/25/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/26/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/27/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/28/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/29/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/30/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/31/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/32/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/34/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/35/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/36/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/37/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/38/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/39/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/40/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/41/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/42/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/43/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/44/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/45/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/46/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/48/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/50/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/51/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/52/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/53/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/55/hhcell" destination="synapses"/>
+            <input id="0" target="../L23_PC/56/hhcell" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>

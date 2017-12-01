@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  ../Schemas/NeuroML2/NeuroML_v2beta5.xsd"
+         id="gaba">
+
+    <expTwoSynapse id="gaba" gbase="2nS" erev="-80mV"
+                   tauRise="1ms" tauDecay="10ms" >
+    </expTwoSynapse>
+    
+</neuroml>

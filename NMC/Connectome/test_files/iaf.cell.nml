@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  ../Schemas/NeuroML2/NeuroML_v2beta4.xsd"
+    id="isf">
+
+
+    <iafCell id="iaf" leakReversal="-50mV" thresh="-55mV"
+	     reset="-70mV" C="0.2nF" leakConductance="0.01uS"/>
+
+
+    <izhikevichCell id="izBurst" v0 = "-70mV" thresh = "30mV" a="0.02"
+		    b = "0.2" c = "-50.0" d = "2"/>
+ 
+
+</neuroml>
