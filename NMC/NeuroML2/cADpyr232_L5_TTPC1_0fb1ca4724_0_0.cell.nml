@@ -19,12 +19,7 @@ Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaborati
 
 For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L5_TTPC1_cADpyr/details
 
-******************************************************
-*  This export to NeuroML2 has not yet been fully validated!!
-*  Use with caution!!
-******************************************************
-
-        </notes>
+</notes>
         <property tag="BBP:layer" value="L5"/>
         <property tag="BBP:me-type" value="L5_TTPC1_cADpyr"/>
         <property tag="BBP:m-type" value="L5_TTPC1"/>

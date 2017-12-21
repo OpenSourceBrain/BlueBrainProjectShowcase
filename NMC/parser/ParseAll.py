@@ -328,10 +328,6 @@ wopen()
             "https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/%s/" \
             "details\n\n" % cell_info['me-type']
             
-        notes += "******************************************************\n*" \
-            "  This export to NeuroML2 has not yet been fully validated!!" \
-            "\n*  Use with caution!!\n***********************************" \
-            "*******************\n\n        "
 
         cell.notes = notes
         
@@ -419,7 +415,7 @@ wopen()
                                        "LEMS_%s.xml" % cell_dir,
                                        local_nml2_cell_dir,
                                        copy_neuroml=False,
-                                       seed=1234)
+                                       simulation_seed=1234)
 
         pynml.nml2_to_svg(nml_net_loc)
 

@@ -5,12 +5,7 @@ Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaborati
 
 For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L5_TTPC1_cADpyr/details
 
-******************************************************
-*  This export to NeuroML2 has not yet been fully validated!!
-*  Use with caution!!
-******************************************************
-
-        </notes>
+</notes>
     <include href="cADpyr232_L5_TTPC1_0fb1ca4724_0_0.cell.nml"></include>
     <pulseGenerator id="stepcurrent3_hyp" delay="0ms" duration="3000ms" amplitude="-0.247559nA"/>
     <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.646625nA"/>

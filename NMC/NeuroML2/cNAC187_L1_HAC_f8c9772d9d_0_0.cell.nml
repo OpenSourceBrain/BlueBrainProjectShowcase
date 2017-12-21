@@ -19,12 +19,7 @@ Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaborati
 
 For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L1_HAC_cNAC/details
 
-******************************************************
-*  This export to NeuroML2 has not yet been fully validated!!
-*  Use with caution!!
-******************************************************
-
-        </notes>
+</notes>
         <property tag="BBP:layer" value="L1"/>
         <property tag="BBP:me-type" value="L1_HAC_cNAC"/>
         <property tag="BBP:m-type" value="L1_HAC"/>
