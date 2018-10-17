@@ -37,3 +37,15 @@ ChannelTest/*.log
 /NMC/NeuroML2/ManyCells.net.png
 /NMC/Connectome/BBP.net.png
 /NMC/Connectome/cons_locs_pathways_mc0_Column.tar
+/NMC/NeuroML2/nmllite/*.mod
+*.gv
+*.gv.png
+/NMC/NeuroML2/nmllite/IClamp_*.json
+/NMC/NeuroML2/nmllite/ParamSweep_*
+/NMC/NeuroML2/nmllite/IClamp_*.net.nml
+/NMC/NeuroML2/nmllite/*.hoc
+/NMC/NeuroML2/nmllite/*.dat
+/NMC/NeuroML2/nmllite/LEMS_Sim_IClamp_*.xml
+/NMC/NeuroML2/nmllite/Sim_IClamp_*.json
+report.*.txt
+*_nrn.py
