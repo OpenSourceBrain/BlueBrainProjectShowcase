@@ -15,5 +15,11 @@ to NeuroML 2.
 
 See [here](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/NMC/NeuroML2/README.md) for more details.
 
-
 [![Build Status](https://travis-ci.org/OpenSourceBrain/BlueBrainProjectShowcase.svg?branch=master)](https://travis-ci.org/OpenSourceBrain/BlueBrainProjectShowcase)
+
+[![DOI](https://www.zenodo.org/badge/17436997.svg)](https://www.zenodo.org/badge/latestdoi/17436997)
+
+### Reusing this model
+
+The code in this repository is provided under the terms of the [software license](LICENSE) included with it. If you use this model in your research, we respectfully ask you to cite the references outlined in the [CITATION](CITATION.md) file.
+
