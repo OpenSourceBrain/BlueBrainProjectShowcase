@@ -6,7 +6,9 @@ env:
     - OMV_ENGINE=jNeuroML
     - OMV_ENGINE=jNeuroML_NEURON
     - OMV_ENGINE=jNeuroML_NetPyNE
-    - OMV_ENGINE=NEURON
+    - OMV_ENGINE=NEURON:7.4
+    - OMV_ENGINE=NEURON:7.5
+    - OMV_ENGINE=NEURON:7.6
     - OMV_ENGINE=jNeuroML_validate
     - OMV_ENGINE=NON_OMV_TESTS
 
