@@ -33,5 +33,7 @@ access cNAC187_L1_HAC_f8c9772d9d[0].dend[0]
 
 psection()
 
+simInfo()
+
 //quit()
 
