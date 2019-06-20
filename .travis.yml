@@ -51,9 +51,10 @@ script:
     - pynml LEMS_Test_HCN1.xml -nogui
     
     # Test NMC related scripts
-    #- omv install NEURON             # broken...
-    #- cd ../NMC/parser
-    #- python ParseAll.py
+    - omv install NEURON             # broken..?
+    - cd ../NMC/parser
+    - python ParseAll.py
+    - omv list -V
     
 
     

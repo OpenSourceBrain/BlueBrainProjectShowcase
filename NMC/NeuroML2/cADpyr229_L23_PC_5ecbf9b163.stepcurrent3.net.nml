@@ -6,7 +6,7 @@ Export of a cell model obtained from the BBP NeocorticalMicrocircuit Collaborati
 For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/microcircuit#/metype/L23_PC_cADpyr/details
 
 </notes>
-    <include href="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"></include>
+    <include href="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"/>
     <pulseGenerator id="stepcurrent3_hyp" delay="0ms" duration="3000ms" amplitude="-0.071777nA"/>
     <pulseGenerator id="stepcurrent3" delay="700ms" duration="2000ms" amplitude="0.1897924nA"/>
     <network id="network" type="networkWithTemperature" temperature="34 degC">
