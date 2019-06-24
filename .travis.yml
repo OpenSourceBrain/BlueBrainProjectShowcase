@@ -52,6 +52,7 @@ script:
     
     # Test NMC related scripts
     - omv install NEURON             # broken..?
+    - pip install jinja2
     - cd ../NMC/parser
     - python ParseAll.py
     - omv list -V
