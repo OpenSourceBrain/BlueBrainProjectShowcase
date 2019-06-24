@@ -51,7 +51,8 @@ script:
     - pynml LEMS_Test_HCN1.xml -nogui
     
     # Test NMC related scripts
-    - omv install NEURON             # broken..?
+    - omv install NEURON        
+    - /home/travis/neuron/nrn/x86_64/bin/nrnivmodl ../NEURON/ # compile mod files for use here
     - pip install jinja2
     - cd ../NMC/parser
     - python ParseAll.py
