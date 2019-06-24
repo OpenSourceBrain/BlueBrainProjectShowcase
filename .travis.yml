@@ -51,10 +51,10 @@ script:
     - pynml LEMS_Test_HCN1.xml -nogui
     
     # Test NMC related scripts
-    - omv install NEURON        
-    - /home/travis/neuron/nrn/x86_64/bin/nrnivmodl ../NEURON/ # compile mod files for use here
+    - omv install NEURON    
     - pip install jinja2
-    - cd ../NMC/parser
+    - cd ../NMC/parser    
+    - /home/travis/neuron/nrn/x86_64/bin/nrnivmodl ../NEURON/ # compile mod files for use here
     - python ParseAll.py
     - omv list -V
     
