@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     info = generate(channel_file, channel, ["m"], 32)
                       
-    print info
+    print(info)
                       
     lf = open(new_lems_file, 'w')
     lf.write(info)
@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
     info = generate(channel_file, channel, ["m"], 32)
                       
-    print info
+    print(info)
                       
     lf = open(new_lems_file, 'w')
     lf.write(info)
