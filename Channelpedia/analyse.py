@@ -20,7 +20,7 @@ def generate(channel_file, channel, gates, temperature, ion = '?'):
     ca_conc = 1e-5
     ion = ion.lower()
     print('---- Generating for %s in %s (gates: %s) with ion: %s'%(channel, channel_file, gates, ion))
-    if known_parameters.has_key(channel):
+    if channel in known_parameters:
         params = known_parameters[channel]
         print('Using:')
         print(params)
@@ -33,7 +33,7 @@ def generate(channel_file, channel, gates, temperature, ion = '?'):
         duration = params[6]
         erev = params[7]
         
-    elif default_parameters.has_key(ion):
+    elif ion in default_parameters:
         params = default_parameters[ion]
         print('Using:')
         print(params)

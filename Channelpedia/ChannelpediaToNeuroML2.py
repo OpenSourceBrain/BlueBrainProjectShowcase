@@ -71,7 +71,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
             species = animal.attrib['Name'].lower()
 
             if species:
-                if osb.resources.KNOWN_SPECIES.has_key(species):
+                if species in osb.resources.KNOWN_SPECIES:
                     known_id = osb.resources.KNOWN_SPECIES[species]
                     osb.metadata.add_simple_qualifier(desc, \
                                                       'bqbiol', \
@@ -86,7 +86,7 @@ def channelpedia_xml_to_neuroml2(cpd_xml, nml2_file_name, unknowns=""):
             cell_type = cell_type_el.text.strip().lower()
 
             if cell_type:
-                if osb.resources.KNOWN_CELL_TYPES.has_key(cell_type):
+                if cell_type in osb.resources.KNOWN_CELL_TYPES:
                     known_id = osb.resources.KNOWN_CELL_TYPES[cell_type]
                     osb.metadata.add_simple_qualifier(desc, \
                                                       'bqbiol', \
