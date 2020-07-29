@@ -1,7 +1,17 @@
+# Framework for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+dist: xenial
+
+addons:
+  apt:
+    packages:
+    - python-tk
+    - python-numpy 
+    - python-lxml
+    - python-tornado
+    - python-tables
+
 language: python
-
-python: 2.7
-
+python: 3.6
 
 env:
     - OMV_ENGINE=jNeuroML
@@ -21,11 +31,11 @@ install:
     # Install OMV
     - pip install git+https://github.com/OpenSourceBrain/osb-model-validation
 
-
     # Install libNeuroML & pyNeuroML
 
     - pip install pyNeuroML 
-    - pip install scipy # Why is this needed? Scipy doesn't seem to get installed correctly on trusty with addons above...
+    - pip install matplotlib>=2.2.5 # This is more because Matplotlib v2.x is required...
+    - pip install future pandas matplotlib-scalebar bokeh scipy
 
 
     #   Install OSB API
