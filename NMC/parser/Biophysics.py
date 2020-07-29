@@ -170,7 +170,7 @@ def parse_templates_json(templates_json="templates.json",
                                     inhomogeneous_value=iv)]
 
                         channel_name  = channel
-                        if channel_substitutes.has_key(channel):
+                        if channel in channel_substitutes:
                             channel_name = channel_substitutes[channel]
                             
                         channel_nml2_file = "%s.channel.nml"%channel_name
