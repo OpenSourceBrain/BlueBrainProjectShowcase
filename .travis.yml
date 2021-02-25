@@ -21,8 +21,8 @@ env:
     # This hoc command: voltage.record(&v(0.5), 0.025) seems to give inconsistent results on 7.4...
     # - OMV_ENGINE=NEURON:7.4 
     
-    - OMV_ENGINE=NEURON:7.5
-    - OMV_ENGINE=NEURON:7.6
+    #- OMV_ENGINE=NEURON:7.5
+    - OMV_ENGINE=NEURON:7.7
     - OMV_ENGINE=jNeuroML_validate
     - OMV_ENGINE=NON_OMV_TESTS
 
