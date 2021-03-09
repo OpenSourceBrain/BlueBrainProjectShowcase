@@ -2,7 +2,8 @@
 
 A project to illustrate how models and data from the [Blue Brain Project](http://bluebrain.epfl.ch/) can be converted to NeuroML and PyNN.
 
-<iframe src="http://wl.figshare.com/articles/1570970/embed" width="568" height="502" frameborder="0"></iframe>
+<!-- No longer working on GH
+<iframe src="http://wl.figshare.com/articles/1570970/embed" width="568" height="502" frameborder="0"></iframe>-->
 
 #### Channelpedia interactions
 
