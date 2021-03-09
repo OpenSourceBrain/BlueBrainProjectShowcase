@@ -64,7 +64,7 @@ script:
     - omv install NEURON    
     - pip install jinja2
     - cd ../NMC/parser    
-    - /home/travis/neuron/nrn/x86_64/bin/nrnivmodl ../NEURON/ # compile mod files for use here
+    - nrnivmodl ../NEURON/ # compile mod files for use here; nrnivmodl installed with Neuron via pip
     - python ParseAll.py
     - omv list -V
     
