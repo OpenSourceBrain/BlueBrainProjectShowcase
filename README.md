@@ -16,7 +16,7 @@ to NeuroML 2.
 
 See [here](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/blob/master/NMC/NeuroML2/README.md) for more details.
 
-[![Build Status](https://travis-ci.com/OpenSourceBrain/BlueBrainProjectShowcase.svg?branch=master)](https://travis-ci.com/OpenSourceBrain/BlueBrainProjectShowcase)
+[![Continuous build using OMV](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/actions/workflows/omv-ci.yml/badge.svg)](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/actions/workflows/omv-ci.yml) [![Non OMV tests](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/actions/workflows/non_omv.yml/badge.svg)](https://github.com/OpenSourceBrain/BlueBrainProjectShowcase/actions/workflows/non_omv.yml) 
 
 [![DOI](https://www.zenodo.org/badge/17436997.svg)](https://www.zenodo.org/badge/latestdoi/17436997)
 
