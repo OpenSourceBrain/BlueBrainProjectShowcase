@@ -1,0 +1,50 @@
+name: Non OMV tests
+
+on:
+  push:
+    branches: [ master, development, test* ]
+  pull_request:
+    branches: [ master, development, test* ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.7, 3.9 ]
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version:  ${{ matrix.python-version }}
+
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        
+    - name: Install OSB API
+      run: |
+        git clone https://github.com/OpenSourceBrain/OSB_API.git
+        cd OSB_API/python
+        python setup.py install
+        
+    - name: Test Channelpedia related scripts
+      run: |
+        cd Channelpedia
+        python ChannelpediaToNeuroML2.py HCN1
+        python analyse.py
+        pip install pyneuroml
+        pynml LEMS_Test_HCN1.xml -nogui
+    
+    - name: Test NMC related scripts
+      run: |
+        omv install NEURON    
+        pip install jinja2
+        cd NMC/parser    
+        nrnivmodl ../NEURON/ # compile mod files for use here; nrnivmodl installed with Neuron via pip
+        python ParseAll.py
+        omv list -V
