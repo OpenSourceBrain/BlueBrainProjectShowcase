@@ -47,4 +47,5 @@ jobs:
         cd NMC/parser
         nrnivmodl ../NEURON/ # compile mod files for use here; nrnivmodl installed with Neuron via pip
         python ParseAll.py
+        ls -alt ../NeuroML2/
         omv list -V
