@@ -2,7 +2,7 @@
     
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.3.16 (libNeuroML v0.2.47)
+        This LEMS file has been automatically generated using PyNeuroML v0.7.2 (libNeuroML v0.4.1)
 
      -->
     
@@ -17,24 +17,24 @@
     <Include file="cSTUT189_L23_LBC_e6e8f83407.stepcurrent3.net.nml"/>
     <Include file="cSTUT189_L23_LBC_e6e8f83407_0_0.cell.nml"/>
     <Include file="K_Tst.channel.nml"/>
-    <Include file="SKv3_1.channel.nml"/>
     <Include file="StochKv_deterministic.channel.nml"/>
     <Include file="Nap_Et2.channel.nml"/>
-    <Include file="NaTs2_t.channel.nml"/>
     <Include file="Ih.channel.nml"/>
+    <Include file="NaTs2_t.channel.nml"/>
+    <Include file="SKv3_1.channel.nml"/>
     <Include file="pas.channel.nml"/>
     <Include file="Im.channel.nml"/>
     <Include file="NaTa_t.channel.nml"/>
-    <Include file="Ca_LVAst.channel.nml"/>
     <Include file="SK_E2.channel.nml"/>
     <Include file="K_Pst.channel.nml"/>
     <Include file="CaDynamics_E2_NML2.nml"/>
+    <Include file="Ca_LVAst.channel.nml"/>
     <Include file="Ca.channel.nml"/>
    
     <Simulation id="L23_LBC_cSTUT189_1" length="3000ms" step="0.025ms" target="network" seed="1234">  <!-- Note seed: ensures same random numbers used every run -->
         
-        <Display id="DispPop__Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" title="Membrane potentials of cells in Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0" ymin="-90" ymax="50">
-            <Line id="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0[0]: v" quantity="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0/0/cSTUT189_L23_LBC_e6e8f83407_0_0/v" scale="1mV" color="#6aa799" timeScale="1ms"/>
+        <Display id="DispPop__Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" title="Membrane potentials of cells in Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0000000000005" ymin="-90" ymax="50">
+            <Line id="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0[0]: v" quantity="Pop_cSTUT189_L23_LBC_e6e8f83407_0_0/0/cSTUT189_L23_LBC_e6e8f83407_0_0/v" scale="1mV" color="#d54f33" timeScale="1ms"/>
         </Display>
         
         <OutputFile id="Volts_file__Pop_cSTUT189_L23_LBC_e6e8f83407_0_0" fileName="L23_LBC_cSTUT189_1.Pop_cSTUT189_L23_LBC_e6e8f83407_0_0.v.dat">
