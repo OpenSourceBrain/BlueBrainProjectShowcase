@@ -49,3 +49,4 @@ ChannelTest/*.log
 /NMC/NeuroML2/nmllite/Sim_IClamp_*.json
 report.*.txt
 *_nrn.py
+arm64
