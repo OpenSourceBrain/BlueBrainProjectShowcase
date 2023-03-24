@@ -1,3 +1,6 @@
+#!/bin/bash
+set -ex
+
 python ChannelpediaToNeuroML2.py HCN1
 pynml LEMS_Test_HCN1.xml &
 

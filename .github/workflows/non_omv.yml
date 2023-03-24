@@ -11,6 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         python-version: [ 3.7, 3.9 ]
 
@@ -36,6 +37,7 @@ jobs:
       run: |
         cd Channelpedia
         pip install pyneuroml
+        pip install pyelectro
         python ChannelpediaToNeuroML2.py HCN1
         python analyse.py
         pynml LEMS_Test_HCN1.xml -nogui
