@@ -7,7 +7,7 @@
      -->
     
     <!-- Specify which component to run -->
-    <Target component="L23_LBC_cSTUT189_1"/>
+    <Target component="L23_LBC_cSTUT189_1" reportFile="report.lbc.__SIMULATOR__.txt"/>
 
     <!-- Include core NeuroML2 ComponentType definitions -->
     <Include file="Cells.xml"/>

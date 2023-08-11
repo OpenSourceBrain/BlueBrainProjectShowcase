@@ -7,7 +7,7 @@
      -->
     
     <!-- Specify which component to run -->
-    <Target component="L5_TTPC1_cADpyr232_1"/>
+    <Target component="L5_TTPC1_cADpyr232_1" reportFile="report.l5.__SIMULATOR__.txt"/>
 
     <!-- Include core NeuroML2 ComponentType definitions -->
     <Include file="Cells.xml"/>

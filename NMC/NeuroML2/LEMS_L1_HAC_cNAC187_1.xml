@@ -7,7 +7,7 @@
      -->
     
     <!-- Specify which component to run -->
-    <Target component="L1_HAC_cNAC187_1"/>
+    <Target component="L1_HAC_cNAC187_1" reportFile="report.l1.__SIMULATOR__.txt"/>
 
     <!-- Include core NeuroML2 ComponentType definitions -->
     <Include file="Cells.xml"/>

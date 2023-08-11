@@ -51,3 +51,5 @@ report.*.txt
 *_nrn.py
 arm64
 *_eden.py
+*_code.gen.c
+*_code.gen.so
