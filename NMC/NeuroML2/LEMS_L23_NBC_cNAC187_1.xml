@@ -7,7 +7,7 @@
      -->
     
     <!-- Specify which component to run -->
-    <Target component="L23_NBC_cNAC187_1"/>
+    <Target component="L23_NBC_cNAC187_1" reportFile="report.l23ncb.__SIMULATOR__.txt"/>
 
     <!-- Include core NeuroML2 ComponentType definitions -->
     <Include file="Cells.xml"/>
@@ -30,7 +30,7 @@
     <Include file="Ca_LVAst.channel.nml"/>
     <Include file="Ca.channel.nml"/>
    
-    <Simulation id="L23_NBC_cNAC187_1" length="3000ms" step="0.025ms" target="network" seed="1234">  <!-- Note seed: ensures same random numbers used every run -->
+    <Simulation id="L23_NBC_cNAC187_1" length="3000ms" step="0.01ms" target="network" seed="1234">  <!-- Note seed: ensures same random numbers used every run -->
         
         <Display id="DispPop__Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0" title="Membrane potentials of cells in Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0000000000005" ymin="-90" ymax="50">
             <Line id="Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0[0]: v" quantity="Pop_cNAC187_L23_NBC_9d37c4b1f8_0_0/0/cNAC187_L23_NBC_9d37c4b1f8_0_0/v" scale="1mV" color="#d54f33" timeScale="1ms"/>

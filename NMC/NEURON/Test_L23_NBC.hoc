@@ -19,6 +19,7 @@ load_file("utils/cellCheck.hoc")
 //forall {if (ismembrane("NaTs2_t")) { uninsert NaTs2_t } }
 
 tstop=3000
+dt = 0.01
 
 create_recording()
 

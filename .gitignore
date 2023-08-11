@@ -50,3 +50,4 @@ ChannelTest/*.log
 report.*.txt
 *_nrn.py
 arm64
+*_eden.py
