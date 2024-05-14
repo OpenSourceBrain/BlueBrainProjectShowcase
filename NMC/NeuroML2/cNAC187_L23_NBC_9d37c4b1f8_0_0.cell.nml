@@ -5455,6 +5455,7 @@ For more information on this cell model see: https://bbp.epfl.ch/nmc-portal/micr
                         <inhomogeneousValue inhomogeneousParameter="PathLengthOver_apical" value="1e4 * ((-0.869600 + 2.087000*exp((p-0.000000)*0.003000))*0.000052)"/>
                     </variableParameter>
                 </channelDensityNonUniform>
+                <spikeThresh value="10mV"/>
                 <specificCapacitance value="1.0 uF_per_cm2" segmentGroup="axonal"/>
                 <specificCapacitance value="1.0 uF_per_cm2" segmentGroup="somatic"/>
                 <specificCapacitance value="1.0 uF_per_cm2" segmentGroup="basal"/>

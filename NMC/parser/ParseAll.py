@@ -416,7 +416,7 @@ wopen()
                                        local_nml2_cell_dir,
                                        copy_neuroml=False,
                                        simulation_seed=1234,
-                                       report_file_name='report.%s.__SIMULATOR__.txt'%(cell_dir.split('_')[0]).lower())
+                                       report_file_name='report.%s_%s.__SIMULATOR__.txt'%(cell_dir.split('_')[0],cell_dir.split('_')[1]))
 
         pynml.nml2_to_svg(nml_net_loc)
 
