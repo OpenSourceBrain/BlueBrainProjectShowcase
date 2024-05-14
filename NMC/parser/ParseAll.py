@@ -411,11 +411,12 @@ wopen()
                                        new_net_loc,
                                        "network",
                                        stim_sim_duration,
-                                       0.025,
+                                       0.01 if 'NBC' in cell_dir else 0.025,
                                        "LEMS_%s.xml" % cell_dir,
                                        local_nml2_cell_dir,
                                        copy_neuroml=False,
-                                       simulation_seed=1234)
+                                       simulation_seed=1234,
+                                       report_file_name='report.%s.__SIMULATOR__.txt'%(cell_dir.split('_')[0]).lower())
 
         pynml.nml2_to_svg(nml_net_loc)
 

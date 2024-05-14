@@ -1,11 +1,11 @@
 <Lems>
-    
+
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.7.2 (libNeuroML v0.4.1)
+        This LEMS file has been automatically generated using PyNeuroML v1.2.13 (libNeuroML v0.5.9)
 
      -->
-    
+
     <!-- Specify which component to run -->
     <Target component="L23_PC_cADpyr229_1" reportFile="report.l23.__SIMULATOR__.txt"/>
 
@@ -13,7 +13,7 @@
     <Include file="Cells.xml"/>
     <Include file="Networks.xml"/>
     <Include file="Simulation.xml"/>
-    
+
     <Include file="cADpyr229_L23_PC_5ecbf9b163.stepcurrent3.net.nml"/>
     <Include file="cADpyr229_L23_PC_5ecbf9b163_0_0.cell.nml"/>
     <Include file="pas.channel.nml"/>
@@ -29,17 +29,16 @@
     <Include file="K_Pst.channel.nml"/>
     <Include file="CaDynamics_E2_NML2.nml"/>
     <Include file="Ca_LVAst.channel.nml"/>
-   
-    <Simulation id="L23_PC_cADpyr229_1" length="3000ms" step="0.025ms" target="network" seed="1234">  <!-- Note seed: ensures same random numbers used every run -->
-        
+
+    <Simulation id="L23_PC_cADpyr229_1" length="3000.0ms" step="0.025ms" target="network" seed="1234">  <!-- Note seed: ensures same random numbers used every run -->
         <Display id="DispPop__Pop_cADpyr229_L23_PC_5ecbf9b163_0_0" title="Membrane potentials of cells in Pop_cADpyr229_L23_PC_5ecbf9b163_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0000000000005" ymin="-90" ymax="50">
             <Line id="Pop_cADpyr229_L23_PC_5ecbf9b163_0_0[0]: v" quantity="Pop_cADpyr229_L23_PC_5ecbf9b163_0_0/0/cADpyr229_L23_PC_5ecbf9b163_0_0/v" scale="1mV" color="#d54f33" timeScale="1ms"/>
         </Display>
-        
+
         <OutputFile id="Volts_file__Pop_cADpyr229_L23_PC_5ecbf9b163_0_0" fileName="L23_PC_cADpyr229_1.Pop_cADpyr229_L23_PC_5ecbf9b163_0_0.v.dat">
-            <OutputColumn id="v_Pop_cADpyr229_L23_PC_5ecbf9b163_0_0_0_cADpyr229_L23_PC_5ecbf9b163_0_0_v" quantity="Pop_cADpyr229_L23_PC_5ecbf9b163_0_0/0/cADpyr229_L23_PC_5ecbf9b163_0_0/v"/> 
+            <OutputColumn id="v_Pop_cADpyr229_L23_PC_5ecbf9b163_0_0_0_cADpyr229_L23_PC_5ecbf9b163_0_0_v" quantity="Pop_cADpyr229_L23_PC_5ecbf9b163_0_0/0/cADpyr229_L23_PC_5ecbf9b163_0_0/v"/>
         </OutputFile>
-        
+
     </Simulation>
 
 </Lems>

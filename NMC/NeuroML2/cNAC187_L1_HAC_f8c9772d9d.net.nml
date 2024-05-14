@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd"
+    xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.xsd"
     id = "NeuroML2_file_exported_from_NEURON">
 
-  <notes> NeuroML 2 file generated from ModelView by: NEURON -- VERSION 7.8.2 HEAD (09b151ec) 2020-12-16
+  <notes> NeuroML 2 file generated from ModelView by: NEURON -- VERSION 8.1.0 HEAD (047dd824) 2022-03-25
           Authors: Michael Hines, Sushil Kambampati and Padraig Gleeson,
           Yale University and UCL 
   </notes>
