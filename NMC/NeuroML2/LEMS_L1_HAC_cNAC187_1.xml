@@ -1,19 +1,19 @@
 <Lems>
-    
+
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.7.2 (libNeuroML v0.4.1)
+        This LEMS file has been automatically generated using PyNeuroML v1.2.13 (libNeuroML v0.5.9)
 
      -->
-    
+
     <!-- Specify which component to run -->
-    <Target component="L1_HAC_cNAC187_1" reportFile="report.l1.__SIMULATOR__.txt"/>
+    <Target component="L1_HAC_cNAC187_1" reportFile="report.L1_HAC.__SIMULATOR__.txt"/>
 
     <!-- Include core NeuroML2 ComponentType definitions -->
     <Include file="Cells.xml"/>
     <Include file="Networks.xml"/>
     <Include file="Simulation.xml"/>
-    
+
     <Include file="cNAC187_L1_HAC_f8c9772d9d.stepcurrent3.net.nml"/>
     <Include file="cNAC187_L1_HAC_f8c9772d9d_0_0.cell.nml"/>
     <Include file="K_Tst.channel.nml"/>
@@ -29,17 +29,16 @@
     <Include file="CaDynamics_E2_NML2.nml"/>
     <Include file="Ca_LVAst.channel.nml"/>
     <Include file="Ca.channel.nml"/>
-   
-    <Simulation id="L1_HAC_cNAC187_1" length="3000ms" step="0.025ms" target="network" seed="1234">  <!-- Note seed: ensures same random numbers used every run -->
-        
+
+    <Simulation id="L1_HAC_cNAC187_1" length="3000.0ms" step="0.025ms" target="network" seed="1234">  <!-- Note seed: ensures same random numbers used every run -->
         <Display id="DispPop__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" title="Membrane potentials of cells in Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" timeScale="1ms" xmin="-300.0" xmax="3300.0000000000005" ymin="-90" ymax="50">
             <Line id="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0[0]: v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v" scale="1mV" color="#d54f33" timeScale="1ms"/>
         </Display>
-        
+
         <OutputFile id="Volts_file__Pop_cNAC187_L1_HAC_f8c9772d9d_0_0" fileName="L1_HAC_cNAC187_1.Pop_cNAC187_L1_HAC_f8c9772d9d_0_0.v.dat">
-            <OutputColumn id="v_Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0_cNAC187_L1_HAC_f8c9772d9d_0_0_v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v"/> 
+            <OutputColumn id="v_Pop_cNAC187_L1_HAC_f8c9772d9d_0_0_0_cNAC187_L1_HAC_f8c9772d9d_0_0_v" quantity="Pop_cNAC187_L1_HAC_f8c9772d9d_0_0/0/cNAC187_L1_HAC_f8c9772d9d_0_0/v"/>
         </OutputFile>
-        
+
     </Simulation>
 
 </Lems>
