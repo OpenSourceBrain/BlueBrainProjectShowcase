@@ -27,6 +27,8 @@ jobs:
       run: |
         pip install git+https://github.com/OpenSourceBrain/osb-model-validation
         pip install scipy sympy matplotlib cython pandas tables
+
+        pip install setuptools
       
 
     - name: Install OSB API
